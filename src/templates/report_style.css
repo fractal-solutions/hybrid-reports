@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #0047AB; /* Cobalt Blue */
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --accent-color: #FF5733;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-size: 12pt;
+}
+
+.report-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+header {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 24pt;
+}
+
+.meta p {
+    margin: 2px 0;
+    font-size: 10pt;
+    text-align: right;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.kpi-grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.kpi-card {
+    background: var(--secondary-color);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 22%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.kpi-card h3 {
+    margin: 0;
+    font-size: 10pt;
+    color: #666;
+}
+
+.kpi-card .value {
+    font-size: 18pt;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 5px 0;
+}
+
+.kpi-card .label {
+    font-size: 9pt;
+    color: #888;
+}
+
+.visuals-section, .chart-container, .chart-container-small {
+    text-align: center;
+    margin: 20px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Prevent huge charts */
+    border: 1px solid #eee;
+}
+
+.two-col {
+    display: flex;
+    gap: 20px;
+}
+
+.two-col > div {
+    flex: 1;
+}
+
+.health-stats li {
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 9pt;
+    color: #999;
+}
+
+@page {
+    margin: 1cm;
+    size: A4;
+}

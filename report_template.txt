@@ -1,0 +1,97 @@
+Monthly Support Report
+
+Summary
+[Number] tickets were raised within the month of [Month].
+[Number] devices have Webroot antivirus installed; [Number] endpoints are operational.
+Of the [Number] devices, [Number] are fully patched. Users need to restart their devices regularly.
+
+Monthly Report Summary
+[Data Visual - Overall Score + Services Delivered]
+The average score for the month of [Month] was [Score]%.
+
+Monthly Ticket Summary
+In [Month], a total of [Number] tickets were submitted for Eldama Technologies Limited, all of which were resolved within the designated service level agreement (SLA) time frame.
+
+Software: [Number] requests
+Hardware: [Number] requests
+
+Managed Device Types
+Eldama Technologies Limited currently monitors a total of [Number] devices. The company has access to manage these devices remotely, with access granted by users.
+A detailed device health breakdown is provided below, which includes the following metrics:
+Operating System
+Disk Space
+RAM
+
+[Asset Management Table(Device Type - Total Managed - Added Devices in Last 30 days)]
+
+[Insert Device Health Breakdown Pie Chart Here]
+
+Device health check
+A detailed device health chart is attached below. It refers to 3 metrics, namely: The operating system, disk space and RAM.
+All the devices have passed the Device Health Check.
+[Add Device Health Check table/chart with Device Health Check Data]
+
+Key Findings (All Devices Compliant)
+[Percentage]% Pass Rate – All [Number] devices meet every health check requirement.
+No Failures – Zero devices flagged for issues.
+
+Detailed Compliance Status
+Disk Space
+Requirement: ≥15% free space on the system drive.
+Result: [Number]/[Number] Passed – No devices are low on disk space.
+However, [Number] device is older than 4years and they require an upgrade. (Depends on actual data)
+
+[Insert Disk Space Chart Here]
+
+[Insert Hardware Replacement Advice (Over 4 years) from reports]
+[Number] devices are between 3-4 years old.
+[Insert Hardware Replacement Advice (3-4 years) from reports]
+
+Memory (RAM)
+Requirement: ≥3.8 GB installed.
+Result: [Number]/[Number] Passed – All devices meet the minimum RAM threshold.
+[Insert Hardware Lifecycle Report Summary - Hardware Replacement Recommendations & Period]
+
+OS Support
+Requirement: Running a Microsoft-supported OS (Windows 8.1/Server 2012 or older are unsupported).
+Result: [Number]/[Number] Passed – All devices run modern, patched OS versions (e.g., Windows 10/11, Server 2016+).
+[Insert Operating System Support Details]
+
+Warranty Status
+Requirement: Devices must be under warranty.
+Result: [Number]/[Number] Flagged – No data suggests warranty issues.
+
+Antivirus
+[Number] endpoints have Webroot installed, running and up to date.
+[Insert Antivirus Status List +  Chart Here]
+
+Key Takeaways:
+All [Number] workstations have antivirus (100% compliance).
+All [Number] are running and up to date (no outdated or inactive installations).
+No missing or disabled antivirus ("Not Running: 0", "Not Detected: 0").
+
+What This Means:
+Your antivirus (Webroot) is properly installed, active, and updated across all workstations.
+The score of 100% indicates full compliance with your security policy.
+
+Patch Status
+This refers to device updates, which is an ongoing activity.
+[Insert Patch Status Summary Chart Here]
+
+We have a Patch management policy applied to all the devices that have RMM installed. Running on the 1st and 15th at 1630hrs every month. These checks for updates and users are prompted to reboot the devices.
+
+Of the [Number] devices, [Number] are fully patched. [Number] requires an update and a reboot. None needs to be re-installed. Users should regularly carry out the following:
+Settings >Update and Security > Check updates > Install or download, then reboot device.
+
+For users currently on Windows 10, we strongly recommend upgrading to Windows 11. Upgrading ensures the system remains secure, supported, and ready for the future. Attached is a list of users who are still on Windows 10.
+
+[Insert Windows 10 Users List/Chart Here]
+
+Recommendations:
+1. Users should reboot devices promptly after updates to ensure they remain secure and fully patched.
+2. Consider scheduling device upgrades for workstations older than four years to maintain performance and reliability.
+3. Plan an upgrade for users who are still on Windows 10 for continued support and security.
+
+*End of report*
+
+In case of any issue do not hesitate to reach out to us

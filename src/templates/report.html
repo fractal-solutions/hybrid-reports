@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Support Report</title>
+    <style>
+        /* Injected CSS will go here */
+        {{style}}
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <header>
+            <h1>Monthly Support Report</h1>
+            <div class="meta">
+                <p><strong>Client:</strong> {{meta.client_name}}</p>
+                <p><strong>Period:</strong> {{meta.report_month}}</p>
+                <p><strong>Generated:</strong> {{meta.generated_date}}</p>
+            </div>
+        </header>
+
+        <section class="summary-section">
+            <h2>Executive Summary</h2>
+            <p>{{summary.executive_summary}}</p>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <h3>Tickets</h3>
+                    <div class="value">{{summary.total_tickets}}</div>
+                    <div class="label">Resolved</div>
+                </div>
+                <div class="kpi-card">
+                    <h3>Antivirus</h3>
+                    <div class="value">{{summary.av_installed}}</div>
+                    <div class="label">Protected</div>
+                </div>
+                <div class="kpi-card">
+                    <h3>Patch Status</h3>
+                    <div class="value">{{summary.fully_patched}}</div>
+                    <div class="label">Fully Patched</div>
+                </div>
+                <div class="kpi-card">
+                    <h3>Score</h3>
+                    <div class="value">{{scores.average_score}}%</div>
+                    <div class="label">Service Score</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visuals-section">
+            <h2>Monthly Overview</h2>
+            <div class="chart-container">
+                <img src="{{scores.services_delivered_chart_path}}" alt="Services Delivered Chart">
+                <p class="caption">Service Delivery Score: {{scores.average_score}}%</p>
+            </div>
+        </section>
+
+        <section class="ticket-summary">
+            <h2>Ticket Summary</h2>
+            <p>In {{meta.report_month}}, a total of <strong>{{tickets.total}}</strong> tickets were submitted and resolved within the SLA.</p>
+            <ul>
+                <li><strong>Software:</strong> {{tickets.software_count}}</li>
+                <li><strong>Hardware:</strong> {{tickets.hardware_count}}</li>
+            </ul>
+        </section>
+
+        <section class="device-health">
+            <h2>Device Health & Compliance</h2>
+            <div class="two-col">
+                <div>
+                    <p><strong>Managed Devices:</strong> {{device_health.total_managed}}</p>
+                    <p><strong>Compliance Score:</strong> {{device_health.compliance_percentage}}%</p>
+                    <ul class="health-stats">
+                        <li><strong>Disk Space:</strong> {{device_health.metrics.disk_space.passed_count}}/{{device_health.metrics.disk_space.total_count}} Passed</li>
+                        <li><strong>RAM:</strong> {{device_health.metrics.ram.passed_count}}/{{device_health.metrics.ram.total_count}} Passed</li>
+                        <li><strong>OS Support:</strong> {{device_health.metrics.os_support.passed_count}}/{{device_health.metrics.os_support.total_count}} Passed</li>
+                    </ul>
+                </div>
+                <div class="chart-wrapper">
+                    <img src="{{device_health.chart_path}}" alt="Device Health Chart">
+                </div>
+            </div>
+            
+            <h3>Disk Space Analysis</h3>
+            <p>Devices with low disk space: {{device_health.metrics.disk_space.low_space_count}}</p>
+            <div class="chart-container-small">
+                 <img src="{{device_health.metrics.disk_space.chart_path}}" alt="Disk Space Chart">
+            </div>
+        </section>
+
+        <section class="antivirus-section">
+            <h2>Antivirus Status</h2>
+            <p>{{antivirus.installed_count}} endpoints have Webroot installed and active.</p>
+             <div class="chart-container-small">
+                 <img src="{{antivirus.chart_path}}" alt="Antivirus Status Chart">
+            </div>
+        </section>
+
+        <section class="patch-management">
+            <h2>Patch Management</h2>
+            <p>{{patch_management.fully_patched_count}} devices are fully patched. {{patch_management.update_required_count}} require updates/reboot.</p>
+            <div class="chart-container-small">
+                 <img src="{{patch_management.chart_path}}" alt="Patch Status Chart">
+            </div>
+            
+            <div class="windows-upgrade">
+                <h3>Windows 10 Upgrade Recommended</h3>
+                <p>The following users are recommended to upgrade to Windows 11:</p>
+                <ul>
+                    {{patch_management.windows_10_users_list_html}}
+                </ul>
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <h2>Recommendations</h2>
+            <ul>
+                {{recommendations_html}}
+            </ul>
+        </section>
+        
+        <footer>
+            <p>Eldama Technologies Ltd - Confidential - {{meta.report_month}}</p>
+        </footer>
+    </div>
+</body>
+</html>
