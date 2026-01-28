@@ -1,4 +1,4 @@
-import { AsyncFlow } from "@fractal-solutions/qflow";
+import { AsyncFlow, AsyncNode } from "@fractal-solutions/qflow";
 import {
   AgentNode,
   CodeInterpreterNode,
@@ -7,11 +7,10 @@ import {
 import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
 import path from "path";
 import process from "process";
+import fs from "fs"; // Need fs for writing files
 
 // This is a self-contained parser module for Datto RMM data.
-// It returns a qFlow AsyncFlow that, when run, will place its JSON output
-// into the 'shared.output' object.
-export function datto_rmmParserWorkflow() {
+export function dattoRmmParserWorkflow() {
   // --- LLM Configuration ---
   const AGENT_LLM_API_KEY = process.env.AGENT_LLM_API_KEY;
   const AGENT_LLM_MODEL = process.env.AGENT_LLM_MODEL;
@@ -42,7 +41,6 @@ export function datto_rmmParserWorkflow() {
   };
 
   // 3. Instantiate the AgentNode
-  // This agent's goal is focused *only* on parsing Datto RMM data.
   const agent = new AgentNode(agentLLM, availableTools, agentLLM); // Can use same LLM for summary
   agent.prepAsync = async (shared) => {
     // The data directory is passed in via the shared context
@@ -66,12 +64,9 @@ export function datto_rmmParserWorkflow() {
       ### Phase 2: The JSON Snippet
       3.  **Create JSON Data**: Construct a JSON object containing the data you found.
           - It **MUST** strictly adhere to this schema. Do not add extra keys.
-          
-          
+          \`json
           {
-            "summary": { "total_tickets": Number, "av_installed": Number, "fully_patched": Number },
             "scores": { "average_score": Number, "services_delivered_chart_path": "assets/filename.png" },
-            "tickets": { "total": Number, "software_count": Number, "hardware_count": Number },
             "device_health": { 
                 "total_managed": Number, "compliance_percentage": Number, "chart_path": "assets/filename.png",
                 "metrics": {
@@ -82,35 +77,64 @@ export function datto_rmmParserWorkflow() {
             },
             "antivirus": { "installed_count": Number, "chart_path": "assets/filename.png" },
             "patch_management": { 
-                "fully_patched_count": Number, "update_required_count": Number, "chart_path": "assets/filename.png",
+                "fully_patched_count": Number, 
+                "update_required_count": Number, 
+                "chart_path": "assets/filename.png",
                 "windows_10_users_list": ["User A", "User B"]
             }
           }
-          
+          \`
       4. **Final Output**: Your final response should be ONLY the JSON object you constructed. Do not add any other text or explanation.
     `;
     agent.setParams({ goal: goal }); 
   };
 
-  // This node captures the final JSON from the agent and places it in the shared output
-  agent.handleResult = async (res, shared) => {
-    try {
-        console.log('Datto RMM Parser: LLM final message:', res.final_message); // Debug log
-        const jsonOutput = JSON.parse(res.final_message);
-        shared.output = jsonOutput;
-        console.log("Datto RMM Parser completed and captured output.");
-        console.log('Datto RMM Parser: shared.output after assignment:', shared.output); // Debug log
-    } catch (e) {
-        console.error("Error parsing JSON output from Datto RMM agent:", e);
-        console.log("Agent final message was:", res.final_message);
-        shared.output = { error: "Failed to parse Datto RMM output." };
-        console.log('Datto RMM Parser: shared.output after error assignment:', shared.output); // Debug log
+  // 4. Node to process the AgentNode's raw output and write to a file
+  const writeOutputToFileNode = new AsyncNode();
+  writeOutputToFileNode.execAsync = async (shared, execResOfAgentNode) => {
+    // execResOfAgentNode should contain the raw output from the AgentNode's LLM run
+    // assuming AgentNode's execAsync returns an object like { final_message: "..." }
+    const res = execResOfAgentNode; 
+    
+    // Defensive check for the shared object passed into this node
+    if (typeof shared === 'undefined' || shared === null) {
+        console.warn("Datto RMM Parser: 'shared' object was undefined or null in writeOutputToFileNode.execAsync, initializing.");
+        shared = {};
     }
-  }
 
-  // 4. Create the flow
+    try {
+        if (!res || !res.final_message) {
+            throw new Error("AgentNode did not return a valid final_message.");
+        }
+        console.log('Datto RMM Parser: LLM final message from AgentNode output:', res.final_message); // Debug log
+        const jsonOutput = JSON.parse(res.final_message);
+        
+        // Construct a unique temporary filename
+        const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
+        const tempFilePath = path.join(process.cwd(), `temp_datto_rmm_output_${clientNameSanitized}.json`);
+
+        fs.writeFileSync(tempFilePath, JSON.stringify(jsonOutput, null, 2));
+        console.log(`Datto RMM Parser: Wrote output to temporary file: ${tempFilePath}`);
+
+        shared.output_filepath = tempFilePath; // Store the filepath in shared.output_filepath
+        console.log('Datto RMM Parser: shared.output_filepath after assignment:', shared.output_filepath); // Debug log
+    } catch (e) {
+        console.error("Error processing and writing JSON output from Datto RMM agent:", e);
+        console.log("Agent final message was:", res?.final_message);
+        
+        const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
+        const errorFilePath = path.join(process.cwd(), `temp_datto_rmm_error_${clientNameSanitized}.json`);
+        fs.writeFileSync(errorFilePath, JSON.stringify({ error: `Failed to parse Datto RMM output: ${e.message}`, raw_message: res?.final_message || "No final message" }, null, 2));
+        shared.output_filepath = errorFilePath;
+        console.log('Datto RMM Parser: shared.output_filepath after error assignment:', shared.output_filepath); // Debug log
+    }
+    return shared; // Important: Return the shared object for propagation
+  };
+
+  // 5. Create the flow and chain nodes
   const flow = new AsyncFlow();
   flow.start(agent);
+  agent.next(writeOutputToFileNode); // Chain writeOutputToFileNode after the agent
 
   return flow;
 }

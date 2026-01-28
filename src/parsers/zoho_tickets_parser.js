@@ -112,8 +112,8 @@ print(f"Chart saved to {chart_file_path}")
   
   // 3. Node to format the final output
   const formatOutputNode = new AsyncNode();
-  formatOutputNode.execAsync = async (shared) => {
-    shared.output = {
+  formatOutputNode.run = async (shared) => {
+    const jsonOutput = {
       tickets: {
         source: 'Zoho',
         total: shared.total_tickets,
@@ -123,7 +123,16 @@ print(f"Chart saved to {chart_file_path}")
         chart_path: shared.chart_path
       }
     };
-    console.log("Zoho Parser: Completed and formatted output.");
+    
+    // Construct a unique temporary filename
+    const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
+    const tempFilePath = path.join(process.cwd(), `temp_zoho_tickets_output_${clientNameSanitized}.json`);
+
+    fs.writeFileSync(tempFilePath, JSON.stringify(jsonOutput, null, 2));
+    console.log(`Zoho Parser: Wrote output to temporary file: ${tempFilePath}`);
+
+    shared.output_filepath = tempFilePath; // Store the filepath in shared.output_filepath
+    console.log("Zoho Parser: Completed and captured output filepath.");
   };
 
   // Chain the nodes

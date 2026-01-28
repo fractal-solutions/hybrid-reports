@@ -70,14 +70,23 @@ export function agentWorkflow(clientName) {
             client_name: workflowSharedState.config.client_name // Pass client_name from main config
         };
         await parserWorkflow.runAsync(parserShared);
-        console.log('Orchestrator: parserShared.output after parser workflow:', parserShared.output); // Debug log
+        console.log('Orchestrator: parserShared.output_filepath after parser workflow:', parserShared.output_filepath); // Debug log
         
         // Merge the output from the parser
-        if (parserShared.output) {
-          finalJson = mergeDeep(finalJson, parserShared.output);
-          console.log(`Orchestrator: Successfully merged output from ${moduleName}.`);
+        if (parserShared.output_filepath) {
+          try {
+            const parsedOutput = JSON.parse(fs.readFileSync(parserShared.output_filepath, 'utf-8'));
+            finalJson = mergeDeep(finalJson, parsedOutput);
+            console.log(`Orchestrator: Successfully merged output from ${moduleName} (from file).`);
+          } catch (fileReadError) {
+            console.error(`Orchestrator: Error reading output file from ${moduleName} at ${parserShared.output_filepath}:`, fileReadError);
+          } finally {
+            // Clean up the temporary file
+            fs.unlinkSync(parserShared.output_filepath);
+            console.log(`Orchestrator: Deleted temporary file: ${parserShared.output_filepath}`);
+          }
         } else {
-          console.warn(`Orchestrator: Module ${moduleName} did not produce an output.`);
+          console.warn(`Orchestrator: Module ${moduleName} did not produce an output filepath.`);
         }
       } catch (error) {
         console.error(`Orchestrator: Error running parser module ${moduleName}`, error);
