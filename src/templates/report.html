@@ -12,11 +12,16 @@
 <body>
     <div class="report-container">
         <header>
-            <h1>Monthly Support Report</h1>
-            <div class="meta">
-                <p><strong>Client:</strong> {{meta.client_name}}</p>
-                <p><strong>Period:</strong> {{meta.report_month}}</p>
-                <p><strong>Generated:</strong> {{meta.generated_date}}</p>
+            <div class="logo-container">
+                <img src="{{logo_path}}" alt="Eldama Technologies Logo" class="logo">
+            </div>
+            <div class="header-text">
+                <h1>Monthly Support Report</h1>
+                <div class="meta">
+                    <p><strong>Client:</strong> {{meta.client_name}}</p>
+                    <p><strong>Period:</strong> {{meta.report_month}}</p>
+                    <p><strong>Generated:</strong> {{meta.generated_date}}</p>
+                </div>
             </div>
         </header>
 

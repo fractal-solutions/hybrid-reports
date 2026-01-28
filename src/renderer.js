@@ -33,13 +33,16 @@ async function renderReport(jsonPath, outputPdfPath) {
     // Paths
     const templatePath = path.join(import.meta.dir, 'templates', 'report.html');
     const stylePath = path.join(import.meta.dir, 'templates', 'report_style.css');
+    const logoPath = path.join(import.meta.dir, 'templates', 'eldama-logo.png');
 
     console.log('Reading templates...');
     let html = fs.readFileSync(templatePath, 'utf-8');
     const css = fs.readFileSync(stylePath, 'utf-8');
+    const logoBase64 = encodeImageToBase64(logoPath);
 
-    // 1. Inject CSS
+    // 1. Inject CSS and Logo
     html = html.replace('{{style}}', css);
+    html = html.replace('{{logo_path}}', logoBase64);
 
     // 2. Pre-process Lists (to generate HTML for <ul>)
     // Recommendations

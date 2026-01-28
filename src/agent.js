@@ -48,7 +48,6 @@ export function agentWorkflow() {
 
   const availableTools = {
     duckduckgo_search: new DuckDuckGoSearchNode(),
-    system_notification: new SystemNotificationNode(),
     interactive_webview: new InteractiveWebviewNode(),
     shell_command: new ShellCommandNode(),
     pdf_processor: new PDFProcessorNode(),
@@ -73,12 +72,12 @@ export function agentWorkflow() {
 
       ### Phase 1: Data & Assets
       1.  **Analyze Data**: Read files in the 'data/' folder. Extract key metrics (Tickets, Device Health, AV Status, Patch Status, Client Name, Month).
-      2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts. Make sure to generate brief enough code such that the responses are not truncated.
+      2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts. Make sure to generate brief enough code such that the responses are not truncated and execute without requiring permission.
           - Save all images to the 'assets/' folder.
           - Required Charts:
             - **Services Score**: A visual representation of the overall score (e.g., a gauge or bar).
             - **Device Health**: A pie chart showing compliance (Passed vs Failed).
-            - **Disk Space**: A chart showing disk usage distribution (A bar for each disk/user with thesholds also displayed on the chart).
+            - **Disk Space**: A chart showing disk usage distribution (A bar for each disk/user with thresholds also displayed on the chart).
             - **Antivirus**: A chart showing installed/active status.
             - **Patch Status**: A chart showing patched vs missing updates.
           - Ensure chart files are saved (e.g., 'assets/health_chart.png').
