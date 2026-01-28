@@ -1,72 +1,7 @@
 {
   "meta": {
-    "client_name": "Dira Immigration Consultants Ltd",
+    "client_name": "DIRA IMMIGRATION CONSULTANTS",
     "report_month": "January 2026",
-    "generated_date": "2026-01-28"
-  },
-  "summary": {
-    "executive_summary": "This monthly report for Dira Immigration Consultants Ltd covers January 2026. Overall network health score is 57%. Key areas include Asset Management at 100%, Monitoring at 59%, Patch Management at 26%, Software Management at 0%, and Antivirus at 100%.",
-    "total_tickets": 1092,
-    "av_installed": 15,
-    "fully_patched": 4
-  },
-  "scores": {
-    "average_score": 57,
-    "services_delivered_chart_path": "assets\\services_score.png"
-  },
-  "tickets": {
-    "total": 1092,
-    "software_count": 800,
-    "hardware_count": 292
-  },
-  "device_health": {
-    "total_managed": 15,
-    "compliance_percentage": 100,
-    "chart_path": "assets\\device_health.png",
-    "metrics": {
-      "disk_space": {
-        "passed_count": 15,
-        "total_count": 15,
-        "low_space_count": 0,
-        "chart_path": "assets\\disk_space.png"
-      },
-      "ram": {
-        "passed_count": 15,
-        "total_count": 15
-      },
-      "os_support": {
-        "passed_count": 15,
-        "total_count": 15
-      }
-    }
-  },
-  "antivirus": {
-    "installed_count": 15,
-    "chart_path": "assets\\antivirus.png"
-  },
-  "patch_management": {
-    "fully_patched_count": 4,
-    "update_required_count": 11,
-    "chart_path": "assets\\patch_status.png",
-    "windows_10_users_list": [
-      "DIRA-PURITY",
-      "DESKTOP-THLH11P",
-      "DIRA-DUNCAN",
-      "DIRA-MONICAH",
-      "DIRA-FRIDAH",
-      "DIRA-SAMUEL",
-      "DESKTOP-U5RTEDI",
-      "DIRA-STALIN",
-      "DIRA-DAVIS",
-      "DIRA-STALINM",
-      "DIRA-VIVIAN",
-      "DESKTOP-F0MRD7V",
-      "DIRA-CAROLINEM",
-      "DIRA-MERCY"
-    ]
-  },
-  "recommendations": [
-    "Improve patch management compliance by ensuring updates are installed promptly.",
-    "Address high-priority monitoring alerts to improve network health."
-  ]
+    "generated_date": "1/28/2026"
+  }
 }

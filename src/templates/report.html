@@ -62,11 +62,15 @@
 
         <section class="ticket-summary">
             <h2>Ticket Summary</h2>
-            <p>In {{meta.report_month}}, a total of <strong>{{tickets.total}}</strong> tickets were submitted and resolved within the SLA.</p>
+            <p>In {{meta.report_month}}, a total of <strong>{{tickets.total}}</strong> tickets were submitted and resolved within the SLA from {{tickets.source}}.</p>
             <ul>
                 <li><strong>Software:</strong> {{tickets.software_count}}</li>
                 <li><strong>Hardware:</strong> {{tickets.hardware_count}}</li>
+                <li><strong>Miscellaneous:</strong> {{tickets.misc_count}}</li>
             </ul>
+            <div class="chart-container-small">
+                 <img src="{{tickets.chart_path}}" alt="Zoho Tickets Summary Chart">
+            </div>
         </section>
 
         <section class="device-health">

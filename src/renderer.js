@@ -70,7 +70,8 @@ async function renderReport(jsonPath, outputPdfPath) {
         'device_health.chart_path',
         'device_health.metrics.disk_space.chart_path',
         'antivirus.chart_path',
-        'patch_management.chart_path'
+        'patch_management.chart_path',
+        'tickets.chart_path' // New Zoho tickets chart
     ];
 
     for (const keyPath of imageKeys) {

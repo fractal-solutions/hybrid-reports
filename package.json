@@ -4,13 +4,15 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/papaparse": "^5.5.2"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
     "@fractal-solutions/qflow": "^1.0.82",
+    "papaparse": "^5.5.3",
     "puppeteer": "^24.36.1"
   }
 }

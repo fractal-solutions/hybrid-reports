@@ -1,0 +1,9 @@
+{
+  "client_name": "AERO CLUB OF EAST AFRICA",
+  "report_period": "January 2026",
+  "data_directory": "data/",
+  "modules_to_run": [
+    "datto_rmm",
+    "zoho_tickets"
+  ]
+}
