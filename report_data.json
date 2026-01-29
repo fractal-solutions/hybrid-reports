@@ -10,14 +10,14 @@
   },
   "device_health": {
     "total_managed": 15,
-    "compliance_percentage": 6.67,
-    "chart_path": "assets/device_health_chart.png",
+    "compliance_percentage": 100,
+    "chart_path": "assets/device_health_compliance.png",
     "metrics": {
       "disk_space": {
         "passed_count": 15,
         "total_count": 15,
         "low_space_count": 0,
-        "chart_path": "assets/disk_space_chart.png"
+        "chart_path": "assets/disk_space_status.png"
       },
       "ram": {
         "passed_count": 15,
@@ -31,19 +31,27 @@
   },
   "antivirus": {
     "installed_count": 15,
-    "chart_path": "assets/antivirus_chart.png"
+    "chart_path": "assets/antivirus_status.png"
   },
   "patch_management": {
     "fully_patched_count": 4,
-    "update_required_count": 9,
-    "chart_path": "assets/patch_chart.png",
+    "update_required_count": 11,
+    "chart_path": "assets/patch_status.png",
     "windows_10_users_list": [
       "DIRA-CAROLINE",
-      "DIRA-CAROLINEM",
       "DIRA-DUNCAN",
-      "DIRA-KEZIAH",
+      "DESKTOP-F0MRD7V",
       "DIRA-PURITY",
-      "DIRA-STALINM"
+      "DIRA-STALIN",
+      "DESKTOP-U5RTEDI"
     ]
+  },
+  "tickets": {
+    "source": "Zoho",
+    "total": 10,
+    "software_count": 3,
+    "hardware_count": 5,
+    "misc_count": 2,
+    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
   }
 }
