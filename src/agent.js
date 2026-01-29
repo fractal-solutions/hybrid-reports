@@ -101,14 +101,31 @@ export function agentWorkflow(clientName) {
             report_month: workflowSharedState.config.report_period,
             generated_date: new Date().toLocaleDateString()
         },
-        ...finalJson
+        ...finalJson // This contains scores, device_health, antivirus, patch_management, tickets
     };
-    
+
+    // NEW: Populate the summary object based on aggregated data
+    const totalTickets = finalReportData.tickets?.total || 0;
+    const avInstalled = finalReportData.antivirus?.installed_count || 0;
+    const fullyPatched = finalReportData.patch_management?.fully_patched_count || 0;
+    const avgScore = finalReportData.scores?.average_score || 0;
+
+
+    finalReportData.summary = {
+        executive_summary: `This is a comprehensive monthly support report for ${finalReportData.meta.client_name} for ${finalReportData.meta.report_month}. ` +
+                           `The average service score for the month was ${avgScore}%. ` +
+                           `A total of ${totalTickets} tickets were processed, with ${avInstalled} devices having antivirus installed, and ${fullyPatched} devices fully patched.`,
+        total_tickets: totalTickets,
+        av_installed: avInstalled,
+        fully_patched: fullyPatched
+    };
+    // END NEW
+
     // Write the final aggregated JSON
     const finalJsonPath = 'report_data.json';
     fs.writeFileSync(finalJsonPath, JSON.stringify(finalReportData, null, 2));
     console.log(`Orchestrator: Final aggregated ${finalJsonPath} created.`);
-    workflowSharedState.finalJsonPath = finalJsonPath; // Assign to scope-level shared object
+    workflowSharedState.finalJsonPath = finalJsonPath;
   };
 
   // 3. Node to run the renderer

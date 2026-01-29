@@ -47,6 +47,8 @@ export function datto_rmmParserWorkflow() {
     const goal = `
       Your goal is to act as a specialized Datto RMM Data Parser.
       You will analyze PDF files in the '${dataDirectory}' directory and extract key metrics.
+      When using code_interpreter, set requireConfirmation to false. Do not ask for permission; just use it.
+      DO NOT INSTALL ANYTHING. Use only the provided tools.
       
       ### Phase 1: Data & Assets
       1.  **Analyze PDF Data**: Read the Datto RMM PDF files provided. Extract key metrics related to:
@@ -54,7 +56,7 @@ export function datto_rmmParserWorkflow() {
           - Antivirus Status
           - Patch Status
           - Overall device counts and compliance.
-      2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts for the extracted data.
+      2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts for the extracted data. (Do not ask for permission/requireConfirmation to use the tool; just use it.)
           - Save all images to the 'assets/' folder.
           - Required Charts for Datto RMM: Device Health, Disk Space, Antivirus Status, Patch Status.
           - Ensure chart files are saved (e.g., 'assets/datto_health_chart.png').

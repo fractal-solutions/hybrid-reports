@@ -5,45 +5,45 @@
     "generated_date": "1/29/2026"
   },
   "scores": {
-    "average_score": 57,
-    "services_delivered_chart_path": "assets/services_delivered_chart.png"
+    "average_score": 6.67,
+    "services_delivered_chart_path": "./assets/device_health_chart.png"
   },
   "device_health": {
     "total_managed": 15,
-    "compliance_percentage": 100,
-    "chart_path": "assets/device_health_compliance.png",
+    "compliance_percentage": 6.67,
+    "chart_path": "./assets/device_health_chart.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 15,
+        "passed_count": 1,
         "total_count": 15,
-        "low_space_count": 0,
-        "chart_path": "assets/disk_space_status.png"
+        "low_space_count": 14,
+        "chart_path": "./assets/disk_space_chart.png"
       },
       "ram": {
-        "passed_count": 15,
+        "passed_count": 1,
         "total_count": 15
       },
       "os_support": {
-        "passed_count": 15,
+        "passed_count": 1,
         "total_count": 15
       }
     }
   },
   "antivirus": {
     "installed_count": 15,
-    "chart_path": "assets/antivirus_status.png"
+    "chart_path": "./assets/antivirus_chart.png"
   },
   "patch_management": {
     "fully_patched_count": 4,
     "update_required_count": 11,
-    "chart_path": "assets/patch_status.png",
+    "chart_path": "./assets/patch_status_chart.png",
     "windows_10_users_list": [
       "DIRA-CAROLINE",
       "DIRA-DUNCAN",
-      "DESKTOP-F0MRD7V",
+      "DIRA-KEZIAH",
       "DIRA-PURITY",
-      "DIRA-STALIN",
-      "DESKTOP-U5RTEDI"
+      "DIRA-STALINM",
+      "DIRAJACKLINE"
     ]
   },
   "tickets": {
@@ -53,5 +53,11 @@
     "hardware_count": 5,
     "misc_count": 2,
     "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
+  },
+  "summary": {
+    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 6.67%. A total of 10 tickets were processed, with 15 devices having antivirus installed, and 4 devices fully patched.",
+    "total_tickets": 10,
+    "av_installed": 15,
+    "fully_patched": 4
   }
 }

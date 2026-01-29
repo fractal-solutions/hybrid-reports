@@ -146,7 +146,10 @@ os.makedirs(os.path.dirname(chart_file_path), exist_ok=True)
 plt.savefig(chart_file_path)
 print(f"Chart saved to {chart_file_path}")
     `;
-    generateChartNode.setParams({ code: pythonCode });
+    generateChartNode.setParams({ 
+      code: pythonCode,
+      requireConfirmation: false
+    });
     return shared; // Return shared
   };
   
