@@ -44,7 +44,7 @@ async function renderReport(jsonPath, outputPdfPath) {
     html = html.replace('{{style}}', css);
     html = html.replace('{{logo_path}}', logoBase64);
 
-    // 2. Pre-process Lists (to generate HTML for <ul>)
+    // 2. Pre-process Lists and Tables (to generate HTML for <ul> and <table><tbody>)
     // Recommendations
     if (data.recommendations && Array.isArray(data.recommendations)) {
         const listHtml = data.recommendations.map(item => `<li>${item}</li>`).join('\n');
@@ -62,8 +62,27 @@ async function renderReport(jsonPath, outputPdfPath) {
         data.patch_management.windows_10_users_list_html = '<li>None listed.</li>';
     }
 
+    // PRTG Monitoring Links Table Rows
+    if (data.prtg_monitoring && data.prtg_monitoring.links && Array.isArray(data.prtg_monitoring.links)) {
+        const tableRowsHtml = data.prtg_monitoring.links.map(link => `
+            <tr>
+                <td>${link.name}</td>
+                <td>${link.avg_bandwidth}</td>
+                <td>${link.total_data}</td>
+                <td>${link.uptime_percent}</td>
+                <td>${link.downtime_percent}</td>
+                <td>${link.uptime_duration}</td>
+                <td>${link.downtime_duration}</td>
+            </tr>
+        `).join('\n');
+        data.prtg_monitoring.links_table_rows = tableRowsHtml;
+    } else {
+        if (!data.prtg_monitoring) data.prtg_monitoring = {};
+        data.prtg_monitoring.links_table_rows = '<tr><td colspan="7">No PRTG link data available.</td></tr>';
+    }
+
+
     // 3. Process Images (Find keys ending in _path or strictly known keys)
-    // We can recursively walk the object or just check specific keys known from schema.
     // For robustness, let's walk the known schema paths that are images.
     const imageKeys = [
         'scores.services_delivered_chart_path',
@@ -71,7 +90,8 @@ async function renderReport(jsonPath, outputPdfPath) {
         'device_health.metrics.disk_space.chart_path',
         'antivirus.chart_path',
         'patch_management.chart_path',
-        'tickets.chart_path' // New Zoho tickets chart
+        'tickets.chart_path', // Zoho tickets chart
+        'prtg_monitoring.chart_path' // New PRTG monitoring chart
     ];
 
     for (const keyPath of imageKeys) {

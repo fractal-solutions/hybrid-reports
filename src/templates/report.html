@@ -121,6 +121,37 @@
             </div>
         </section>
 
+        <section class="prtg-monitoring">
+            <h2>PRTG Network Monitoring</h2>
+            <div class="prtg-summary">
+                <p>Overall Average Uptime: <strong>{{prtg_monitoring.summary_stats.overall_avg_uptime_percent}}</strong></p>
+                <p>Overall Average Downtime: <strong>{{prtg_monitoring.summary_stats.overall_avg_downtime_percent}}</strong></p>
+                <p>Total Links Monitored: {{prtg_monitoring.summary_stats.total_links_monitored}}</p>
+                <p>Links with Downtime: {{prtg_monitoring.summary_stats.links_with_downtime}}</p>
+            </div>
+
+            <h3>Link Performance Details</h3>
+            <table class="prtg-table">
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Avg. Bandwidth</th>
+                        <th>Total Data</th>
+                        <th>Uptime (%)</th>
+                        <th>Downtime (%)</th>
+                        <th>Uptime Duration</th>
+                        <th>Downtime Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{prtg_monitoring.links_table_rows}}
+                </tbody>
+            </table>
+            <div class="chart-container-large">
+                <img src="{{prtg_monitoring.chart_path}}" alt="PRTG Link Uptime/Downtime Chart">
+            </div>
+        </section>
+
         <section class="recommendations">
             <h2>Recommendations</h2>
             <ul>

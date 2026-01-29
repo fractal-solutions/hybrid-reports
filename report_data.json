@@ -1,63 +1,13 @@
 {
   "meta": {
-    "client_name": "DIRA IMMIGRATION CONSULTANTS",
+    "client_name": "SERENITY SPA LIMITED",
     "report_month": "January 2026",
     "generated_date": "1/29/2026"
   },
-  "scores": {
-    "average_score": 57,
-    "services_delivered_chart_path": "./assets/services_delivery_scores.png"
-  },
-  "device_health": {
-    "total_managed": 15,
-    "compliance_percentage": 100,
-    "chart_path": "./assets/device_health_compliance.png",
-    "metrics": {
-      "disk_space": {
-        "passed_count": 15,
-        "total_count": 15,
-        "low_space_count": 0,
-        "chart_path": "./assets/disk_free_space.png"
-      },
-      "ram": {
-        "passed_count": 15,
-        "total_count": 15
-      },
-      "os_support": {
-        "passed_count": 15,
-        "total_count": 15
-      }
-    }
-  },
-  "antivirus": {
-    "installed_count": 15,
-    "chart_path": "./assets/antivirus_status.png"
-  },
-  "patch_management": {
-    "fully_patched_count": 4,
-    "update_required_count": 11,
-    "chart_path": "./assets/patch_status.png",
-    "windows_10_users_list": [
-      "DIRA-CAROLINEM",
-      "DIRA-DUNCAN",
-      "DIRA-KEZIAH",
-      "DIRA-PURITY",
-      "DIRA-STALINM",
-      "DIRAJACKLINE"
-    ]
-  },
-  "tickets": {
-    "source": "Zoho",
-    "total": 10,
-    "software_count": 3,
-    "hardware_count": 5,
-    "misc_count": 2,
-    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
-  },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 57%. A total of 10 tickets were processed, with 15 devices having antivirus installed, and 4 devices fully patched.",
-    "total_tickets": 10,
-    "av_installed": 15,
-    "fully_patched": 4
+    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 0%. A total of 0 tickets were processed, with 0 devices having antivirus installed, and 0 devices fully patched.",
+    "total_tickets": 0,
+    "av_installed": 0,
+    "fully_patched": 0
   }
 }

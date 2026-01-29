@@ -130,6 +130,41 @@ ul {
     padding-left: 20px;
 }
 
+.prtg-monitoring h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.prtg-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 10pt;
+}
+
+.prtg-table th, .prtg-table td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+}
+
+.prtg-table th {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.chart-container-large {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.chart-container-large img {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px; /* Adjust as needed */
+}
+
 footer {
     margin-top: 50px;
     padding-top: 20px;
