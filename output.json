@@ -1,0 +1,219 @@
+{
+  "prtg_monitoring": {
+    "links": [
+      {
+        "name": "Gigiri DD LAN 1,658,801 MB 2.059 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "97.924 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "27d 10h 03m 17s",
+        "downtime_duration": "27d 10h 03m 17s"
+      },
+      {
+        "name": "Gigiri DD DD-Link 682,867 MB 2.059 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "97.922 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "27d 10h 03m 22s",
+        "downtime_duration": "27d 10h 03m 22s"
+      },
+      {
+        "name": "Gigiri DD Guest LAN OMB 2.059 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "97.924 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "27d 10h 04m 22s",
+        "downtime_duration": "27d 10h 04m 22s"
+      },
+      {
+        "name": "Gigiri-JTL-197.232.140.107 LAN 1,657,791 MB 2.151 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "97.825 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "27d 09h 25m 44s",
+        "downtime_duration": "27d 09h 25m 44s"
+      },
+      {
+        "name": "Gigiri-JTL-197.232.140.107 JTL-WAN 543,014 MB 2.151 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "97.815 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "27d 09h 25m 39s",
+        "downtime_duration": "27d 09h 25m 39s"
+      },
+      {
+        "name": "Kitisuru - JTL Cameras-LAN 784,506 MB 0% [00s 0.025 % 10]",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Kitisuru - JTL JTL-WAN 970,408 MB 0%",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "99.975 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "27d 23h 53m 35s",
+        "downtime_duration": "27d 23h 53m 35s"
+      },
+      {
+        "name": "Kitisuru - JTL",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Staff LAN 271,887 MB 70 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 | Cameras LAN 50 MB 70 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "30 %",
+        "downtime_percent": "N/A",
+        "uptime_duration": "08d 08h 53m 53s",
+        "downtime_duration": "08d 08h 53m 53s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Availability 62 msec 70 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 DD 274,337 MB 70 %",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "30%",
+        "downtime_percent": "N/A",
+        "uptime_duration": "08d 08h 51m 43s",
+        "downtime_duration": "08d 08h 51m 43s"
+      },
+      {
+        "name": "41.215.60.10 JANI",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "2.616 %",
+        "downtime_percent": "2.635 %",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "41.215.60.10 JANI",
+        "avg_bandwidth": "N/A",
+        "total_data": "692,075 MB",
+        "uptime_percent": "0%",
+        "downtime_percent": "0.018 %",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "DD-SPA _KAREN Ping 67 msec 3.666 % 01d 00h 38m 00s 3.744 % 1510]",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "DD-SPA _KAREN DD_WAN Port2 229,474 MB 3.675 % 01d 00h 41m 32s 3.775 % 1522]",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "DD-SPA _KAREN",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "DD-SPA _KAREN",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "JTL-KAREN",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "JTL-KAREN",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Spa_TIGONI Airtel",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Spa_TIGON| Airtel",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      },
+      {
+        "name": "Spa_TIGONI_JTL",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "N/A",
+        "downtime_percent": "N/A",
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
+      }
+    ],
+    "summary_stats": {
+      "overall_avg_uptime_percent": "28.348 %",
+      "overall_avg_downtime_percent": "0.115 %",
+      "total_links_monitored": 23,
+      "links_with_downtime": 2
+    }
+  }
+}

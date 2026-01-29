@@ -3,6 +3,7 @@ import {
   AgentNode,
   PDFProcessorNode,
   CodeInterpreterNode,
+  ShellCommandNode,
 } from "@fractal-solutions/qflow/nodes";
 import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
 import path from "path";
@@ -28,16 +29,9 @@ export function prtg_monitoringParserWorkflow() {
     baseUrl: AGENT_LLM_BASE_URL,
   });
 
-  // 2. Setup PDF Processor
-  const pdfProcessor = new PDFProcessorNode();
 
-  // 3. Setup Code Interpreter
-  const codeInterpreter = new CodeInterpreterNode();
-  codeInterpreter.setParams({
-      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
-  });
 
-  // 4. Node to find and process the PRTG PDF
+  // 2. Node to find and process the PRTG PDF
   const findAndProcessPrtgPdfNode = new AsyncNode();
   findAndProcessPrtgPdfNode.prepAsync = async (shared) => {
     if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
@@ -72,15 +66,23 @@ export function prtg_monitoringParserWorkflow() {
     }
     shared.prtgPdfPath = prtgPdfPath;
     
-    // Set parameters for PDFProcessorNode
-    pdfProcessor.setParams({ file_path: prtgPdfPath });
     return shared;
   };
 
+
+  // 3. Setup PDF Processor
+  const pdfProcessor = new PDFProcessorNode();
+
+  // 4. Setup Code Interpreter
+  const codeInterpreter = new CodeInterpreterNode();
+  codeInterpreter.setParams({
+      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
+  });
+
   // Define availableTools for the AgentNode
   const availableTools = {
-    pdf_processor: pdfProcessor,
     code_interpreter: codeInterpreter,
+    shell_command: new ShellCommandNode(),
   };
   
 
@@ -91,25 +93,27 @@ export function prtg_monitoringParserWorkflow() {
     if (!shared.prtgPdfPath) {
         throw new Error("PRTG Parser: Missing prtgPdfPath in shared object.");
     }
-    // The previous node (pdfProcessor) is assumed to put its text output on `shared.pdf_text_content`
-    const pdfTextContent = shared.pdf_text_content || shared.execRes; // Qflow specific - get output of PDFProcessor
     
-    if (!pdfTextContent) {
-        console.warn("PRTG Parser: No text content found from PDFProcessorNode. This might be a qflow integration issue.");
-        throw new Error("PRTG Parser: No text content available from PRTG PDF for extraction.");
-    }
 
     const goal = `
       You are an expert at parsing PRTG Network Monitor reports.
-      Your goal is to extract structured link performance data for each device sensor from the provided text.
+      Your goal is to extract structured link performance data for each device sensor from the provided pdf.
+      **STRICTLY**: Extract its text using pyTesseract OCR and analyze the content to produce the required JSON output. Nothing else will work. Tesseract-OCR is in C:\\Program Files\\Tesseract-OCR\\tesseract.exe.
+      DO NOT install packages - pyTesseract is pre-installed and ready to use.
+      You have NO pdf processor tool!
+      Dont ask for permission to use tools; just use them. No requireConfirmation.
+      Some values can be N/A or 0 if not found or not applicable.
+      Be quick and save on tokens so just start by extracting the data with Tesseract OCR.
+      STRICTLY USE TESSERACT STOP TRYING TO INSTALL PDF PROCESSORS OR OTHER LIBRARIES.
+      If you have imperfect parsing of names its okay as long as the uptime/downtime and bandwidth data is correct move on quickly.
 
       ### Input Data
-      The following text is extracted from a PRTG PDF report for client "${shared.client_name}".
+      The following is a path to  a PRTG PDF report for client "${shared.client_name}".
       It contains information about various network links, including uptime, downtime, and bandwidth.
 
-      --- PDF Content ---
-      ${pdfTextContent}
-      --- End PDF Content ---
+      --- PDF Content Path ---
+      ${shared.prtgPdfPath}
+      --- End PDF Content Path ---
 
       ### Extraction Requirements
       For each device sensor entry, extract the following fields. If a field is not present or cannot be reliably extracted, use "N/A" or "0".

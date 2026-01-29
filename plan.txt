@@ -1,0 +1,1 @@
+Goal: Extract structured link performance data from PRTG PDF report. Steps: 1. Check PDF file. 2. Extract text via PyPDF2/pdfplumber. 3. Use OCR if needed. 4. Parse text for device sensors. 5. Compute summary stats. 6. Output JSON. 
