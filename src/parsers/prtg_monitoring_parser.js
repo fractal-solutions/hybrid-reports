@@ -105,7 +105,7 @@ export function prtg_monitoringParserWorkflow() {
       Some values can be N/A or 0 if not found or not applicable.
       Be quick and save on tokens so just start by extracting the data with Tesseract OCR.
       STRICTLY USE TESSERACT STOP TRYING TO INSTALL PDF PROCESSORS OR OTHER LIBRARIES.
-      If you have imperfect parsing of names its okay as long as the uptime/downtime and bandwidth data is correct move on quickly.
+      If you have imperfect parsing of names its okay as long as the uptime/downtime and bandwidth data is correct move on quickly. The data is more important than perfect names.
 
       ### Input Data
       The following is a path to  a PRTG PDF report for client "${shared.client_name}".

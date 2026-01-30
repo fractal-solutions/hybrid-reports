@@ -1,5 +1,4 @@
---- Page 1 ---
-PRTG NETWORK MONITO!
+PRTG NETWORK MONITOR
 
 Report (1/1/2026 12:00:00 AM - 1/29/2026 12:00:00 AM 24 / 7)
 
@@ -10,304 +9,214 @@ Local Probe (Local Probe) »
 Serenity Spa Links » 5.87 Mbit/s 97.941 %
 Gigiri DD LAN 1,658,801 MB 2.059 %
 
-27d 10h 03m 17s 97.924 %
-3h 50m 00s 2.076 %
+[27d 10h 03m 17s 97.924 %
+[13h 50m 00s 2.076 %
 
-39481
-837.
+[39481]
+[837]
 
 Local Probe (Local Probe) »
 Serenity Spa Links » 2.42 Mbit/s 97.941 %
 Gigiri DD DD-Link 682,867 MB 2.059 %
 
-27d 10h 03m 22s 97.922 %
-3h 50m 00s 2.078 %
+[27d 10h 03m 22s 97.922 %
+[13h 50m 00s 2.078 %
 
-39480
-838
+[39480]
+[838]
 
 Local Probe (Local Probe) »
 Serenity Spa Links » 0 Mbit/s 97.941 %
-Gigiri DD Guest LAN OMB 2.059 %
+Gigiri DD Guest LAN 0 MB 2.059 %
 
-27d 10h 04m 22s 97.924 %
-13h 50m 00s 2.076 %
+[27d 10h 04m 22s 97.924 %
+[13h 50m 00s 2.076 %
 
-39482
-837
-
+[39482]
+[837]
 Local Probe (Local Probe) »
+
 Serenity Spa Links » 5.88 Mbit/s 97.849 %
-Gigiri-JTL-197.232.140.107 LAN 1,657,791 MB 2.151 %
+Gigiri-JTL- 197.232.140.107 LAN 1,657,791 MB 2.151%
 
-27d 09h 25m 44s 97.825 %
-4h 27m 00s 2.175 %
+[27d 09h 25m 44s 97.825 %
+[14h 27m 00s 2.175 %
 
-39441
-877
+[39441
+[877]
 
 Local Probe (Local Probe) »
 Serenity Spa Links » 1.92 Mbit/s 97.849 %
-Gigiri-JTL-197.232.140.107 JTL-WAN 543,014 MB 2.151 %
+Gigiri-JTL-197.232.140.107 JTL-WAN 543,014 MB 2.151%
 
-27d 09h 25m 39s 97.815 %
-4h 27m 00s 2.185 %
+[27d 09h 25m 39s 97.815 %
+[14h 27m 00s 2.185 %
 
-39437
-881
-
-Local Probe (Local Probe) »
-Serenity Spa Links » 2.72 Mbit/s 00 x 27d 23h 53m 25s 99.975 x4 40306
-
-Kitisuru - JTL Cameras-LAN 784,506 MB 0% [00s 0.025 % 10]
+[39437]
+[881
 
 Local Probe (Local Probe) »
-Serenity Spa Links » 3.37 Mbit/s 00 %
+Serenity Spa Links » 2.72 Mbit/s 100 a | [27d 23h 53m 25s 99.975 a | [40306
+
+Kitisuru - JTL Cameras-LAN 784,506 MB 0% [00s 0.025 % [10]
+
+Local Probe (Local Probe) »
+Serenity Spa Links » 3.37 Mbit/s 100 %
 Kitisuru - JTL JTL-WAN 970,408 MB 0%
 
-27d 23h 53m 35s 99.975 %
+[27d 23h 53m 35s 99.975 %
 [00s 0.025 %
 
-40306
-10]
+[40306
+[10]
 
 Local Probe (Local Probe) »
-
-27d 23h 54m 30s 99.975 %
-[00s 0.025 %
-
-Serenity Spa Links » 0.08 Mbit/s 00 %
+Serenity Spa Links » 0.08 Mbit/s 100 %
 Kitisuru - JTL (008) Port4 Traffic 23,188 MB 0%
 
-40307
-10]
+[27d 23h 54m 30s 99.975 %
+[00s 0.025 %
+
+[40307]
+[10]
 
 Local Probe (Local Probe) »
-08d 08h 52m 48s 30%
-19d 15h 01m 00s 70 %
-
-12041
-28341
-
-Serenity Spa Links » 3.12 Mbit/s 30%
+Serenity Spa Links » 3.12 Mbit/s 30 %
 Kitisuru DD-197.254.29.114 Staff LAN 271,887 MB 70 %
 
-Local Probe (Local Probe) »
-Serenity Spa Links » < 0.01 Mbit/s 30%
-Kitisuru DD-197.254.29.114 | Cameras LAN 50 MB 70 %
+[08d 08h 52m 48s 30 %
+[19d 15h 01m 00s 70 %
 
-08d 08h 53m 53s 30 %
-19d 15h 00m 00s 70 %
-
-12044
-28345
+[12041
+[28341
 
 Local Probe (Local Probe) »
-08d 08h 53m 48s 30%
-19d 14h 59m 00s 70 %
+Serenity Spa Links » < 0.01 Mbit/s 30 %
+Kitisuru DD-197.254.29.114 Cameras LAN 50 MB 70 %
 
-12052
-28327
+[08d 08h 53m 53s 30 %
+[19d 15h 00m 00s 70 %
 
-Serenity Spa Links » 30%
-Kitisuru DD-197.254.29.114 Availability 62 msec 70 %
+[12044
+[28345]
 
 Local Probe (Local Probe) »
-Serenity Spa Links » 3.15 Mbit/s 30%
+Serenity Spa Links » 30 %
+Kitisuru DD-197.254.29.114 — Availability 62 msec 70 %
+
+[08d 08h 53m 48s 30 %
+[19d 14h 59m 00s 70 %
+
+[12052]
+[28327
+
+Local Probe (Local Probe) »
+Serenity Spa Links » 3.15 Mbit/s 30 %
 Kitisuru DD-197.254.29.114 DD 274,337 MB 70 %
 
-08d 08h 51m 43s 30%
-19d 15h 02m 00s 70 %
+[08d 08h 51m 43s 30 %
+[19d 15h 02m 00s 70 %
 
-12044
-28334
+[12044
+[28334]
 
 Local Probe (Local Probe) »
 
 Serenity Spa Links »
 
-41.215.60.10 JANI (Tigoni 97.384 % 27d 06h 20m 36s 97.365 % 78518
-DD) Ping 72 msec 2.616 % [17h 34m 30s 2.635 % 2125]
+41.215.60.10 JANI (Tigoni 97.384 % [27d 06h 20m 36s 97.365 % [78518]
+DD) Ping 72 msec 2.616 % [17h 34m 30s 2.635 % [2125]
 Local Probe (Local Probe) »
 
 Serenity Spa Links »
 
-41.215.60.10 JANI (Tigoni 2.47 Mbit/s 100 % 27d 06h 08m 12s 99.982 % 39247
-DD) Tigoni_DD 692,075 MB 0% [00s 0.018 % 7)
+41.215.60.10 JANI (Tigoni 2.47 Mbit/s 100 % [27d 06h 08m 12s 99.982 % [39247]
+DD) Tigoni_DD 692,075 MB 0% [00s 0.018 % [7]
+
+Local Probe (Local Probe) »
+Serenity Spa Links » 96.334 % [26d 23h 16m 19s 96.256 % [38821
+
+DD-SPA _KAREN Ping 67 msec 3.666 % [01d 00h 38m 00s 3.744 % [1510]
 Local Probe (Local Probe) »
 
-Serenity Spa Links » 96.334 % 26d 23h 16m 19s 96.256 % 38821
+Serenity Spa Links » 0.83 Mbit/s 96.325 % [26d 23h 11m 52s 96.225 % [38799
 
-DD-SPA _KAREN Ping 67 msec 3.666 % 01d 00h 38m 00s 3.744 % 1510]
-Local Probe (Local Probe) »
-
-Serenity Spa Links » 0.83 Mbit/s 96.325 % 26d 23h 11m 52s 96.225 % 38799
-
-DD-SPA _KAREN DD_WAN Port2 229,474 MB 3.675 % 01d 00h 41m 32s 3.775 % 1522]
+DD-SPA _KAREN DD_WAN Port2 229,474 MB 3.675 % [01d 00h 41m 32s 3.775 % [1522]
 
 1/2
 
---- Page 2 ---
-Probe, Group, Device
+--- Page Break ---
+Average Uptime Good
+Probe, Group, Device Sensor Total Downtime Failed
 
 Local Probe (Local Probe) »
-Serenity Spa Links »
-DD-SPA _KAREN
+Serenity Spa Links » 2.09 Mbit/s 96.324 %
+DD-SPA _KAREN LAN Port3 579,825 MB 3.676 %
+
+[26d 23h 12m 09s 96.23 %
+[01d 00h 42m 00s 3.77 %
+
+[38801]
+[1520]
 
 Local Probe (Local Probe) »
-Serenity Spa Links »
-DD-SPA _KAREN
+Serenity Spa Links » < 0.01 Mbit/s 96.326 %
+DD-SPA _KAREN CCTV Port8 403 MB 3.674 %
+
+[26d 23h 12m 14s 96.225 %
+[01d 00h 41m 00s 3.775 %
+
+[38798]
+[1522]
 
 Local Probe (Local Probe) »
-Serenity Spa Links »
-JTL-KAREN
+Serenity Spa Links » 96.319 %
+JTL-KAREN Ping 64 msec 3.681 %
+
+[26d 23h 10m 15s 96.244 %
+[01d 00h 44m 00s 3.756 %
+
+[38816]
+[1515]
 
 Local Probe (Local Probe) »
-Serenity Spa Links »
-JTL-KAREN
+Serenity Spa Links » 1.26 Mbit/s 96.311 “I [26d 23h 06m 21s 96.235 “I [38801
+
+JTL-KAREN JTL Port7 349,999 MB 3.689 % [01d 00h 47m 00s 3.765 % [1518]
+
+Local Probe (Local Probe) »
+Serenity Spa Links » 48 %
+Spa_TIGONI Airtel Ping 75 msec 52%
+
+[13d 11h 31m 22s 48 %
+[14d 12h 23m 00s 52%
+
+[19402]
+[20971
+
+Local Probe (Local Probe) »
+Serenity Spa Links » < 0.01 Mbit/s 48 %
+Spa_TIGONI Airtel Airtel WAN_PortF1 217 MB 52%
+
+[13d 11h 28m 36s 48 %
+[14d 12h 24m 00s 52%
+
+[19392]
+[20977]
 
 Local Probe (Local Probe) »
 
-Serenity Spa Links »
-Spa_TIGONI Airtel
+Serenity Spa Links » 1.71 Mbit/s 97.537%
+Spa_TIGONI_JTL JTL-Port6 480,186 MB 2.463 %
 
-Local Probe (Local Probe) »
-Serenity Spa Links »
-Spa_TIGON| Airtel
+PAESSLER 20.2.59.1689+ © 1/29/2026 2:28:36 PM
 
-Local Probe (Local Probe) »
+[39274
+[1044]
 
-Serenity Spa Links »
-Spa_TIGONI_JTL
-PAESSLER 2
-
-Sensor
-
-LAN Port3
-
-CCTV Port8
-
-Ping
-
-JTL Port7
-
-Ping
-
-Airtel WAN_PortF1
-
-JTL-Port6
-
-Average
-Total
-
-2.09 Mbit/s
-579,825 MB
-
-< 0.01 Mbit/s
-403 MB
-
-64 msec
-
-1.26 Mbit/s
-349,999 MB
-
-75 msec
-
-< 0.01 Mbit/s
-217 MB
-
-1.71 Mbit/s
-480,186 MB
-
-Uptime
-Downtime
-
-96.324 %
-3.676 %
-
-96.326 %
-3.674 %
-
-96.319 %
-3.681 %
-
-96.311 %
-3.689 %
-
-48 %
-52%
-
-48 %
-52%
-
-97.537 %
-2463 %
-
-26d 23h 12m 09s
-01d 00h 42m 00s
-
-26d 23h 12m 14s
-01d 00h 41m 00s
-
-26d 23h 10m 15s
-01d 00h 44m 00s
-
-26d 23h 06m 21s
-01d 00h 47m 00s
-
-13d 11h 31m 22s
-14d 12h 23m 00s
-
-13d 11h 28m 36s
-14d 12h 24m 00s
-
-27d 07h 19m 56s
-[16h 33m 00s
-
-Good
-Failed
-
-96.23 %
-3.77 %
-
-96.225 %
-3.775 %
-
-96.244 %
-3.756 %
-
-96.235 %
-3.765 %
-
-48 %
-52%
-
-48 %
-52%
-
-97.411 %
-2.589 %
-
-38801
-1520
-
-38798
-1522
-
-38816
-1515.
-
-3880
-1518
-
-19402
-20971
-
-19392
-20977
-
-39274
-1044]
+[27d 07h 19m 56s 97411 %
+[16h 33m 00s 2.589 %
 
 2/2
 
+--- Page Break ---
