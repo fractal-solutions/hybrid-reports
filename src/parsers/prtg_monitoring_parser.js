@@ -65,15 +65,63 @@ export function prtg_monitoringParserWorkflow() {
         throw e;
     }
     shared.prtgPdfPath = prtgPdfPath;
-    
     return shared;
   };
 
+    const extractPdfTextNode = new CodeInterpreterNode();
+    extractPdfTextNode.prepAsync = async (shared) => {
+      if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
+      if (!shared.prtgPdfPath) {
+          throw new Error("PRTG Parser: Missing prtgPdfPath in shared object for PDF text extraction.");
+      }
+    // Escape backslashes for the Python string
+      const safePdfPath = shared.prtgPdfPath.replace(/\\/g, '\\\\');
+      extractPdfTextNode.setParams({
+        interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+        requireConfirmation: false,
+        code: `
+import os
+import pytesseract 
+from pdf2image import convert_from_path
+import re
 
-  // 3. Setup PDF Processor
-  const pdfProcessor = new PDFProcessorNode();
+# Set Tesseract path if needed
+pytesseract.pytesseract.tesseract_cmd = r'C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe'
 
-  // 4. Setup Code Interpreter
+pdf_path = r'${safePdfPath}'
+
+# Convert PDF to images
+print('Converting PDF to images...')
+images = convert_from_path(pdf_path, dpi=300)
+print(f'Number of pages: {len(images)}')
+
+# Extract text from each image
+extracted_text = ''
+for i, image in enumerate(images):
+    print(f'Processing page {i+1}...')
+    text = pytesseract.image_to_string(image)
+    extracted_text += text + '\\n--- Page Break ---\\n'
+
+# Save extracted text to a file for inspection
+# Ensure the directory exists
+os.makedirs('data/PRTG', exist_ok=True)
+with open('data/PRTG/extracted_text.txt', 'w', encoding='utf-8') as f:
+    f.write(extracted_text)
+
+print('Text extraction complete. First 2000 chars:')
+print(extracted_text[:2000])`
+
+      });
+
+    };
+  extractPdfTextNode.postAsync = async (shared, prepRes, execRes) => {
+    console.log("PRTG Parser: Completed PDF text extraction.");
+      console.log("  Stdout:", execRes.stdout);
+      console.log("  Stderr:", execRes.stderr);
+      console.log("  Exit Code:", execRes.exitCode);
+  };
+
+  // 3. Setup Code Interpreter
   const codeInterpreter = new CodeInterpreterNode();
   codeInterpreter.setParams({
       interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
@@ -86,7 +134,7 @@ export function prtg_monitoringParserWorkflow() {
   };
   
 
-  // 5. AgentNode to extract structured data from PDF text
+  // 4. AgentNode to extract structured data from PDF text
   const extractDataAgent = new AgentNode(agentLLM, availableTools, agentLLM);
   extractDataAgent.prepAsync = async (shared) => {
     if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
@@ -97,23 +145,20 @@ export function prtg_monitoringParserWorkflow() {
 
     const goal = `
       You are an expert at parsing PRTG Network Monitor reports.
-      Your goal is to extract structured link performance data for each device sensor from the provided pdf.
-      **STRICTLY**: Extract its text using pyTesseract OCR and analyze the content to produce the required JSON output. Nothing else will work. Tesseract-OCR is in C:\\Program Files\\Tesseract-OCR\\tesseract.exe.
-      DO NOT install packages - pyTesseract is pre-installed and ready to use.
-      You have NO pdf processor tool!
-      Dont ask for permission to use tools; just use them. No requireConfirmation.
+      Your goal is to extract structured link performance data for each device sensor from the data/PRTG/extracted_text.txt file.
+      Dont ask for permission to use tools; just use them. In the code_interpreter ALWAYS set requireConfirmation to false.
       Some values can be N/A or 0 if not found or not applicable.
-      Be quick and save on tokens so just start by extracting the data with Tesseract OCR.
-      STRICTLY USE TESSERACT STOP TRYING TO INSTALL PDF PROCESSORS OR OTHER LIBRARIES.
+      Once you have parsed and extracted the data and it looks plausible, very quickly output the final JSON as specified STOP trying to go back and forth too much this is a very trivial section of the report.
       If you have imperfect parsing of names its okay as long as the uptime/downtime and bandwidth data is correct move on quickly. The data is more important than perfect names.
-
+      Instead of including the entire extracted text in the code_interpreter, you will read it from the file system using the code_interpreter tool to avoid token limits.
+      
       ### Input Data
-      The following is a path to  a PRTG PDF report for client "${shared.client_name}".
-      It contains information about various network links, including uptime, downtime, and bandwidth.
+      The extracted_text.txt file contains information about various network links, including uptime, downtime, and bandwidth.
+      Each device entry begins with the "Local Probe (Local Probe) »" label followed by the actual entry.
 
-      --- PDF Content Path ---
-      ${shared.prtgPdfPath}
-      --- End PDF Content Path ---
+      1. **Read the extracted text file**: Use the code_interpreter tool to read the contents of 'data/PRTG/extracted_text.txt'.
+      2. **Analyze the text**: Parse the text to identify device sensor entries and extract the required fields.
+      3. **Extract the following fields for each device sensor**:
 
       ### Extraction Requirements
       For each device sensor entry, extract the following fields. If a field is not present or cannot be reliably extracted, use "N/A" or "0".
@@ -154,7 +199,7 @@ export function prtg_monitoringParserWorkflow() {
       - Calculate "total_links_monitored" and "links_with_downtime" from the extracted data.
       - Ensure all percentage strings include the '%' symbol.
       
-      4. **Final Output**: Your final response should be ONLY the JSON object you constructed. Do not add any other text or explanation.
+      4. **Final Output**: Make a data/PRTG/extracted.json file containing the final JSON object. Do not add any other text or explanation.
     `;
     extractDataAgent.setParams({ goal: goal });
     return shared;
@@ -280,6 +325,7 @@ print(f"Chart saved to {r"${chartPathForPython}"}")
   // Chain the nodes
   const flow = new AsyncFlow();
   flow.start(findAndProcessPrtgPdfNode)
+    .next(extractPdfTextNode)
     .next(extractDataAgent)
     .next(generateChartNode)
     .next(formatOutputNode);
