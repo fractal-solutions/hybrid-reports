@@ -1,7 +1,6 @@
 import { AsyncFlow, AsyncNode } from "@fractal-solutions/qflow";
 import {
   AgentNode,
-  PDFProcessorNode,
   CodeInterpreterNode,
   ShellCommandNode,
 } from "@fractal-solutions/qflow/nodes";
@@ -9,6 +8,7 @@ import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
 import path from "path";
 import process from "process";
 import fs from "fs";
+import { json } from "stream/consumers";
 
 // This is a self-contained parser module for PRTG Monitoring data.
 export function prtg_monitoringParserWorkflow() {
@@ -204,32 +204,37 @@ print(extracted_text[:2000])`
     extractDataAgent.setParams({ goal: goal });
     return shared;
   };
-  extractDataAgent.postAsync = async (shared, prepRes, execRes) => {
-    if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
-    console.log("PRTG Parser: Extract Data Agent completed. Inspecting shared object and execRes:");
-    console.log("Shared object after Extract Data Agent:", JSON.stringify(shared, null, 2)); // Debug log
-    console.log("execRes from Extract Data Agent:", JSON.stringify(execRes, null, 2)); // Debug log
+  // 5. Node to process the AgentNode's raw output
+  const processPrtgOutputNode = new AsyncNode();
+  processPrtgOutputNode.prepAsync = async (shared) => {
+    if (typeof shared === 'undefined' || shared === null) { shared = {}; } 
     
-    // The AgentNode's postAsync (built-in) will set shared.agentOutput = execRes
-    // So here, execRes is the raw string output from the LLM (the JSON string)
-    shared.prtg_llm_output = execRes; // Store the raw LLM output for the next node
+    if (shared.agentOutput) {
+        shared.prtg_llm_output = shared.agentOutput;
+    } else {
+        console.warn("PRTG Parser: shared.agentOutput is missing.");
+        shared.prtg_llm_output = "{}"; 
+    }
+
+    const jsonPath = path.join(process.cwd(), 'data', 'PRTG', 'extracted.json');
+    if (fs.existsSync(jsonPath)) {
+        console.log("PRTG Parser: Verified 'data/PRTG/extracted.json' exists.");
+    } else {
+        console.warn("PRTG Parser: 'data/PRTG/extracted.json' does NOT exist.");
+    }
+    
     return shared;
   };
 
 
   // 6. Node to generate chart from structured data
   const generateChartNode = new CodeInterpreterNode();
-  generateChartNode.setParams({
-    interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
-  });
   generateChartNode.prepAsync = async (shared) => {
-    if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
-    if (!shared.prtg_llm_output) {
-        throw new Error("PRTG Parser: Missing LLM output from AgentNode for chart generation.");
-    }
+    const jsonPath = path.join(process.cwd(), 'data', 'PRTG', 'extracted.json');
     let prtgData;
     try {
-        prtgData = JSON.parse(shared.prtg_llm_output);
+        const fileContent = fs.readFileSync(jsonPath, 'utf8');
+        prtgData = JSON.parse(fileContent);
         if (!prtgData.prtg_monitoring || !Array.isArray(prtgData.prtg_monitoring.links)) {
             throw new Error("PRTG Parser: Invalid PRTG data structure from LLM output.");
         }
@@ -238,6 +243,7 @@ print(extracted_text[:2000])`
         throw new Error(`PRTG Parser: Failed to parse LLM output JSON: ${e.message}`);
     }
 
+    console.log("PRTG Parser: Generating chart with the following link data:", JSON.stringify(prtgData.prtg_monitoring.links, null, 2));
     const links = prtgData.prtg_monitoring.links;
     const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
     const chartPathRelative = path.join('assets', `prtg_uptime_${clientNameSanitized}.png`);
@@ -291,7 +297,11 @@ os.makedirs(os.path.dirname(r"${chartPathForPython}"), exist_ok=True)
 plt.savefig(r"${chartPathForPython}")
 print(f"Chart saved to {r"${chartPathForPython}"}")
     `;
-    generateChartNode.setParams({ code: pythonCode });
+    generateChartNode.setParams({ 
+      code: pythonCode,
+      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+      requireConfirmation: false
+    });
     return shared;
   };
 
@@ -302,13 +312,15 @@ print(f"Chart saved to {r"${chartPathForPython}"}")
     if (!shared.prtg_llm_output || !shared.prtg_chart_path) {
         throw new Error("PRTG Parser: Missing LLM output or chart path in shared object for final output.");
     }
+    const jsonPath = path.join(process.cwd(), 'data', 'PRTG', 'extracted.json');
     let prtgData;
     try {
-        prtgData = JSON.parse(shared.prtg_llm_output);
+        const fileContent = fs.readFileSync(jsonPath, 'utf8');
+        prtgData = JSON.parse(fileContent);
         prtgData.prtg_monitoring.chart_path = shared.prtg_chart_path; // Add chart path to the main object
     } catch (e) {
-        console.error("PRTG Parser: Error parsing LLM output for final formatting:", e);
-        throw new Error(`PRTG Parser: Failed to parse LLM output JSON for final formatting: ${e.message}`);
+        console.error("PRTG Parser: Error parsing extracted JSON for final formatting:", e);
+        throw new Error(`PRTG Parser: Failed to parse extracted JSON for final formatting: ${e.message}`);
     }
 
     const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
@@ -327,6 +339,7 @@ print(f"Chart saved to {r"${chartPathForPython}"}")
   flow.start(findAndProcessPrtgPdfNode)
     .next(extractPdfTextNode)
     .next(extractDataAgent)
+    .next(processPrtgOutputNode)
     .next(generateChartNode)
     .next(formatOutputNode);
 

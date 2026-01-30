@@ -47,22 +47,13 @@
         "downtime_duration": "14h 27m 00s"
       },
       {
-        "name": "40306\n\nKitisuru - JTL Cameras-LAN",
-        "avg_bandwidth": "2.72 Mbit/s",
-        "total_data": "784,506 MB",
-        "uptime_percent": "0 %",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 23h 53m 25s",
-        "downtime_duration": "N/A"
-      },
-      {
         "name": "Kitisuru - JTL JTL-WAN",
         "avg_bandwidth": "3.37 Mbit/s",
         "total_data": "970,408 MB",
         "uptime_percent": "100 %",
         "downtime_percent": "0%",
         "uptime_duration": "27d 23h 53m 35s",
-        "downtime_duration": "N/A"
+        "downtime_duration": "00s"
       },
       {
         "name": "Kitisuru - JTL (008) Port4 Traffic",
@@ -71,7 +62,7 @@
         "uptime_percent": "100 %",
         "downtime_percent": "0%",
         "uptime_duration": "27d 23h 54m 30s",
-        "downtime_duration": "N/A"
+        "downtime_duration": "00s"
       },
       {
         "name": "Kitisuru DD-197.254.29.114 Staff LAN",
@@ -110,43 +101,16 @@
         "downtime_duration": "19d 15h 02m 00s"
       },
       {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "97.384 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "27d 06h 20m 36s",
-        "downtime_duration": "17h 34m 30s"
-      },
-      {
-        "name": "DD",
-        "avg_bandwidth": "2.47 Mbit/s",
-        "total_data": "692,075 MB",
-        "uptime_percent": "100 %",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 06h 08m 12s",
-        "downtime_duration": "N/A"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "96.334 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 16m 19s",
-        "downtime_duration": "01d 00h 38m 00s"
-      },
-      {
-        "name": "WAN Port2",
+        "name": "DD-SPA _KAREN DD_WAN Port2",
         "avg_bandwidth": "0.83 Mbit/s",
         "total_data": "229,474 MB",
         "uptime_percent": "96.325 %",
         "downtime_percent": "3.675 %",
-        "uptime_duration": "26d 23h 11m 52s",
-        "downtime_duration": "01d 00h 41m 32s"
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
       },
       {
-        "name": "KAREN LAN Port3",
+        "name": "DD-SPA _KAREN LAN Port3",
         "avg_bandwidth": "2.09 Mbit/s",
         "total_data": "579,825 MB",
         "uptime_percent": "96.324 %",
@@ -155,7 +119,7 @@
         "downtime_duration": "01d 00h 42m 00s"
       },
       {
-        "name": "KAREN CCTV Port8",
+        "name": "DD-SPA _KAREN CCTV Port8",
         "avg_bandwidth": "0.01 Mbit/s",
         "total_data": "403 MB",
         "uptime_percent": "96.326 %",
@@ -173,15 +137,6 @@
         "downtime_duration": "01d 00h 44m 00s"
       },
       {
-        "name": "38801\n\nJTL-KAREN JTL Port7",
-        "avg_bandwidth": "1.26 Mbit/s",
-        "total_data": "349,999 MB",
-        "uptime_percent": "3.689 %",
-        "downtime_percent": "3.689 %",
-        "uptime_duration": "26d 23h 06m 21s",
-        "downtime_duration": "01d 00h 47m 00s"
-      },
-      {
         "name": "N/A",
         "avg_bandwidth": "N/A",
         "total_data": "N/A",
@@ -191,7 +146,7 @@
         "downtime_duration": "14d 12h 23m 00s"
       },
       {
-        "name": "PortF1",
+        "name": "Spa_TIGONI Airtel Airtel WAN_PortF1",
         "avg_bandwidth": "0.01 Mbit/s",
         "total_data": "217 MB",
         "uptime_percent": "48 %",
@@ -200,20 +155,20 @@
         "downtime_duration": "14d 12h 24m 00s"
       },
       {
-        "name": "JTL JTL-Port6",
+        "name": "Spa_TIGONI_JTL JTL-Port6",
         "avg_bandwidth": "1.71 Mbit/s",
         "total_data": "480,186 MB",
-        "uptime_percent": "97.537 %",
+        "uptime_percent": "97.537%",
         "downtime_percent": "2.463 %",
-        "uptime_duration": "27d 07h 19m 56s",
-        "downtime_duration": "16h 33m 00s"
+        "uptime_duration": "N/A",
+        "downtime_duration": "N/A"
       }
     ],
     "summary_stats": {
-      "overall_avg_uptime_percent": "73.294 %",
-      "overall_avg_downtime_percent": "16.092 %",
-      "total_links_monitored": 23,
-      "links_with_downtime": 14
+      "overall_avg_uptime_percent": "77.131%",
+      "overall_avg_downtime_percent": "19.064%",
+      "total_links_monitored": 18,
+      "links_with_downtime": 13
     }
   }
 }
