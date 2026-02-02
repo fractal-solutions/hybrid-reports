@@ -3,6 +3,7 @@ import {
   AgentNode,
   CodeInterpreterNode,
   PDFProcessorNode,
+  AppendFileNode,
 } from "@fractal-solutions/qflow/nodes";
 import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
 import path from "path";
@@ -84,7 +85,7 @@ export function datto_rmmParserWorkflow() {
       await pdfExtractor.runAsync({});
 
     }
-    return shared; // Propagate shared to execAsync via prepRes
+    return shared; 
   }
 
   // 1. Instantiate the LLM for the agent's reasoning
