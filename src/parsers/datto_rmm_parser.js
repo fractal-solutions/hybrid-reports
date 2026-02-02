@@ -8,6 +8,7 @@ import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
 import path from "path";
 import process from "process";
 import fs from "fs"; // Need fs for writing files
+import { file } from "bun";
 
 // This is a self-contained parser module for Datto RMM data.
 export function datto_rmmParserWorkflow() {
@@ -18,6 +19,72 @@ export function datto_rmmParserWorkflow() {
 
   if (!AGENT_LLM_API_KEY) {
     throw new Error("AGENT_LLM_API_KEY is not set.");
+  }
+
+  // 1. Node to find and process Datto RMM PDF files
+  const findAndProcessDattoPdfsNode = new AsyncNode();
+  findAndProcessDattoPdfsNode.prepAsync = async (shared) => {
+    // Defensive check
+    if (typeof shared === 'undefined' || shared === null) {
+      console.warn("Datto RMM Parser: 'shared' object was undefined or null in findAndProcessDattoPdfs.prepAsync, initializing.");
+      shared = {};
+    }
+
+    const dattoRmmDataDir = path.join(process.cwd(), 'data', 'datto_rmm');
+    console.log(`Datto RMM Parser: Looking for Datto RMM PDF files in ${dattoRmmDataDir}`);
+    let dattoRmmPdfPaths = [];
+
+    // Dynamically find the Datto RMM PDF files
+    let fileNames = []; 
+    try {
+      const files = fs.readdirSync(dattoRmmDataDir);
+      console.log(`Datto RMM Parser: Found ${files.length} files in ${dattoRmmDataDir}`);
+      console.log(`>>>Files: \n${files.join(', \n')}`);
+      fileNames = files;
+      const clientNameRegex = new RegExp(shared.client_name.replace(/[^a-zA-Z0-9]/g, '.*'), 'i');
+      for (const file of files) {
+        if (file.endsWith(".pdf") && clientNameRegex.test(file)) {
+          dattoRmmPdfPaths.push(path.join(dattoRmmDataDir, file));
+          console.log(`Datto RMM Parser: Found Datto RMM PDF file: ${file}`);
+        }
+      }
+    } catch (err) {
+      console.error("Error finding Datto RMM PDF files:", err);
+    }
+    shared.datto_rmm_pdf_paths = dattoRmmPdfPaths;
+    shared.datto_rmm_file_names = fileNames;
+    return shared; // Propagate shared to execAsync via prepRes
+  };
+
+  const pdfExtractor = new PDFProcessorNode();
+
+  const extractPdfsTextNode = new AsyncNode();
+  extractPdfsTextNode.prepAsync = async (shared) => {
+    // Defensive check
+    if (typeof shared === 'undefined' || shared === null) {
+      console.warn("Datto RMM Parser: 'shared' object was undefined or null in extractPdfsTextNode.prepAsync, initializing.");
+      shared = {};
+    }
+    const pdfPaths = shared.datto_rmm_pdf_paths || [];
+    if (pdfPaths.length === 0) {
+      console.warn("Datto RMM Parser: No Datto RMM PDF paths found in shared.datto_rmm_pdf_paths.");
+    } else {
+      console.log(`Datto RMM Parser: Preparing to extract text from ${pdfPaths.length} PDF files.`);
+    }
+
+    let i = 0;
+    for (const pdfPath of pdfPaths) {
+      i++;
+      console.log(`Datto RMM Parser: Extracting text from PDF: ${pdfPath}`);
+      pdfExtractor.setParams({ 
+        filePath: pdfPath,
+        action: 'extract_text',
+        outputDir: path.join(process.cwd(), "data", "datto_rmm", "extracted", shared.datto_rmm_file_names[i-1]),
+      });
+      await pdfExtractor.runAsync({});
+
+    }
+    return shared; // Propagate shared to execAsync via prepRes
   }
 
   // 1. Instantiate the LLM for the agent's reasoning
@@ -43,15 +110,15 @@ export function datto_rmmParserWorkflow() {
   // 3. Instantiate the AgentNode (LLM-driven task execution)
   const agent = new AgentNode(agentLLM, availableTools, agentLLM); // Can use same LLM for summary
   agent.prepAsync = async (shared) => { // This receives `parserShared` from orchestrator
-    const dataDirectory = shared.data_directory || 'data/';
+    const dataDirectory = shared.data_directory || 'data/datto_rmm/extracted';
     const goal = `
       Your goal is to act as a specialized Datto RMM Data Parser.
-      You will analyze PDF files in the '${dataDirectory}' directory and extract key metrics.
+      You will analyze TXT files in the '${dataDirectory}' directory and its subdirectories and extract key metrics.
       When using code_interpreter, set requireConfirmation to false. Do not ask for permission; just use it.
       DO NOT INSTALL ANYTHING. Use only the provided tools.
       
       ### Phase 1: Data & Assets
-      1.  **Analyze PDF Data**: Read the Datto RMM PDF files provided. Extract key metrics related to:
+      1.  **Analyze TXT Data**: Read the Datto RMM TXT files provided. Extract key metrics related to:
           - Device Health (Disk, RAM, OS)
           - Antivirus Status
           - Patch Status
@@ -132,7 +199,9 @@ export function datto_rmmParserWorkflow() {
 
   // 5. Create the flow and chain nodes
   const flow = new AsyncFlow();
-  flow.start(agent)
+  flow.start(findAndProcessDattoPdfsNode)
+    .next(extractPdfsTextNode)
+    .next(agent)
     .next(processAgentOutputNode); // Chain processAgentOutputNode after the agent
 
   return flow;

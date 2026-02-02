@@ -2,7 +2,7 @@
   "meta": {
     "client_name": "SERENITY SPA LIMITED",
     "report_month": "January 2026",
-    "generated_date": "1/30/2026"
+    "generated_date": "2/2/2026"
   },
   "scores": {
     "average_score": 62,
@@ -10,42 +10,36 @@
   },
   "device_health": {
     "total_managed": 48,
-    "compliance_percentage": 97,
-    "chart_path": "assets/device_health.png",
+    "compliance_percentage": 85,
+    "chart_path": "assets/device_health_compliance.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 47,
+        "passed_count": 40,
         "total_count": 48,
-        "low_space_count": 1,
-        "chart_path": "assets/disk_space.png"
+        "low_space_count": 8,
+        "chart_path": "assets/disk_space_usage.png"
       },
       "ram": {
-        "passed_count": 47,
+        "passed_count": 45,
         "total_count": 48
       },
       "os_support": {
-        "passed_count": 47,
+        "passed_count": 44,
         "total_count": 48
       }
     }
   },
   "antivirus": {
-    "installed_count": 47,
+    "installed_count": 45,
     "chart_path": "assets/antivirus_status.png"
   },
   "patch_management": {
     "fully_patched_count": 12,
-    "update_required_count": 36,
+    "update_required_count": 0,
     "chart_path": "assets/patch_status.png",
     "windows_10_users_list": [
-      "SERKIT-Frontdesk",
-      "SERTIGFRONTDESK1",
-      "SERGIG-Gabriel",
-      "SERTIG-SAMUEL",
-      "SERKIT-Coffee-shop",
-      "DESKTOP-9N2SFLI",
-      "SERGIGFRONTDESK",
-      "SERGIG-ESTHER"
+      "Jani-Jonathan",
+      "SERGIGCOFFEESHOP"
     ]
   },
   "tickets": {
@@ -90,7 +84,7 @@
         "avg_bandwidth": "5.88 Mbit/s",
         "total_data": "1,657,791 MB",
         "uptime_percent": "97.849 %",
-        "downtime_percent": "2.151%",
+        "downtime_percent": "2.151 %",
         "uptime_duration": "27d 09h 25m 44s",
         "downtime_duration": "14h 27m 00s"
       },
@@ -99,7 +93,7 @@
         "avg_bandwidth": "1.92 Mbit/s",
         "total_data": "543,014 MB",
         "uptime_percent": "97.849 %",
-        "downtime_percent": "2.151%",
+        "downtime_percent": "2.151 %",
         "uptime_duration": "27d 09h 25m 39s",
         "downtime_duration": "14h 27m 00s"
       },
@@ -108,18 +102,18 @@
         "avg_bandwidth": "3.37 Mbit/s",
         "total_data": "970,408 MB",
         "uptime_percent": "100 %",
-        "downtime_percent": "0%",
+        "downtime_percent": "0 %",
         "uptime_duration": "27d 23h 53m 35s",
-        "downtime_duration": "00s"
+        "downtime_duration": "N/A"
       },
       {
         "name": "Kitisuru - JTL (008) Port4 Traffic",
         "avg_bandwidth": "0.08 Mbit/s",
         "total_data": "23,188 MB",
         "uptime_percent": "100 %",
-        "downtime_percent": "0%",
+        "downtime_percent": "0 %",
         "uptime_duration": "27d 23h 54m 30s",
-        "downtime_duration": "00s"
+        "downtime_duration": "N/A"
       },
       {
         "name": "Kitisuru DD-197.254.29.114 Staff LAN",
@@ -132,7 +126,7 @@
       },
       {
         "name": "Kitisuru DD-197.254.29.114 Cameras LAN",
-        "avg_bandwidth": "0.01 Mbit/s",
+        "avg_bandwidth": "< 0.01 Mbit/s",
         "total_data": "50 MB",
         "uptime_percent": "30 %",
         "downtime_percent": "70 %",
@@ -140,11 +134,11 @@
         "downtime_duration": "19d 15h 00m 00s"
       },
       {
-        "name": "N/A",
+        "name": "Kitisuru DD-197.254.29.114 — Availability 62 msec",
         "avg_bandwidth": "N/A",
         "total_data": "N/A",
         "uptime_percent": "30 %",
-        "downtime_percent": "N/A",
+        "downtime_percent": "70 %",
         "uptime_duration": "08d 08h 53m 48s",
         "downtime_duration": "19d 14h 59m 00s"
       },
@@ -158,7 +152,7 @@
         "downtime_duration": "19d 15h 02m 00s"
       },
       {
-        "name": "DD-SPA _KAREN DD_WAN Port2",
+        "name": "DD-SPA _KAREN DD_WAN Port2   [01d 00h 41m 32s 3.775 % [1522]",
         "avg_bandwidth": "0.83 Mbit/s",
         "total_data": "229,474 MB",
         "uptime_percent": "96.325 %",
@@ -177,7 +171,7 @@
       },
       {
         "name": "DD-SPA _KAREN CCTV Port8",
-        "avg_bandwidth": "0.01 Mbit/s",
+        "avg_bandwidth": "< 0.01 Mbit/s",
         "total_data": "403 MB",
         "uptime_percent": "96.326 %",
         "downtime_percent": "3.674 %",
@@ -185,29 +179,29 @@
         "downtime_duration": "01d 00h 41m 00s"
       },
       {
-        "name": "N/A",
+        "name": "JTL-KAREN Ping 64 msec",
         "avg_bandwidth": "N/A",
         "total_data": "N/A",
         "uptime_percent": "96.319 %",
-        "downtime_percent": "N/A",
+        "downtime_percent": "3.681 %",
         "uptime_duration": "26d 23h 10m 15s",
         "downtime_duration": "01d 00h 44m 00s"
       },
       {
-        "name": "N/A",
+        "name": "Spa_TIGONI Airtel Ping 75 msec",
         "avg_bandwidth": "N/A",
         "total_data": "N/A",
         "uptime_percent": "48 %",
-        "downtime_percent": "N/A",
+        "downtime_percent": "52 %",
         "uptime_duration": "13d 11h 31m 22s",
         "downtime_duration": "14d 12h 23m 00s"
       },
       {
         "name": "Spa_TIGONI Airtel Airtel WAN_PortF1",
-        "avg_bandwidth": "0.01 Mbit/s",
+        "avg_bandwidth": "< 0.01 Mbit/s",
         "total_data": "217 MB",
         "uptime_percent": "48 %",
-        "downtime_percent": "52%",
+        "downtime_percent": "52 %",
         "uptime_duration": "13d 11h 28m 36s",
         "downtime_duration": "14d 12h 24m 00s"
       },
@@ -215,24 +209,24 @@
         "name": "Spa_TIGONI_JTL JTL-Port6",
         "avg_bandwidth": "1.71 Mbit/s",
         "total_data": "480,186 MB",
-        "uptime_percent": "97.537%",
+        "uptime_percent": "97.537 %",
         "downtime_percent": "2.463 %",
         "uptime_duration": "N/A",
         "downtime_duration": "N/A"
       }
     ],
     "summary_stats": {
-      "overall_avg_uptime_percent": "77.131%",
-      "overall_avg_downtime_percent": "19.064%",
+      "overall_avg_uptime_percent": "77.131 %",
+      "overall_avg_downtime_percent": "22.869 %",
       "total_links_monitored": 18,
-      "links_with_downtime": 13
+      "links_with_downtime": 16
     },
     "chart_path": "assets\\prtg_uptime_SERENITY_SPA_LIMITED.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 62%. A total of 21 tickets were processed, with 47 devices having antivirus installed, and 12 devices fully patched.",
+    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 62%. A total of 21 tickets were processed, with 45 devices having antivirus installed, and 12 devices fully patched.",
     "total_tickets": 21,
-    "av_installed": 47,
+    "av_installed": 45,
     "fully_patched": 12
   }
 }
