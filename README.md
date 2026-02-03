@@ -63,10 +63,6 @@ bun src/index.js --client=<SanitizedClientName>
 
 The generated PDF report will be saved in the `reports/` directory with a filename like `<SanitizedClientName>-<SanitizedReportPeriod>-Monthly_Report.pdf`.
 
-## Available Clients and Commands
-
-<!-- CLIENT_LIST_START -->
-<!-- CLIENT_LIST_END -->
 
 ## Adding New Parser Modules
 
@@ -78,4 +74,4 @@ To extend the system with a new data source:
     *   Generate any necessary charts or visuals, saving them to `assets/`.
     *   Construct a JSON object snippet containing its extracted data.
     *   Place this JSON snippet into `shared.output`.
-3.  **Update Client Config**: Add `<your_module_name>` to the `
+3.  **Update Client Config**: Add `<your_module_name>` to the 

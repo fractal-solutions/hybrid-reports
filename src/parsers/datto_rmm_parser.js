@@ -2,14 +2,12 @@ import { AsyncFlow, AsyncNode } from "@fractal-solutions/qflow";
 import {
   AgentNode,
   CodeInterpreterNode,
-  PDFProcessorNode,
-  AppendFileNode,
+  PDFProcessorNode, // Re-added as it's needed locally within extractPdfsTextNode
 } from "@fractal-solutions/qflow/nodes";
 import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
 import path from "path";
 import process from "process";
 import fs from "fs"; // Need fs for writing files
-import { file } from "bun";
 
 // This is a self-contained parser module for Datto RMM data.
 export function datto_rmmParserWorkflow() {
@@ -20,72 +18,6 @@ export function datto_rmmParserWorkflow() {
 
   if (!AGENT_LLM_API_KEY) {
     throw new Error("AGENT_LLM_API_KEY is not set.");
-  }
-
-  // 1. Node to find and process Datto RMM PDF files
-  const findAndProcessDattoPdfsNode = new AsyncNode();
-  findAndProcessDattoPdfsNode.prepAsync = async (shared) => {
-    // Defensive check
-    if (typeof shared === 'undefined' || shared === null) {
-      console.warn("Datto RMM Parser: 'shared' object was undefined or null in findAndProcessDattoPdfs.prepAsync, initializing.");
-      shared = {};
-    }
-
-    const dattoRmmDataDir = path.join(process.cwd(), 'data', 'datto_rmm');
-    console.log(`Datto RMM Parser: Looking for Datto RMM PDF files in ${dattoRmmDataDir}`);
-    let dattoRmmPdfPaths = [];
-
-    // Dynamically find the Datto RMM PDF files
-    let fileNames = []; 
-    try {
-      const files = fs.readdirSync(dattoRmmDataDir);
-      console.log(`Datto RMM Parser: Found ${files.length} files in ${dattoRmmDataDir}`);
-      console.log(`>>>Files: \n${files.join(', \n')}`);
-      fileNames = files;
-      const clientNameRegex = new RegExp(shared.client_name.replace(/[^a-zA-Z0-9]/g, '.*'), 'i');
-      for (const file of files) {
-        if (file.endsWith(".pdf") && clientNameRegex.test(file)) {
-          dattoRmmPdfPaths.push(path.join(dattoRmmDataDir, file));
-          console.log(`Datto RMM Parser: Found Datto RMM PDF file: ${file}`);
-        }
-      }
-    } catch (err) {
-      console.error("Error finding Datto RMM PDF files:", err);
-    }
-    shared.datto_rmm_pdf_paths = dattoRmmPdfPaths;
-    shared.datto_rmm_file_names = fileNames;
-    return shared; // Propagate shared to execAsync via prepRes
-  };
-
-  const pdfExtractor = new PDFProcessorNode();
-
-  const extractPdfsTextNode = new AsyncNode();
-  extractPdfsTextNode.prepAsync = async (shared) => {
-    // Defensive check
-    if (typeof shared === 'undefined' || shared === null) {
-      console.warn("Datto RMM Parser: 'shared' object was undefined or null in extractPdfsTextNode.prepAsync, initializing.");
-      shared = {};
-    }
-    const pdfPaths = shared.datto_rmm_pdf_paths || [];
-    if (pdfPaths.length === 0) {
-      console.warn("Datto RMM Parser: No Datto RMM PDF paths found in shared.datto_rmm_pdf_paths.");
-    } else {
-      console.log(`Datto RMM Parser: Preparing to extract text from ${pdfPaths.length} PDF files.`);
-    }
-
-    let i = 0;
-    for (const pdfPath of pdfPaths) {
-      i++;
-      console.log(`Datto RMM Parser: Extracting text from PDF: ${pdfPath}`);
-      pdfExtractor.setParams({ 
-        filePath: pdfPath,
-        action: 'extract_text',
-        outputDir: path.join(process.cwd(), "data", "datto_rmm", "extracted", shared.datto_rmm_file_names[i-1]),
-      });
-      await pdfExtractor.runAsync({});
-
-    }
-    return shared; 
   }
 
   // 1. Instantiate the LLM for the agent's reasoning
@@ -101,32 +33,131 @@ export function datto_rmmParserWorkflow() {
   codeInterpreter.setParams({
       interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
   });
-  const pdf_processor = new PDFProcessorNode();
-
+  
+  // This availableTools will be passed to the AgentNode
   const availableTools = {
     code_interpreter: codeInterpreter,
-    pdf_processor: pdf_processor,
+    // PDFProcessorNode is no longer needed here as AgentNode receives pre-processed text
   };
 
+  // --- NODES FOR THE DATTO RMM PARSER FLOW ---
+
+  // Node to find and process Datto RMM PDF files
+  const findAndProcessDattoPdfsNode = new AsyncNode();
+  findAndProcessDattoPdfsNode.prepAsync = async (shared) => {
+    // Defensive check
+    if (typeof shared === 'undefined' || shared === null) {
+      console.warn("Datto RMM Parser: 'shared' object was undefined or null in findAndProcessDattoPdfs.prepAsync, initializing.");
+      shared = {};
+    }
+
+    const dattoRmmDataDir = path.join(process.cwd(), 'data', 'datto_rmm');
+    console.log(`Datto RMM Parser: Looking for Datto RMM PDF files in ${dattoRmmDataDir}`);
+    let dattoRmmPdfPaths = [];
+
+    // Dynamically find the Datto RMM PDF files
+    try {
+      const files = fs.readdirSync(dattoRmmDataDir);
+      console.log(`Datto RMM Parser: Found ${files.length} files in ${dattoRmmDataDir}`);
+      const clientNameRegex = new RegExp(shared.client_name.replace(/[^a-zA-Z0-9]/g, '.*'), 'i');
+      for (const file of files) {
+        if (file.endsWith(".pdf") && clientNameRegex.test(file)) {
+          dattoRmmPdfPaths.push(path.join(dattoRmmDataDir, file));
+          console.log(`Datto RMM Parser: Found Datto RMM PDF file: ${file}`);
+        }
+      }
+    } catch (err) {
+      console.error("Error finding Datto RMM PDF files:", err);
+      // Even if error, propagate shared to avoid breaking chain.
+    }
+    shared.datto_rmm_pdf_paths = dattoRmmPdfPaths;
+    return shared; 
+  };
+
+  // Node to extract text from all found PDFs and merge them
+  const extractPdfsTextNode = new AsyncNode();
+  extractPdfsTextNode.prepAsync = async (shared) => { // prepAsync for extractPdfsTextNode
+    if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
+    
+    const pdfPaths = shared.datto_rmm_pdf_paths || [];
+    if (pdfPaths.length === 0) {
+      console.warn("Datto RMM Parser: No Datto RMM PDF paths found. Agent will receive empty text.");
+      shared.pdfTextContent = ""; 
+      return shared; 
+    }
+    
+    let allExtractedText = [];
+
+    for (const pdfPath of pdfPaths) {
+      console.log(`Datto RMM Parser: Extracting text from PDF: ${pdfPath}`);
+      const localPdfProcessor = new PDFProcessorNode(); // Instantiate locally for each PDF
+      localPdfProcessor.setParams({
+        filePath: pdfPath,
+        action: 'extract_text',
+      });
+      
+      try {
+        const result = await new AsyncFlow(localPdfProcessor).runAsync({});
+        if (result && result.text) {
+          allExtractedText.push(`--- Content from PDF: ${path.basename(pdfPath)} ---\n` + result.text + '\n\n');
+        } else {
+          console.warn(`Datto RMM Parser: No text extracted from ${pdfPath}. Result:`, result);
+        }
+      } catch (pdfExtractError) {
+        console.error(`Datto RMM Parser: Error extracting text from ${pdfPath}: ${pdfExtractError.message}`);
+        allExtractedText.push(`--- Error extracting text from PDF: ${path.basename(pdfPath)} ---\nError: ${pdfExtractError.message}\n\n`);
+      }
+    }
+
+    const mergedContent = allExtractedText.join('\n\n\n--- Document Break ---\n\n\n');
+    
+    // Store merged content directly in shared object for LLM's goal
+    shared.pdfTextContent = mergedContent; 
+    console.log(`Datto RMM Parser: Merged extracted text content (total length: ${mergedContent.length})`);
+    
+    // Also write to a temporary file for robustness/debugging, though LLM directly uses shared.pdfTextContent
+    const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
+    const mergedTextDir = path.join(process.cwd(), 'data', 'datto_rmm', 'extracted');
+    if (!fs.existsSync(mergedTextDir)) {
+      fs.mkdirSync(mergedTextDir, { recursive: true });
+    }
+    shared.merged_datto_rmm_text_filepath = path.join(mergedTextDir, `merged_content_${clientNameSanitized}.txt`);
+    fs.writeFileSync(shared.merged_datto_rmm_text_filepath, mergedContent);
+    console.log(`Datto RMM Parser: Merged text written to ${shared.merged_datto_rmm_text_filepath}`);
+
+    return shared; 
+  }
+
   // 3. Instantiate the AgentNode (LLM-driven task execution)
-  const agent = new AgentNode(agentLLM, availableTools, agentLLM); // Can use same LLM for summary
+  const agent = new AgentNode(agentLLM, availableTools, agentLLM); // Agent still needs LLM and tools
   agent.prepAsync = async (shared) => { // This receives `parserShared` from orchestrator
-    const dataDirectory = shared.data_directory || 'data/datto_rmm/extracted';
+    // Use the merged text content directly in the goal
+    const mergedTextContent = shared.pdfTextContent;
+    
+    if (!mergedTextContent) {
+        throw new Error("Datto RMM Parser: Merged PDF text content not found in shared object for AgentNode. Check previous extraction step.");
+    }
+
     const goal = `
       Your goal is to act as a specialized Datto RMM Data Parser.
-      You will analyze TXT files in the '${dataDirectory}' directory and its subdirectories and extract key metrics.
+      You will analyze the provided consolidated text from Datto RMM PDF reports and extract key metrics.
+      
+      --- CONSOLIDATED DATTO RMM REPORT TEXT ---
+      ${mergedTextContent}
+      --- END CONSOLIDATED DATTO RMM REPORT TEXT ---
+
       When using code_interpreter, set requireConfirmation to false. Do not ask for permission; just use it.
       DO NOT INSTALL ANYTHING. Use only the provided tools.
       
       ### Phase 1: Data & Assets
-      1.  **Analyze TXT Data**: Read the Datto RMM TXT files provided. Extract key metrics related to:
+      1.  **Analyze Text Data**: Read the consolidated text provided. Extract key metrics related to:
           - Device Health (Disk, RAM, OS)
           - Antivirus Status
           - Patch Status
           - Overall device counts and compliance.
       2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts for the extracted data. (Do not ask for permission/requireConfirmation to use the tool; just use it.)
           - Save all images to the 'assets/' folder.
-          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart), Device Health, Disk Space(Bar Charts for each user device with thesholds shown), Antivirus Status(Bar Chart), Patch Status(Pie Chart).
+          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart for various services), Device Health, Disk Space(Bar Charts for each user device with thesholds shown and user names per bar), Antivirus Status(Bar Chart), Patch Status(Pie Chart).
           - Ensure chart files are saved (e.g., 'assets/datto_health_chart.png').
 
       ### Phase 2: The JSON Snippet
@@ -158,7 +189,7 @@ export function datto_rmmParserWorkflow() {
     return shared; // Return shared for propagation
   };
 
-  // 4. Node to process the AgentNode's raw output (from shared.agentOutput) and write to a file
+  // Node to process the AgentNode's raw output (from shared.agentOutput) and write to a file
   const processAgentOutputNode = new AsyncNode();
   processAgentOutputNode.prepAsync = async (shared) => { // prepAsync only takes `shared`
     // Defensive check

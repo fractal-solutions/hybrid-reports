@@ -1,0 +1,3719 @@
+--- Content from PDF: Device Health Summary - Serenity Spa Limited.pdf ---
+Device Health Summary Report
+Description: This report shows the health of the selected managed devices.
+Create Date: 30 JAN 2026 12:20 (EAT)
+Sites: Serenity Spa
+Devices: 48
+
+Device Health Summary Report
+SUMMARY
+
+Servers: 4
+Workstations: 44
+Devices with Check Passed: 1
+
+48
+
+Network Devices: 0
+
+48
+
+Devices with Checks Failed: 47
+
+ESXi Hosts: 0
+Printers: 0
+Mobiles: 0
+Total Managed devices: 48
+
+SERVERS
+
+Device Name
+
+Device Description
+
+Operating System
+
+SERGIG-SVR
+
+Gigiri-svr
+
+Microsoft Windows
+Server 2019
+
+SERKIT-SVR
+
+SERKIT-SVR
+
+Microsoft Windows
+Server 2012 R2
+
+SERKRN-SEVR
+
+SERKRN-SVR
+
+Microsoft Windows
+Server 2019 Standard
+
+SERTIG-SVR
+
+JANI-QUICKBOOKS
+
+Microsoft Windows
+Server 2019 Standard
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+WORKSTATIONS
+
+Device Name
+
+Device Description
+
+Operating System
+
+DESKTOP9N2SFLI
+
+DESKTOP-9N2SFLI
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DESKTOPVKRMBR2
+
+DESKTOP-VKRMBR2
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+PSSurface
+
+PSSurface
+
+Microsoft Windows 11
+Enterprise 10.0.26100
+
+SBTC-DORIS
+
+SBTYC-DORIS
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SBTCRECEPTION
+
+SBTC-RECEPTION
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SBTC-ROSE
+
+Petra Surface
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERBTC-JOYCE SERBTC-JOYCE
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERBTYC-ZAMA SERBTYC-ZAMA
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERGIGBACKOFFICE
+
+SERGIGBACKOFFICE
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERGIGCHARLES
+
+SERGIG-CHARLES
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERGIGCOFFEESHOP
+
+Jani-Jonathan
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERGIGELIZABETH
+
+SERGIG-ELIZABETH
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERGIGEPHRAIM
+
+SERGIG-EPHRAIM
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERGIGESTHER
+
+Gigiri
+
+Microsoft Windows 11
+Pro 10.0.22621
+
+SERGIGFOLAPTOP
+
+Gigiri Front Desk
+Laptop
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERGIG-FrontHP
+
+SERGIGFRONTDESK1
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERGIGFRONTDESK
+
+SERGIG-FRONTDESK
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIG-Gabriel Kitisuru
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERGIGGABRIEL
+
+SERGIG-GABRIEL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIG-JACK
+
+SERGIG-JACK
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIGKITCHEN
+
+SERGIG-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+SERGIG-KOINI
+
+SERGIG-KOINI
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERGIG-MaryM
+
+SERGIG-MARYM
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERGIG-MORAA SERGIG-MORAA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIG-VIOLET SERGIG-VIOLET
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERKARENBACKOFFICE
+
+SERGIG-FRONT1
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKARENFRONT1
+
+SERKAREN-FRONT1
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERKARENFRONT2
+
+SERKAREN-FRONT2
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERKERNKITCHEN
+
+SERKERN-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKITBACKOFFICE
+
+SERKIT-BACKOFFICE
+
+Microsoft Windows 10
+Home Single
+
+SERKITBACKOFFICE
+
+SERKIT-BACKOFFICE
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKIT-Coffeeshop
+
+SERKIT-COFFEE
+SHOP
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKITFrontdesk
+
+SERKITFRONTDESK2
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKITFRONTDESK1
+
+SERKITFRONTDESK1
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERKITKITCHEN
+
+SERKIT-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKIT-LYNN
+
+SERKIT-LYNN
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERKITVANESSA
+
+SERKIT-VANESSA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKRNDENNIS
+
+SERGIG-WINIE
+SPARE
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKRN-VIVIAN SERKIT-GILBERT
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+SERTIGFRONTDESK1
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERTIGFRONTDESK1
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+SERTIGFRONTDESK2
+
+SERTIGFRONTDESK2
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERTIGKITCHEN
+
+SERTIG-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERTIG-LENOX SERTIG-LENOX
+
+Microsoft Windows 11
+Pro for Workstations
+
+SERTIGSAMUEL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERTIG-SAMUEL
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Device Storage - Serenity Spa Limited.pdf ---
+Device Storage Report
+Description: This report lists all the disks available on the selected devices including their
+available disk space.
+Create Date: 30 JAN 2026 12:20 (EAT)
+Sites: Serenity Spa
+Devices: 48
+
+Device Storage Report
+SERENITY SPA
+Servers
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+
+SERGIG-SVR
+
+Gigiri-svr
+D:
+C:
+
+SERKIT-SVR
+
+SERKIT-SVR
+D:
+C:
+
+SERKRN-SEVR
+
+SERKRN-SVR
+D:
+C:
+
+SERTIG-SVR
+
+JANI-QUICKBOOKS
+
+D:
+E:
+
+Size
+
+Local Fixed
+487.68GB
+Disk
+Local Fixed
+443.23GB
+Disk
+Local Fixed
+243.62GB
+Disk
+Local Fixed
+221.62GB
+Disk
+Local Fixed
+187.85GB
+Disk
+Local Fixed
+288.49GB
+Disk
+Local Fixed
+325.44GB
+Disk
+Local Fixed
+41.99GB
+Disk
+Local Fixed
+97.73GB
+Disk
+
+Free
+
+Used %
+
+215.75GB
+
+55.76%
+
+160.11GB
+
+63.88%
+
+352.54MB
+
+99.86%
+
+216.04MB
+
+99.90%
+
+86.81GB
+
+53.79%
+
+254.74GB
+
+11.70%
+
+231.67GB
+
+28.81%
+
+41.73GB
+
+0.62%
+
+33.62GB
+
+65.60%
+
+Free
+
+Used %
+
+440.62GB
+
+7.46%
+
+122.40GB
+
+48.65%
+
+335.42GB
+
+29.34%
+
+402.80GB
+
+15.40%
+
+355.46GB
+
+25.34%
+
+169.44GB
+
+28.56%
+
+390.81GB
+
+17.93%
+
+353.62GB
+
+25.73%
+
+370.68GB
+
+22.16%
+
+284.68GB
+
+40.20%
+
+366.14GB
+
+20.70%
+
+464.91MB
+
+7.02%
+
+173.17GB
+
+28.78%
+
+250.59GB
+
+47.36%
+
+11.02GB
+
+98.82%
+
+348.60GB
+
+26.76%
+
+Workstations
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+DESKTOP-9N2SFLI
+
+DESKTOP-9N2SFLI
+
+C:
+
+DESKTOP-VKRMBR2 DESKTOP-VKRMBR2
+
+C:
+
+PSSurface
+
+PSSurface
+
+C:
+
+SBTC-DORIS
+
+SBTYC-DORIS
+
+C:
+
+SBTC-RECEPTION
+
+SBTC-RECEPTION
+
+C:
+
+SBTC-ROSE
+
+Petra Surface
+
+C:
+
+SERBTC-JOYCE
+
+SERBTC-JOYCE
+
+C:
+
+SERBTYC-ZAMA
+
+SERBTYC-ZAMA
+
+C:
+
+SERGIGBACKOFFICE
+
+SERGIG-BACKOFFICE
+
+C:
+
+SERGIG-CHARLES
+
+SERGIG-CHARLES
+
+C:
+C:
+
+SERGIGCOFFEESHOP
+
+Jani-Jonathan
+
+D:
+F:
+C:
+
+SERGIG-ELIZABETH SERGIG-ELIZABETH
+E:
+SERGIG-EPHRAIM
+
+SERGIG-EPHRAIM
+
+C:
+
+Size
+
+Local Fixed
+476.12GB
+Disk
+Local Fixed
+238.36GB
+Disk
+Local Fixed
+474.67GB
+Disk
+Local Fixed
+476.12GB
+Disk
+Local Fixed
+476.12GB
+Disk
+Local Fixed
+237.18GB
+Disk
+Local Fixed
+476.19GB
+Disk
+Local Fixed
+476.12GB
+Disk
+Local Fixed
+476.20GB
+Disk
+Local Fixed
+476.02GB
+Disk
+Local Fixed
+461.71GB
+Disk
+Local Fixed
+500.00MB
+Disk
+Local Fixed
+243.15GB
+Disk
+Local Fixed
+476.00GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+475.98GB
+Disk
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+SERGIG-ESTHER
+
+Gigiri
+
+C:
+
+SERGIG-FOLAPTOP Gigiri Front Desk Laptop
+
+C:
+
+SERGIG-Front-HP
+
+SERGIG-FRONTDESK1
+
+C:
+
+SERGIGFRONTDESK
+
+SERGIG-FRONTDESK
+
+SERGIG-Gabriel
+
+Kitisuru
+
+C:
+
+SERGIG-GABRIEL
+
+SERGIG-GABRIEL
+
+C:
+
+SERGIG-JACK
+
+SERGIG-JACK
+
+C:
+
+SERGIG-KITCHEN
+
+SERGIG-KITCHEN
+
+C:
+
+SERGIG-KOINI
+
+SERGIG-KOINI
+
+C:
+
+SERGIG-MaryM
+
+SERGIG-MARYM
+
+C:
+
+SERGIG-MORAA
+
+SERGIG-MORAA
+
+C:
+
+SERGIG-VIOLET
+
+SERGIG-VIOLET
+
+C:
+
+SERKARENBACKOFFICE
+
+SERGIG-FRONT1
+
+C:
+
+C:
+D:
+
+SERKAREN-FRONT1 SERKAREN-FRONT1
+
+C:
+
+SERKAREN-FRONT2 SERKAREN-FRONT2
+
+C:
+
+SERKERN-KITCHEN SERKERN-KITCHEN
+
+C:
+
+SERKITBACKOFFICE
+
+C:
+SERKIT-BACKOFFICE
+D:
+C:
+
+SERKITBACKOFFICE
+
+D:
+SERKIT-BACKOFFICE
+F:
+G:
+
+SERKIT-Coffee-shop
+
+SERKIT-COFFEE SHOP
+
+C:
+
+SERKIT-Frontdesk
+
+SERKIT-FRONTDESK2
+
+C:
+
+SERKITFRONTDESK1
+
+SERKIT-FRONTDESK1
+
+C:
+
+SERKIT-KITCHEN
+
+SERKIT-KITCHEN
+
+C:
+
+SERKIT-LYNN
+
+SERKIT-LYNN
+
+C:
+
+SERKIT-VANESSA
+
+SERKIT-VANESSA
+
+C:
+
+Size
+
+Local Fixed
+237.50GB
+Disk
+Local Fixed
+464.84GB
+Disk
+Local Fixed
+475.33GB
+Disk
+Local Fixed
+476.60GB
+Disk
+Local Fixed
+930.71GB
+Disk
+Local Fixed
+930.10GB
+Disk
+Local Fixed
+475.94GB
+Disk
+Local Fixed
+236.78GB
+Disk
+Local Fixed
+237.86GB
+Disk
+Local Fixed
+475.22GB
+Disk
+Local Fixed
+475.96GB
+Disk
+Local Fixed
+237.87GB
+Disk
+Local Fixed
+475.94GB
+Disk
+Local Fixed
+476.33GB
+Disk
+Local Fixed
+475.98GB
+Disk
+Local Fixed
+476.12GB
+Disk
+Local Fixed
+237.86GB
+Disk
+Local Fixed
+476.31GB
+Disk
+Local Fixed
+349.98MB
+Disk
+Local Fixed
+248.76GB
+Disk
+Local Fixed
+226.62GB
+Disk
+Local Fixed
+510.98MB
+Disk
+Local Fixed
+329.52MB
+Disk
+Local Fixed
+243.15GB
+Disk
+Local Fixed
+475.61GB
+Disk
+Local Fixed
+237.56GB
+Disk
+
+Free
+
+Used %
+
+79.83GB
+
+66.39%
+
+337.08GB
+
+27.49%
+
+335.18GB
+
+29.48%
+
+377.14GB
+
+20.87%
+
+794.80GB
+
+14.60%
+
+789.57GB
+
+15.11%
+
+359.27GB
+
+24.51%
+
+135.78GB
+
+42.66%
+
+192.14GB
+
+19.22%
+
+301.19GB
+
+36.62%
+
+227.84GB
+
+52.13%
+
+48.00GB
+
+79.82%
+
+302.25GB
+
+36.49%
+
+357.79GB
+
+24.89%
+
+394.22GB
+
+17.18%
+
+358.56GB
+
+24.69%
+
+190.30GB
+
+20.00%
+
+379.41GB
+
+20.34%
+
+302.20MB
+
+13.65%
+
+170.66GB
+
+31.39%
+
+226.52GB
+
+0.04%
+
+497.03MB
+
+2.73%
+
+302.51MB
+
+8.20%
+
+152.56GB
+
+37.25%
+
+326.66GB
+
+31.32%
+
+104.42GB
+
+56.04%
+
+Local Fixed
+237.76GB 191.78GB
+Disk
+Local Fixed
+475.99GB 343.71GB
+Disk
+Local Fixed
+476.33GB 340.87GB
+Disk
+
+19.34%
+27.79%
+28.44%
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+SERKRN-DENNIS
+
+SERGIG-WINIE SPARE
+
+C:
+
+SERKRN-VIVIAN
+
+SERKIT-GILBERT
+
+C:
+D:
+SERTIGFRONTDESK1
+
+SERTIG-FRONTDESK1
+
+C:
+
+SERTIGFRONTDESK2
+
+SERTIG-FRONTDESK2
+
+C:
+
+SERTIG-KITCHEN
+
+SERTIG-KITCHEN
+
+C:
+
+SERTIG-LENOX
+
+SERTIG-LENOX
+
+C:
+
+SERTIG-SAMUEL
+
+SERTIG-SAMUEL
+
+C:
+
+Size
+
+Free
+
+Used %
+
+365.19GB
+
+23.33%
+
+315.83GB
+
+32.82%
+
+469.49MB
+
+8.12%
+
+361.95GB
+
+23.96%
+
+Local Fixed
+476.02GB 367.32GB
+Disk
+
+22.83%
+
+Local Fixed
+476.33GB
+Disk
+Local Fixed
+470.14GB
+Disk
+Local Fixed
+510.98MB
+Disk
+Local Fixed
+476.02GB
+Disk
+
+Local Fixed
+237.86GB 198.61GB
+Disk
+Local Fixed
+475.99GB 277.16GB
+Disk
+Local Fixed
+476.12GB 359.14GB
+Disk
+
+16.50%
+41.77%
+24.57%
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Executive Summary - Serenity Spa Limited.pdf ---
+Executive Summary Report
+Description: This report shows the health of the delivered Managed Services.
+Create Date: 30 JAN 2026 12:20 (EAT)
+Sites: Serenity Spa
+Devices: 48
+
+Executive Summary Report
+SUMMARY
+The Overall score represents the overall health of the network. The score is influenced by the results of different services that
+are delivered below.
+
+0%
+
+62%
+
+100%
+
+Services Delivered
+
+Score
+
+Asset Management
+
+97%
+
+Monitoring
+
+59%
+
+Patch Management
+
+25%
+
+Software Management
+
+33%
+
+Antivirus
+
+97%
+
+Average Score
+
+62%
+
+Asset Management
+The Asset Management score represents the capability of the network to function as is required by today's standards.
+Compliancy checks are made against the device to ensure devices meet the set criteria. Included in the checks are Warranty
+Status, Disk Capacity, Memory Capacity and if the Operating system is still supported.
+Monitoring
+The Monitoring score is influenced by the open monitoring alerts for the network. The total number of open alerts influence
+the score, a higher priority is reflected by a increased weight in the calculation. A lower score means that issues are seen but
+have not yet been resolved.
+Patch Management
+Regularly installing Microsoft Updates is essential for keeping the network secure. The Patch Management score represents
+the current state of Microsoft Updates in the network.
+Software Management
+Keeping commonly used 3rd party software applications updated significantly helps keeping the network secure. Attackers
+often try to exploit security vulnerabilities in these applications. This score indicates the compliance level of the managed
+devices.
+Antivirus
+An Antivirus product on all devices is essential for keeping the network protected against malware and other threats. The
+Antivirus Score represents if the Antivirus solution is installed, running and up to date on all devices.
+Proactive Maintenance
+Any network requires proactive maintenance to ensure its availability, security and performance. The report contains a list of
+regularly scheduled automated activities. No score is calculated based on these activities.
+
+Executive Summary Report
+ASSET MANAGEMENT (97%)
+Device Type
+
+Total Managed
+
+Added Last 30 Days
+
+Laptop
+
+28
+
+0
+
+Desktop
+
+16
+
+0
+
+Server
+
+4
+
+0
+
+Total
+
+48
+
+0
+
+Device Health Check
+
+Passed
+
+Failed
+
+Score
+
+Devices must have at least 15% free space on System Drive
+
+47
+
+1
+
+97%
+
+Devices must have at least 3.8 GB of memory installed
+
+47
+
+1
+
+97%
+
+Windows Devices OS must be supported by Microsoft
+Unsupported devices are those running Windows 8.1 and under or Windows
+Server 2012/2012R2 and under.
+
+47
+
+1
+
+97%
+
+Device must be within warranty
+
+0
+
+0
+
+100%
+
+Average
+
+97%
+
+Executive Summary Report
+MONITORING (59%)
+Total Alerts by Priority
+Alert Priority
+Critical: 57
+High: 1759
+
+3729
+
+Moderate: 366
+
+Raised
+
+Resolved Unresolved Score
+
+Critical
+
+57
+
+56
+
+1
+
+98%
+
+High
+
+1759
+
+1
+
+1758
+
+0%
+
+Moderate
+
+366
+
+4
+
+362
+
+1%
+
+0
+
+0
+
+0
+
+100%
+
+1547
+
+1546
+
+1
+
+99%
+
+Low: 0
+Information: 1547
+
+Low
+Information
+Average
+
+59%
+
+Total Alerts by Device Type
+
+Device Type
+
+Unresolved: 2122
+
+3729
+
+Resolved: 1607
+
+Raised Resolved
+
+Unresolved
+
+Desktop
+
+2486
+
+925
+
+1561
+
+Laptop
+
+785
+
+584
+
+201
+
+Server
+
+458
+
+98
+
+360
+
+Total
+
+3729
+
+1607
+
+2122
+
+Top 5 Servers by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+SERGIG-SVR
+
+Gigiri-svr
+
+4
+
+5
+
+208
+
+0
+
+8
+
+SERKRN-SEVR
+
+SERKRN-SVR
+
+11
+
+58
+
+54
+
+0
+
+23
+
+SERKIT-SVR
+
+SERKIT-SVR
+
+21
+
+15
+
+1
+
+0
+
+9
+
+SERTIG-SVR
+
+JANI-QUICKBOOKS
+
+21
+
+18
+
+2
+
+0
+
+0
+
+Top 5 Other Devices by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+SERKERN-KITCHEN
+
+SERKERN-KITCHEN
+
+0
+
+549
+
+2
+
+0
+
+117
+
+SERTIG-KITCHEN
+
+SERTIG-KITCHEN
+
+0
+
+450
+
+2
+
+0
+
+128
+
+SERKIT-KITCHEN
+
+SERKIT-KITCHEN
+
+0
+
+242
+
+2
+
+0
+
+221
+
+SERGIG-EPHRAIM
+
+SERGIG-EPHRAIM
+
+0
+
+24
+
+0
+
+0
+
+97
+
+Executive Summary Report
+Device Name
+
+Description
+
+SERKIT-FRONTDESK1
+
+SERKIT-FRONTDESK1
+
+Critical
+
+High
+0
+
+Moderate
+3
+
+Low
+0
+
+Information
+0
+
+111
+
+Executive Summary Report
+PATCH MANAGEMENT (25%)
+Server Patch Status
+
+Fully Patched: 2
+
+Total
+4
+
+Approved Pending: 0
+
+4
+
+Fully Patched
+
+Score
+2
+
+50%
+
+Install Error: 1
+Reboot Required: 1
+No Data: 0
+No Policy: 0
+
+Workstation Patch Status
+
+Fully Patched: 10
+Approved Pending: 24
+
+44
+
+Install Error: 7
+Reboot Required: 2
+No Data: 1
+No Policy: 0
+
+Total
+
+Fully Patched
+44
+
+Score
+10
+
+22%
+
+Executive Summary Report
+SOFTWARE MANAGEMENT (33%)
+Server Software Status
+Total
+
+Compliant
+4
+
+Score
+3
+
+75%
+
+Compliant: 3
+
+4
+
+Not Compliant: 1
+Unmanaged: 0
+
+Workstation Software Status
+Total
+
+Compliant
+44
+
+Compliant: 13
+
+44
+
+Not Compliant: 31
+Unmanaged: 0
+
+Score
+13
+
+29%
+
+Executive Summary Report
+ANTIVIRUS (97%)
+Server Antivirus Status
+Total
+4
+
+Running and Up to Date: 4
+
+4
+
+Up to date
+4
+
+Not up to date Not Running Score
+0
+
+0
+
+100%
+
+Not up to date: 0
+Not Running: 0
+Not Detected: 0
+
+Workstation Antivirus Status
+Total
+Running and Up to Date: 43
+Not up to date: 0
+
+44
+
+Not Running: 1
+Not Detected: 0
+
+44
+
+Up to date
+43
+
+Not up to date Not Running Score
+0
+
+1
+
+97%
+
+Executive Summary Report
+PROACTIVE MAINTENANCE
+No Data
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Hardware Lifecycle - Serenity Spa Limited.pdf ---
+Hardware Lifecycle Report
+Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
+Create Date: 30 JAN 2026 12:20 (EAT)
+Sites: Serenity Spa
+Devices: 48
+
+Hardware Lifecycle Report
+SUMMARY
+Hardware Replacement Recommendations
+
+Suitable for 24 months+: 31
+
+48
+
+Replacement recommended within 12-24 months: 3
+Replacement recommended within 12 months: 14
+Unknown: 0
+
+Period
+
+Age
+
+Quantity
+
+Replacement recommended within 12 months
+
+4 years+
+
+14
+
+Replacement recommended within 12-24 months
+
+3-4 years
+
+3
+
+Suitable for 24 months+
+
+< 3 years
+
+31
+
+Unknown
+
+0
+
+Total Devices
+
+48
+
+Operating System Support
+
+Operating system is supported: 47
+
+48
+
+Operating system may be unsupported: 1
+Operating system is unsupported: 0
+
+Operating System Support*
+
+Quantity
+
+Operating system is supported
+
+47
+
+Operating system is unsupported unless manufacturer extended support has been arranged
+
+1
+
+Operating system is unsupported
+
+0
+
+Total Devices
+
+48
+
+Windows operating system support only. Non-Windows OS are counted as supported.
+
+Hardware Lifecycle Report
+SERENITY SPA
+Hardware replacement advised within 12 months (Over 4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+SERKIT-Coffee-shop
+
+SERKIT-COFFEE
+SHOP
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKITMXL04900
+COFFEE-S\hp KQ
+pc
+
+09 JUN
+2010
+
+SERGIG-Front-HP
+
+SERGIGFRONTDESK1
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERGIGTRF327007
+FRONTF
+HP\FRONTDE
+SK 1
+
+29 OCT
+2012
+
+SBTC-ROSE
+
+Petra Surface
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SBTCROSE\Rose
+
+033450684
+953
+
+11 AUG
+2015
+
+SERKIT-Frontdesk
+
+SERKITFRONTDESK2
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKITFRONTDES\F
+RONTDESK
+
+TRF5490S
+VX
+
+28 SEP
+2015
+
+SERTIG-SVR
+
+JANI-QUICKBOOKS
+
+Microsoft Windows
+Server 2019 Standard
+10.0.17763
+
+SERTIGTRF60401P
+SVR\Administr 6
+ator
+
+28 SEP
+2015
+
+SERKARENBACKOFFICE
+
+SERGIG-FRONT1
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKARENCND54872
+BACKOF\Front F2
+1
+
+19 OCT
+2015
+
+SERGIG-Gabriel
+
+Kitisuru
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERGIGCND6263Z
+GABRIEL\Gab Z3
+riel
+
+19 MAY
+2016
+
+SERKIT-BACKOFFICE SERKIT-BACKOFFICE Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKITCND70822
+BACKOFFI\Se 8T
+renity
+
+27 OCT
+2016
+
+SERKIT-VANESSA
+
+SERKIT-VANESSA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKITCND7074F
+VANESSA\Van 4N
+essa
+
+27 OCT
+2016
+
+SERKRN-DENNIS
+
+SERGIG-WINIE
+SPARE
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKRNCND65143
+DENNIS\Denni NT
+s
+
+27 OCT
+2016
+
+SERKIT-SVR
+
+SERKIT-SVR
+
+Microsoft Windows
+Server 2012 R2
+Standard 6.3.9600
+
+SERKITSVR\Eldama
+
+20 APR
+2017
+
+4CE7223JT
+Q
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+SERGIG-SVR
+
+Gigiri-svr
+
+SERGIG-FOLAPTOP
+
+Gigiri Front Desk
+Laptop
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Microsoft Windows
+Server 2019
+Essentials 10.0.17763
+
+SERGIGSVR\Eldama
+
+PC182A6L
+
+14 AUG
+2019
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERGIGCND6369J
+FOLAPTOP\Fr 9C
+ont Office
+Laptop
+
+26 JUN
+2020
+
+SERGIGFRONTDES\F
+RONT-DESK
+
+PC1MNZN6
+
+08 FEB
+2021
+
+Last User
+
+Serial
+Number
+
+SERGIG-FRONTDESK SERGIG-FRONTDESK Microsoft Windows 11
+Pro 10.0.26200
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Hardware replacement advised within 12-24 months (Between 3-4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+SERGIGCOFFEESHOP
+
+Jani-Jonathan
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERGIG49Q32F2
+COFFEESH\Gi
+giri Coffee
+Shop
+
+14 JUL
+2022
+
+SERKRN-SEVR
+
+SERKRN-SVR
+
+Microsoft Windows
+Server 2019 Standard
+10.0.17763
+
+SERKRNPC2KY7Q1
+SEVR\Adminis
+trator
+
+25 JUL
+2022
+
+DESKTOP-VKRMBR2
+
+DESKTOP-VKRMBR2
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+DESKTOPVKRMBR2\Ad
+ministrator
+
+R90LWUZ9
+
+11 OCT
+2022
+
+Last User
+
+Serial
+Number
+
+Hardware suitable for 24+ months (Less than 3 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+SERGIG-KITCHEN
+
+SERGIG-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+OS
+Support
+
+SERGIG2UA6381S3
+KITCHEN\Gigir F
+i Kitchen
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+14 MAR
+2024
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+SERKERN-KITCHEN
+
+SERKERN-KITCHEN
+
+SERKIT-KITCHEN
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKERNKITCHEN\Kitc
+hen
+
+2UA6302D
+L8
+
+14 MAR
+2024
+
+SERKIT-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERKIT2UA6482R
+KITCHEN\Sere 91
+nity SPA
+
+14 MAR
+2024
+
+SERTIG-KITCHEN
+
+SERTIG-KITCHEN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERTIGKITCHEN\Kitc
+hen
+
+2UA6182B
+S0
+
+14 MAR
+2024
+
+SBTC-RECEPTION
+
+SBTC-RECEPTION
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SBTCGM0LZL9V
+RECEPTION\B
+eauty College
+
+25 MAR
+2024
+
+SERGIGBACKOFFICE
+
+SERGIGBACKOFFICE
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERGIGBACKOFFI\Le
+novo
+
+GM0LZLAM
+
+25 MAR
+2024
+
+SERGIG-ELIZABETH
+
+SERGIG-ELIZABETH
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERGIG5CD2496M
+ELIZABET\Eliz WZ
+abeth
+
+23 APR
+2024
+
+SERGIG-EPHRAIM
+
+SERGIG-EPHRAIM
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERGIG5CD2496N
+EPHRAIM\Eph 0V
+raim Mbugua
+
+23 APR
+2024
+
+SERGIG-GABRIEL
+
+SERGIG-GABRIEL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIG5CD34367
+GABRIEL\Gab S2
+riel
+
+23 APR
+2024
+
+SERKIT-BACKOFFICE SERKIT-BACKOFFICE Microsoft Windows 10
+Home Single
+Language 10.0.19045
+
+SERKITCND9131F
+BEATRICE\Ad 73
+ministrator
+
+20 AUG
+2024
+
+SERBTC-JOYCE
+
+SERBTC-JOYCE
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERBTCJOYCE\Joyce
+
+5CD4462C
+68
+
+23 AUG
+2024
+
+DESKTOP-9N2SFLI
+
+DESKTOP-9N2SFLI
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DESKTOP9N2SFLI\hp
+
+5CG5103Y
+9T
+
+25 NOV
+2024
+
+SBTC-DORIS
+
+SBTYC-DORIS
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SBTC5CD4462C
+DORIS\DORIS 3Z
+
+20 MAR
+2025
+
+SERBTYC-ZAMA
+
+SERBTYC-ZAMA
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERBTYCZAMA\Zama
+Sokhela
+
+20 MAR
+2025
+
+5CD4462C
+3W
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+SERTIG-SAMUEL
+
+SERTIG-SAMUEL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERTIG5CD4462C
+SAMUEL\Sam 4T
+uel Angode
+
+20 MAR
+2025
+
+SERGIG-KOINI
+
+SERGIG-KOINI
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERGIGKOINI\Winnie
+Koini
+
+5CD1211B
+WJ
+
+09 APR
+2025
+
+SERGIG-MORAA
+
+SERGIG-MORAA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIG5CD10865L
+MORAA\Winie 9
+Moraa
+
+09 APR
+2025
+
+SERGIG-MaryM
+
+SERGIG-MARYM
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERGIGMARYM\Mary
+Mwangi
+
+5CG0483Y
+Y3
+
+27 JUN
+2025
+
+SERKAREN-FRONT1
+
+SERKAREN-FRONT1
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERKAREN4CE219BF
+FRONT1\Front 3Q
+Office
+
+05 AUG
+2025
+
+SERKITFRONTDESK1
+
+SERKITFRONTDESK1
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERKIT4CE331B7
+FRONTDES\Fr B1
+ont desk1
+
+12 AUG
+2025
+
+SERTIGFRONTDESK1
+
+SERTIGFRONTDESK1
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERTIG4CE336C5
+FRONTDES\S WB
+ERTIGFRONTDESK1
+
+12 AUG
+2025
+
+SERTIGFRONTDESK2
+
+SERTIGFRONTDESK2
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERTIGFRONTDES\F
+RONTDESK2
+
+4CE338DD
+T0
+
+12 AUG
+2025
+
+PSSurface
+
+PSSurface
+
+Microsoft Windows 11
+Enterprise 10.0.26100
+
+AzureAD\Petra 0F37MVD2
+Somen
+5173GT
+
+14 AUG
+2025
+
+SERGIG-VIOLET
+
+SERGIG-VIOLET
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERGIGVIOLET\Violet
+Murithi
+
+5CD245D5
+C6
+
+19 AUG
+2025
+
+SERTIG-LENOX
+
+SERTIG-LENOX
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.22631
+
+SERTIGLENOX\Lenox
+
+5CD245D5
+90
+
+19 AUG
+2025
+
+SERGIG-ESTHER
+
+Gigiri
+
+Microsoft Windows 11
+Pro 10.0.22621
+
+SERGIGESTHER\Esth
+er
+
+5CD10865
+QX
+
+22 AUG
+2025
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+SERGIG-JACK
+
+SERGIG-JACK
+
+SERKIT-LYNN
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERGIGJACK\Jack
+
+5CD202651
+8
+
+22 AUG
+2025
+
+SERKIT-LYNN
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.22621
+
+SERKITLYNN\Lynn
+
+5CD231JS9
+L
+
+22 AUG
+2025
+
+SERKRN-VIVIAN
+
+SERKIT-GILBERT
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+SERKRNVIVIAN\Vivian
+
+5CD216462
+G
+
+22 AUG
+2025
+
+SERGIG-CHARLES
+
+SERGIG-CHARLES
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.22631
+
+SERGIGCHARLES\Ch
+arles
+
+5CD4024C
+83
+
+26 AUG
+2025
+
+SERKAREN-FRONT2
+
+SERKAREN-FRONT2
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERKARENFRONT2\SPA
+KAREN
+
+4CE219C5
+9Y
+
+23 OCT
+2025
+
+*Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Patch Management Summary - Serenity Spa Limited.pdf ---
+Patch Management Summary Report
+Description: This report shows the patch status by device
+Create Date: 30 JAN 2026 12:20 (EAT)
+Sites: Serenity Spa
+Devices: 48
+
+Patch Management Summary Report
+PATCH SUMMARY
+
+Fully Patched: 12
+Approved Pending: 24
+Install Error: 8
+Reboot Required: 3
+No Data: 1
+
+48
+
+No Policy: 0
+
+Serenity Spa
+Servers
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+SERKIT-SVR
+
+SERKIT-SVR
+
+15 DEC 2025
+08:38 (EAT)
+
+101
+
+0
+
+0
+
+Fully
+Patched
+
+SERKRN-SEVR
+
+SERKRN-SVR
+
+25 JAN 2026
+08:34 (EAT)
+
+7
+
+2
+
+0
+
+Install
+Error
+
+SERTIG-SVR
+
+JANI-QUICKBOOKS
+
+08 JAN 2026
+08:55 (EAT)
+
+7
+
+4
+
+0
+
+Reboot
+Required
+
+SERGIG-SVR
+
+Gigiri-svr
+
+28 JAN 2026
+15:21 (EAT)
+
+11
+
+0
+
+0
+
+Fully
+Patched
+
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+SERKIT-Frontdesk
+
+SERKIT-FRONTDESK2
+
+30 JAN 2026
+08:02 (EAT)
+
+11
+
+0
+
+0
+
+Fully
+Patched
+
+SERTIGFRONTDESK1
+
+SERTIG-FRONTDESK1
+
+21 JAN 2026
+08:16 (EAT)
+
+6
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-Gabriel
+
+Kitisuru
+
+06 AUG 2024
+09:51 (EAT)
+
+9
+
+2
+
+0
+
+Approved
+Pending
+
+SERTIG-SAMUEL
+
+SERTIG-SAMUEL
+
+19 JAN 2026
+16:22 (EAT)
+
+4
+
+2
+
+0
+
+Approved
+Pending
+
+SERKIT-Coffee-shop
+
+SERKIT-COFFEE SHOP
+
+28 JAN 2026
+16:32 (EAT)
+
+70
+
+0
+
+0
+
+Fully
+Patched
+
+DESKTOP-9N2SFLI
+
+DESKTOP-9N2SFLI
+
+25 NOV 2025
+17:06 (EAT)
+
+1
+
+19
+
+0
+
+Approved
+Pending
+
+SERKIT-LYNN
+
+SERKIT-LYNN
+
+30 JAN 2026
+11:21 (EAT)
+
+6
+
+7
+
+0
+
+Approved
+Pending
+
+SERBTYC-ZAMA
+
+SERBTYC-ZAMA
+
+16 JAN 2026
+17:10 (EAT)
+
+4
+
+3
+
+0
+
+Install
+Error
+
+SERGIGFRONTDESK
+
+SERGIG-FRONTDESK
+
+29 JAN 2026
+21:07 (EAT)
+
+7
+
+1
+
+0
+
+Approved
+Pending
+
+SERGIG-ESTHER
+
+Gigiri
+
+29 JAN 2026
+12:20 (EAT)
+
+69
+
+2
+
+0
+
+Approved
+Pending
+
+PSSurface
+
+PSSurface
+
+19 JAN 2026
+10:24 (EAT)
+
+5
+
+2
+
+0
+
+Install
+Error
+
+Workstations
+
+Patch Management Summary Report
+Serenity Spa
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+SBTC-DORIS
+
+SBTYC-DORIS
+
+28 JAN 2026
+09:00 (EAT)
+
+4
+
+5
+
+0
+
+Approved
+Pending
+
+SERKAREN-FRONT1
+
+SERKAREN-FRONT1
+
+29 JAN 2026
+12:23 (EAT)
+
+8
+
+4
+
+0
+
+Approved
+Pending
+
+SERGIG-ELIZABETH
+
+SERGIG-ELIZABETH
+
+15 JAN 2026
+12:33 (EAT)
+
+6
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-JACK
+
+SERGIG-JACK
+
+29 JAN 2026
+10:22 (EAT)
+
+5
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-KITCHEN
+
+SERGIG-KITCHEN
+
+26 JAN 2026
+09:00 (EAT)
+
+7
+
+0
+
+0
+
+Fully
+Patched
+
+SERKIT-VANESSA
+
+SERKIT-VANESSA
+
+10 DEC 2025
+09:17 (EAT)
+
+10
+
+0
+
+0
+
+Fully
+Patched
+
+SERTIGFRONTDESK2
+
+SERTIG-FRONTDESK2
+
+28 JAN 2026
+08:16 (EAT)
+
+6
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIGBACKOFFICE
+
+SERGIG-BACKOFFICE
+
+23 JAN 2026
+16:34 (EAT)
+
+5
+
+2
+
+0
+
+Install
+Error
+
+SERKRN-DENNIS
+
+SERGIG-WINIE SPARE
+
+23 JAN 2026
+07:59 (EAT)
+
+8
+
+1
+
+0
+
+Approved
+Pending
+
+SERKAREN-FRONT2
+
+SERKAREN-FRONT2
+
+26 JAN 2026
+12:42 (EAT)
+
+6
+
+1
+
+0
+
+Approved
+Pending
+
+SERTIG-KITCHEN
+
+SERTIG-KITCHEN
+
+30 JAN 2026
+10:33 (EAT)
+
+7
+
+0
+
+0
+
+Fully
+Patched
+
+SERGIG-KOINI
+
+SERGIG-KOINI
+
+22 DEC 2025
+15:19 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+SERGIG-Front-HP
+
+SERGIG-FRONTDESK1
+
+17 JAN 2026
+22:50 (EAT)
+
+9
+
+0
+
+0
+
+Fully
+Patched
+
+SBTC-ROSE
+
+Petra Surface
+
+30 JAN 2026
+07:11 (EAT)
+
+7
+
+2
+
+0
+
+Install
+Error
+
+SERGIG-GABRIEL
+
+SERGIG-GABRIEL
+
+26 JAN 2026
+09:20 (EAT)
+
+6
+
+1
+
+0
+
+Approved
+Pending
+
+SERGIGCOFFEESHOP
+
+Jani-Jonathan
+
+23 JAN 2026
+16:35 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+SERKITBACKOFFICE
+
+SERKIT-BACKOFFICE
+
+23 JAN 2026
+10:52 (EAT)
+
+11
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-FOLAPTOP
+
+Gigiri Front Desk Laptop
+
+16 FEB 2024
+12:23 (EAT)
+
+8
+
+0
+
+0
+
+Install
+Error
+
+SERGIG-VIOLET
+
+SERGIG-VIOLET
+
+26 JAN 2026
+09:38 (EAT)
+
+3
+
+9
+
+0
+
+Approved
+Pending
+
+SERGIG-MaryM
+
+SERGIG-MARYM
+
+17 NOV 2025
+17:50 (EAT)
+
+71
+
+2
+
+0
+
+Reboot
+Required
+
+SERGIG-EPHRAIM
+
+SERGIG-EPHRAIM
+
+29 JAN 2026
+09:33 (EAT)
+
+7
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-MORAA
+
+SERGIG-MORAA
+
+18 JAN 2026
+12:53 (EAT)
+
+5
+
+1
+
+0
+
+Approved
+Pending
+
+DESKTOP-VKRMBR2
+
+DESKTOP-VKRMBR2
+
+30 JAN 2026
+04:39 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+SERKARENBACKOFFICE
+
+SERGIG-FRONT1
+
+23 JAN 2026
+12:38 (EAT)
+
+7
+
+3
+
+0
+
+Approved
+Pending
+
+Patch Management Summary Report
+Serenity Spa
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+SERBTC-JOYCE
+
+SERBTC-JOYCE
+
+30 JAN 2026
+11:20 (EAT)
+
+5
+
+3
+
+0
+
+Approved
+Pending
+
+SERKERN-KITCHEN
+
+SERKERN-KITCHEN
+
+29 JAN 2026
+16:17 (EAT)
+
+5
+
+1
+
+0
+
+Install
+Error
+
+SBTC-RECEPTION
+
+SBTC-RECEPTION
+
+29 JAN 2026
+08:51 (EAT)
+
+4
+
+1
+
+0
+
+Approved
+Pending
+
+SERTIG-LENOX
+
+SERTIG-LENOX
+
+23 JAN 2026
+11:35 (EAT)
+
+10
+
+2
+
+0
+
+Approved
+Pending
+
+SERKRN-VIVIAN
+
+SERKIT-GILBERT
+
+15 DEC 2025
+09:57 (EAT)
+
+9
+
+2
+
+0
+
+Reboot
+Required
+
+SERKIT-KITCHEN
+
+SERKIT-KITCHEN
+
+29 JAN 2026
+07:58 (EAT)
+
+7
+
+0
+
+0
+
+Fully
+Patched
+
+SERKITBACKOFFICE
+
+SERKIT-BACKOFFICE
+
+28 JAN 2026
+17:02 (EAT)
+
+9
+
+0
+
+0
+
+Fully
+Patched
+
+SERKITFRONTDESK1
+
+SERKIT-FRONTDESK1
+
+29 JAN 2026
+08:05 (EAT)
+
+5
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-CHARLES
+
+SERGIG-CHARLES
+
+19 JAN 2026
+09:15 (EAT)
+
+8
+
+17
+
+0
+
+Install
+Error
+
+
+
