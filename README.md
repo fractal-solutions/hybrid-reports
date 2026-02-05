@@ -74,4 +74,4 @@ To extend the system with a new data source:
     *   Generate any necessary charts or visuals, saving them to `assets/`.
     *   Construct a JSON object snippet containing its extracted data.
     *   Place this JSON snippet into `shared.output`.
-3.  **Update Client Config**: Add `<your_module_name>` to the 
+3.  **Update Client Config**: Add `<your_module_name>` to the

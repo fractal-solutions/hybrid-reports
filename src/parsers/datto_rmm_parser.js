@@ -157,7 +157,7 @@ export function datto_rmmParserWorkflow() {
           - Overall device counts and compliance.
       2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts for the extracted data. (Do not ask for permission/requireConfirmation to use the tool; just use it.)
           - Save all images to the 'assets/' folder.
-          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart for various services), Device Health, Disk Space(Bar Charts for each user device with thesholds shown and user names per bar), Antivirus Status(Bar Chart), Patch Status(Pie Chart).
+          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart for various services), Device Health, Disk Space(Bar Charts for each user device with thesholds shown and user names per bar), Antivirus Status(Bar Chart), Patch Status(Donut (hollow Pie) Chart).
           - Ensure chart files are saved (e.g., 'assets/datto_health_chart.png').
 
       ### Phase 2: The JSON Snippet
