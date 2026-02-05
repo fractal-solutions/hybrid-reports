@@ -1,291 +1,80 @@
 {
   "meta": {
-    "client_name": "SERENITY SPA LIMITED",
+    "client_name": "REA VIPINGO PLANTATIONS LIMITED",
     "report_month": "January 2026",
-    "generated_date": "2/2/2026"
+    "generated_date": "2/5/2026"
   },
   "scores": {
-    "average_score": 62,
+    "average_score": 50,
     "services_delivered_chart_path": "assets/services_delivery_scores.png"
   },
   "device_health": {
-    "total_managed": 48,
+    "total_managed": 46,
     "compliance_percentage": 97,
     "chart_path": "assets/device_health_compliance.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 47,
-        "total_count": 48,
+        "passed_count": 45,
+        "total_count": 46,
         "low_space_count": 1,
-        "chart_path": "assets/disk_space_chart.png"
+        "chart_path": "assets/disk_space_usage.png"
       },
       "ram": {
-        "passed_count": 47,
-        "total_count": 48
+        "passed_count": 44,
+        "total_count": 46
       },
       "os_support": {
-        "passed_count": 47,
-        "total_count": 48
+        "passed_count": 45,
+        "total_count": 46
       }
     }
   },
   "antivirus": {
-    "installed_count": 47,
+    "installed_count": 35,
     "chart_path": "assets/antivirus_status.png"
   },
   "patch_management": {
-    "fully_patched_count": 12,
+    "fully_patched_count": 9,
     "update_required_count": 36,
-    "chart_path": "assets/patch_status.png",
+    "chart_path": "assets/patch_status_donut.png",
     "windows_10_users_list": [
-      "SERKIT-Coffee-shop",
-      "SERGIG-Front-HP",
-      "SERKIT-Frontdesk",
-      "SERKARENBACKOFFICE",
-      "SERGIG-Gabriel",
-      "SERKIT-BACKOFFICE",
-      "SERKIT-VANESSA",
-      "SERKRN-DENNIS",
-      "SERGIG-FOLAPTOP",
-      "SERGIGCOFFEESHOP",
-      "SERGIG-KITCHEN",
-      "SERKERN-KITCHEN",
-      "SERKIT-KITCHEN",
-      "SERTIG-KITCHEN",
-      "SERKIT-BACKOFFICE",
-      "SERGIG-MaryM"
+      "DWA-BECKYPRODUCTION",
+      "DWA-CLINICRECORDS",
+      "DWA-EMMA",
+      "DWA-EMS-OFFICE",
+      "DWA-FUELSTATION",
+      "DWA-HORTICULTURE",
+      "DWA-IRENE",
+      "DWA-JOSEPH",
+      "DWA-LETTY",
+      "DWA-MAURICESTORES",
+      "DWA-MWAMBA",
+      "DWA-NDINDA",
+      "DWA-PARTSTORES",
+      "DWA-PAYROLL-1",
+      "DWA-PPESTOCK",
+      "DWA-PRISCILA",
+      "DWA-ROBERT",
+      "DWA-SHADRACK",
+      "DWA-STEVESTORES",
+      "DWACLINIC-PC",
+      "REA-KALORI",
+      "REA-KEVIN",
+      "Oyugi"
     ]
   },
   "tickets": {
     "source": "Zoho",
-    "total": 21,
-    "software_count": 7,
+    "total": 8,
+    "software_count": 0,
     "hardware_count": 2,
-    "misc_count": 12,
-    "chart_path": "assets\\zoho_tickets_SERENITY_SPA_LIMITED.png"
-  },
-  "prtg_monitoring": {
-    "links": [
-      {
-        "name": "Gigiri DD LAN",
-        "avg_bandwidth": "5.87 Mbit/s",
-        "total_data": "1,658,801 MB",
-        "uptime_percent": "97.941 %",
-        "downtime_percent": "2.059 %",
-        "uptime_duration": "27d 10h 03m 17s",
-        "downtime_duration": "13h 50m 00s"
-      },
-      {
-        "name": "Gigiri DD DD-Link",
-        "avg_bandwidth": "2.42 Mbit/s",
-        "total_data": "682,867 MB",
-        "uptime_percent": "97.941 %",
-        "downtime_percent": "2.059 %",
-        "uptime_duration": "27d 10h 03m 22s",
-        "downtime_duration": "13h 50m 00s"
-      },
-      {
-        "name": "Gigiri DD Guest LAN",
-        "avg_bandwidth": "0 Mbit/s",
-        "total_data": "0 MB",
-        "uptime_percent": "97.941 %",
-        "downtime_percent": "2.059 %",
-        "uptime_duration": "27d 10h 04m 22s",
-        "downtime_duration": "13h 50m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "5.88 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "97.849 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "27d 09h 25m 44s",
-        "downtime_duration": "14h 27m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "1.92 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "97.849 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "27d 09h 25m 39s",
-        "downtime_duration": "14h 27m 00s"
-      },
-      {
-        "name": "Kitisuru - JTL Cameras-LAN",
-        "avg_bandwidth": "2.72 Mbit/s",
-        "total_data": "784,506 MB",
-        "uptime_percent": "100  %",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 23h 53m 25s",
-        "downtime_duration": "N/A"
-      },
-      {
-        "name": "Kitisuru - JTL JTL-WAN",
-        "avg_bandwidth": "3.37 Mbit/s",
-        "total_data": "970,408 MB",
-        "uptime_percent": "100 %",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 23h 53m 35s",
-        "downtime_duration": "N/A"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "0.08 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "100 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "27d 23h 54m 30s",
-        "downtime_duration": "N/A"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "3.12 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "30 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "08d 08h 52m 48s",
-        "downtime_duration": "19d 15h 01m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "< 0.01 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "30 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "08d 08h 53m 53s",
-        "downtime_duration": "19d 15h 00m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "N/A",
-        "downtime_percent": "N/A",
-        "uptime_duration": "08d 08h 53m 48s",
-        "downtime_duration": "19d 14h 59m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "3.15 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "30 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "08d 08h 51m 43s",
-        "downtime_duration": "19d 15h 02m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "N/A",
-        "downtime_percent": "N/A",
-        "uptime_duration": "27d 06h 20m 36s",
-        "downtime_duration": "17h 34m 30s"
-      },
-      {
-        "name": "DD) Tigoni_DD",
-        "avg_bandwidth": "N/A",
-        "total_data": "692,075 MB",
-        "uptime_percent": "N/A",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 06h 08m 12s",
-        "downtime_duration": "N/A"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "N/A",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 16m 19s",
-        "downtime_duration": "01d 00h 38m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "0.83 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "96.325 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 11m 52s",
-        "downtime_duration": "01d 00h 41m 32s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "2.09 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "96.324 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 12m 09s",
-        "downtime_duration": "01d 00h 42m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "< 0.01 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "96.326 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 12m 14s",
-        "downtime_duration": "01d 00h 41m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "N/A",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 10m 15s",
-        "downtime_duration": "01d 00h 44m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "1.26 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "96.311  %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "26d 23h 06m 21s",
-        "downtime_duration": "01d 00h 47m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "N/A",
-        "total_data": "N/A",
-        "uptime_percent": "N/A",
-        "downtime_percent": "N/A",
-        "uptime_duration": "13d 11h 31m 22s",
-        "downtime_duration": "14d 12h 23m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "< 0.01 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "48 %",
-        "downtime_percent": "N/A",
-        "uptime_duration": "13d 11h 28m 36s",
-        "downtime_duration": "14d 12h 24m 00s"
-      },
-      {
-        "name": "N/A",
-        "avg_bandwidth": "1.71 Mbit/s",
-        "total_data": "N/A",
-        "uptime_percent": "97.537%",
-        "downtime_percent": "N/A",
-        "uptime_duration": "27d 07h 19m 56s",
-        "downtime_duration": "16h 33m 00s"
-      }
-    ],
-    "summary_stats": {
-      "overall_avg_uptime_percent": "82.961 %",
-      "overall_avg_downtime_percent": "1.030 %",
-      "total_links_monitored": 23,
-      "links_with_downtime": 6
-    },
-    "chart_path": "assets\\prtg_uptime_SERENITY_SPA_LIMITED.png"
+    "misc_count": 6,
+    "chart_path": "assets\\zoho_tickets_REA_VIPINGO_PLANTATIONS_LIMITED.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 62%. A total of 21 tickets were processed, with 47 devices having antivirus installed, and 12 devices fully patched.",
-    "total_tickets": 21,
-    "av_installed": 47,
-    "fully_patched": 12
+    "executive_summary": "This is a comprehensive monthly support report for REA VIPINGO PLANTATIONS LIMITED for January 2026. The average service score for the month was 50%. A total of 8 tickets were processed, with 35 devices having antivirus installed, and 9 devices fully patched.",
+    "total_tickets": 8,
+    "av_installed": 35,
+    "fully_patched": 9
   }
 }

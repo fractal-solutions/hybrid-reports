@@ -146,76 +146,170 @@ DD-SPA _KAREN DD_WAN Port2 229,474 MB 3.675 % [01d 00h 41m 32s 3.775 % [1522]
 1/2
 
 --- Page Break ---
-Average Uptime Good
-Probe, Group, Device Sensor Total Downtime Failed
+Probe, Group, Device
 
 Local Probe (Local Probe) »
-Serenity Spa Links » 2.09 Mbit/s 96.324 %
-DD-SPA _KAREN LAN Port3 579,825 MB 3.676 %
+Serenity Spa Links »
+DD-SPA _KAREN
 
-[26d 23h 12m 09s 96.23 %
-[01d 00h 42m 00s 3.77 %
+Local Probe (Local Probe) »
+
+Serenity Spa Links »
+DD-SPA __KAREN
+
+Local Probe (Local Probe) »
+Serenity Spa Links »
+JTL-KAREN
+
+Local Probe (Local Probe) »
+
+Serenity Spa Links »
+JTL-KAREN
+
+Local Probe (Local Probe) »
+
+Serenity Spa Links »
+Spa_TIGONI Airtel
+
+Local Probe (Local Probe) »
+Serenity Spa Links »
+Spa_TIGONI Airtel
+
+Local Probe (Local Probe) »
+
+Serenity Spa Links »
+
+Spa_TIGONI_JTL
+
+Sensor
+
+LAN Port3
+
+CCTV Port8
+
+Ping
+
+JTL Port7
+
+Ping
+
+Airtel_WAN_PortF1
+
+JTL-Port6
+
+Average
+Total
+
+2.09 Mbit/s
+579,825 MB
+
+< 0.01 Mbit/s
+403 MB
+
+64 msec
+
+1.26 Mbit/s
+349,999 MB
+
+75 msec
+
+< 0.01 Mbit/s
+217 MB
+
+1.71 Mbit/s
+480,186 MB
+
+Uptime
+Downtime
+
+96.324 %
+3.676 %
+
+96.326 %
+3.674 %
+
+96.319 %
+3.681 %
+
+96.311 %
+3.689 %
+
+48 %
+52%
+
+48 %
+52%
+
+97.537 %
+2.463 %
+
+[26d 23h 12m 09s
+[01d 00h 42m 00s
+
+[26d 23h 12m 14s
+[01d 00h 41m 00s
+
+[26d 23h 10m 15s
+[01d 00h 44m 00s
+
+[26d 23h 06m 21s
+[01d 00h 47m 00s
+
+[13d 11h 31m 22s
+[14d 12h 23m 00s
+
+[13d 11h 28m 36s
+[14d 12h 24m 00s
+
+[27d 07h 19m 56s
+[16h 33m 00s
+
+Good
+Failed
+
+96.23 %
+3.77 %
+
+96.225 %
+3.775 %
+
+96.244 %
+3.756 %
+
+96.235 %
+3.765 %
+
+48 %
+52%
+
+48 %
+52%
+
+97411 %
+2.589 %
 
 [38801]
 [1520]
 
-Local Probe (Local Probe) »
-Serenity Spa Links » < 0.01 Mbit/s 96.326 %
-DD-SPA _KAREN CCTV Port8 403 MB 3.674 %
-
-[26d 23h 12m 14s 96.225 %
-[01d 00h 41m 00s 3.775 %
-
 [38798]
 [1522]
-
-Local Probe (Local Probe) »
-Serenity Spa Links » 96.319 %
-JTL-KAREN Ping 64 msec 3.681 %
-
-[26d 23h 10m 15s 96.244 %
-[01d 00h 44m 00s 3.756 %
 
 [38816]
 [1515]
 
-Local Probe (Local Probe) »
-Serenity Spa Links » 1.26 Mbit/s 96.311 “I [26d 23h 06m 21s 96.235 “I [38801
-
-JTL-KAREN JTL Port7 349,999 MB 3.689 % [01d 00h 47m 00s 3.765 % [1518]
-
-Local Probe (Local Probe) »
-Serenity Spa Links » 48 %
-Spa_TIGONI Airtel Ping 75 msec 52%
-
-[13d 11h 31m 22s 48 %
-[14d 12h 23m 00s 52%
+[38801
+[1518]
 
 [19402]
 [20971
 
-Local Probe (Local Probe) »
-Serenity Spa Links » < 0.01 Mbit/s 48 %
-Spa_TIGONI Airtel Airtel WAN_PortF1 217 MB 52%
-
-[13d 11h 28m 36s 48 %
-[14d 12h 24m 00s 52%
-
 [19392]
 [20977]
-
-Local Probe (Local Probe) »
-
-Serenity Spa Links » 1.71 Mbit/s 97.537%
-Spa_TIGONI_JTL JTL-Port6 480,186 MB 2.463 %
-
-PAESSLER 20.2.59.1689+ © 1/29/2026 2:28:36 PM
 
 [39274
 [1044]
 
-[27d 07h 19m 56s 97411 %
-[16h 33m 00s 2.589 %
+PAESSLER 20.2:59.1689+ © 1/29/2026 4:26:36 PM
 
 2/2
 

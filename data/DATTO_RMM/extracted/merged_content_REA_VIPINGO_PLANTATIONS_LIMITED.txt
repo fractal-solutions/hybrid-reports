@@ -1,0 +1,3809 @@
+--- Content from PDF: Device Health Summary - REA Vipingo Planatations Limited.pdf ---
+Device Health Summary Report
+Description: This report shows the health of the selected managed devices.
+Create Date: 05 FEB 2026 09:18 (EAT)
+Sites: REA Vipingo Planatations Ltd.
+Devices: 46
+
+Device Health Summary Report
+SUMMARY
+
+Servers: 1
+Workstations: 45
+Devices with Check Passed: 2
+
+46
+
+Network Devices: 0
+
+46
+
+Devices with Checks Failed: 44
+
+ESXi Hosts: 0
+Printers: 0
+Mobiles: 0
+Total Managed devices: 46
+
+SERVERS
+
+Device Name
+
+Device Description
+
+Operating System
+
+SERVER2025
+
+REA-SERVER2025
+
+Microsoft Windows
+Server 2025 Standard
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+WORKSTATIONS
+
+Device Name
+
+Device Description
+
+Operating System
+
+DWA-ANCENT
+
+KADIMA-PC
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-ANNETSTORES
+
+DWA-ANNETSTORES
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-ANTONY
+
+DWA-ANTONY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-BECKYPRODUCTION
+
+DWA-BECKYPRODUCTION
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-BENJAMIN- DWA-BENJAMINLEGAL
+LEGAL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+DWA-BIOMASS
+
+DWA-Biomass
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+DWA-CLINICRECORDS
+
+DWA-CLINICRECORDS
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-EMMA
+
+ADMIN-PC
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-EMSOFFICE
+
+EM-OFFICE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-ERICK
+
+PATRICA2019
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+DWA-ESTHER
+
+DWA-ESTHER
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-FIRDAUS
+
+DWA-FIRDAUS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWAFUELSTATION
+
+DWA-FUELSTATION
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-GEORGEPAYROLL
+
+DESKTOP-GAH2GD4
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWADWAHORTICULTURE HORTICULTURE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-IRENE
+
+DWA-IRENE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-JAPHETH
+
+DWA-JAPHETH
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWAJOHNMUNYOKI
+
+DWA-JOHNMUNYOKI
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+DWA-JOSEPH
+
+DWA-JOSEPH
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-LETTY
+
+DWA-LETTY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-MARY
+
+DWA-MARY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-MATHIAS
+
+DWA-MATHIAS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-MAURICE- DWA-MAURICESTORES
+STORES
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-MWAMBA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-MWAMBA
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+DWA-NDINDA
+
+DWA-NDINDA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-NDUNGESTORES
+
+DWA-NDUNGESTORES
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWAPARTSTORES
+
+DWA-PARTSTORES
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-PAYROLLPAYROL-OFFICE1
+1
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAPPESTOCK
+
+DWA-PPESTOCK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-PRISCILA
+
+DWA-PRISCILA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAPRODUCTION
+
+DWA-PRODUCTION
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-ROBERT
+
+DWA-ROBERT
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWASHADRACK
+
+DWA-SHADRACK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-STEVESTORES
+
+DWA-STEVE-STORE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-TERESA
+
+DWA-TERESA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-TOM-EMG DWA-TONY-ENG
+
+Microsoft Windows 11
+Pro 10.0.22000
+
+DWA-WANZA
+
+DWA-WANZA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA-WILSONK
+
+DWA-WILSONK
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWACLINIC-PC
+
+DWACLINIC-PC
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAWorkshop
+
+ManagerEng
+
+Microsoft Windows 11
+Home Single
+
+NEIL
+
+LAPTOP-OBD6T1EB
+
+Microsoft Windows 11
+Home 10.0.26100
+
+Oyugi
+
+DWA-ROBERTSECURITY
+
+Microsoft Windows 7
+Professional 6.1.7601
+
+REA-KALORI
+
+DWA-KALORI
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+REA-KEVIN
+
+DWA-KEVIN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+TECHNICALMAN TECHNICALMANGER- Microsoft Windows 11
+GER-ENG
+ENG
+Pro 10.0.26200
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Device Storage - REA Vipingo Planatations Limited.pdf ---
+Device Storage Report
+Description: This report lists all the disks available on the selected devices including their
+available disk space.
+Create Date: 05 FEB 2026 09:22 (EAT)
+Sites: REA Vipingo Planatations Ltd.
+Devices: 46
+
+Device Storage Report
+REA VIPINGO PLANATATIONS LTD.
+Servers
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+D:
+
+SERVER2025
+
+REA-SERVER2025
+
+E:
+F:
+H:
+
+Size
+
+Free
+
+Local Fixed
+953.01GB 120.95GB
+Disk
+Local Fixed
+100.00MB 88.04MB
+Disk
+Local Fixed
+953.11GB 693.76GB
+Disk
+Local Fixed 1,863.02 1,345.27
+Disk
+GB
+GB
+Local Fixed
+931.51GB 697.60GB
+Disk
+
+Used %
+87.31%
+11.95%
+27.21%
+27.79%
+25.11%
+
+Workstations
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+DWA-ANCENT
+
+KADIMA-PC
+
+C:
+C:
+
+DWA-ANNETSTORES
+
+DWA-ANNET-STORES
+
+D:
+E:
+
+DWA-ANTONY
+
+DWA-ANTONY
+
+C:
+
+DWA-BECKYPRODUCTION
+
+DWA-BECKY-PRODUCTION
+
+C:
+
+DWA-BENJAMINLEGAL
+
+DWA-BENJAMIN-LEGAL
+
+C:
+
+DWA-BIOMASS
+
+DWA-Biomass
+
+C:
+C:
+
+DWA-CLINICRECORDS
+
+E:
+DWA-CLINIC-RECORDS
+F:
+G:
+C:
+
+DWA-EMMA
+
+ADMIN-PC
+D:
+C:
+
+DWA-EMS-OFFICE
+
+EM-OFFICE
+
+E:
+Z:
+C:
+
+DWA-ERICK
+
+PATRICA2019
+D:
+
+Size
+
+Free
+
+Used %
+
+849.50GB
+
+8.73%
+
+166.49GB
+
+39.01%
+
+389.03GB
+
+20.14%
+
+433.55GB
+
+2.18%
+
+285.25GB
+
+40.09%
+
+411.20GB
+
+11.59%
+
+Local Fixed
+476.10GB 295.45GB
+Disk
+
+37.94%
+
+Local Fixed
+930.72GB
+Disk
+Local Fixed
+272.98GB
+Disk
+Local Fixed
+487.12GB
+Disk
+Local Fixed
+443.23GB
+Disk
+Local Fixed
+476.10GB
+Disk
+Local Fixed
+465.11GB
+Disk
+
+Local Fixed
+476.14GB
+Disk
+Local Fixed
+476.29GB
+Disk
+Local Fixed
+100.00MB
+Disk
+Local Fixed
+97.12GB
+Disk
+Local Fixed
+368.10GB
+Disk
+Local Fixed
+491.46GB
+Disk
+Local Fixed
+439.45GB
+Disk
+Local Fixed
+660.34GB
+Disk
+Local Fixed
+270.03GB
+Disk
+Local Fixed
+96.00MB
+Disk
+Local Fixed
+441.91GB
+Disk
+Local Fixed
+488.28GB
+Disk
+
+404.59GB
+
+15.03%
+
+403.65GB
+
+15.25%
+
+62.47MB
+
+37.52%
+
+26.60GB
+
+72.61%
+
+289.17GB
+
+21.44%
+
+259.41GB
+
+47.22%
+
+438.20GB
+
+0.29%
+
+127.04GB
+
+80.76%
+
+91.81GB
+
+66.00%
+
+44.80MB
+
+53.33%
+
+346.00GB
+
+21.70%
+
+482.37GB
+
+1.21%
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+
+DWA-ESTHER
+
+DWA-ESTHER
+
+D:
+E:
+
+DWA-FIRDAUS
+
+DWA-FIRDAUS
+
+C:
+C:
+
+DWA-FUELSTATION DWA-FUELSTATION
+
+D:
+F:
+
+DWA-GEORGEPAYROLL
+
+DESKTOP-GAH2GD4
+
+C:
+C:
+
+DWAHORTICULTURE
+
+DWA-HORTICULTURE
+
+DWA-IRENE
+
+DWA-IRENE
+
+E:
+C:
+E:
+C:
+D:
+
+DWA-JAPHETH
+
+DWA-JAPHETH
+E:
+F:
+C:
+
+DWAJOHNMUNYOKI
+
+DWA-JOHNMUNYOKI
+
+D:
+E:
+C:
+
+DWA-JOSEPH
+
+DWA-JOSEPH
+D:
+C:
+
+DWA-LETTY
+
+DWA-LETTY
+D:
+
+DWA-MARY
+
+DWA-MARY
+
+DWA-MATHIAS
+
+DWA-MATHIAS
+
+C:
+C:
+D:
+
+DWA-MAURICESTORES
+
+DWA-MAURICE-STORES
+
+C:
+
+DWA-MWAMBA
+
+DWA-MWAMBA
+
+C:
+
+Size
+
+Free
+
+Used %
+
+363.35GB
+
+23.68%
+
+865.59GB
+
+7.02%
+
+759.56GB
+
+18.46%
+
+261.78GB
+
+45.02%
+
+100.85GB
+
+56.30%
+
+212.24GB
+
+9.45%
+
+64.00MB
+
+36.00%
+
+795.01GB
+
+14.53%
+
+141.17GB
+
+69.66%
+
+843.75GB
+
+9.42%
+
+217.08GB
+
+22.74%
+
+195.20GB
+
+0.06%
+
+399.23GB
+
+16.15%
+
+464.64MB
+
+7.07%
+
+359.76GB
+
+18.66%
+
+481.32GB
+
+1.42%
+
+177.58GB
+
+36.60%
+
+149.15GB
+
+23.63%
+
+632.97GB
+
+32.05%
+
+67.06GB
+
+60.89%
+
+225.58GB
+
+23.00%
+
+122.37GB
+
+28.95%
+
+292.87GB
+
+0.03%
+
+849.11GB
+
+8.76%
+
+217.16GB
+
+33.10%
+
+151.45GB
+
+0.08%
+
+402.31GB
+
+13.50%
+
+Local Fixed
+292.70GB 165.63GB
+Disk
+
+43.41%
+
+Local Fixed
+476.08GB
+Disk
+Local Fixed
+930.91GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+476.12GB
+Disk
+Local Fixed
+230.79GB
+Disk
+Local Fixed
+234.37GB
+Disk
+Local Fixed
+100.00MB
+Disk
+Local Fixed
+930.14GB
+Disk
+Local Fixed
+465.27GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+280.98GB
+Disk
+Local Fixed
+195.31GB
+Disk
+Local Fixed
+476.15GB
+Disk
+Local Fixed
+500.00MB
+Disk
+Local Fixed
+442.28GB
+Disk
+Local Fixed
+488.28GB
+Disk
+Local Fixed
+280.10GB
+Disk
+Local Fixed
+195.31GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+171.47GB
+Disk
+Local Fixed
+292.97GB
+Disk
+Local Fixed
+172.23GB
+Disk
+Local Fixed
+292.97GB
+Disk
+Local Fixed
+930.65GB
+Disk
+Local Fixed
+324.58GB
+Disk
+Local Fixed
+151.57GB
+Disk
+Local Fixed
+465.11GB
+Disk
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+
+DWA-NDINDA
+
+DWA-NDINDA
+D:
+
+DWA-NDUNGESTORES
+
+DWA-NDUNGE-STORES
+
+C:
+C:
+
+DWA-PARTSTORES
+
+DWA-PARTSTORES
+E:
+C:
+
+DWA-PAYROLL-1
+
+PAYROL-OFFICE1
+
+D:
+F:
+
+DWA-PPESTOCK
+
+DWA-PPESTOCK
+
+DWA-PRISCILA
+
+DWA-PRISCILA
+
+C:
+C:
+E:
+C:
+
+DWA-PRODUCTION
+
+DWA-PRODUCTION
+D:
+C:
+
+DWA-ROBERT
+
+DWA-ROBERT
+D:
+C:
+
+DWA-SHADRACK
+
+DWA-SHADRACK
+E:
+C:
+
+DWA-STEVESTORES
+
+DWA-STEVE-STORE
+
+DWA-TERESA
+
+DWA-TERESA
+
+D:
+C:
+C:
+
+DWA-TOM-EMG
+
+DWA-TONY-ENG
+
+E:
+F:
+C:
+
+DWA-WANZA
+
+DWA-WANZA
+D:
+
+DWA-WILSONK
+
+DWA-WILSONK
+
+C:
+C:
+
+DWACLINIC-PC
+
+DWACLINIC-PC
+
+D:
+G:
+
+Size
+
+Free
+
+Local Fixed
+442.63GB 346.88GB
+Disk
+Local Fixed
+488.28GB 485.16GB
+Disk
+Local Fixed
+476.11GB 403.75GB
+Disk
+Local Fixed
+226.84GB
+Disk
+Local Fixed
+238.32GB
+Disk
+Local Fixed
+171.79GB
+Disk
+Local Fixed
+292.97GB
+Disk
+Local Fixed 1,863.01
+Disk
+GB
+Local Fixed
+281.04GB
+Disk
+Local Fixed
+584.88GB
+Disk
+Local Fixed
+345.57GB
+Disk
+Local Fixed
+476.05GB
+Disk
+Local Fixed
+931.48GB
+Disk
+Local Fixed
+442.63GB
+Disk
+Local Fixed
+488.28GB
+Disk
+Local Fixed
+466.50GB
+Disk
+Local Fixed
+464.41GB
+Disk
+Local Fixed
+442.63GB
+Disk
+Local Fixed
+488.28GB
+Disk
+Local Fixed
+476.23GB
+Disk
+Local Fixed
+441.01GB
+Disk
+Local Fixed
+488.28GB
+Disk
+Local Fixed 1,863.01
+Disk
+GB
+Local Fixed
+476.10GB
+Disk
+Local Fixed
+249.69GB
+Disk
+Local Fixed
+476.08GB
+Disk
+Local Fixed
+97.12GB
+Disk
+Local Fixed
+368.10GB
+Disk
+Local Fixed
+100.00MB
+Disk
+
+Used %
+21.63%
+0.64%
+15.20%
+
+79.91GB
+
+64.77%
+
+234.17GB
+
+1.74%
+
+43.42GB
+
+74.73%
+
+212.25GB
+
+27.55%
+
+1,249.91
+GB
+
+32.91%
+
+229.73GB
+
+18.26%
+
+510.50GB
+
+12.72%
+
+345.33GB
+
+0.07%
+
+318.42GB
+
+33.11%
+
+859.29GB
+
+7.75%
+
+370.82GB
+
+16.22%
+
+352.17GB
+
+27.88%
+
+281.26GB
+
+39.71%
+
+445.32GB
+
+4.11%
+
+356.58GB
+
+19.44%
+
+450.28GB
+
+7.78%
+
+404.55GB
+
+15.05%
+
+273.36GB
+
+38.01%
+
+487.69GB
+
+0.12%
+
+1,546.60
+GB
+
+16.98%
+
+373.89GB
+
+21.47%
+
+212.80GB
+
+14.77%
+
+407.52GB
+
+14.40%
+
+22.79GB
+
+76.54%
+
+289.17GB
+
+21.44%
+
+62.47MB
+
+37.52%
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+DWAWorkshop
+
+ManagerEng
+
+C:
+
+NEIL
+
+LAPTOP-OBD6T1EB
+
+C:
+
+Oyugi
+
+DWA-ROBERT-SECURITY
+
+C:
+D:
+C:
+REA-KALORI
+
+DWA-KALORI
+E:
+C:
+D:
+
+REA-KEVIN
+
+DWA-KEVIN
+E:
+F:
+
+TECHNICALMANGE
+R-ENG
+
+C:
+TECHNICALMANGER-ENG
+D:
+
+Size
+
+Local Fixed
+475.85GB
+Disk
+Local Fixed
+952.85GB
+Disk
+Local Fixed
+292.53GB
+Disk
+Local Fixed
+172.79GB
+Disk
+Local Fixed
+467.70GB
+Disk
+Local Fixed
+462.76GB
+Disk
+Local Fixed
+476.35GB
+Disk
+Local Fixed
+100.00MB
+Disk
+Local Fixed
+269.66GB
+Disk
+Local Fixed
+196.00GB
+Disk
+Local Fixed
+476.10GB
+Disk
+Local Fixed 1,863.01
+Disk
+GB
+
+Free
+
+Used %
+
+389.85GB
+
+18.07%
+
+899.88GB
+
+5.56%
+
+178.42GB
+
+39.01%
+
+170.81GB
+
+1.14%
+
+410.04GB
+
+12.33%
+
+458.85GB
+
+0.85%
+
+349.36GB
+
+26.66%
+
+67.73MB
+
+32.26%
+
+63.59GB
+
+76.42%
+
+186.77GB
+
+4.71%
+
+413.22GB
+
+13.21%
+
+1,842.80
+GB
+
+1.08%
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Executive Summary - REA Vipingo Planatations Limited.pdf ---
+Executive Summary Report
+Description: This report shows the health of the delivered Managed Services.
+Create Date: 05 FEB 2026 09:18 (EAT)
+Sites: REA Vipingo Planatations Ltd.
+Devices: 46
+
+Executive Summary Report
+SUMMARY
+The Overall score represents the overall health of the network. The score is influenced by the results of different services that
+are delivered below.
+
+0%
+
+50%
+
+100%
+
+Services Delivered
+
+Score
+
+Asset Management
+
+97%
+
+Monitoring
+
+62%
+
+Patch Management
+
+19%
+
+Software Management
+
+0%
+
+Antivirus
+
+76%
+
+Average Score
+
+50%
+
+Asset Management
+The Asset Management score represents the capability of the network to function as is required by today's standards.
+Compliancy checks are made against the device to ensure devices meet the set criteria. Included in the checks are Warranty
+Status, Disk Capacity, Memory Capacity and if the Operating system is still supported.
+Monitoring
+The Monitoring score is influenced by the open monitoring alerts for the network. The total number of open alerts influence
+the score, a higher priority is reflected by a increased weight in the calculation. A lower score means that issues are seen but
+have not yet been resolved.
+Patch Management
+Regularly installing Microsoft Updates is essential for keeping the network secure. The Patch Management score represents
+the current state of Microsoft Updates in the network.
+Software Management
+Keeping commonly used 3rd party software applications updated significantly helps keeping the network secure. Attackers
+often try to exploit security vulnerabilities in these applications. This score indicates the compliance level of the managed
+devices.
+Antivirus
+An Antivirus product on all devices is essential for keeping the network protected against malware and other threats. The
+Antivirus Score represents if the Antivirus solution is installed, running and up to date on all devices.
+Proactive Maintenance
+Any network requires proactive maintenance to ensure its availability, security and performance. The report contains a list of
+regularly scheduled automated activities. No score is calculated based on these activities.
+
+Executive Summary Report
+ASSET MANAGEMENT (97%)
+Device Type
+
+Total Managed
+
+Added Last 30 Days
+
+Desktop
+
+42
+
+0
+
+Laptop
+
+3
+
+0
+
+Server
+
+1
+
+0
+
+Total
+
+46
+
+0
+
+Device Health Check
+
+Passed
+
+Failed
+
+Score
+
+Devices must have at least 15% free space on System Drive
+
+45
+
+1
+
+97%
+
+Devices must have at least 3.8 GB of memory installed
+
+44
+
+2
+
+95%
+
+Windows Devices OS must be supported by Microsoft
+Unsupported devices are those running Windows 8.1 and under or Windows
+Server 2012/2012R2 and under.
+
+45
+
+1
+
+97%
+
+Device must be within warranty
+
+0
+
+0
+
+100%
+
+Average
+
+97%
+
+Executive Summary Report
+MONITORING (62%)
+Total Alerts by Priority
+Alert Priority
+Critical: 14
+High: 801
+
+1947
+
+Moderate: 174
+
+Raised
+
+Resolved Unresolved Score
+
+Critical
+
+14
+
+14
+
+0
+
+100%
+
+High
+
+801
+
+28
+
+773
+
+3%
+
+Moderate
+
+174
+
+14
+
+160
+
+8%
+
+0
+
+0
+
+0
+
+100%
+
+958
+
+958
+
+0
+
+100%
+
+Low: 0
+Information: 958
+
+Low
+Information
+Average
+
+62%
+
+Total Alerts by Device Type
+
+Device Type
+
+Unresolved: 933
+
+1947
+
+Resolved: 1014
+
+Raised Resolved
+
+Unresolved
+
+Desktop
+
+1644
+
+772
+
+872
+
+Laptop
+
+253
+
+203
+
+50
+
+Server
+
+50
+
+39
+
+11
+
+Total
+
+1947
+
+1014
+
+933
+
+Top 5 Servers by Alerts
+Device Name
+
+Description
+
+SERVER2025
+
+REA-SERVER2025
+
+Critical
+
+High
+
+14
+
+Moderate
+28
+
+Low
+8
+
+Information
+0
+
+0
+
+Top 5 Other Devices by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+DWA-BIOMASS
+
+DWA-Biomass
+
+0
+
+147
+
+0
+
+0
+
+258
+
+DWA-PRODUCTION
+
+DWA-PRODUCTION
+
+0
+
+138
+
+1
+
+0
+
+146
+
+DWA-GEORGE-PAYROLL
+
+DESKTOP-GAH2GD4
+
+0
+
+50
+
+0
+
+0
+
+130
+
+DWA-HORTICULTURE
+
+DWA-HORTICULTURE
+
+0
+
+48
+
+1
+
+0
+
+127
+
+DWA-JOHNMUNYOKI
+
+DWA-JOHNMUNYOKI
+
+0
+
+23
+
+0
+
+0
+
+151
+
+Executive Summary Report
+PATCH MANAGEMENT (19%)
+Server Patch Status
+
+Fully Patched: 0
+
+Total
+1
+
+Approved Pending: 0
+
+1
+
+Fully Patched
+
+Score
+0
+
+0%
+
+Install Error: 1
+Reboot Required: 0
+No Data: 0
+No Policy: 0
+
+Workstation Patch Status
+
+Fully Patched: 9
+Approved Pending: 27
+
+45
+
+Install Error: 7
+Reboot Required: 1
+No Data: 0
+No Policy: 1
+
+Total
+
+Fully Patched
+45
+
+Score
+9
+
+20%
+
+Executive Summary Report
+SOFTWARE MANAGEMENT (0%)
+Server Software Status
+Total
+
+Compliant
+1
+
+Score
+0
+
+0%
+
+Compliant: 0
+
+1
+
+Not Compliant: 1
+Unmanaged: 0
+
+Workstation Software Status
+Total
+
+Compliant
+45
+
+Compliant: 0
+
+45
+
+Not Compliant: 45
+Unmanaged: 0
+
+Score
+0
+
+0%
+
+Executive Summary Report
+ANTIVIRUS (76%)
+Server Antivirus Status
+Total
+1
+
+Running and Up to Date: 0
+
+1
+
+Up to date
+0
+
+Not up to date Not Running Score
+0
+
+1
+
+0%
+
+Not up to date: 0
+Not Running: 1
+Not Detected: 0
+
+Workstation Antivirus Status
+Total
+Running and Up to Date: 35
+Not up to date: 2
+
+45
+
+Not Running: 8
+Not Detected: 0
+
+45
+
+Up to date
+35
+
+Not up to date Not Running Score
+2
+
+8
+
+77%
+
+Executive Summary Report
+PROACTIVE MAINTENANCE
+No Data
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Hardware Lifecycle - REA Vipingo Planatations Limited.pdf ---
+Hardware Lifecycle Report
+Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
+Create Date: 05 FEB 2026 09:22 (EAT)
+Sites: REA Vipingo Planatations Ltd.
+Devices: 46
+
+Hardware Lifecycle Report
+SUMMARY
+Hardware Replacement Recommendations
+
+Suitable for 24 months+: 25
+
+46
+
+Replacement recommended within 12-24 months: 3
+Replacement recommended within 12 months: 18
+Unknown: 0
+
+Period
+
+Age
+
+Quantity
+
+Replacement recommended within 12 months
+
+4 years+
+
+18
+
+Replacement recommended within 12-24 months
+
+3-4 years
+
+3
+
+Suitable for 24 months+
+
+< 3 years
+
+25
+
+Unknown
+
+0
+
+Total Devices
+
+46
+
+Operating System Support
+
+Operating system is supported: 45
+
+46
+
+Operating system may be unsupported: 0
+Operating system is unsupported: 1
+
+Operating System Support*
+
+Quantity
+
+Operating system is supported
+
+45
+
+Operating system is unsupported unless manufacturer extended support has been arranged
+
+0
+
+Operating system is unsupported
+
+1
+
+Total Devices
+
+46
+
+Windows operating system support only. Non-Windows OS are counted as supported.
+
+Hardware Lifecycle Report
+REA VIPINGO PLANATATIONS LTD.
+Hardware replacement advised within 12 months (Over 4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+Oyugi
+
+DWA-ROBERTSECURITY
+
+DWA-PPESTOCK
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 7
+Professional 6.1.7601
+
+SERVER2012
+0\Oyugi
+
+TRF2190Z
+NJ
+
+23 MAR
+2012
+
+DWA-PPESTOCK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAPPESTOCK\P
+C
+
+8W8FPV1
+
+01 FEB
+2013
+
+DWACLINIC-PC
+
+DWACLINIC-PC
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWACLINIC- ES1151072
+PC\DWACLINI 4
+C
+
+18 FEB
+2013
+
+DWA-BECKYPRODUCTION
+
+DWA-BECKYPRODUCTION
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-BECKY- TRF42306Y
+PRODU\Produ Z
+ction-PC
+
+25 OCT
+2013
+
+DWA-FUELSTATION
+
+DWA-FUELSTATION
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\horace
+
+CZC64799
+QK
+
+04 NOV
+2016
+
+DWA-JOSEPH
+
+DWA-JOSEPH
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Joseph
+
+CZC7097D
+2Y
+
+06 FEB
+2017
+
+REA-KEVIN
+
+DWA-KEVIN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Kevin
+
+CZC709759
+S
+
+06 FEB
+2017
+
+DWA-PARTSTORES
+
+DWA-PARTSTORES
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Pat
+
+4CE73638B
+R
+
+17 JUL
+2017
+
+DWAHORTICULTURE
+
+DWAHORTICULTURE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAPC0T68BQ
+HORTICULTU
+R\Horticulture
+
+09 NOV
+2017
+
+DWA-LETTY
+
+DWA-LETTY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\LETTY
+
+PC0T684S
+
+09 NOV
+2017
+
+DWA-PAYROLL-1
+
+PAYROL-OFFICE1
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAPAYROLL1\Beth
+
+PC0T687M
+
+09 NOV
+2017
+
+DWA-CLINICRECORDS
+
+DWA-CLINICRECORDS
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA-CLINICRECO\Clinic
+
+4CE8103R
+P1
+
+31 JAN
+2018
+
+DWA-MARY
+
+DWA-MARY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Mary
+
+YL00WKCS
+
+31 JAN
+2020
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+DWA-IRENE
+
+DWA-IRENE
+
+DWA-ERICK
+
+Last User
+
+Serial
+Number
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Nandi
+
+PC0P8PLY
+
+18 SEP
+2020
+
+PATRICA2019
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+SERVER2012
+0\erick
+
+PC0ZJ1SU
+
+28 OCT
+2020
+
+DWA-NDINDA
+
+DWA-NDINDA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Ndinda
+
+PC0ZJ1SN
+
+28 OCT
+2020
+
+DWA-ROBERT
+
+DWA-ROBERT
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Robert
+
+PC0ZJ1RR
+
+28 OCT
+2020
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\musyoki
+
+PC0ZJ1RM
+
+28 OCT
+2020
+
+Last User
+
+Serial
+Number
+
+DWA-STEVE-STORES DWA-STEVE-STORE
+
+OS
+Support
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Hardware replacement advised within 12-24 months (Between 3-4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+DWA-TOM-EMG
+
+DWA-TONY-ENG
+
+Microsoft Windows 11
+Pro 10.0.22000
+
+DWA-TOMEMG\Tom
+Ojijo
+
+MP24RKH9
+
+08 JUL
+2022
+
+DWA-EMS-OFFICE
+
+EM-OFFICE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\EM-OFFICE
+
+8CG9356W
+5N
+
+27 JUL
+2022
+
+DWA-SHADRACK
+
+DWA-SHADRACK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\Shadrack
+
+8CG938NJ
+6K
+
+27 JUL
+2022
+
+Last User
+
+Serial
+Number
+
+Hardware suitable for 24+ months (Less than 3 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+DWA-PRISCILA
+
+DWA-PRISCILA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWA4CE9291FT
+PRISCILA\PRI K
+SCILLA
+
+27 JUN
+2023
+
+REA-KALORI
+
+DWA-KALORI
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA4CE9291F
+KALORI\Kalori RQ
+
+27 JUN
+2023
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+DWA-MWAMBA
+
+DWA-MWAMBA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAGM0D194N
+MWAMBA\Mw
+ambaG
+
+03 JUL
+2023
+
+DWA-WILSONK
+
+DWA-WILSONK
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\WilsonK
+
+GM0D194H
+
+03 JUL
+2023
+
+DWAWorkshop
+
+ManagerEng
+
+Microsoft Windows 11
+Home Single
+Language 10.0.22631
+
+DWAWORKS
+HOP\dwaen
+
+5CD345DW
+20
+
+03 JUL
+2023
+
+DWA-GEORGEPAYROLL
+
+DESKTOP-GAH2GD4
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWAGEORGEPAYR\Payroll
+
+PC2FAZ58
+
+25 DEC
+2023
+
+SERVER2025
+
+REA-SERVER2025
+
+Microsoft Windows
+Server 2025 Standard
+10.0.26100
+
+SERVER2012 CZUD2N01
+0\Administrator 5R
+
+06 DEC
+2024
+
+DWA-ANNETSTORES
+
+DWA-ANNETSTORES
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Annet
+
+CZC9187Q
+7Y
+
+30 DEC
+2024
+
+DWA-BIOMASS
+
+DWA-Biomass
+
+Microsoft Windows 11
+Pro 10.0.26100
+
+DWABIOMASS\US
+ER
+
+4CE338DD
+GK
+
+20 MAR
+2025
+
+DWA-ESTHER
+
+DWA-ESTHER
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Esther
+
+4CE351F4
+KP
+
+20 MAR
+2025
+
+DWA-MATHIAS
+
+DWA-MATHIAS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Mathias
+
+4CE351F4
+RP
+
+20 MAR
+2025
+
+DWA-WANZA
+
+DWA-WANZA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Gladys
+
+4CE351F51
+5
+
+20 MAR
+2025
+
+DWA-EMMA
+
+ADMIN-PC
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DWAEMMA\AdminI
+T
+
+8CC1202Z
+RL
+
+26 MAR
+2025
+
+NEIL
+
+LAPTOP-OBD6T1EB
+
+Microsoft Windows 11
+Home 10.0.26100
+
+NEIL\NEIL
+
+1H85402W
+V7
+
+04 JUN
+2025
+
+DWA-ANCENT
+
+KADIMA-PC
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\kadima
+
+31J9GJ3
+
+12 JUN
+2025
+
+DWA-BENJAMINLEGAL
+
+DWA-BENJAMINLEGAL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWABENJAMINLE\Legal
+
+J1J9GJ3
+
+12 JUN
+2025
+
+DWA-MAURICESTORES
+
+DWA-MAURICESTORES
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+SERVER2012
+0\maurice
+
+HWH9GJ3
+
+12 JUN
+2025
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+DWA-ANTONY
+
+DWA-ANTONY
+
+DWA-FIRDAUS
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Kinyamasyo
+
+4CE408CW
+8H
+
+12 AUG
+2025
+
+DWA-FIRDAUS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Firdaus
+
+4CE451DR
+P7
+
+12 AUG
+2025
+
+DWA-JAPHETH
+
+DWA-JAPHETH
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Japheth
+
+4CE351F4
+PG
+
+12 AUG
+2025
+
+DWA-NDUNGESTORES
+
+DWA-NDUNGESTORES
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\STORES
+
+4CE334CY
+1G
+
+12 AUG
+2025
+
+DWA-PRODUCTION
+
+DWA-PRODUCTION
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DWA4CE351F4
+PRODUCTION V2
+\USER
+
+12 AUG
+2025
+
+DWA-TERESA
+
+DWA-TERESA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+SERVER2012
+0\Teresa
+
+4CE502BS
+YK
+
+12 AUG
+2025
+
+DWA-JOHNMUNYOKI DWA-JOHNMUNYOKI Microsoft Windows 11
+Pro 10.0.22631
+
+DWA5CD4024V
+JOHNMUNYO K1
+KI\USER
+
+26 AUG
+2025
+
+TECHNICALMANGER- TECHNICALMANGER- Microsoft Windows 11
+ENG
+ENG
+Pro 10.0.26200
+
+TECHNICALM 4CE409B6
+ANGER\USER FN
+
+24 OCT
+2025
+
+*Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Patch Management Summary - REA Vipingo Planatations Limited.pdf ---
+Patch Management Summary Report
+Description: This report shows the patch status by device
+Create Date: 05 FEB 2026 09:24 (EAT)
+Sites: REA Vipingo Planatations Ltd.
+Devices: 46
+
+Patch Management Summary Report
+PATCH SUMMARY
+
+Fully Patched: 9
+Approved Pending: 27
+Install Error: 8
+Reboot Required: 1
+No Data: 0
+
+46
+
+No Policy: 1
+
+REA Vipingo Planatations Ltd.
+Servers
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+SERVER2025
+
+REA-SERVER2025
+
+26 JAN 2026
+16:28 (EAT)
+
+8
+
+3
+
+0
+
+Install
+Error
+
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+DWACLINIC-PC
+
+DWACLINIC-PC
+
+07 FEB 2025
+17:39 (EAT)
+
+63
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-PRISCILA
+
+DWA-PRISCILA
+
+05 FEB 2026
+07:18 (EAT)
+
+9
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-TOM-EMG
+
+DWA-TONY-ENG
+
+28 JAN 2026
+08:11 (EAT)
+
+76
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-JOHNMUNYOKI DWA-JOHNMUNYOKI
+
+05 FEB 2026
+08:17 (EAT)
+
+9
+
+4
+
+0
+
+Install
+Error
+
+DWA-EMMA
+
+ADMIN-PC
+
+04 FEB 2026
+16:40 (EAT)
+
+15
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-EMS-OFFICE
+
+EM-OFFICE
+
+06 JAN 2026
+11:12 (EAT)
+
+11
+
+7
+
+0
+
+Approved
+Pending
+
+DWA-LETTY
+
+DWA-LETTY
+
+03 FEB 2026
+07:03 (EAT)
+
+78
+
+0
+
+0
+
+Install
+Error
+
+DWA-PARTSTORES
+
+DWA-PARTSTORES
+
+28 JAN 2026
+07:13 (EAT)
+
+12
+
+1
+
+0
+
+Install
+Error
+
+TECHNICALMANGER
+TECHNICALMANGER-ENG
+-ENG
+
+02 FEB 2026
+07:41 (EAT)
+
+5
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-MATHIAS
+
+DWA-MATHIAS
+
+02 FEB 2026
+07:11 (EAT)
+
+7
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-WANZA
+
+DWA-WANZA
+
+05 FEB 2026
+07:01 (EAT)
+
+4
+
+3
+
+0
+
+Install
+Error
+
+DWA-BIOMASS
+
+DWA-Biomass
+
+05 FEB 2026
+07:02 (EAT)
+
+7
+
+4
+
+0
+
+Approved
+Pending
+
+DWA-PPESTOCK
+
+DWA-PPESTOCK
+
+03 FEB 2026
+12:43 (EAT)
+
+77
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-SHADRACK
+
+DWA-SHADRACK
+
+04 FEB 2026
+07:05 (EAT)
+
+11
+
+2
+
+0
+
+Approved
+Pending
+
+Workstations
+
+Patch Management Summary Report
+REA Vipingo Planatations Ltd.
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+DWA-WILSONK
+
+DWA-WILSONK
+
+27 JAN 2026
+08:26 (EAT)
+
+6
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-JOSEPH
+
+DWA-JOSEPH
+
+28 JAN 2026
+11:32 (EAT)
+
+8
+
+1
+
+0
+
+Install
+Error
+
+DWAWorkshop
+
+ManagerEng
+
+05 FEB 2026
+06:56 (EAT)
+
+8
+
+3
+
+0
+
+Approved
+Pending
+
+DWA-MWAMBA
+
+DWA-MWAMBA
+
+28 JAN 2026
+08:48 (EAT)
+
+10
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-ESTHER
+
+DWA-ESTHER
+
+31 JAN 2026
+07:07 (EAT)
+
+71
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-GEORGEPAYROLL
+
+DESKTOP-GAH2GD4
+
+05 FEB 2026
+07:04 (EAT)
+
+64
+
+4
+
+0
+
+Install
+Error
+
+DWA-BECKYPRODUCTION
+
+DWA-BECKY-PRODUCTION
+
+03 FEB 2026
+04:24 (EAT)
+
+75
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-ERICK
+
+PATRICA2019
+
+04 FEB 2026
+16:30 (EAT)
+
+22
+
+1
+
+0
+
+Reboot
+Required
+
+REA-KALORI
+
+DWA-KALORI
+
+02 FEB 2026
+16:35 (EAT)
+
+10
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-TERESA
+
+DWA-TERESA
+
+05 FEB 2026
+08:24 (EAT)
+
+8
+
+3
+
+0
+
+Approved
+Pending
+
+DWA-IRENE
+
+DWA-IRENE
+
+04 FEB 2026
+07:40 (EAT)
+
+80
+
+1
+
+0
+
+Approved
+Pending
+
+Oyugi
+
+DWA-ROBERT-SECURITY
+
+20 JAN 2026
+11:05 (EAT)
+
+231
+
+5
+
+0
+
+Install
+Error
+
+DWA-PAYROLL-1
+
+PAYROL-OFFICE1
+
+03 FEB 2026
+07:13 (EAT)
+
+10
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-ANCENT
+
+KADIMA-PC
+
+29 JAN 2026
+10:35 (EAT)
+
+4
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-NDINDA
+
+DWA-NDINDA
+
+03 FEB 2026
+16:28 (EAT)
+
+9
+
+0
+
+0
+
+Fully
+Patched
+
+DWA-FIRDAUS
+
+DWA-FIRDAUS
+
+03 FEB 2026
+07:11 (EAT)
+
+7
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-NDUNGESTORES
+
+DWA-NDUNGE-STORES
+
+28 JAN 2026
+08:25 (EAT)
+
+4
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-ROBERT
+
+DWA-ROBERT
+
+05 FEB 2026
+06:57 (EAT)
+
+7
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-STEVESTORES
+
+DWA-STEVE-STORE
+
+26 JAN 2026
+09:23 (EAT)
+
+10
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-ANNETSTORES
+
+DWA-ANNET-STORES
+
+28 JAN 2026
+08:19 (EAT)
+
+73
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-PRODUCTION
+
+DWA-PRODUCTION
+
+04 FEB 2026
+05:31 (EAT)
+
+7
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-ANTONY
+
+DWA-ANTONY
+
+02 FEB 2026
+07:12 (EAT)
+
+5
+
+2
+
+0
+
+Approved
+Pending
+
+DWA-BENJAMINLEGAL
+
+DWA-BENJAMIN-LEGAL
+
+03 FEB 2026
+14:45 (EAT)
+
+4
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-FUELSTATION
+
+DWA-FUELSTATION
+
+02 FEB 2026
+05:46 (EAT)
+
+11
+
+1
+
+0
+
+Approved
+Pending
+
+Patch Management Summary Report
+REA Vipingo Planatations Ltd.
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+DWA-CLINICRECORDS
+
+DWA-CLINIC-RECORDS
+
+03 FEB 2026
+05:50 (EAT)
+
+78
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-MARY
+
+DWA-MARY
+
+05 FEB 2026
+07:14 (EAT)
+
+76
+
+1
+
+0
+
+Approved
+Pending
+
+DWA-MAURICESTORES
+
+DWA-MAURICE-STORES
+
+13 JAN 2026
+15:23 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+REA-KEVIN
+
+DWA-KEVIN
+
+05 FEB 2026
+09:01 (EAT)
+
+13
+
+0
+
+0
+
+Fully
+Patched
+
+DWAHORTICULTURE
+
+DWA-HORTICULTURE
+
+04 FEB 2026
+06:46 (EAT)
+
+77
+
+2
+
+0
+
+Approved
+Pending
+
+NEIL
+
+LAPTOP-OBD6T1EB
+
+16 DEC 2025
+10:54 (EAT)
+
+1
+
+0
+
+3
+
+No Policy
+
+DWA-JAPHETH
+
+DWA-JAPHETH
+
+04 FEB 2026
+07:02 (EAT)
+
+10
+
+1
+
+0
+
+Approved
+Pending
+
+
+

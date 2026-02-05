@@ -1,7 +1,7 @@
 --- Content from PDF: Device Health Summary - Serenity Spa Limited.pdf ---
 Device Health Summary Report
 Description: This report shows the health of the selected managed devices.
-Create Date: 30 JAN 2026 12:20 (EAT)
+Create Date: 05 FEB 2026 09:18 (EAT)
 Sites: Serenity Spa
 Devices: 48
 
@@ -517,7 +517,7 @@ Alerts
 Device Storage Report
 Description: This report lists all the disks available on the selected devices including their
 available disk space.
-Create Date: 30 JAN 2026 12:20 (EAT)
+Create Date: 05 FEB 2026 09:22 (EAT)
 Sites: Serenity Spa
 Devices: 48
 
@@ -590,33 +590,33 @@ Free
 
 Used %
 
-215.75GB
+215.73GB
 
 55.76%
 
-160.11GB
+157.15GB
 
-63.88%
+64.54%
 
-352.54MB
+363.75MB
 
-99.86%
+99.85%
 
 216.04MB
 
 99.90%
 
-86.81GB
+86.29GB
 
-53.79%
+54.06%
 
 254.74GB
 
 11.70%
 
-231.67GB
+232.15GB
 
-28.81%
+28.66%
 
 41.73GB
 
@@ -634,45 +634,45 @@ Used %
 
 7.46%
 
-122.40GB
+122.44GB
 
-48.65%
+48.63%
 
-335.42GB
+335.45GB
 
-29.34%
+29.33%
 
-402.80GB
+401.75GB
 
-15.40%
+15.62%
 
-355.46GB
+354.60GB
 
-25.34%
+25.52%
 
-169.44GB
+169.04GB
 
-28.56%
+28.73%
 
-390.81GB
+390.74GB
 
-17.93%
+17.94%
 
-353.62GB
+353.65GB
 
-25.73%
+25.72%
 
-370.68GB
+367.56GB
 
-22.16%
+22.81%
 
-284.68GB
+284.58GB
 
-40.20%
+40.22%
 
-366.14GB
+358.94GB
 
-20.70%
+22.26%
 
 464.91MB
 
@@ -682,17 +682,17 @@ Used %
 
 28.78%
 
-250.59GB
+249.48GB
 
-47.36%
+47.59%
 
 11.02GB
 
 98.82%
 
-348.60GB
+347.50GB
 
-26.76%
+26.99%
 
 Workstations
 Device Name
@@ -1058,23 +1058,23 @@ Free
 
 Used %
 
-79.83GB
+78.13GB
 
-66.39%
+67.10%
 
 337.08GB
 
 27.49%
 
-335.18GB
+347.27GB
 
-29.48%
+26.94%
 
-377.14GB
+367.13GB
 
-20.87%
+22.97%
 
-794.80GB
+794.79GB
 
 14.60%
 
@@ -1082,61 +1082,61 @@ Used %
 
 15.11%
 
-359.27GB
+358.78GB
 
-24.51%
+24.62%
 
-135.78GB
+135.26GB
 
-42.66%
+42.88%
 
-192.14GB
+193.17GB
 
-19.22%
+18.79%
 
 301.19GB
 
 36.62%
 
-227.84GB
+226.53GB
 
-52.13%
+52.40%
 
-48.00GB
+47.04GB
 
-79.82%
+80.22%
 
-302.25GB
+301.52GB
 
-36.49%
+36.65%
 
 357.79GB
 
 24.89%
 
-394.22GB
+391.57GB
 
-17.18%
+17.73%
 
-358.56GB
+357.28GB
 
-24.69%
+24.96%
 
-190.30GB
+190.71GB
 
-20.00%
+19.82%
 
-379.41GB
+386.85GB
 
-20.34%
+18.78%
 
 302.20MB
 
 13.65%
 
-170.66GB
+172.78GB
 
-31.39%
+30.55%
 
 226.52GB
 
@@ -1150,31 +1150,31 @@ Used %
 
 8.20%
 
-152.56GB
+159.18GB
 
-37.25%
+34.53%
 
-326.66GB
+327.68GB
 
-31.32%
+31.10%
 
-104.42GB
+103.80GB
 
-56.04%
+56.31%
 
 Local Fixed
-237.76GB 191.78GB
+237.76GB 191.66GB
 Disk
 Local Fixed
-475.99GB 343.71GB
+475.99GB 343.75GB
 Disk
 Local Fixed
-476.33GB 340.87GB
+476.33GB 358.79GB
 Disk
 
-19.34%
-27.79%
-28.44%
+19.39%
+27.78%
+24.68%
 
 Device Storage Report
 Device Name
@@ -1231,27 +1231,27 @@ Free
 
 Used %
 
-365.19GB
+366.04GB
 
-23.33%
+23.15%
 
-315.83GB
+314.45GB
 
-32.82%
+33.12%
 
 469.49MB
 
 8.12%
 
-361.95GB
+355.40GB
 
-23.96%
+25.34%
 
 Local Fixed
-476.02GB 367.32GB
+476.02GB 368.18GB
 Disk
 
-22.83%
+22.66%
 
 Local Fixed
 476.33GB
@@ -1267,18 +1267,18 @@ Local Fixed
 Disk
 
 Local Fixed
-237.86GB 198.61GB
+237.86GB 198.21GB
 Disk
 Local Fixed
-475.99GB 277.16GB
+475.99GB 278.43GB
 Disk
 Local Fixed
-476.12GB 359.14GB
+476.12GB 364.55GB
 Disk
 
-16.50%
-41.77%
-24.57%
+16.67%
+41.50%
+23.43%
 
 
 
@@ -1291,7 +1291,7 @@ Disk
 --- Content from PDF: Executive Summary - Serenity Spa Limited.pdf ---
 Executive Summary Report
 Description: This report shows the health of the delivered Managed Services.
-Create Date: 30 JAN 2026 12:20 (EAT)
+Create Date: 05 FEB 2026 09:16 (EAT)
 Sites: Serenity Spa
 Devices: 48
 
@@ -1302,7 +1302,7 @@ are delivered below.
 
 0%
 
-62%
+57%
 
 100%
 
@@ -1324,7 +1324,7 @@ Patch Management
 
 Software Management
 
-33%
+10%
 
 Antivirus
 
@@ -1332,7 +1332,7 @@ Antivirus
 
 Average Score
 
-62%
+57%
 
 Asset Management
 The Asset Management score represents the capability of the network to function as is required by today's standards.
@@ -1438,12 +1438,12 @@ Average
 MONITORING (59%)
 Total Alerts by Priority
 Alert Priority
-Critical: 57
-High: 1759
+Critical: 56
+High: 1707
 
-3729
+3659
 
-Moderate: 366
+Moderate: 353
 
 Raised
 
@@ -1451,9 +1451,9 @@ Resolved Unresolved Score
 
 Critical
 
-57
-
 56
+
+55
 
 1
 
@@ -1461,21 +1461,21 @@ Critical
 
 High
 
-1759
+1707
 
 1
 
-1758
+1706
 
 0%
 
 Moderate
 
-366
+353
 
 4
 
-362
+349
 
 1%
 
@@ -1487,16 +1487,16 @@ Moderate
 
 100%
 
-1547
+1543
 
-1546
+1541
 
-1
+2
 
 99%
 
 Low: 0
-Information: 1547
+Information: 1543
 
 Low
 Information
@@ -1508,47 +1508,47 @@ Total Alerts by Device Type
 
 Device Type
 
-Unresolved: 2122
+Unresolved: 2058
 
-3729
+3659
 
-Resolved: 1607
+Resolved: 1601
 
 Raised Resolved
 
 Unresolved
 
-Desktop
-
-2486
-
-925
-
-1561
-
 Laptop
 
-785
+782
 
-584
+582
 
-201
+200
+
+Desktop
+
+2436
+
+923
+
+1513
 
 Server
 
-458
+441
 
-98
+96
 
-360
+345
 
 Total
 
-3729
+3659
 
-1607
+1601
 
-2122
+2058
 
 Top 5 Servers by Alerts
 Device Name
@@ -1573,7 +1573,7 @@ Gigiri-svr
 
 5
 
-208
+197
 
 0
 
@@ -1585,13 +1585,13 @@ SERKRN-SVR
 
 11
 
-58
+56
 
 54
 
 0
 
-23
+22
 
 SERKIT-SVR
 
@@ -1611,9 +1611,9 @@ SERTIG-SVR
 
 JANI-QUICKBOOKS
 
-21
+20
 
-18
+16
 
 2
 
@@ -1642,13 +1642,13 @@ SERKERN-KITCHEN
 
 0
 
-549
+521
 
 2
 
 0
 
-117
+121
 
 SERTIG-KITCHEN
 
@@ -1662,7 +1662,7 @@ SERTIG-KITCHEN
 
 0
 
-128
+127
 
 SERKIT-KITCHEN
 
@@ -1670,13 +1670,13 @@ SERKIT-KITCHEN
 
 0
 
-242
+235
 
 2
 
 0
 
-221
+216
 
 SERGIG-EPHRAIM
 
@@ -1684,13 +1684,13 @@ SERGIG-EPHRAIM
 
 0
 
-24
+25
 
 0
 
 0
 
-97
+96
 
 Executive Summary Report
 Device Name
@@ -1715,27 +1715,27 @@ Low
 Information
 0
 
-111
+109
 
 Executive Summary Report
 PATCH MANAGEMENT (25%)
 Server Patch Status
 
-Fully Patched: 2
+Fully Patched: 1
 
 Total
 4
 
-Approved Pending: 0
+Approved Pending: 1
 
 4
 
 Fully Patched
 
 Score
-2
+1
 
-50%
+25%
 
 Install Error: 1
 Reboot Required: 1
@@ -1744,13 +1744,13 @@ No Policy: 0
 
 Workstation Patch Status
 
-Fully Patched: 10
-Approved Pending: 24
+Fully Patched: 11
+Approved Pending: 19
 
 44
 
-Install Error: 7
-Reboot Required: 2
+Install Error: 9
+Reboot Required: 4
 No Data: 1
 No Policy: 0
 
@@ -1760,12 +1760,12 @@ Fully Patched
 44
 
 Score
-10
+11
 
-22%
+25%
 
 Executive Summary Report
-SOFTWARE MANAGEMENT (33%)
+SOFTWARE MANAGEMENT (10%)
 Server Software Status
 Total
 
@@ -1773,15 +1773,15 @@ Compliant
 4
 
 Score
-3
+1
 
-75%
+25%
 
-Compliant: 3
+Compliant: 1
 
 4
 
-Not Compliant: 1
+Not Compliant: 3
 Unmanaged: 0
 
 Workstation Software Status
@@ -1790,17 +1790,17 @@ Total
 Compliant
 44
 
-Compliant: 13
+Compliant: 4
 
 44
 
-Not Compliant: 31
+Not Compliant: 40
 Unmanaged: 0
 
 Score
-13
+4
 
-29%
+9%
 
 Executive Summary Report
 ANTIVIRUS (97%)
@@ -1863,7 +1863,7 @@ No Data
 --- Content from PDF: Hardware Lifecycle - Serenity Spa Limited.pdf ---
 Hardware Lifecycle Report
 Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
-Create Date: 30 JAN 2026 12:20 (EAT)
+Create Date: 05 FEB 2026 09:20 (EAT)
 Sites: Serenity Spa
 Devices: 48
 
@@ -1875,8 +1875,8 @@ Suitable for 24 months+: 31
 
 48
 
-Replacement recommended within 12-24 months: 3
-Replacement recommended within 12 months: 14
+Replacement recommended within 12-24 months: 4
+Replacement recommended within 12 months: 13
 Unknown: 0
 
 Period
@@ -1889,13 +1889,13 @@ Replacement recommended within 12 months
 
 4 years+
 
-14
+13
 
 Replacement recommended within 12-24 months
 
 3-4 years
 
-3
+4
 
 Suitable for 24 months+
 
@@ -1958,6 +1958,18 @@ Last User
 
 Serial
 Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
 
 SERKIT-Coffee-shop
 
@@ -2063,16 +2075,6 @@ riel
 19 MAY
 2016
 
-SERKIT-BACKOFFICE SERKIT-BACKOFFICE Microsoft Windows 10
-Enterprise 10.0.19045
-
-SERKITCND70822
-BACKOFFI\Se 8T
-renity
-
-27 OCT
-2016
-
 SERKIT-VANESSA
 
 SERKIT-VANESSA
@@ -2112,47 +2114,15 @@ Standard 6.3.9600
 
 SERKITSVR\Eldama
 
-20 APR
-2017
-
 4CE7223JT
 Q
 
-Disk
-Space
-
-RAM
-Under
-Online
-Quantity Warranty Within
-Last 30
-Days
-
-Build Date*
-
-Hardware Lifecycle Report
-Device Name
-
-Device Description
-
-Operating System
+20 APR
+2017
 
 SERGIG-SVR
 
 Gigiri-svr
-
-SERGIG-FOLAPTOP
-
-Gigiri Front Desk
-Laptop
-
-OS
-Support
-
-Last User
-
-Serial
-Number
 
 Microsoft Windows
 Server 2019
@@ -2165,8 +2135,43 @@ PC182A6L
 14 AUG
 2019
 
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+SERGIG-FOLAPTOP
+
+Gigiri Front Desk
+Laptop
+
 Microsoft Windows 10
 Enterprise 10.0.19045
+
+OS
+Support
+
+SERGIG-FRONTDESK SERGIG-FRONTDESK Microsoft Windows 11
+Pro 10.0.26200
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
 
 SERGIGCND6369J
 FOLAPTOP\Fr 9C
@@ -2189,21 +2194,6 @@ Last User
 Serial
 Number
 
-SERGIG-FRONTDESK SERGIG-FRONTDESK Microsoft Windows 11
-Pro 10.0.26200
-
-Disk
-Space
-
-RAM
-Under
-Online
-Quantity Warranty Within
-Last 30
-Days
-
-Build Date*
-
 Hardware replacement advised within 12-24 months (Between 3-4 years old)
 Device Name
 
@@ -2225,6 +2215,16 @@ Last 30
 Days
 
 Build Date*
+
+SERKIT-BACKOFFICE SERKIT-BACKOFFICE Microsoft Windows 10
+Enterprise 10.0.19045
+
+SERKITCND70822
+BACKOFFI\Se 8T
+renity
+
+15 MAR
+2022
 
 SERGIGCOFFEESHOP
 
@@ -2451,8 +2451,8 @@ Home Single
 Language 10.0.19045
 
 SERKITCND9131F
-BEATRICE\Ad 73
-ministrator
+BACKOFFI\BA 73
+CK-OFFICE
 
 20 AUG
 2024
@@ -2644,38 +2644,6 @@ ont desk1
 12 AUG
 2025
 
-SERTIGFRONTDESK1
-
-SERTIGFRONTDESK1
-
-Microsoft Windows 11
-Pro for Workstations
-10.0.26200
-
-SERTIG4CE336C5
-FRONTDES\S WB
-ERTIGFRONTDESK1
-
-12 AUG
-2025
-
-SERTIGFRONTDESK2
-
-SERTIGFRONTDESK2
-
-Microsoft Windows 11
-Pro for Workstations
-10.0.26200
-
-SERTIGFRONTDES\F
-RONTDESK2
-
-4CE338DD
-T0
-
-12 AUG
-2025
-
 PSSurface
 
 PSSurface
@@ -2739,38 +2707,9 @@ QX
 22 AUG
 2025
 
-Hardware Lifecycle Report
-Device Name
-
-Device Description
-
-Operating System
-
 SERGIG-JACK
 
 SERGIG-JACK
-
-SERKIT-LYNN
-
-OS
-Support
-
-Last User
-
-Serial
-Number
-
-Disk
-Space
-
-RAM
-Under
-Online
-Quantity Warranty Within
-Last 30
-Days
-
-Build Date*
 
 Microsoft Windows 11
 Pro 10.0.26200
@@ -2782,6 +2721,8 @@ SERGIGJACK\Jack
 
 22 AUG
 2025
+
+SERKIT-LYNN
 
 SERKIT-LYNN
 
@@ -2812,9 +2753,26 @@ G
 22 AUG
 2025
 
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
 SERGIG-CHARLES
 
 SERGIG-CHARLES
+
+SERKAREN-FRONT2
+
+OS
+Support
+
+Last User
+
+Serial
+Number
 
 Microsoft Windows 11
 Pro for Workstations
@@ -2831,8 +2789,6 @@ arles
 
 SERKAREN-FRONT2
 
-SERKAREN-FRONT2
-
 Microsoft Windows 11
 Pro for Workstations
 10.0.26200
@@ -2845,6 +2801,50 @@ KAREN
 
 23 OCT
 2025
+
+SERTIGFRONTDESK1
+
+SERTIGFRONTDESK1
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERTIG4CE336C5
+FRONTDES\S WB
+ERTIGFRONTDESK1
+
+24 OCT
+2025
+
+SERTIGFRONTDESK2
+
+SERTIGFRONTDESK2
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+SERTIGFRONTDES\F
+RONTDESK2
+
+24 OCT
+2025
+
+4CE338DD
+T0
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
 
 *Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
 
@@ -2859,7 +2859,7 @@ KAREN
 --- Content from PDF: Patch Management Summary - Serenity Spa Limited.pdf ---
 Patch Management Summary Report
 Description: This report shows the patch status by device
-Create Date: 30 JAN 2026 12:20 (EAT)
+Create Date: 05 FEB 2026 09:23 (EAT)
 Sites: Serenity Spa
 Devices: 48
 
@@ -2867,9 +2867,9 @@ Devices: 48
 PATCH SUMMARY
 
 Fully Patched: 12
-Approved Pending: 24
-Install Error: 8
-Reboot Required: 3
+Approved Pending: 20
+Install Error: 10
+Reboot Required: 5
 No Data: 1
 
 48
@@ -2894,37 +2894,21 @@ Not Approved
 Patch
 Status
 
-SERKIT-SVR
+SERGIG-SVR
 
-SERKIT-SVR
+Gigiri-svr
 
-15 DEC 2025
-08:38 (EAT)
+28 JAN 2026
+15:21 (EAT)
 
-101
+10
 
-0
-
-0
-
-Fully
-Patched
-
-SERKRN-SEVR
-
-SERKRN-SVR
-
-25 JAN 2026
-08:34 (EAT)
-
-7
-
-2
+1
 
 0
 
-Install
-Error
+Approved
+Pending
 
 SERTIG-SVR
 
@@ -2942,14 +2926,30 @@ JANI-QUICKBOOKS
 Reboot
 Required
 
-SERGIG-SVR
+SERKRN-SEVR
 
-Gigiri-svr
+SERKRN-SVR
 
-28 JAN 2026
-15:21 (EAT)
+25 JAN 2026
+08:34 (EAT)
 
-11
+7
+
+2
+
+0
+
+Install
+Error
+
+SERKIT-SVR
+
+SERKIT-SVR
+
+15 DEC 2025
+08:38 (EAT)
+
+101
 
 0
 
@@ -2974,12 +2974,76 @@ Not Approved
 Patch
 Status
 
+SERGIG-EPHRAIM
+
+SERGIG-EPHRAIM
+
+02 FEB 2026
+09:57 (EAT)
+
+6
+
+2
+
+0
+
+Approved
+Pending
+
+SERKITFRONTDESK1
+
+SERKIT-FRONTDESK1
+
+31 JAN 2026
+08:51 (EAT)
+
+5
+
+0
+
+0
+
+Reboot
+Required
+
+SERGIG-Front-HP
+
+SERGIG-FRONTDESK1
+
+04 FEB 2026
+08:14 (EAT)
+
+9
+
+0
+
+0
+
+Fully
+Patched
+
+SERKRN-DENNIS
+
+SERGIG-WINIE SPARE
+
+31 JAN 2026
+14:14 (EAT)
+
+8
+
+1
+
+0
+
+Approved
+Pending
+
 SERKIT-Frontdesk
 
 SERKIT-FRONTDESK2
 
-30 JAN 2026
-08:02 (EAT)
+04 FEB 2026
+17:53 (EAT)
 
 11
 
@@ -2990,62 +3054,14 @@ SERKIT-FRONTDESK2
 Fully
 Patched
 
-SERTIGFRONTDESK1
+SERGIG-KITCHEN
 
-SERTIG-FRONTDESK1
+SERGIG-KITCHEN
 
-21 JAN 2026
-08:16 (EAT)
+02 FEB 2026
+12:02 (EAT)
 
-6
-
-2
-
-0
-
-Approved
-Pending
-
-SERGIG-Gabriel
-
-Kitisuru
-
-06 AUG 2024
-09:51 (EAT)
-
-9
-
-2
-
-0
-
-Approved
-Pending
-
-SERTIG-SAMUEL
-
-SERTIG-SAMUEL
-
-19 JAN 2026
-16:22 (EAT)
-
-4
-
-2
-
-0
-
-Approved
-Pending
-
-SERKIT-Coffee-shop
-
-SERKIT-COFFEE SHOP
-
-28 JAN 2026
-16:32 (EAT)
-
-70
+7
 
 0
 
@@ -3054,37 +3070,53 @@ SERKIT-COFFEE SHOP
 Fully
 Patched
 
-DESKTOP-9N2SFLI
+SERGIGCOFFEESHOP
 
-DESKTOP-9N2SFLI
+Jani-Jonathan
 
-25 NOV 2025
-17:06 (EAT)
+23 JAN 2026
+16:35 (EAT)
 
-1
+8
 
-19
+0
+
+0
+
+Fully
+Patched
+
+SERBTC-JOYCE
+
+SERBTC-JOYCE
+
+04 FEB 2026
+19:56 (EAT)
+
+5
+
+3
 
 0
 
 Approved
 Pending
 
-SERKIT-LYNN
+DESKTOP-VKRMBR2
 
-SERKIT-LYNN
+DESKTOP-VKRMBR2
 
-30 JAN 2026
-11:21 (EAT)
+03 FEB 2026
+09:28 (EAT)
 
-6
-
-7
+8
 
 0
 
-Approved
-Pending
+0
+
+Fully
+Patched
 
 SERBTYC-ZAMA
 
@@ -3102,53 +3134,21 @@ SERBTYC-ZAMA
 Install
 Error
 
-SERGIGFRONTDESK
+SERTIGFRONTDESK2
 
-SERGIG-FRONTDESK
+SERTIG-FRONTDESK2
 
-29 JAN 2026
-21:07 (EAT)
+04 FEB 2026
+08:30 (EAT)
 
 7
 
-1
+0
 
 0
 
-Approved
-Pending
-
-SERGIG-ESTHER
-
-Gigiri
-
-29 JAN 2026
-12:20 (EAT)
-
-69
-
-2
-
-0
-
-Approved
-Pending
-
-PSSurface
-
-PSSurface
-
-19 JAN 2026
-10:24 (EAT)
-
-5
-
-2
-
-0
-
-Install
-Error
+Fully
+Patched
 
 Workstations
 
@@ -3170,260 +3170,37 @@ Not Approved
 Patch
 Status
 
-SBTC-DORIS
+SBTC-RECEPTION
 
-SBTYC-DORIS
+SBTC-RECEPTION
 
-28 JAN 2026
-09:00 (EAT)
-
-4
-
-5
-
-0
-
-Approved
-Pending
-
-SERKAREN-FRONT1
-
-SERKAREN-FRONT1
-
-29 JAN 2026
-12:23 (EAT)
-
-8
+05 FEB 2026
+08:55 (EAT)
 
 4
 
-0
-
-Approved
-Pending
-
-SERGIG-ELIZABETH
-
-SERGIG-ELIZABETH
-
-15 JAN 2026
-12:33 (EAT)
-
-6
-
-2
+1
 
 0
 
 Approved
 Pending
 
-SERGIG-JACK
+PSSurface
 
-SERGIG-JACK
+PSSurface
 
-29 JAN 2026
-10:22 (EAT)
+19 JAN 2026
+10:24 (EAT)
 
 5
 
-2
-
-0
-
-Approved
-Pending
-
-SERGIG-KITCHEN
-
-SERGIG-KITCHEN
-
-26 JAN 2026
-09:00 (EAT)
-
-7
-
-0
-
-0
-
-Fully
-Patched
-
-SERKIT-VANESSA
-
-SERKIT-VANESSA
-
-10 DEC 2025
-09:17 (EAT)
-
-10
-
-0
-
-0
-
-Fully
-Patched
-
-SERTIGFRONTDESK2
-
-SERTIG-FRONTDESK2
-
-28 JAN 2026
-08:16 (EAT)
-
-6
-
-2
-
-0
-
-Approved
-Pending
-
-SERGIGBACKOFFICE
-
-SERGIG-BACKOFFICE
-
-23 JAN 2026
-16:34 (EAT)
-
 5
-
-2
 
 0
 
 Install
 Error
-
-SERKRN-DENNIS
-
-SERGIG-WINIE SPARE
-
-23 JAN 2026
-07:59 (EAT)
-
-8
-
-1
-
-0
-
-Approved
-Pending
-
-SERKAREN-FRONT2
-
-SERKAREN-FRONT2
-
-26 JAN 2026
-12:42 (EAT)
-
-6
-
-1
-
-0
-
-Approved
-Pending
-
-SERTIG-KITCHEN
-
-SERTIG-KITCHEN
-
-30 JAN 2026
-10:33 (EAT)
-
-7
-
-0
-
-0
-
-Fully
-Patched
-
-SERGIG-KOINI
-
-SERGIG-KOINI
-
-22 DEC 2025
-15:19 (EAT)
-
-0
-
-0
-
-0
-
-No Data
-
-SERGIG-Front-HP
-
-SERGIG-FRONTDESK1
-
-17 JAN 2026
-22:50 (EAT)
-
-9
-
-0
-
-0
-
-Fully
-Patched
-
-SBTC-ROSE
-
-Petra Surface
-
-30 JAN 2026
-07:11 (EAT)
-
-7
-
-2
-
-0
-
-Install
-Error
-
-SERGIG-GABRIEL
-
-SERGIG-GABRIEL
-
-26 JAN 2026
-09:20 (EAT)
-
-6
-
-1
-
-0
-
-Approved
-Pending
-
-SERGIGCOFFEESHOP
-
-Jani-Jonathan
-
-23 JAN 2026
-16:35 (EAT)
-
-8
-
-0
-
-0
-
-Fully
-Patched
 
 SERKITBACKOFFICE
 
@@ -3434,6 +3211,22 @@ SERKIT-BACKOFFICE
 
 11
 
+1
+
+0
+
+Approved
+Pending
+
+SERKIT-LYNN
+
+SERKIT-LYNN
+
+04 FEB 2026
+10:37 (EAT)
+
+6
+
 2
 
 0
@@ -3441,64 +3234,80 @@ SERKIT-BACKOFFICE
 Approved
 Pending
 
-SERGIG-FOLAPTOP
+SERKIT-VANESSA
 
-Gigiri Front Desk Laptop
+SERKIT-VANESSA
 
-16 FEB 2024
-12:23 (EAT)
+31 JAN 2026
+08:42 (EAT)
 
-8
+10
+
+1
 
 0
+
+Approved
+Pending
+
+SERTIG-LENOX
+
+SERTIG-LENOX
+
+04 FEB 2026
+20:47 (EAT)
+
+10
+
+1
+
+0
+
+Approved
+Pending
+
+SERTIGFRONTDESK1
+
+SERTIG-FRONTDESK1
+
+04 FEB 2026
+08:34 (EAT)
+
+7
+
+0
+
+0
+
+Fully
+Patched
+
+SERKERN-KITCHEN
+
+SERKERN-KITCHEN
+
+05 FEB 2026
+07:46 (EAT)
+
+5
+
+1
 
 0
 
 Install
 Error
 
-SERGIG-VIOLET
+SERGIGFRONTDESK
 
-SERGIG-VIOLET
+SERGIG-FRONTDESK
 
-26 JAN 2026
-09:38 (EAT)
-
-3
-
-9
-
-0
-
-Approved
-Pending
-
-SERGIG-MaryM
-
-SERGIG-MARYM
-
-17 NOV 2025
-17:50 (EAT)
-
-71
-
-2
-
-0
-
-Reboot
-Required
-
-SERGIG-EPHRAIM
-
-SERGIG-EPHRAIM
-
-29 JAN 2026
-09:33 (EAT)
+02 FEB 2026
+11:17 (EAT)
 
 7
 
-2
+1
 
 0
 
@@ -3521,14 +3330,78 @@ SERGIG-MORAA
 Approved
 Pending
 
-DESKTOP-VKRMBR2
+SERGIG-FOLAPTOP
 
-DESKTOP-VKRMBR2
+Gigiri Front Desk Laptop
 
-30 JAN 2026
-04:39 (EAT)
+16 FEB 2024
+12:23 (EAT)
 
 8
+
+0
+
+0
+
+Install
+Error
+
+SERGIG-ESTHER
+
+Gigiri
+
+03 FEB 2026
+10:24 (EAT)
+
+69
+
+2
+
+0
+
+Approved
+Pending
+
+SERKAREN-FRONT1
+
+SERKAREN-FRONT1
+
+29 JAN 2026
+12:23 (EAT)
+
+7
+
+0
+
+0
+
+Reboot
+Required
+
+SERGIG-GABRIEL
+
+SERGIG-GABRIEL
+
+26 JAN 2026
+09:20 (EAT)
+
+6
+
+1
+
+0
+
+Approved
+Pending
+
+SERKITBACKOFFICE
+
+SERKIT-BACKOFFICE
+
+01 FEB 2026
+14:25 (EAT)
+
+9
 
 0
 
@@ -3537,16 +3410,144 @@ DESKTOP-VKRMBR2
 Fully
 Patched
 
-SERKARENBACKOFFICE
+SERKAREN-FRONT2
 
-SERGIG-FRONT1
+SERKAREN-FRONT2
 
-23 JAN 2026
-12:38 (EAT)
+01 FEB 2026
+23:23 (EAT)
 
 7
 
+0
+
+0
+
+Install
+Error
+
+SERGIG-MaryM
+
+SERGIG-MARYM
+
+04 FEB 2026
+15:36 (EAT)
+
+71
+
+7
+
+0
+
+Install
+Error
+
+SBTC-DORIS
+
+SBTYC-DORIS
+
+05 FEB 2026
+08:55 (EAT)
+
+4
+
+5
+
+0
+
+Approved
+Pending
+
+DESKTOP-9N2SFLI
+
+DESKTOP-9N2SFLI
+
+25 NOV 2025
+17:06 (EAT)
+
+1
+
+19
+
+0
+
+Approved
+Pending
+
+SERTIG-KITCHEN
+
+SERTIG-KITCHEN
+
+05 FEB 2026
+08:36 (EAT)
+
+7
+
+0
+
+0
+
+Fully
+Patched
+
+SERGIGBACKOFFICE
+
+SERGIG-BACKOFFICE
+
+23 JAN 2026
+16:34 (EAT)
+
+5
+
+2
+
+0
+
+Install
+Error
+
+SERGIG-ELIZABETH
+
+SERGIG-ELIZABETH
+
+15 JAN 2026
+12:33 (EAT)
+
+5
+
+2
+
+0
+
+Approved
+Pending
+
+SERGIG-VIOLET
+
+SERGIG-VIOLET
+
+26 JAN 2026
+09:38 (EAT)
+
 3
+
+9
+
+0
+
+Approved
+Pending
+
+SERGIG-Gabriel
+
+Kitisuru
+
+06 AUG 2024
+09:51 (EAT)
+
+9
+
+2
 
 0
 
@@ -3571,64 +3572,32 @@ Not Approved
 Patch
 Status
 
-SERBTC-JOYCE
+SERGIG-JACK
 
-SERBTC-JOYCE
+SERGIG-JACK
 
-30 JAN 2026
-11:20 (EAT)
-
-5
-
-3
-
-0
-
-Approved
-Pending
-
-SERKERN-KITCHEN
-
-SERKERN-KITCHEN
-
-29 JAN 2026
-16:17 (EAT)
+04 FEB 2026
+09:41 (EAT)
 
 5
-
-1
-
-0
-
-Install
-Error
-
-SBTC-RECEPTION
-
-SBTC-RECEPTION
-
-29 JAN 2026
-08:51 (EAT)
-
-4
-
-1
-
-0
-
-Approved
-Pending
-
-SERTIG-LENOX
-
-SERTIG-LENOX
-
-23 JAN 2026
-11:35 (EAT)
-
-10
 
 2
+
+0
+
+Approved
+Pending
+
+SERKARENBACKOFFICE
+
+SERGIG-FRONT1
+
+23 JAN 2026
+12:38 (EAT)
+
+7
+
+3
 
 0
 
@@ -3651,12 +3620,28 @@ SERKIT-GILBERT
 Reboot
 Required
 
-SERKIT-KITCHEN
+SBTC-ROSE
+
+Petra Surface
+
+04 FEB 2026
+21:31 (EAT)
+
+6
+
+2
+
+0
+
+Install
+Error
 
 SERKIT-KITCHEN
 
-29 JAN 2026
-07:58 (EAT)
+SERKIT-KITCHEN
+
+04 FEB 2026
+06:05 (EAT)
 
 7
 
@@ -3666,38 +3651,6 @@ SERKIT-KITCHEN
 
 Fully
 Patched
-
-SERKITBACKOFFICE
-
-SERKIT-BACKOFFICE
-
-28 JAN 2026
-17:02 (EAT)
-
-9
-
-0
-
-0
-
-Fully
-Patched
-
-SERKITFRONTDESK1
-
-SERKIT-FRONTDESK1
-
-29 JAN 2026
-08:05 (EAT)
-
-5
-
-2
-
-0
-
-Approved
-Pending
 
 SERGIG-CHARLES
 
@@ -3714,6 +3667,53 @@ SERGIG-CHARLES
 
 Install
 Error
+
+SERGIG-KOINI
+
+SERGIG-KOINI
+
+22 DEC 2025
+15:19 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+SERKIT-Coffee-shop
+
+SERKIT-COFFEE SHOP
+
+02 FEB 2026
+13:42 (EAT)
+
+70
+
+0
+
+0
+
+Fully
+Patched
+
+SERTIG-SAMUEL
+
+SERTIG-SAMUEL
+
+30 JAN 2026
+14:02 (EAT)
+
+4
+
+2
+
+0
+
+Reboot
+Required
 
 
 

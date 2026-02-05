@@ -9,6 +9,55 @@ import path from "path";
 import process from "process";
 import fs from "fs"; // Need fs for writing files
 
+function tokenizeForMatch(value) {
+  return (value || "")
+    .toLowerCase()
+    .split(/[^a-z0-9]+/g)
+    .filter(Boolean);
+}
+
+function levenshteinDistance(a, b) {
+  if (a === b) return 0;
+  if (!a) return b.length;
+  if (!b) return a.length;
+
+  const matrix = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i++) matrix[i][0] = i;
+  for (let j = 0; j <= b.length; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost
+      );
+    }
+  }
+
+  return matrix[a.length][b.length];
+}
+
+function tokenMatches(clientToken, fileTokens) {
+  if (fileTokens.includes(clientToken)) return true;
+  if (clientToken.length < 4) return false;
+
+  const maxDistance = clientToken.length >= 8 ? 2 : 1;
+  for (const token of fileTokens) {
+    if (Math.abs(token.length - clientToken.length) > maxDistance) continue;
+    if (levenshteinDistance(clientToken, token) <= maxDistance) return true;
+  }
+  return false;
+}
+
+function fuzzyClientMatch(clientName, fileName) {
+  const clientTokens = tokenizeForMatch(clientName);
+  const fileTokens = tokenizeForMatch(fileName);
+  if (clientTokens.length === 0 || fileTokens.length === 0) return false;
+  return clientTokens.every((clientToken) => tokenMatches(clientToken, fileTokens));
+}
+
 // This is a self-contained parser module for Datto RMM data.
 export function datto_rmmParserWorkflow() {
   // --- LLM Configuration ---
@@ -60,10 +109,25 @@ export function datto_rmmParserWorkflow() {
       const files = fs.readdirSync(dattoRmmDataDir);
       console.log(`Datto RMM Parser: Found ${files.length} files in ${dattoRmmDataDir}`);
       const clientNameRegex = new RegExp(shared.client_name.replace(/[^a-zA-Z0-9]/g, '.*'), 'i');
+      const pdfFiles = files.filter((file) => file.endsWith(".pdf"));
+      const regexMatched = [];
       for (const file of files) {
         if (file.endsWith(".pdf") && clientNameRegex.test(file)) {
+          regexMatched.push(file);
           dattoRmmPdfPaths.push(path.join(dattoRmmDataDir, file));
           console.log(`Datto RMM Parser: Found Datto RMM PDF file: ${file}`);
+        }
+      }
+      if (dattoRmmPdfPaths.length === 0) {
+        console.warn("Datto RMM Parser: No PDF matches found using exact regex. Trying fuzzy matching...");
+        for (const file of pdfFiles) {
+          if (fuzzyClientMatch(shared.client_name, file)) {
+            dattoRmmPdfPaths.push(path.join(dattoRmmDataDir, file));
+            console.log(`Datto RMM Parser: Fuzzy matched PDF file: ${file}`);
+          }
+        }
+        if (dattoRmmPdfPaths.length === 0 && regexMatched.length === 0) {
+          console.warn("Datto RMM Parser: No PDF matches found after fuzzy matching.");
         }
       }
     } catch (err) {
