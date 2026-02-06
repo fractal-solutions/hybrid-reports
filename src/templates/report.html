@@ -25,7 +25,7 @@
             </div>
         </header>
 
-        <section class="summary-section">
+        <section class="summary-section" data-module="datto_rmm">
             <h2>Executive Summary</h2>
             <p>{{summary.executive_summary}}</p>
             <div class="kpi-grid">
@@ -52,7 +52,7 @@
             </div>
         </section>
 
-        <section class="visuals-section">
+        <section class="visuals-section" data-module="datto_rmm">
             <h2>Monthly Overview</h2>
             <div class="chart-container">
                 <img src="{{scores.services_delivered_chart_path}}" alt="Services Delivered Chart">
@@ -60,7 +60,7 @@
             </div>
         </section>
 
-        <section class="ticket-summary">
+        <section class="ticket-summary" data-module="zoho_tickets">
             <h2>Ticket Summary</h2>
             <p>In {{meta.report_month}}, a total of <strong>{{tickets.total}}</strong> tickets were submitted and resolved within the SLA from {{tickets.source}}.</p>
             <ul>
@@ -73,7 +73,7 @@
             </div>
         </section>
 
-        <section class="device-health">
+        <section class="device-health" data-module="datto_rmm">
             <h2>Device Health & Compliance</h2>
             <div class="two-col">
                 <div>
@@ -97,7 +97,7 @@
             </div>
         </section>
 
-        <section class="antivirus-section">
+        <section class="antivirus-section" data-module="datto_rmm">
             <h2>Antivirus Status</h2>
             <p>{{antivirus.installed_count}} endpoints have Webroot installed and active.</p>
              <div class="chart-container-small">
@@ -105,7 +105,7 @@
             </div>
         </section>
 
-        <section class="patch-management">
+        <section class="patch-management" data-module="datto_rmm">
             <h2>Patch Management</h2>
             <p>{{patch_management.fully_patched_count}} devices are fully patched. {{patch_management.update_required_count}} require updates/reboot.</p>
             <div class="chart-container-small">
@@ -121,7 +121,7 @@
             </div>
         </section>
 
-        <section class="prtg-monitoring">
+        <section class="prtg-monitoring" data-module="prtg_monitoring">
             <h2>PRTG Network Monitoring</h2>
             <div class="prtg-summary">
                 <p>Overall Average Uptime: <strong>{{prtg_monitoring.summary_stats.overall_avg_uptime_percent}}</strong></p>
@@ -152,7 +152,7 @@
             </div>
         </section>
 
-        <section class="recommendations">
+        <section class="recommendations" data-module="datto_rmm">
             <h2>Recommendations</h2>
             <ul>
                 {{recommendations_html}}

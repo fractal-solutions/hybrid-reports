@@ -25,6 +25,30 @@ function encodeImageToBase64(filePath) {
     }
 }
 
+function stripSectionsForMissingModules(html, modulesToRun) {
+    if (!Array.isArray(modulesToRun) || modulesToRun.length === 0) {
+        return html;
+    }
+
+    const moduleSet = new Set(modulesToRun);
+    const foundModules = new Set();
+    const moduleAttrRegex = /data-module="([^"]+)"/g;
+    let match;
+
+    while ((match = moduleAttrRegex.exec(html)) !== null) {
+        foundModules.add(match[1]);
+    }
+
+    for (const moduleName of foundModules) {
+        if (moduleSet.has(moduleName)) continue;
+        const escapedModule = moduleName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const sectionRegex = new RegExp(`<section\\b[^>]*data-module="${escapedModule}"[^>]*>[\\s\\S]*?<\\/section>`, 'gi');
+        html = html.replace(sectionRegex, '');
+    }
+
+    return html;
+}
+
 async function renderReport(jsonPath, outputPdfPath) {
     console.log(`Reading data from ${jsonPath}...`);
     const rawData = fs.readFileSync(jsonPath, 'utf-8');
@@ -43,6 +67,7 @@ async function renderReport(jsonPath, outputPdfPath) {
     // 1. Inject CSS and Logo
     html = html.replace('{{style}}', css);
     html = html.replace('{{logo_path}}', logoBase64);
+    html = stripSectionsForMissingModules(html, data?.meta?.modules_to_run);
 
     // 2. Pre-process Lists and Tables (to generate HTML for <ul> and <table><tbody>)
     // Recommendations

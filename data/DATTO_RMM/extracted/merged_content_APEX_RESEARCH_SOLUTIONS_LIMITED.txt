@@ -1,0 +1,1787 @@
+--- Content from PDF: Device Health Summary - Apex Research Solutions Limited.pdf ---
+Device Health Summary Report
+Description: This report shows the health of the selected managed devices.
+Create Date: 06 FEB 2026 09:05 (EAT)
+Sites: Apex Research Solutions Limited
+Devices: 18
+
+Device Health Summary Report
+SUMMARY
+
+Servers: 0
+Workstations: 18
+Devices with Check Passed: 0
+
+18
+
+Network Devices: 0
+
+18
+
+Devices with Checks Failed: 18
+
+ESXi Hosts: 0
+Printers: 0
+Mobiles: 0
+Total Managed devices: 18
+
+WORKSTATIONS
+
+Device Name
+
+Device Description
+
+Operating System
+
+APEX-AderoE
+
+LAPTOP-7F219NAE
+
+Microsoft Windows 11
+Home 10.0.26100
+
+APEXASHIONOR
+
+APEX-ASHIONOR
+
+Microsoft Windows 10
+Pro 10.0.19044
+
+APEX-Bukirwaj
+
+DESKTOP-CUH8RAU
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+APEXHILLIARDW
+
+DESKTOP-KUUM72L
+
+Microsoft Windows 11
+Home Single
+
+Apex-Howard
+
+Apex-Horward
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+Apex-Howards
+
+HOWARDS
+
+Microsoft Windows 11
+Home 10.0.22631
+
+Apex-Joseph
+
+Apex-Joseph
+
+Microsoft Windows 11
+Home Single
+
+Apex-Jumap
+
+APEX-JUMAP
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+Apex-KemoiT
+
+APEX-KEMOIT
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+APEX-LUMARAE LAPTOP-RS29OC62
+
+Microsoft Windows 11
+Home 10.0.22621
+
+APEX-MIRITIM
+
+DESKTOP-9S3NIEC
+
+Microsoft Windows 10
+Pro 10.0.19044
+
+ApexMukaramojaJ
+
+APEX-MUKARAMOJA
+
+Microsoft Windows 10
+Pro 10.0.19042
+
+APEX-MwangiM
+
+DESKTOP-5MPNPAB
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Apex-NaomiW
+
+APEX-NAOMIW
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Apex-TangusR
+
+APEX-TANGUSR
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DESKTOP9TT2MRG
+
+DESKTOP-52JCJ84
+
+Microsoft Windows 11
+Home Single
+
+DESKTOPMSS91ST
+
+DESKTOP-MSS91ST
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+WaburiG
+
+WaburiG
+
+Microsoft Windows 10
+Home 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Device Storage - Apex Research Solutions Limited.pdf ---
+Device Storage Report
+Description: This report lists all the disks available on the selected devices including their
+available disk space.
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Apex Research Solutions Limited
+Devices: 18
+
+Device Storage Report
+APEX RESEARCH SOLUTIONS LIMITED
+Workstations
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+APEX-AderoE
+
+LAPTOP-7F219NAE
+
+C:
+
+APEX-ASHIONOR
+
+APEX-ASHIONOR
+
+C:
+W:
+APEX-Bukirwaj
+
+DESKTOP-CUH8RAU
+
+C:
+
+APEX-HILLIARDW
+
+DESKTOP-KUUM72L
+
+C:
+
+Apex-Howard
+
+Apex-Horward
+
+C:
+
+Apex-Howards
+
+HOWARDS
+
+C:
+
+Apex-Joseph
+
+Apex-Joseph
+
+C:
+F:
+Apex-Jumap
+
+APEX-JUMAP
+
+C:
+
+Apex-KemoiT
+
+APEX-KEMOIT
+
+C:
+
+APEX-LUMARAE
+
+LAPTOP-RS29OC62
+
+C:
+
+APEX-MIRITIM
+
+DESKTOP-9S3NIEC
+
+C:
+
+Apex-MukaramojaJ
+
+APEX-MUKARAMOJA
+
+C:
+
+APEX-MwangiM
+
+DESKTOP-5MPNPAB
+
+C:
+
+Apex-NaomiW
+
+APEX-NAOMIW
+
+C:
+
+Apex-TangusR
+
+APEX-TANGUSR
+
+C:
+C:
+
+DESKTOP-9TT2MRG DESKTOP-52JCJ84
+D:
+DESKTOP-MSS91ST DESKTOP-MSS91ST
+
+C:
+C:
+
+WaburiG
+
+WaburiG
+T:
+
+Size
+
+Local Fixed
+475.40GB
+Disk
+Local Fixed
+214.73GB
+Disk
+Local Fixed
+250.49GB
+Disk
+Local Fixed
+464.52GB
+Disk
+Local Fixed
+952.62GB
+Disk
+Local Fixed
+223.73GB
+Disk
+Local Fixed
+475.63GB
+Disk
+Local Fixed
+117.92GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+465.22GB
+Disk
+Local Fixed
+465.22GB
+Disk
+Local Fixed
+475.54GB
+Disk
+Local Fixed
+464.59GB
+Disk
+Local Fixed
+465.15GB
+Disk
+Local Fixed
+465.22GB
+Disk
+Local Fixed
+465.22GB
+Disk
+Local Fixed
+465.01GB
+Disk
+Local Fixed
+418.89GB
+Disk
+Local Fixed
+533.95GB
+Disk
+Local Fixed
+166.51GB
+Disk
+Local Fixed
+232.18GB
+Disk
+Local Fixed
+244.14GB
+Disk
+
+Free
+
+Used %
+
+349.19GB
+
+26.55%
+
+139.56GB
+
+35.01%
+
+249.94GB
+
+0.22%
+
+382.29GB
+
+17.70%
+
+753.86GB
+
+20.86%
+
+64.49GB
+
+71.17%
+
+375.17GB
+
+21.12%
+
+21.12GB
+
+82.09%
+
+842.62GB
+
+9.54%
+
+50.04GB
+
+89.24%
+
+108.47GB
+
+76.68%
+
+299.88GB
+
+36.94%
+
+403.22GB
+
+13.21%
+
+425.19GB
+
+8.59%
+
+300.75GB
+
+35.35%
+
+203.53GB
+
+56.25%
+
+378.79GB
+
+18.54%
+
+271.41GB
+
+35.21%
+
+533.83GB
+
+0.02%
+
+94.60GB
+
+43.19%
+
+90.57GB
+
+60.99%
+
+10.37GB
+
+95.75%
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Executive Summary - Apex Research Solutions Limited.pdf ---
+Executive Summary Report
+Description: This report shows the health of the delivered Managed Services.
+Create Date: 06 FEB 2026 09:05 (EAT)
+Sites: Apex Research Solutions Limited
+Devices: 18
+
+Executive Summary Report
+SUMMARY
+The Overall score represents the overall health of the network. The score is influenced by the results of different services that
+are delivered below.
+
+0%
+
+53%
+
+100%
+
+Services Delivered
+
+Score
+
+Asset Management
+
+98%
+
+Monitoring
+
+59%
+
+Patch Management
+
+11%
+
+Software Management
+
+0%
+
+Antivirus
+
+100%
+
+Average Score
+
+53%
+
+Asset Management
+The Asset Management score represents the capability of the network to function as is required by today's standards.
+Compliancy checks are made against the device to ensure devices meet the set criteria. Included in the checks are Warranty
+Status, Disk Capacity, Memory Capacity and if the Operating system is still supported.
+Monitoring
+The Monitoring score is influenced by the open monitoring alerts for the network. The total number of open alerts influence
+the score, a higher priority is reflected by a increased weight in the calculation. A lower score means that issues are seen but
+have not yet been resolved.
+Patch Management
+Regularly installing Microsoft Updates is essential for keeping the network secure. The Patch Management score represents
+the current state of Microsoft Updates in the network.
+Software Management
+Keeping commonly used 3rd party software applications updated significantly helps keeping the network secure. Attackers
+often try to exploit security vulnerabilities in these applications. This score indicates the compliance level of the managed
+devices.
+Antivirus
+An Antivirus product on all devices is essential for keeping the network protected against malware and other threats. The
+Antivirus Score represents if the Antivirus solution is installed, running and up to date on all devices.
+Proactive Maintenance
+Any network requires proactive maintenance to ensure its availability, security and performance. The report contains a list of
+regularly scheduled automated activities. No score is calculated based on these activities.
+
+Executive Summary Report
+ASSET MANAGEMENT (98%)
+Device Type
+
+Total Managed
+
+Added Last 30 Days
+
+Laptop
+
+18
+
+0
+
+Total
+
+18
+
+0
+
+Device Health Check
+
+Passed
+
+Failed
+
+Score
+
+Devices must have at least 15% free space on System Drive
+
+17
+
+1
+
+94%
+
+Devices must have at least 3.8 GB of memory installed
+
+18
+
+0
+
+100%
+
+Windows Devices OS must be supported by Microsoft
+Unsupported devices are those running Windows 8.1 and under or Windows
+Server 2012/2012R2 and under.
+
+18
+
+0
+
+100%
+
+Device must be within warranty
+
+0
+
+0
+
+100%
+
+Average
+
+98%
+
+Executive Summary Report
+MONITORING (59%)
+Total Alerts by Priority
+Alert Priority
+Critical: 0
+High: 75
+
+217
+
+Moderate: 6
+
+Raised
+
+Resolved Unresolved Score
+
+Critical
+
+0
+
+0
+
+0
+
+100%
+
+High
+
+75
+
+0
+
+75
+
+0%
+
+Moderate
+
+6
+
+0
+
+6
+
+0%
+
+Low
+
+0
+
+0
+
+0
+
+100%
+
+136
+
+134
+
+2
+
+98%
+
+Low: 0
+Information: 136
+
+Information
+Average
+
+59%
+
+Total Alerts by Device Type
+
+Device Type
+
+Unresolved: 83
+
+217
+
+Raised Resolved
+
+Unresolved
+
+Laptop
+
+217
+
+134
+
+83
+
+Total
+
+217
+
+134
+
+83
+
+Resolved: 134
+
+Top 5 Servers by Alerts
+No Data
+Top 5 Other Devices by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+Apex-Howard
+
+Apex-Horward
+
+0
+
+2
+
+0
+
+0
+
+99
+
+APEX-AderoE
+
+LAPTOP-7F219NAE
+
+0
+
+62
+
+0
+
+0
+
+0
+
+Apex-KemoiT
+
+APEX-KEMOIT
+
+0
+
+0
+
+2
+
+0
+
+23
+
+APEX-MwangiM
+
+DESKTOP-5MPNPAB
+
+0
+
+7
+
+0
+
+0
+
+13
+
+Apex-MukaramojaJ
+
+APEX-MUKARAMOJA
+
+0
+
+2
+
+2
+
+0
+
+0
+
+Executive Summary Report
+PATCH MANAGEMENT (11%)
+Server Patch Status
+
+Fully Patched: 0
+
+Total
+0
+
+Approved Pending: 0
+
+0
+
+Fully Patched
+
+Score
+0
+
+100%
+
+Install Error: 0
+Reboot Required: 0
+No Data: 0
+No Policy: 0
+
+Workstation Patch Status
+
+Fully Patched: 2
+Approved Pending: 11
+
+18
+
+Install Error: 0
+Reboot Required: 2
+No Data: 3
+No Policy: 0
+
+Total
+
+Fully Patched
+18
+
+Score
+2
+
+11%
+
+Executive Summary Report
+SOFTWARE MANAGEMENT (0%)
+Server Software Status
+Total
+
+Compliant
+0
+
+Score
+0
+
+100%
+
+Compliant: 0
+
+0
+
+Not Compliant: 0
+Unmanaged: 0
+
+Workstation Software Status
+Total
+
+Compliant
+18
+
+Compliant: 0
+
+18
+
+Not Compliant: 14
+Unmanaged: 4
+
+Score
+0
+
+0%
+
+Executive Summary Report
+ANTIVIRUS (100%)
+Server Antivirus Status
+Total
+0
+
+Running and Up to Date: 0
+
+0
+
+Up to date
+0
+
+Not up to date Not Running Score
+0
+
+0
+
+100%
+
+Not up to date: 0
+Not Running: 0
+Not Detected: 0
+
+Workstation Antivirus Status
+Total
+Running and Up to Date: 18
+Not up to date: 0
+
+18
+
+Not Running: 0
+Not Detected: 0
+
+18
+
+Up to date
+18
+
+Not up to date Not Running Score
+0
+
+0
+
+100%
+
+Executive Summary Report
+PROACTIVE MAINTENANCE
+No Data
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Hardware Lifecycle - Apex Research Solutions Limited.pdf ---
+Hardware Lifecycle Report
+Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Apex Research Solutions Limited
+Devices: 18
+
+Hardware Lifecycle Report
+SUMMARY
+Hardware Replacement Recommendations
+
+Suitable for 24 months+: 5
+
+18
+
+Replacement recommended within 12-24 months: 1
+Replacement recommended within 12 months: 12
+Unknown: 0
+
+Period
+
+Age
+
+Quantity
+
+Replacement recommended within 12 months
+
+4 years+
+
+12
+
+Replacement recommended within 12-24 months
+
+3-4 years
+
+1
+
+Suitable for 24 months+
+
+< 3 years
+
+5
+
+Unknown
+
+0
+
+Total Devices
+
+18
+
+Operating System Support
+
+Operating system is supported: 18
+
+18
+
+Operating system may be unsupported: 0
+Operating system is unsupported: 0
+
+Operating System Support*
+
+Quantity
+
+Operating system is supported
+
+18
+
+Operating system is unsupported unless manufacturer extended support has been arranged
+
+0
+
+Operating system is unsupported
+
+0
+
+Total Devices
+
+18
+
+Windows operating system support only. Non-Windows OS are counted as supported.
+
+Hardware Lifecycle Report
+APEX RESEARCH SOLUTIONS LIMITED
+Hardware replacement advised within 12 months (Over 4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+DESKTOP-MSS91ST
+
+DESKTOP-MSS91ST
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DESKTOP5CG44831
+MSS91ST\Ape XP
+xHr
+
+18 JAN
+2016
+
+Apex-Jumap
+
+APEX-JUMAP
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+APEX5CG7333K
+JUMAP\JumaP CQ
+
+08 JUN
+2017
+
+APEX-ASHIONOR
+
+APEX-ASHIONOR
+
+Microsoft Windows 10
+Pro 10.0.19044
+
+APEX5CG8090R
+ASHIONOR\As 82
+hionoR
+
+16 APR
+2019
+
+APEX-MwangiM
+
+DESKTOP-5MPNPAB
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+APEXMWANGIM\M
+wangiM
+
+5CG8183M
+68
+
+16 APR
+2019
+
+Apex-NaomiW
+
+APEX-NAOMIW
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+APEXNAOMIW\Nao
+miW
+
+5CG7444S
+M9
+
+19 AUG
+2019
+
+Apex-KemoiT
+
+APEX-KEMOIT
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+APEX5CG7333N
+KEMOIT\Kemo 1S
+iT
+
+31 OCT
+2019
+
+APEX-Bukirwaj
+
+DESKTOP-CUH8RAU
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+APEX5CG8042D
+BUKIRWAJ\us 2B
+er
+
+05 JAN
+2020
+
+Apex-TangusR
+
+APEX-TANGUSR
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+APEXTANGUSR\Ta
+ngusR
+
+5CG90731
+KS
+
+12 JUL
+2020
+
+Apex-Howards
+
+HOWARDS
+
+Microsoft Windows 11
+Home 10.0.22631
+
+APEXPF1BWXT9
+HOWARDS\Ho
+wardS
+
+24 FEB
+2021
+
+APEX-MIRITIM
+
+DESKTOP-9S3NIEC
+
+Microsoft Windows 10
+Pro 10.0.19044
+
+APEXMIRITIM\Miriti
+
+5CG7440S
+JM
+
+20 APR
+2021
+
+Apex-MukaramojaJ
+
+APEX-MUKARAMOJA Microsoft Windows 10
+Pro 10.0.19042
+
+APEX5CG7022P
+MUKARAMOJ 3X
+A\Mukaramoja
+J
+
+20 APR
+2021
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+APEX-HILLIARDW
+
+DESKTOP-KUUM72L
+
+Microsoft Windows 11
+Home Single
+Language 10.0.22621
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+APEXPF2JRK0X
+HILLIARDW\W
+abwireH
+
+Build Date*
+
+21 MAY
+2021
+
+Hardware replacement advised within 12-24 months (Between 3-4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+DESKTOP-9TT2MRG
+
+DESKTOP-52JCJ84
+
+Microsoft Windows 11
+Home Single
+Language 10.0.22621
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+DESKTOPPF2JRV3J
+9TT2MRG\Eve
+lynR
+
+Build Date*
+
+07 JUL
+2022
+
+Hardware suitable for 24+ months (Less than 3 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+APEX-LUMARAE
+
+LAPTOP-RS29OC62
+
+APEX-AderoE
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 11
+Home 10.0.22621
+
+APEXLUMARAE\Lu
+maraE
+
+5CG0164M
+6P
+
+15 DEC
+2023
+
+LAPTOP-7F219NAE
+
+Microsoft Windows 11
+Home 10.0.26100
+
+APEXPF2F6RP2
+ADEROE\Ader
+oE
+
+12 APR
+2024
+
+Apex-Joseph
+
+Apex-Joseph
+
+Microsoft Windows 11
+Home Single
+Language 10.0.26100
+
+APEXJOSEPH\HP
+
+CND0111N
+81
+
+26 APR
+2024
+
+WaburiG
+
+WaburiG
+
+Microsoft Windows 10
+Home 10.0.19045
+
+WABURIG\ad
+min
+
+5CG72321
+Z5
+
+11 JUL
+2024
+
+Apex-Howard
+
+Apex-Horward
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+APEXHOWARD\HO
+RWARD
+SAKWA
+
+GMW7W33
+
+08 SEP
+2025
+
+*Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Patch Management Summary - Apex Research Solutions Limited.pdf ---
+Patch Management Summary Report
+Description: This report shows the patch status by device
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Apex Research Solutions Limited
+Devices: 18
+
+Patch Management Summary Report
+PATCH SUMMARY
+
+Fully Patched: 2
+Approved Pending: 11
+Install Error: 0
+Reboot Required: 2
+No Data: 3
+
+18
+
+No Policy: 0
+
+Apex Research Solutions Limited
+Workstations
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+APEX-HILLIARDW
+
+DESKTOP-KUUM72L
+
+22 JUL 2023
+06:35 (EAT)
+
+11
+
+3
+
+0
+
+Approved
+Pending
+
+DESKTOP-MSS91ST
+
+DESKTOP-MSS91ST
+
+29 OCT 2025
+20:39 (EAT)
+
+3
+
+7
+
+0
+
+Approved
+Pending
+
+APEX-Bukirwaj
+
+DESKTOP-CUH8RAU
+
+17 OCT 2023
+09:52 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+Apex-Joseph
+
+Apex-Joseph
+
+10 FEB 2025
+12:59 (EAT)
+
+5
+
+0
+
+0
+
+Fully
+Patched
+
+Apex-KemoiT
+
+APEX-KEMOIT
+
+05 FEB 2026
+16:51 (EAT)
+
+7
+
+8
+
+0
+
+Approved
+Pending
+
+Apex-TangusR
+
+APEX-TANGUSR
+
+20 MAY 2024
+08:59 (EAT)
+
+3
+
+20
+
+0
+
+Approved
+Pending
+
+Apex-MukaramojaJ
+
+APEX-MUKARAMOJA
+
+23 AUG 2025
+12:34 (EAT)
+
+3
+
+30
+
+0
+
+Approved
+Pending
+
+APEX-MwangiM
+
+DESKTOP-5MPNPAB
+
+14 JAN 2026
+21:53 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+DESKTOP-9TT2MRG
+
+DESKTOP-52JCJ84
+
+29 JAN 2026
+11:14 (EAT)
+
+9
+
+1
+
+0
+
+Approved
+Pending
+
+Apex-Howard
+
+Apex-Horward
+
+06 FEB 2026
+07:40 (EAT)
+
+7
+
+5
+
+0
+
+Approved
+Pending
+
+Apex-NaomiW
+
+APEX-NAOMIW
+
+18 MAR 2025
+12:24 (EAT)
+
+8
+
+3
+
+0
+
+Reboot
+Required
+
+WaburiG
+
+WaburiG
+
+07 JAN 2025
+18:44 (EAT)
+
+61
+
+14
+
+0
+
+Approved
+Pending
+
+Apex-Howards
+
+HOWARDS
+
+15 DEC 2025
+14:19 (EAT)
+
+5
+
+6
+
+0
+
+Approved
+Pending
+
+APEX-LUMARAE
+
+LAPTOP-RS29OC62
+
+15 APR 2024
+09:34 (EAT)
+
+8
+
+1
+
+0
+
+Approved
+Pending
+
+APEX-AderoE
+
+LAPTOP-7F219NAE
+
+05 FEB 2026
+11:15 (EAT)
+
+6
+
+0
+
+0
+
+Fully
+Patched
+
+APEX-ASHIONOR
+
+APEX-ASHIONOR
+
+12 MAY 2022
+20:48 (EAT)
+
+8
+
+3
+
+0
+
+Reboot
+Required
+
+Apex-Jumap
+
+APEX-JUMAP
+
+07 FEB 2024
+10:16 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+Patch Management Summary Report
+Apex Research Solutions Limited
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+APEX-MIRITIM
+
+DESKTOP-9S3NIEC
+
+19 OCT 2022
+11:18 (EAT)
+
+4
+
+19
+
+0
+
+Approved
+Pending
+
+
+

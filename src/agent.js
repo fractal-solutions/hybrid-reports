@@ -99,7 +99,8 @@ export function agentWorkflow(clientName) {
         meta: {
             client_name: workflowSharedState.config.client_name,
             report_month: workflowSharedState.config.report_period,
-            generated_date: new Date().toLocaleDateString()
+            generated_date: new Date().toLocaleDateString(),
+            modules_to_run: workflowSharedState.config.modules_to_run || []
         },
         ...finalJson // This contains scores, device_health, antivirus, patch_management, tickets
     };

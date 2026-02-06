@@ -249,9 +249,11 @@ export function datto_rmmParserWorkflow() {
                 "update_required_count": Number, 
                 "chart_path": "assets/filename.png",
                 "windows_10_users_list": ["User A", "User B"]
-            }
+            },
+            "recommendations": ["Recommendation 1", "Recommendation 2"]
           }
           \`
+          - **Recommendations**: Derive 3–6 concise, actionable recommendations based strictly on the extracted metrics (e.g., low patch compliance, low AV coverage, disk space issues). Do not invent facts.
       4. **Final Output**: Your final response should be ONLY the JSON object you constructed. Do not add any other text or explanation.
     `;
     agent.setParams({ goal: goal }); 

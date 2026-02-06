@@ -1,0 +1,2097 @@
+--- Content from PDF: Device Health Summary - Aspira - CIM Credit    .pdf ---
+Device Health Summary Report
+Description: This report shows the health of the selected managed devices.
+Create Date: 06 FEB 2026 09:05 (EAT)
+Sites: Aspira - CIM Credit
+Devices: 25
+
+Device Health Summary Report
+SUMMARY
+
+Servers: 0
+Workstations: 25
+Devices with Check Passed: 1
+
+25
+
+Network Devices: 0
+
+25
+
+Devices with Checks Failed: 24
+
+ESXi Hosts: 0
+Printers: 0
+Mobiles: 0
+Total Managed devices: 25
+
+WORKSTATIONS
+
+Device Name
+AntonysMacBook-Pro.
+local
+Kriss-MacBookAir.local
+
+Device Description
+
+Operating System
+
+Antonys-MacBook-Pro.
+macOS 15.7.3
+local
+Kriss-MacBook-Air.
+local
+
+macOS 13.3
+
+PC0AHUCTMILKAH
+
+DESKTOP-QP655U2
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0MF7ECEunice
+
+DESKTOP-OFD6KCB
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0QC6H5STACY
+
+DESKTOP-SOLE9K4
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0QPPLS-Anne DESKTOP-M756DCN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0RYTE0ALLAN
+
+DESKTOP-AFEJTJH
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0S81XKMaryanne
+
+DESKTOP-TO7PALU
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0S82E3-JUNE PC0S82E3-June
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+PC0SKHLEJOSEPH
+
+DESKTOP-26A9125
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0UCCYSMARY
+
+DESKTOP-167KSV3
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0UN27CMICHAEL
+
+DESKTOP-9M7TSM1
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC198YN7-Ridge Ridge Otieno
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+PC1H258N-Lucy Bridgit Ramogo
+
+Microsoft Windows 11
+Pro 10.0.22621
+
+PC1H259Y-Sally Sally Olga
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+PF0T96BBRhoda
+
+DESKTOP-QC8CR8C
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF0ZB603MICHELLE
+
+DESKTOP-QC8CR8C
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF12VD4C-Stacy PF12VD4C-Stacy
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF18LRUY-Betsy Betsy Amonde
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF1CD761-Evans PF1CD761-Evans
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF1JU7DWAGNES
+
+DESKTOP-7PB9P63
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF1QANH1LUCY
+
+PF1QANH1-LUCY
+
+PF3J6TBWROSEMARY
+
+DESKTOP-VVCPC8O
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+PF3KNEXYRICKY
+
+DESKTOP-VU2L1LQ
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PW049ARDCLIFFORD
+
+PW049ARDCLIFFORD
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Device Storage - Aspira - CIM Credit    .pdf ---
+Device Storage Report
+Description: This report lists all the disks available on the selected devices including their
+available disk space.
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Aspira - CIM Credit
+Devices: 25
+
+Device Storage Report
+ASPIRA - CIM CREDIT
+Workstations
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+Size
+
+PC0UCCYS-MARY
+
+DESKTOP-167KSV3
+
+PC0UN27CMICHAEL
+
+DESKTOP-9M7TSM1
+
+disk0
+EFI
+300.00MB
+s1
+disk0
+disk1
+233.47GB
+s2
+disk0
+disk1
+500.00MB
+s1
+disk0
+disk3
+228.27GB
+s2
+disk0
+disk2
+5.00GB
+s3
+Local Fixed
+C:
+237.86GB
+Disk
+Local Fixed
+C:
+238.25GB
+Disk
+Local Fixed
+C:
+238.25GB
+Disk
+Local Fixed
+C:
+238.25GB
+Disk
+Local Fixed
+C:
+237.84GB
+Disk
+Local Fixed
+C:
+237.84GB
+Disk
+Local Fixed
+C:
+238.25GB
+Disk
+Local Fixed
+C:
+238.36GB
+Disk
+Local Fixed
+C:
+237.85GB
+Disk
+Local Fixed
+C:
+237.73GB
+Disk
+
+PC198YN7-Ridge
+
+Ridge Otieno
+
+C:
+
+PC1H258N-Lucy
+
+Bridgit Ramogo
+
+C:
+
+PC1H259Y-Sally
+
+Sally Olga
+
+C:
+
+PF0T96BB-Rhoda
+
+DESKTOP-QC8CR8C
+
+C:
+
+PF0ZB603MICHELLE
+
+DESKTOP-QC8CR8C
+
+C:
+
+PF12VD4C-Stacy
+
+PF12VD4C-Stacy
+
+C:
+
+PF18LRUY-Betsy
+
+Betsy Amonde
+
+C:
+
+PF1CD761-Evans
+
+PF1CD761-Evans
+
+C:
+
+PF1JU7DW-AGNES
+
+DESKTOP-7PB9P63
+
+C:
+
+PF1QANH1-LUCY
+
+PF1QANH1-LUCY
+
+PF3J6TBWROSEMARY
+
+DESKTOP-VVCPC8O
+
+Antonys-MacBookPro.local
+
+Kriss-MacBook-Air.
+local
+
+Antonys-MacBook-Pro.local
+
+Kriss-MacBook-Air.local
+
+PC0AHUCT-MILKAH
+
+DESKTOP-QP655U2
+
+PC0MF7EC-Eunice
+
+DESKTOP-OFD6KCB
+
+PC0QC6H5-STACY
+
+DESKTOP-SOLE9K4
+
+PC0QPPLS-Anne
+
+DESKTOP-M756DCN
+
+PC0RYTE0-ALLAN
+
+DESKTOP-AFEJTJH
+
+PC0S81XK-Maryanne DESKTOP-TO7PALU
+PC0S82E3-JUNE
+
+PC0S82E3-June
+
+PC0SKHLE-JOSEPH DESKTOP-26A9125
+
+Local Fixed
+237.47GB
+Disk
+Local Fixed
+237.43GB
+Disk
+Local Fixed
+237.37GB
+Disk
+Local Fixed
+237.76GB
+Disk
+Local Fixed
+237.76GB
+Disk
+Local Fixed
+930.34GB
+Disk
+Local Fixed
+465.13GB
+Disk
+Local Fixed
+237.96GB
+Disk
+Local Fixed
+237.89GB
+Disk
+
+Free
+
+Used %
+
+0.00b
+
+100.00%
+
+4.32GB
+
+98.15%
+
+481.95MB
+
+3.61%
+
+48.10GB
+
+78.93%
+
+3.25GB
+
+34.94%
+
+143.05GB
+
+39.86%
+
+192.20GB
+
+19.33%
+
+167.94GB
+
+29.51%
+
+149.85GB
+
+37.10%
+
+179.83GB
+
+24.39%
+
+109.98GB
+
+53.76%
+
+171.51GB
+
+28.01%
+
+87.49GB
+
+63.30%
+
+178.56GB
+
+24.93%
+
+148.33GB
+
+37.61%
+
+145.01GB
+
+38.93%
+
+122.38GB
+
+48.46%
+
+152.90GB
+
+35.58%
+
+99.71GB
+
+58.06%
+
+166.74GB
+
+29.87%
+
+811.92GB
+
+12.73%
+
+386.47GB
+
+16.91%
+
+164.92GB
+
+30.69%
+
+166.99GB
+
+29.80%
+
+No data
+C:
+
+Local Fixed
+237.06GB 138.54GB
+Disk
+
+41.56%
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+
+PF3KNEXY-RICKY
+
+DESKTOP-VU2L1LQ
+D:
+
+PW049ARDCLIFFORD
+
+PW049ARD-CLIFFORD
+
+C:
+
+Size
+
+Free
+
+Local Fixed
+237.85GB 118.94GB
+Disk
+Local Fixed
+931.50GB 930.05GB
+Disk
+Local Fixed
+474.72GB 405.63GB
+Disk
+
+Used %
+49.99%
+0.16%
+14.55%
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Executive Summary - Aspira - CIM Credit    .pdf ---
+Executive Summary Report
+Description: This report shows the health of the delivered Managed Services.
+Create Date: 06 FEB 2026 09:05 (EAT)
+Sites: Aspira - CIM Credit
+Devices: 25
+
+Executive Summary Report
+SUMMARY
+The Overall score represents the overall health of the network. The score is influenced by the results of different services that
+are delivered below.
+
+0%
+
+55%
+
+100%
+
+Services Delivered
+
+Score
+
+Asset Management
+
+98%
+
+Monitoring
+
+63%
+
+Patch Management
+
+13%
+
+Software Management
+
+12%
+
+Antivirus
+
+91%
+
+Average Score
+
+55%
+
+Asset Management
+The Asset Management score represents the capability of the network to function as is required by today's standards.
+Compliancy checks are made against the device to ensure devices meet the set criteria. Included in the checks are Warranty
+Status, Disk Capacity, Memory Capacity and if the Operating system is still supported.
+Monitoring
+The Monitoring score is influenced by the open monitoring alerts for the network. The total number of open alerts influence
+the score, a higher priority is reflected by a increased weight in the calculation. A lower score means that issues are seen but
+have not yet been resolved.
+Patch Management
+Regularly installing Microsoft Updates is essential for keeping the network secure. The Patch Management score represents
+the current state of Microsoft Updates in the network.
+Software Management
+Keeping commonly used 3rd party software applications updated significantly helps keeping the network secure. Attackers
+often try to exploit security vulnerabilities in these applications. This score indicates the compliance level of the managed
+devices.
+Antivirus
+An Antivirus product on all devices is essential for keeping the network protected against malware and other threats. The
+Antivirus Score represents if the Antivirus solution is installed, running and up to date on all devices.
+Proactive Maintenance
+Any network requires proactive maintenance to ensure its availability, security and performance. The report contains a list of
+regularly scheduled automated activities. No score is calculated based on these activities.
+
+Executive Summary Report
+ASSET MANAGEMENT (98%)
+Device Type
+
+Total Managed
+
+Added Last 30 Days
+
+Laptop
+
+24
+
+0
+
+Desktop
+
+1
+
+0
+
+Total
+
+25
+
+0
+
+Device Health Check
+
+Passed
+
+Failed
+
+Score
+
+Devices must have at least 15% free space on System Drive
+
+23
+
+2
+
+92%
+
+Devices must have at least 3.8 GB of memory installed
+
+25
+
+0
+
+100%
+
+Windows Devices OS must be supported by Microsoft
+Unsupported devices are those running Windows 8.1 and under or Windows
+Server 2012/2012R2 and under.
+
+22
+
+0
+
+100%
+
+Device must be within warranty
+
+0
+
+0
+
+100%
+
+Average
+
+98%
+
+Executive Summary Report
+MONITORING (63%)
+Total Alerts by Priority
+Alert Priority
+Critical: 0
+High: 129
+
+498
+
+Moderate: 34
+
+Raised
+
+Resolved Unresolved Score
+
+Critical
+
+0
+
+0
+
+0
+
+100%
+
+High
+
+129
+
+0
+
+129
+
+0%
+
+Moderate
+
+34
+
+6
+
+28
+
+17%
+
+Low
+
+0
+
+0
+
+0
+
+100%
+
+335
+
+335
+
+0
+
+100%
+
+Low: 0
+Information: 335
+
+Information
+Average
+
+63%
+
+Total Alerts by Device Type
+
+Device Type
+
+Unresolved: 157
+
+498
+
+Resolved: 341
+
+Raised Resolved
+
+Unresolved
+
+Laptop
+
+498
+
+341
+
+157
+
+Desktop
+
+0
+
+0
+
+0
+
+Total
+
+498
+
+341
+
+157
+
+Top 5 Servers by Alerts
+No Data
+Top 5 Other Devices by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+PC0QC6H5-STACY
+
+DESKTOP-SOLE9K4
+
+0
+
+24
+
+2
+
+0
+
+132
+
+PC0S81XK-Maryanne
+
+DESKTOP-TO7PALU
+
+0
+
+45
+
+2
+
+0
+
+108
+
+PC0SKHLE-JOSEPH
+
+DESKTOP-26A9125
+
+0
+
+29
+
+6
+
+0
+
+76
+
+PC0UN27C-MICHAEL
+
+DESKTOP-9M7TSM1
+
+0
+
+4
+
+0
+
+0
+
+14
+
+PC0QPPLS-Anne
+
+DESKTOP-M756DCN
+
+0
+
+6
+
+5
+
+0
+
+0
+
+Executive Summary Report
+PATCH MANAGEMENT (13%)
+Server Patch Status
+
+Fully Patched: 0
+
+Total
+0
+
+Approved Pending: 0
+
+0
+
+Fully Patched
+
+Score
+0
+
+100%
+
+Install Error: 0
+Reboot Required: 0
+No Data: 0
+No Policy: 0
+
+Workstation Patch Status
+
+Fully Patched: 3
+Approved Pending: 12
+
+22
+
+Install Error: 3
+Reboot Required: 2
+No Data: 2
+No Policy: 0
+
+Total
+
+Fully Patched
+22
+
+Score
+3
+
+13%
+
+Executive Summary Report
+SOFTWARE MANAGEMENT (12%)
+Server Software Status
+Total
+
+Compliant
+0
+
+Score
+0
+
+100%
+
+Compliant: 0
+
+0
+
+Not Compliant: 0
+Unmanaged: 0
+
+Workstation Software Status
+Total
+
+Compliant
+24
+
+Compliant: 3
+
+24
+
+Not Compliant: 21
+Unmanaged: 0
+
+Score
+3
+
+12%
+
+Executive Summary Report
+ANTIVIRUS (91%)
+Server Antivirus Status
+Total
+0
+
+Running and Up to Date: 0
+
+0
+
+Up to date
+0
+
+Not up to date Not Running Score
+0
+
+0
+
+100%
+
+Not up to date: 0
+Not Running: 0
+Not Detected: 0
+
+Workstation Antivirus Status
+Total
+Running and Up to Date: 22
+Not up to date: 2
+
+24
+
+Not Running: 0
+Not Detected: 0
+
+24
+
+Up to date
+22
+
+Not up to date Not Running Score
+2
+
+0
+
+91%
+
+Executive Summary Report
+PROACTIVE MAINTENANCE
+No Data
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Hardware Lifecycle - Aspira - CIM Credit    .pdf ---
+Hardware Lifecycle Report
+Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Aspira - CIM Credit
+Devices: 25
+
+Hardware Lifecycle Report
+SUMMARY
+Hardware Replacement Recommendations
+
+Suitable for 24 months+: 17
+
+25
+
+Replacement recommended within 12-24 months: 3
+Replacement recommended within 12 months: 2
+Unknown: 3
+
+Period
+
+Age
+
+Quantity
+
+Replacement recommended within 12 months
+
+4 years+
+
+2
+
+Replacement recommended within 12-24 months
+
+3-4 years
+
+3
+
+Suitable for 24 months+
+
+< 3 years
+
+17
+
+Unknown
+
+3
+
+Total Devices
+
+25
+
+Operating System Support
+
+Operating system is supported: 25
+
+25
+
+Operating system may be unsupported: 0
+Operating system is unsupported: 0
+
+Operating System Support*
+
+Quantity
+
+Operating system is supported
+
+25
+
+Operating system is unsupported unless manufacturer extended support has been arranged
+
+0
+
+Operating system is unsupported
+
+0
+
+Total Devices
+
+25
+
+Windows operating system support only. Non-Windows OS are counted as supported.
+
+Hardware Lifecycle Report
+ASPIRA - CIM CREDIT
+Hardware replacement advised within 12 months (Over 4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+PC0AHUCT-MILKAH
+
+DESKTOP-QP655U2
+
+PF12VD4C-Stacy
+
+PF12VD4C-Stacy
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0AHUCTMILKAH\Admi
+nistrator
+
+PC0AHUCT
+
+14 AUG
+2019
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF12VD4CPF12VD4C
+STACY\Admini
+strator
+
+03 JAN
+2020
+
+Hardware replacement advised within 12-24 months (Between 3-4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+PF3J6TBWROSEMARY
+
+DESKTOP-VVCPC8O
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+PF3J6TBWPF3J6TBW
+ROSEMA\Aspi
+ra-Eunice
+
+08 MAR
+2022
+
+PF3KNEXY-RICKY
+
+DESKTOP-VU2L1LQ
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF3KNEXYRICKY\Admini
+strator
+
+PF3KNEXY
+
+23 MAY
+2022
+
+PF18LRUY-Betsy
+
+Betsy Amonde
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF18LRUYPF18LRUY
+BETSY\AspiraBetsy
+
+30 JAN
+2023
+
+Hardware suitable for 24+ months (Less than 3 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+PF0ZB603-MICHELLE DESKTOP-QC8CR8C
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF0ZB603MICHEL\Aspir
+a-Michelle
+
+PF0ZB603
+
+15 AUG
+2023
+
+PC0MF7EC-Eunice
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0MF7ECEUNICE\Admi
+nistrator
+
+PC0MF7EC
+
+06 NOV
+2023
+
+DESKTOP-OFD6KCB
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+PC0RYTE0-ALLAN
+
+DESKTOP-AFEJTJH
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0RYTE0PC0RYTE0
+ALLAN\AspiraAllan
+
+06 NOV
+2023
+
+PC198YN7-Ridge
+
+Ridge Otieno
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+PC198YN7PC198YN7
+RIDGE\Admini
+strator
+
+20 NOV
+2023
+
+PC0S82E3-JUNE
+
+PC0S82E3-June
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0S82E3JUNE\Aspira Daisy
+
+PC0S82E3
+
+26 FEB
+2024
+
+PC1H259Y-Sally
+
+Sally Olga
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+PC1H259YSALLY\Aspira
+- Lucy
+
+PC1H259Y
+
+25 MAR
+2024
+
+PC0UCCYS-MARY
+
+DESKTOP-167KSV3
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0UCCYSMARY\Ezra
+Opuru
+
+PC0UCCY
+S
+
+26 JUL
+2024
+
+PF1CD761-Evans
+
+PF1CD761-Evans
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF1CD761PF1CD761
+EVANS\Aspira
+-Evans
+
+30 JUL
+2024
+
+PF1JU7DW-AGNES
+
+DESKTOP-7PB9P63
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF1JU7DWPF1JU7DW
+AGNES\Admin
+istrator
+
+30 JUL
+2024
+
+PW049ARDCLIFFORD
+
+PW049ARDCLIFFORD
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PW049ARDPW049ARD
+CLIFFO\Aspira
+- Clifford
+
+11 SEP
+2024
+
+PC0QC6H5-STACY
+
+DESKTOP-SOLE9K4
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0QC6H5PC0QC6H5
+STACY\AspiraStacy
+
+05 NOV
+2024
+
+PC0QPPLS-Anne
+
+DESKTOP-M756DCN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0QPPLSPC0QPPLS
+ANNE\Aspira Anne
+
+05 NOV
+2024
+
+PC0S81XK-Maryanne
+
+DESKTOP-TO7PALU
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0S81XKPC0S81XK
+MARYAN\Aspi
+ra - Maryanne
+
+05 NOV
+2024
+
+PC0SKHLE-JOSEPH
+
+DESKTOP-26A9125
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0SKHLEPC0SKHLE
+JOSEPH\Betty
+
+05 NOV
+2024
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+PC0UN27C-MICHAEL
+
+DESKTOP-9M7TSM1
+
+PF0T96BB-Rhoda
+
+PC1H258N-Lucy
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PC0UN27CMICHAE\Mich
+ael Kiyaka
+
+PC0UN27C
+
+05 NOV
+2024
+
+DESKTOP-QC8CR8C
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+PF0T96BBPF0T96BB
+RHODA\Admin
+istrator
+
+05 NOV
+2024
+
+Bridgit Ramogo
+
+Microsoft Windows 11
+Pro 10.0.22621
+
+PC1H258NPC1H258N
+LUCY\Administ
+rator
+
+06 NOV
+2024
+
+Device Name
+
+Device Description
+
+Operating System
+
+Antonys-MacBookPro.local
+
+Antonys-MacBookPro.local
+
+Kriss-MacBookAir.local
+
+Kriss-MacBookAir.local
+
+PF1QANH1-LUCY
+
+PF1QANH1-LUCY
+
+Unknown Age
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+macOS 15.7.3
+
+antony
+
+C02YN2GH
+JG5H
+
+macOS 13.3
+
+krissenanu
+
+RH9G1CXJ
+Y6
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+PF1QANH1LUCY\LucyAspira
+
+*Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Patch Management Summary - Aspira - CIM Credit    .pdf ---
+Patch Management Summary Report
+Description: This report shows the patch status by device
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Aspira - CIM Credit
+Devices: 22
+
+Patch Management Summary Report
+PATCH SUMMARY
+
+Fully Patched: 3
+Approved Pending: 12
+Install Error: 3
+Reboot Required: 2
+No Data: 2
+
+22
+
+No Policy: 0
+
+Aspira - CIM Credit
+Workstations
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+PC0AHUCT-MILKAH
+
+DESKTOP-QP655U2
+
+17 JAN 2024
+14:28 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+PC198YN7-Ridge
+
+Ridge Otieno
+
+22 APR 2025
+13:50 (EAT)
+
+3
+
+18
+
+0
+
+Approved
+Pending
+
+PC0S82E3-JUNE
+
+PC0S82E3-June
+
+28 NOV 2025
+17:45 (EAT)
+
+6
+
+2
+
+0
+
+Install
+Error
+
+PF3KNEXY-RICKY
+
+DESKTOP-VU2L1LQ
+
+16 DEC 2025
+15:47 (EAT)
+
+5
+
+3
+
+0
+
+Approved
+Pending
+
+PC0UCCYS-MARY
+
+DESKTOP-167KSV3
+
+18 MAR 2025
+21:15 (EAT)
+
+4
+
+6
+
+0
+
+Approved
+Pending
+
+PF12VD4C-Stacy
+
+PF12VD4C-Stacy
+
+19 FEB 2024
+09:28 (EAT)
+
+3
+
+8
+
+0
+
+Approved
+Pending
+
+PW049ARDCLIFFORD
+
+PW049ARD-CLIFFORD
+
+23 SEP 2025
+15:06 (EAT)
+
+3
+
+17
+
+0
+
+Approved
+Pending
+
+PC0MF7EC-Eunice
+
+DESKTOP-OFD6KCB
+
+10 JUN 2024
+14:30 (EAT)
+
+3
+
+10
+
+0
+
+Install
+Error
+
+PF0T96BB-Rhoda
+
+DESKTOP-QC8CR8C
+
+16 DEC 2025
+13:22 (EAT)
+
+6
+
+7
+
+0
+
+Approved
+Pending
+
+PF1JU7DW-AGNES
+
+DESKTOP-7PB9P63
+
+16 DEC 2025
+14:45 (EAT)
+
+6
+
+2
+
+0
+
+Approved
+Pending
+
+PC0UN27C-MICHAEL
+
+DESKTOP-9M7TSM1
+
+30 OCT 2025
+08:29 (EAT)
+
+5
+
+6
+
+0
+
+Approved
+Pending
+
+PF3J6TBWROSEMARY
+
+DESKTOP-VVCPC8O
+
+29 MAR 2025
+13:19 (EAT)
+
+7
+
+4
+
+0
+
+Approved
+Pending
+
+PC0QC6H5-STACY
+
+DESKTOP-SOLE9K4
+
+05 FEB 2026
+11:22 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+PC1H258N-Lucy
+
+Bridgit Ramogo
+
+03 FEB 2026
+09:21 (EAT)
+
+8
+
+4
+
+0
+
+Install
+Error
+
+PC0QPPLS-Anne
+
+DESKTOP-M756DCN
+
+05 FEB 2026
+08:58 (EAT)
+
+5
+
+2
+
+0
+
+Approved
+Pending
+
+PF0ZB603-MICHELLE DESKTOP-QC8CR8C
+
+22 OCT 2025
+10:58 (EAT)
+
+4
+
+8
+
+0
+
+Reboot
+Required
+
+PF18LRUY-Betsy
+
+08 MAR 2024
+10:04 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+Betsy Amonde
+
+Patch Management Summary Report
+Aspira - CIM Credit
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+PF1CD761-Evans
+
+PF1CD761-Evans
+
+16 DEC 2025
+14:41 (EAT)
+
+3
+
+10
+
+0
+
+Approved
+Pending
+
+PC1H259Y-Sally
+
+Sally Olga
+
+03 OCT 2025
+14:37 (EAT)
+
+5
+
+4
+
+0
+
+Approved
+Pending
+
+PC0S81XK-Maryanne
+
+DESKTOP-TO7PALU
+
+02 FEB 2026
+08:42 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+PC0RYTE0-ALLAN
+
+DESKTOP-AFEJTJH
+
+15 APR 2024
+15:55 (EAT)
+
+7
+
+2
+
+0
+
+Reboot
+Required
+
+PC0SKHLE-JOSEPH
+
+DESKTOP-26A9125
+
+02 FEB 2026
+10:17 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+
+

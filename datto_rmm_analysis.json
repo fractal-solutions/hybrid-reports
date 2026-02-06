@@ -1,0 +1,53 @@
+{
+  "scores": {
+    "average_score": 59,
+    "services_delivered_chart_path": "assets/services_delivery_scores.png"
+  },
+  "device_health": {
+    "total_managed": 15,
+    "compliance_percentage": 13.33,
+    "chart_path": "assets/device_health_compliance.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 23,
+        "total_count": 27,
+        "low_space_count": 4,
+        "chart_path": "assets/disk_space_status.png"
+      },
+      "ram": {
+        "passed_count": 0,
+        "total_count": 15
+      },
+      "os_support": {
+        "passed_count": 0,
+        "total_count": 15
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 15,
+    "chart_path": "assets/antivirus_status.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 4,
+    "update_required_count": 11,
+    "chart_path": "assets/patch_status_donut.png",
+    "windows_10_users_list": [
+      "DIRA-CAROLINE",
+      "DIRA-STALIN",
+      "DESKTOP-U5RTEDI",
+      "DIRA-PURITY",
+      "DIRA-DUNCAN",
+      "DIRA-CAROLINEM",
+      "DESKTOP-F0MRD7V"
+    ]
+  },
+  "recommendations": [
+    "Improve patch management: Only 4 out of 15 devices are fully patched. Schedule regular patch deployments and address installation errors.",
+    "Address low disk space: 4 drives have less than 20GB free. Consider cleaning up unnecessary files or expanding storage.",
+    "Enhance overall device health compliance: Only 2 devices passed all health checks. Investigate failing checks (RAM, OS support, etc.) and remediate.",
+    "Ensure antivirus is up-to-date on all devices, even though score is 100%, verify definitions and real-time protection.",
+    "Review software compliance: Software Management score is only 13%. Ensure all software is licensed and up-to-date.",
+    "Monitor hardware lifecycle: 10 devices are suitable for 24+ months, but 5 may need replacement planning."
+  ]
+}

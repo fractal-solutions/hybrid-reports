@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "passed": 1,
+    "failed": 24,
+    "total": 25
+  },
+  "total_devices": 25,
+  "disk_low_count": 0,
+  "disk_passed_count": 25,
+  "ram_passed_count": 0,
+  "antivirus_installed_count": 0,
+  "fully_patched_count": 0,
+  "update_required_count": 25,
+  "windows_10_users": [],
+  "average_score": 40.0,
+  "services": [
+    "Disk Health",
+    "RAM Health",
+    "OS Support",
+    "Antivirus",
+    "Patching"
+  ],
+  "scores": [
+    100.0,
+    0.0,
+    100.0,
+    0.0,
+    0.0
+  ]
+}

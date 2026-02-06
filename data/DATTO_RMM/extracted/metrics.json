@@ -1,0 +1,29 @@
+{
+  "total_managed": 25,
+  "devices_passed": 1,
+  "devices_failed": 24,
+  "compliance_percentage": 4.0,
+  "disk_low_count": 0,
+  "disk_passed_count": 33,
+  "ram_passed_count": 33,
+  "os_passed_count": 33,
+  "antivirus_installed_count": 2,
+  "fully_patched_count": 0,
+  "update_required_count": 33,
+  "windows_10_users": [],
+  "average_score": 61.21212121212121,
+  "services": [
+    "Disk Health",
+    "RAM Health",
+    "OS Support",
+    "Antivirus",
+    "Patching"
+  ],
+  "scores": [
+    100.0,
+    100.0,
+    100.0,
+    6.0606060606060606,
+    0.0
+  ]
+}

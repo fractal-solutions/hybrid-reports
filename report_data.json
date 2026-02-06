@@ -1,62 +1,120 @@
 {
   "meta": {
-    "client_name": "DIRA IMMIGRATION CONSULTANTS",
+    "client_name": "ASPIRA",
     "report_month": "January 2026",
-    "generated_date": "2/6/2026"
+    "generated_date": "2/6/2026",
+    "modules_to_run": [
+      "datto_rmm",
+      "zoho_tickets",
+      "prtg_monitoring"
+    ]
   },
   "scores": {
-    "average_score": 87.6,
-    "services_delivered_chart_path": "assets/services_delivery_scores.png"
+    "average_score": 55,
+    "services_delivered_chart_path": "assets/services_delivered_chart.png"
   },
   "device_health": {
-    "total_managed": 15,
-    "compliance_percentage": 13.33,
-    "chart_path": "assets/device_health.png",
+    "total_managed": 25,
+    "compliance_percentage": 4,
+    "chart_path": "assets/device_health_chart.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 8,
-        "total_count": 14,
-        "low_space_count": 3,
-        "chart_path": "assets/disk_space.png"
+        "passed_count": 23,
+        "total_count": 25,
+        "low_space_count": 2,
+        "chart_path": "assets/disk_space_chart.png"
       },
       "ram": {
-        "passed_count": 10,
-        "total_count": 14
+        "passed_count": 25,
+        "total_count": 25
       },
       "os_support": {
-        "passed_count": 14,
-        "total_count": 14
+        "passed_count": 22,
+        "total_count": 22
       }
     }
   },
   "antivirus": {
-    "installed_count": 12,
-    "chart_path": "assets/antivirus_status.png"
+    "installed_count": 23,
+    "chart_path": "assets/antivirus_chart.png"
   },
   "patch_management": {
-    "fully_patched_count": 6,
-    "update_required_count": 8,
-    "chart_path": "assets/patch_status.png",
+    "fully_patched_count": 3,
+    "update_required_count": 19,
+    "chart_path": "assets/patch_status_chart.png",
     "windows_10_users_list": [
-      "DIRA-DUNCAN",
-      "DIRA-KEZIAH",
-      "DIRA-PURITY",
-      "DIRA-STALIN",
-      "DIRAJACKLINE"
+      "PC0AHUCTMILKAH",
+      "DESKTOP-QP655U2",
+      "PC0MF7ECEunice",
+      "DESKTOP-OFD6KCB",
+      "PC0QC6H5STACY",
+      "DESKTOP-SOLE9K4",
+      "PC0QPPLS-Anne DESKTOP-M756DCN",
+      "PC0RYTE0ALLAN",
+      "DESKTOP-AFEJTJH",
+      "PC0S81XKMaryanne",
+      "DESKTOP-TO7PALU",
+      "PC0S82E3-JUNE PC0S82E3-June"
     ]
   },
+  "recommendations": [
+    "Prioritize patch management: Only 3 out of 22 Windows workstations are fully patched. Address the 19 devices requiring updates, including resolving 3 installation errors and 2 pending reboots.",
+    "Improve software management: The software compliance score is 12%, indicating outdated third‑party applications. Schedule updates for commonly used software to reduce security vulnerabilities.",
+    "Resolve disk‑space issues: 2 devices have less than 15% free space on the system drive. Clean up unnecessary files or expand storage to prevent performance and stability problems.",
+    "Reduce monitoring alerts: The monitoring score is 63% due to 129 high‑priority alerts unresolved. Investigate and resolve these alerts to improve network health and service delivery.",
+    "Enhance overall device compliance: Only 1 out of 25 devices passed all health checks. Review the failing checks (especially disk space and patch status) and implement corrective actions.",
+    "Ensure antivirus coverage on remaining devices: 2 devices lack up‑to‑date antivirus protection. Verify installation and update status to maintain a 100% coverage target."
+  ],
   "tickets": {
     "source": "Zoho",
-    "total": 10,
-    "software_count": 3,
-    "hardware_count": 5,
+    "total": 2,
+    "software_count": 0,
+    "hardware_count": 0,
     "misc_count": 2,
-    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "chart_path": "assets\\zoho_tickets_ASPIRA.png"
+  },
+  "prtg_monitoring": {
+    "links": [
+      {
+        "name": "Aspira Firewall Interface",
+        "avg_bandwidth": "0 Mbit/s",
+        "total_data": "N/A",
+        "uptime_percent": "17%",
+        "downtime_percent": "83%",
+        "uptime_duration": "05d 03h 04m 15s",
+        "downtime_duration": "0d 02h 03m 03s"
+      },
+      {
+        "name": "Aspira Firewall Interface",
+        "avg_bandwidth": "N/A",
+        "total_data": "0 MB",
+        "uptime_percent": "17%",
+        "downtime_percent": "83%",
+        "uptime_duration": "24d 20h 50m 13s",
+        "downtime_duration": "0d 09h 58m 52s"
+      },
+      {
+        "name": "Aspira Angani Backup",
+        "avg_bandwidth": "N/A",
+        "total_data": "N/A",
+        "uptime_percent": "99.998%",
+        "downtime_percent": "0.002%",
+        "uptime_duration": "N/A",
+        "downtime_duration": "0d 00h 00m 01s"
+      }
+    ],
+    "summary_stats": {
+      "overall_avg_uptime_percent": "44.666%",
+      "overall_avg_downtime_percent": "55.334%",
+      "total_links_monitored": 5,
+      "links_with_downtime": 5
+    },
+    "chart_path": "assets\\prtg_uptime_ASPIRA.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 87.6%. A total of 10 tickets were processed, with 12 devices having antivirus installed, and 6 devices fully patched.",
-    "total_tickets": 10,
-    "av_installed": 12,
-    "fully_patched": 6
+    "executive_summary": "This is a comprehensive monthly support report for ASPIRA for January 2026. The average service score for the month was 55%. A total of 2 tickets were processed, with 23 devices having antivirus installed, and 3 devices fully patched.",
+    "total_tickets": 2,
+    "av_installed": 23,
+    "fully_patched": 3
   }
 }
