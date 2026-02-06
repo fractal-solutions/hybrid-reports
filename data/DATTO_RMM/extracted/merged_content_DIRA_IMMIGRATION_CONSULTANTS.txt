@@ -1,0 +1,1615 @@
+--- Content from PDF: Device Health Summary - Dira Immigration Consultants Ltd.pdf ---
+Device Health Summary Report
+Description: This report shows the health of the selected managed devices.
+Create Date: 06 FEB 2026 09:05 (EAT)
+Sites: Dira Immigration Consultants Ltd
+Devices: 15
+
+Device Health Summary Report
+SUMMARY
+
+Servers: 0
+Workstations: 15
+Devices with Check Passed: 2
+
+15
+
+Network Devices: 0
+
+15
+
+Devices with Checks Failed: 13
+
+ESXi Hosts: 0
+Printers: 0
+Mobiles: 0
+Total Managed devices: 15
+
+WORKSTATIONS
+
+Device Name
+
+Device Description
+
+Operating System
+
+DESKTOPTHLH11P
+
+DIRA-CAROLINE
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+DIRA-CAROLINE DIRA-CAROLINEM
+
+Microsoft Windows 10
+Pro for Workstations
+
+DIRA-DAVIS
+
+DIRA-DAVIS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRA-DUNCAN
+
+DIRA-DUNCAN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRA-FRIDAH
+
+DIRA-FRIDAH
+
+Microsoft Windows 11
+Home 10.0.26200
+
+DIRA-KEZIAH
+
+DESKTOP-F0MRD7V
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRA-MERCY
+
+DIRA-MERCY
+
+Microsoft Windows 11
+Home Single
+
+DIRA-MONICAH DIRA-MONICAH
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRA-PURITY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRA-PURITY
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+Microsoft Windows 11
+Home 10.0.26200
+
+DIRA-SAMUEL
+
+DIRA-SAMUEL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRA-STALIN
+
+DIRA-STALIN
+
+Microsoft Windows 11
+Home 10.0.26100
+
+DIRA-STALINM
+
+DIRA-STALIN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRA-VIVIAN
+
+DIRA-VIVIAN
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRAJACKLINE
+
+DESKTOP-U5RTEDI
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Device Storage - Dira Immigration Consultants Ltd.pdf ---
+Device Storage Report
+Description: This report lists all the disks available on the selected devices including their
+available disk space.
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Dira Immigration Consultants Ltd
+Devices: 15
+
+Device Storage Report
+DIRA IMMIGRATION CONSULTANTS LTD
+Workstations
+Device Name
+
+Device Description
+
+Drive Drive Type
+
+DESKTOP-THLH11P
+
+DIRA-CAROLINE
+
+C:
+
+DIRA-CAROLINE
+
+DIRA-CAROLINEM
+
+C:
+
+DIRA-DAVIS
+
+DIRA-DAVIS
+
+C:
+
+DIRA-DUNCAN
+
+DIRA-DUNCAN
+
+C:
+
+DIRA-FRIDAH
+
+DIRA-FRIDAH
+
+C:
+
+DIRA-KEZIAH
+
+DESKTOP-F0MRD7V
+
+C:
+
+DIRA-MERCY
+
+DIRA-MERCY
+
+C:
+D:
+DIRA-MONICAH
+
+DIRA-MONICAH
+
+C:
+C:
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+D:
+F:
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+C:
+
+DIRA-SAMUEL
+
+DIRA-SAMUEL
+
+C:
+
+DIRA-STALIN
+
+DIRA-STALIN
+
+C:
+X:
+DIRA-STALINM
+
+DIRA-STALIN
+
+C:
+
+DIRA-VIVIAN
+
+DIRA-VIVIAN
+
+C:
+
+DIRAJACKLINE
+
+DESKTOP-U5RTEDI
+
+C:
+
+Size
+
+Local Fixed
+237.52GB
+Disk
+Local Fixed
+237.93GB
+Disk
+Local Fixed
+473.92GB
+Disk
+Local Fixed
+237.32GB
+Disk
+Local Fixed
+932.39GB
+Disk
+Local Fixed
+237.84GB
+Disk
+Local Fixed
+476.60GB
+Disk
+Local Fixed
+329.48MB
+Disk
+Local Fixed
+236.44GB
+Disk
+Local Fixed
+225.20GB
+Disk
+Local Fixed
+249.98GB
+Disk
+Local Fixed
+348.30MB
+Disk
+Local Fixed
+455.52GB
+Disk
+Local Fixed
+237.40GB
+Disk
+Local Fixed
+455.53GB
+Disk
+Local Fixed
+990.00MB
+Disk
+Local Fixed
+464.45GB
+Disk
+Local Fixed
+237.41GB
+Disk
+Local Fixed
+237.84GB
+Disk
+
+Free
+
+Used %
+
+158.74GB
+
+33.17%
+
+153.73GB
+
+35.39%
+
+312.91GB
+
+33.97%
+
+106.61GB
+
+55.08%
+
+787.67GB
+
+15.52%
+
+139.00GB
+
+41.56%
+
+376.91GB
+
+20.92%
+
+295.94MB
+
+10.18%
+
+169.24GB
+
+28.42%
+
+64.91GB
+
+71.18%
+
+218.02GB
+
+12.78%
+
+302.20MB
+
+13.24%
+
+326.00GB
+
+28.43%
+
+130.29GB
+
+45.12%
+
+324.22GB
+
+28.82%
+
+295.42MB
+
+70.16%
+
+230.28GB
+
+50.42%
+
+121.14GB
+
+48.98%
+
+169.08GB
+
+28.91%
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Executive Summary - Dira Immigration Consultants Ltd.pdf ---
+Executive Summary Report
+Description: This report shows the health of the delivered Managed Services.
+Create Date: 06 FEB 2026 09:05 (EAT)
+Sites: Dira Immigration Consultants Ltd
+Devices: 15
+
+Executive Summary Report
+SUMMARY
+The Overall score represents the overall health of the network. The score is influenced by the results of different services that
+are delivered below.
+
+0%
+
+59%
+
+100%
+
+Services Delivered
+
+Score
+
+Asset Management
+
+100%
+
+Monitoring
+
+60%
+
+Patch Management
+
+26%
+
+Software Management
+
+13%
+
+Antivirus
+
+100%
+
+Average Score
+
+59%
+
+Asset Management
+The Asset Management score represents the capability of the network to function as is required by today's standards.
+Compliancy checks are made against the device to ensure devices meet the set criteria. Included in the checks are Warranty
+Status, Disk Capacity, Memory Capacity and if the Operating system is still supported.
+Monitoring
+The Monitoring score is influenced by the open monitoring alerts for the network. The total number of open alerts influence
+the score, a higher priority is reflected by a increased weight in the calculation. A lower score means that issues are seen but
+have not yet been resolved.
+Patch Management
+Regularly installing Microsoft Updates is essential for keeping the network secure. The Patch Management score represents
+the current state of Microsoft Updates in the network.
+Software Management
+Keeping commonly used 3rd party software applications updated significantly helps keeping the network secure. Attackers
+often try to exploit security vulnerabilities in these applications. This score indicates the compliance level of the managed
+devices.
+Antivirus
+An Antivirus product on all devices is essential for keeping the network protected against malware and other threats. The
+Antivirus Score represents if the Antivirus solution is installed, running and up to date on all devices.
+Proactive Maintenance
+Any network requires proactive maintenance to ensure its availability, security and performance. The report contains a list of
+regularly scheduled automated activities. No score is calculated based on these activities.
+
+Executive Summary Report
+ASSET MANAGEMENT (100%)
+Device Type
+
+Total Managed
+
+Added Last 30 Days
+
+Laptop
+
+15
+
+0
+
+Total
+
+15
+
+0
+
+Device Health Check
+
+Passed
+
+Failed
+
+Score
+
+Devices must have at least 15% free space on System Drive
+
+15
+
+0
+
+100%
+
+Devices must have at least 3.8 GB of memory installed
+
+15
+
+0
+
+100%
+
+Windows Devices OS must be supported by Microsoft
+Unsupported devices are those running Windows 8.1 and under or Windows
+Server 2012/2012R2 and under.
+
+15
+
+0
+
+100%
+
+Device must be within warranty
+
+0
+
+0
+
+100%
+
+Average
+
+100%
+
+Executive Summary Report
+MONITORING (60%)
+Total Alerts by Priority
+Alert Priority
+Critical: 0
+High: 349
+
+1198
+
+Moderate: 26
+
+Raised
+
+Resolved Unresolved Score
+
+Critical
+
+0
+
+0
+
+0
+
+100%
+
+High
+
+349
+
+0
+
+349
+
+0%
+
+Moderate
+
+26
+
+0
+
+26
+
+0%
+
+Low
+
+0
+
+0
+
+0
+
+100%
+
+823
+
+823
+
+0
+
+100%
+
+Low: 0
+Information: 823
+
+Information
+Average
+
+60%
+
+Total Alerts by Device Type
+
+Device Type
+
+Unresolved: 375
+
+1198
+
+Raised Resolved
+
+Unresolved
+
+Laptop
+
+1198
+
+823
+
+375
+
+Total
+
+1198
+
+823
+
+375
+
+Resolved: 823
+
+Top 5 Servers by Alerts
+No Data
+Top 5 Other Devices by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+DIRA-STALINM
+
+DIRA-STALIN
+
+0
+
+125
+
+0
+
+0
+
+222
+
+DIRA-FRIDAH
+
+DIRA-FRIDAH
+
+0
+
+138
+
+4
+
+0
+
+138
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+0
+
+22
+
+1
+
+0
+
+131
+
+DIRA-VIVIAN
+
+DIRA-VIVIAN
+
+0
+
+1
+
+2
+
+0
+
+150
+
+DIRA-SAMUEL
+
+DIRA-SAMUEL
+
+0
+
+10
+
+3
+
+0
+
+81
+
+Executive Summary Report
+PATCH MANAGEMENT (26%)
+Server Patch Status
+
+Fully Patched: 0
+
+Total
+0
+
+Approved Pending: 0
+
+0
+
+Fully Patched
+
+Score
+0
+
+100%
+
+Install Error: 0
+Reboot Required: 0
+No Data: 0
+No Policy: 0
+
+Workstation Patch Status
+
+Fully Patched: 4
+Approved Pending: 8
+
+15
+
+Install Error: 2
+Reboot Required: 0
+No Data: 1
+No Policy: 0
+
+Total
+
+Fully Patched
+15
+
+Score
+4
+
+26%
+
+Executive Summary Report
+SOFTWARE MANAGEMENT (13%)
+Server Software Status
+Total
+
+Compliant
+0
+
+Score
+0
+
+100%
+
+Compliant: 0
+
+0
+
+Not Compliant: 0
+Unmanaged: 0
+
+Workstation Software Status
+Total
+
+Compliant
+15
+
+Compliant: 2
+
+15
+
+Not Compliant: 13
+Unmanaged: 0
+
+Score
+2
+
+13%
+
+Executive Summary Report
+ANTIVIRUS (100%)
+Server Antivirus Status
+Total
+0
+
+Running and Up to Date: 0
+
+0
+
+Up to date
+0
+
+Not up to date Not Running Score
+0
+
+0
+
+100%
+
+Not up to date: 0
+Not Running: 0
+Not Detected: 0
+
+Workstation Antivirus Status
+Total
+Running and Up to Date: 15
+Not up to date: 0
+
+15
+
+Not Running: 0
+Not Detected: 0
+
+15
+
+Up to date
+15
+
+Not up to date Not Running Score
+0
+
+0
+
+100%
+
+Executive Summary Report
+PROACTIVE MAINTENANCE
+No Data
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Hardware Lifecycle - Dira Immigration Consultants Ltd.pdf ---
+Hardware Lifecycle Report
+Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Dira Immigration Consultants Ltd
+Devices: 15
+
+Hardware Lifecycle Report
+SUMMARY
+Hardware Replacement Recommendations
+
+Suitable for 24 months+: 10
+
+15
+
+Replacement recommended within 12-24 months: 3
+Replacement recommended within 12 months: 2
+Unknown: 0
+
+Period
+
+Age
+
+Quantity
+
+Replacement recommended within 12 months
+
+4 years+
+
+2
+
+Replacement recommended within 12-24 months
+
+3-4 years
+
+3
+
+Suitable for 24 months+
+
+< 3 years
+
+10
+
+Unknown
+
+0
+
+Total Devices
+
+15
+
+Operating System Support
+
+Operating system is supported: 15
+
+15
+
+Operating system may be unsupported: 0
+Operating system is unsupported: 0
+
+Operating System Support*
+
+Quantity
+
+Operating system is supported
+
+15
+
+Operating system is unsupported unless manufacturer extended support has been arranged
+
+0
+
+Operating system is unsupported
+
+0
+
+Total Devices
+
+15
+
+Windows operating system support only. Non-Windows OS are counted as supported.
+
+Hardware Lifecycle Report
+DIRA IMMIGRATION CONSULTANTS LTD
+Hardware replacement advised within 12 months (Over 4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+DIRA-CAROLINE
+
+DIRA-CAROLINEM
+
+Microsoft Windows 10
+Pro for Workstations
+10.0.19045
+
+DIRA4T2QXY1
+CAROLINE\CA
+ROLINE
+
+01 FEB
+2018
+
+DIRA-MERCY
+
+DIRA-MERCY
+
+Microsoft Windows 11
+Home Single
+Language 10.0.22631
+
+DIRAPF3LV0ML
+MERCY\Mercy
+Kang'ethe
+
+15 JAN
+2022
+
+Hardware replacement advised within 12-24 months (Between 3-4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+DIRA-DUNCAN
+
+DIRA-DUNCAN
+
+DIRA-KEZIAH
+
+DIRAJACKLINE
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRADUNCAN\Dun
+can
+
+4ZF42G2
+
+18 SEP
+2022
+
+DESKTOP-F0MRD7V
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRAKEZIAH\Kezia
+h Mwangi
+
+4JVBFC2
+
+20 NOV
+2022
+
+DESKTOP-U5RTEDI
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRAJACKLIN 80NBSF2
+E\Jackline
+Mwende
+
+20 NOV
+2022
+
+Hardware suitable for 24+ months (Less than 3 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRA5CD7231Y
+PURITY\Purity 3X
+
+03 APR
+2024
+
+DIRA-STALINM
+
+DIRA-STALIN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+DIRA5CD65032J
+STALINM\USE S
+R
+
+03 APR
+2024
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+DESKTOP-THLH11P
+
+DIRA-CAROLINE
+
+DIRA-DAVIS
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+DESKTOPTHLH11P\Car
+oline Mwirigi
+
+6PZXVT2
+
+05 SEP
+2024
+
+DIRA-DAVIS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRADAVIS\Davis
+
+GRZ0H53
+
+18 NOV
+2024
+
+DIRA-VIVIAN
+
+DIRA-VIVIAN
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRAGRV12X2
+VIVIAN\ADMIN
+
+05 JUN
+2025
+
+DIRA-MONICAH
+
+DIRA-MONICAH
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRAMONICAH\Mo
+nicah
+
+D7B3JW2
+
+05 AUG
+2025
+
+DIRA-STALIN
+
+DIRA-STALIN
+
+Microsoft Windows 11
+Home 10.0.26100
+
+DIRASTALIN\Stalin
+Mwenda
+
+3QB0Y54
+
+18 AUG
+2025
+
+DIRA-SAMUEL
+
+DIRA-SAMUEL
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+DIRA433KYY2
+SAMUEL\Sam
+uel
+
+12 SEP
+2025
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+Microsoft Windows 11
+Home 10.0.26200
+
+DIRA9KB0Y54
+PURITY\Purity
+Makandi
+
+30 OCT
+2025
+
+DIRA-FRIDAH
+
+DIRA-FRIDAH
+
+Microsoft Windows 11
+Home 10.0.26200
+
+DIRADP4WR54
+FRIDAH\admin
+
+26 NOV
+2025
+
+*Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Patch Management Summary - Dira Immigration Consultants Ltd.pdf ---
+Patch Management Summary Report
+Description: This report shows the patch status by device
+Create Date: 06 FEB 2026 09:06 (EAT)
+Sites: Dira Immigration Consultants Ltd
+Devices: 15
+
+Patch Management Summary Report
+PATCH SUMMARY
+
+Fully Patched: 4
+Approved Pending: 8
+Install Error: 2
+Reboot Required: 0
+No Data: 1
+
+15
+
+No Policy: 0
+
+Dira Immigration Consultants Ltd
+Workstations
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+DIRA-FRIDAH
+
+DIRA-FRIDAH
+
+05 FEB 2026
+07:51 (EAT)
+
+7
+
+2
+
+0
+
+Approved
+Pending
+
+DIRA-MONICAH
+
+DIRA-MONICAH
+
+05 FEB 2026
+09:03 (EAT)
+
+4
+
+0
+
+0
+
+Fully
+Patched
+
+DIRA-SAMUEL
+
+DIRA-SAMUEL
+
+05 FEB 2026
+09:41 (EAT)
+
+5
+
+5
+
+0
+
+Install
+Error
+
+DIRA-STALIN
+
+DIRA-STALIN
+
+05 FEB 2026
+09:26 (EAT)
+
+11
+
+3
+
+0
+
+Approved
+Pending
+
+DIRA-KEZIAH
+
+DESKTOP-F0MRD7V
+
+05 FEB 2026
+08:36 (EAT)
+
+10
+
+0
+
+0
+
+Fully
+Patched
+
+DIRA-DAVIS
+
+DIRA-DAVIS
+
+24 JAN 2026
+17:43 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+05 FEB 2026
+12:44 (EAT)
+
+41
+
+36
+
+0
+
+Approved
+Pending
+
+DIRA-DUNCAN
+
+DIRA-DUNCAN
+
+28 JAN 2026
+10:05 (EAT)
+
+6
+
+5
+
+0
+
+Approved
+Pending
+
+DIRA-CAROLINE
+
+DIRA-CAROLINEM
+
+30 DEC 2025
+12:45 (EAT)
+
+7
+
+2
+
+0
+
+Approved
+Pending
+
+DIRA-MERCY
+
+DIRA-MERCY
+
+05 FEB 2026
+12:39 (EAT)
+
+7
+
+0
+
+0
+
+Fully
+Patched
+
+DIRAJACKLINE
+
+DESKTOP-U5RTEDI
+
+06 FEB 2026
+08:14 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+DESKTOP-THLH11P
+
+DIRA-CAROLINE
+
+29 JAN 2026
+12:27 (EAT)
+
+4
+
+3
+
+0
+
+Approved
+Pending
+
+DIRA-VIVIAN
+
+DIRA-VIVIAN
+
+04 FEB 2026
+13:58 (EAT)
+
+6
+
+3
+
+0
+
+Install
+Error
+
+DIRA-STALINM
+
+DIRA-STALIN
+
+05 FEB 2026
+11:11 (EAT)
+
+9
+
+1
+
+0
+
+Approved
+Pending
+
+DIRA-PURITY
+
+DIRA-PURITY
+
+06 FEB 2026
+05:53 (EAT)
+
+7
+
+6
+
+0
+
+Approved
+Pending
+
+
+

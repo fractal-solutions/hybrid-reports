@@ -1,80 +1,62 @@
 {
   "meta": {
-    "client_name": "REA VIPINGO PLANTATIONS LIMITED",
+    "client_name": "DIRA IMMIGRATION CONSULTANTS",
     "report_month": "January 2026",
-    "generated_date": "2/5/2026"
+    "generated_date": "2/6/2026"
   },
   "scores": {
-    "average_score": 50,
+    "average_score": 87.6,
     "services_delivered_chart_path": "assets/services_delivery_scores.png"
   },
   "device_health": {
-    "total_managed": 46,
-    "compliance_percentage": 97,
-    "chart_path": "assets/device_health_compliance.png",
+    "total_managed": 15,
+    "compliance_percentage": 13.33,
+    "chart_path": "assets/device_health.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 45,
-        "total_count": 46,
-        "low_space_count": 1,
-        "chart_path": "assets/disk_space_usage.png"
+        "passed_count": 8,
+        "total_count": 14,
+        "low_space_count": 3,
+        "chart_path": "assets/disk_space.png"
       },
       "ram": {
-        "passed_count": 44,
-        "total_count": 46
+        "passed_count": 10,
+        "total_count": 14
       },
       "os_support": {
-        "passed_count": 45,
-        "total_count": 46
+        "passed_count": 14,
+        "total_count": 14
       }
     }
   },
   "antivirus": {
-    "installed_count": 35,
+    "installed_count": 12,
     "chart_path": "assets/antivirus_status.png"
   },
   "patch_management": {
-    "fully_patched_count": 9,
-    "update_required_count": 36,
-    "chart_path": "assets/patch_status_donut.png",
+    "fully_patched_count": 6,
+    "update_required_count": 8,
+    "chart_path": "assets/patch_status.png",
     "windows_10_users_list": [
-      "DWA-BECKYPRODUCTION",
-      "DWA-CLINICRECORDS",
-      "DWA-EMMA",
-      "DWA-EMS-OFFICE",
-      "DWA-FUELSTATION",
-      "DWA-HORTICULTURE",
-      "DWA-IRENE",
-      "DWA-JOSEPH",
-      "DWA-LETTY",
-      "DWA-MAURICESTORES",
-      "DWA-MWAMBA",
-      "DWA-NDINDA",
-      "DWA-PARTSTORES",
-      "DWA-PAYROLL-1",
-      "DWA-PPESTOCK",
-      "DWA-PRISCILA",
-      "DWA-ROBERT",
-      "DWA-SHADRACK",
-      "DWA-STEVESTORES",
-      "DWACLINIC-PC",
-      "REA-KALORI",
-      "REA-KEVIN",
-      "Oyugi"
+      "DIRA-DUNCAN",
+      "DIRA-KEZIAH",
+      "DIRA-PURITY",
+      "DIRA-STALIN",
+      "DIRAJACKLINE"
     ]
   },
   "tickets": {
     "source": "Zoho",
-    "total": 8,
-    "software_count": 0,
-    "hardware_count": 2,
-    "misc_count": 6,
-    "chart_path": "assets\\zoho_tickets_REA_VIPINGO_PLANTATIONS_LIMITED.png"
+    "total": 10,
+    "software_count": 3,
+    "hardware_count": 5,
+    "misc_count": 2,
+    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for REA VIPINGO PLANTATIONS LIMITED for January 2026. The average service score for the month was 50%. A total of 8 tickets were processed, with 35 devices having antivirus installed, and 9 devices fully patched.",
-    "total_tickets": 8,
-    "av_installed": 35,
-    "fully_patched": 9
+    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 87.6%. A total of 10 tickets were processed, with 12 devices having antivirus installed, and 6 devices fully patched.",
+    "total_tickets": 10,
+    "av_installed": 12,
+    "fully_patched": 6
   }
 }

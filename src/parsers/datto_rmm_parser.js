@@ -206,9 +206,8 @@ export function datto_rmmParserWorkflow() {
       Your goal is to act as a specialized Datto RMM Data Parser.
       You will analyze the provided consolidated text from Datto RMM PDF reports and extract key metrics.
       
-      --- CONSOLIDATED DATTO RMM REPORT TEXT ---
-      ${mergedTextContent}
-      --- END CONSOLIDATED DATTO RMM REPORT TEXT ---
+      Get the merged data for ${shared.client_name} in the ${shared.merged_datto_rmm_text_filepath} file. It may be long so you may need to process it in relevant chunks depending on the metrics you need to extract.
+     
 
       When using code_interpreter, set requireConfirmation to false. Do not ask for permission; just use it.
       DO NOT INSTALL ANYTHING. Use only the provided tools.
@@ -220,9 +219,15 @@ export function datto_rmmParserWorkflow() {
           - Patch Status
           - Overall device counts and compliance.
       2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts for the extracted data. (Do not ask for permission/requireConfirmation to use the tool; just use it.)
+          - Use **matplotlib** for all charts (no other plotting libraries).
           - Save all images to the 'assets/' folder.
-          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart for various services), Device Health, Disk Space(Bar Charts for each user device with thesholds shown and user names per bar), Antivirus Status(Bar Chart), Patch Status(Donut (hollow Pie) Chart).
+          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart for various services with average service score as a threshold), Device Health, Disk Space(Bar Charts for each user device with thesholds shown and user names per bar), Antivirus Status(Bar Chart), Patch Status(Donut (hollow Pie) Chart).
           - Ensure chart files are saved (e.g., 'assets/datto_health_chart.png').
+          - **Eldama visual theme (styling only; do not change data/logic):**
+            - Primary color: #0047AB; accent: #FF5733; neutrals: #f4f4f4, #e6ecf5, #333, #6f6f6f.
+            - Use consistent typography (try "Montserrat" if available, else fallback to DejaVu Sans); set readable label sizes.
+            - Prefer clean, minimal grids; soften axes and spines; add clear titles and value labels where helpful.
+            - Maintain consistent margins and aspect ratios across charts; use 300 DPI for clarity.
 
       ### Phase 2: The JSON Snippet
       3.  **Create JSON Data**: Construct a JSON object containing the data you found.

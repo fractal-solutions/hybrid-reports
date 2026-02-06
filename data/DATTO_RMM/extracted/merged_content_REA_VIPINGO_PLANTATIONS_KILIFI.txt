@@ -1,0 +1,2947 @@
+--- Content from PDF: Device Health Summary - REA Vipingo Plantations Kilifi.pdf ---
+Device Health Summary Report
+Description: This report shows the health of the selected managed devices.
+Create Date: 05 FEB 2026 09:18 (EAT)
+Sites: REA Vipingo Plantations Kilifi
+Devices: 33
+
+Device Health Summary Report
+SUMMARY
+
+Servers: 1
+Workstations: 32
+Devices with Check Passed: 2
+
+33
+
+Network Devices: 0
+
+33
+
+Devices with Checks Failed: 31
+
+ESXi Hosts: 0
+Printers: 0
+Mobiles: 0
+Total Managed devices: 33
+
+SERVERS
+
+Device Name
+
+Device Description
+
+Operating System
+
+SERVER
+
+REA-SERVER
+
+Microsoft Windows
+Server 2012 R2
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+WORKSTATIONS
+
+Device Name
+
+Device Description
+
+Operating System
+
+BACKUP
+
+BACKUP
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-AMOS
+
+REA-AMOS
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-ANNETTE
+
+REA-ANNETTE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-BENJAMIN REA-BENJAMIN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-CHARITY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-CHARITY
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+REA-Clarke
+
+REA-CLARK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-DAVIDO
+
+REA-DAVIDO
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA-EMILY
+
+REA-EMILLY
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+REAENGDESIGN
+
+REA-ENGDESIGN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-ESTHER
+
+REA-ESTHER
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-FLORIDAH REA-FLORIDAH
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-GRACEM
+
+REA-GRACEM
+
+Microsoft Windows 11
+Pro for Workstations
+
+REA-JOSEPH
+
+REA-JOSEPH
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA-JULIET
+
+REA-JULIET
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-KARISA
+
+JohnKarisa
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-LENCER
+
+REA-LENCER
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-MATHEW
+
+REA-MATHEW
+
+Microsoft Windows 11
+Pro for Workstations
+
+REA-MONICA
+
+REA-MONICA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-NICHOLAS- REA-NICHOLASSTORES
+STORES
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-PATRICK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-PATRICK
+
+REA-PHARMACY REA-PHARMACY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAREA - PRODUCTION- Microsoft Windows 11
+PRODUCTIOND
+DEPT
+Pro 10.0.26200
+EPT
+Microsoft Windows 11
+REA-RACHEL
+REA-RACHEL
+Pro 10.0.22631
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+Device Health Summary Report
+
+Device Name
+
+Device Description
+
+Operating System
+
+REA-ROY
+
+REA-ROY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA-SAMMY
+
+REA-SAMMY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA-SNJENGA
+
+REA-SNJENGA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA-TABITHA
+
+REA-TABITHA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REATRANSPORT
+
+REA-TRANSPORT
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-TRIZA
+
+REA-TRIZA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA-VALENTA
+
+REA-VALENTA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA-ZAINAB
+
+REA-ZAINAB
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+Robert-Clarke
+
+REA-CARDOVILLIS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+Disk Space
+
+RAM
+Quantity
+
+Software
+Compliant
+
+Fully
+Patched
+
+Antivirus
+Online
+Under
+Up to
+Within Last
+Warranty
+Date
+30 Days
+
+No Open
+Alerts
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Device Storage - REA Vipingo Plantations Kilifi.pdf ---
+Device Storage Report
+Description: This report lists all the disks available on the selected devices including their
+available disk space.
+Create Date: 05 FEB 2026 09:22 (EAT)
+Sites: REA Vipingo Plantations Kilifi
+Devices: 33
+
+Device Storage Report
+REA VIPINGO PLANTATIONS KILIFI
+Servers
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+D:
+
+SERVER
+
+REA-SERVER
+
+F:
+G:
+P:
+
+Size
+
+Free
+
+Local Fixed
+221.25GB 26.75GB
+Disk
+Local Fixed
+244.14GB 123.23GB
+Disk
+Local Fixed
+350.00MB 86.39MB
+Disk
+Local Fixed
+314.59GB 109.71GB
+Disk
+Local Fixed
+244.14GB 40.26GB
+Disk
+
+Used %
+87.91%
+49.53%
+75.32%
+65.13%
+83.51%
+
+Workstations
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+E:
+
+BACKUP
+
+BACKUP
+F:
+Z:
+
+REA-AMOS
+
+REA-AMOS
+
+C:
+
+REA-ANNETTE
+
+REA-ANNETTE
+
+C:
+
+REA-BENJAMIN
+
+REA-BENJAMIN
+
+C:
+
+REA-CHARITY
+
+REA-CHARITY
+
+C:
+
+REA-Clarke
+
+REA-CLARK
+
+C:
+D:
+C:
+REA-DAVIDO
+
+REA-DAVIDO
+D:
+C:
+D:
+
+REA-EMILY
+
+REA-EMILLY
+E:
+F:
+C:
+
+REA-ENGDESIGN
+
+REA-ENGDESIGN
+
+D:
+K:
+
+REA-ESTHER
+
+REA-ESTHER
+
+C:
+
+Size
+
+Local Fixed
+236.94GB
+Disk
+Local Fixed
+228.22GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+930.46GB
+Disk
+Local Fixed
+237.93GB
+Disk
+Local Fixed
+476.83GB
+Disk
+Local Fixed
+237.39GB
+Disk
+Local Fixed
+367.50GB
+Disk
+Local Fixed
+952.80GB
+Disk
+Local Fixed
+931.39GB
+Disk
+Local Fixed
+953.06GB
+Disk
+Local Fixed
+465.76GB
+Disk
+Local Fixed
+479.64GB
+Disk
+Local Fixed
+473.20GB
+Disk
+Local Fixed
+549.00MB
+Disk
+Local Fixed
+464.72GB
+Disk
+Local Fixed
+922.37GB
+Disk
+Local Fixed
+8.26GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+476.29GB
+Disk
+
+Free
+
+Used %
+
+89.94GB
+
+62.04%
+
+47.71GB
+
+79.09%
+
+41.05GB
+
+95.59%
+
+0.00b
+
+100.00%
+
+166.49GB
+
+30.03%
+
+421.23GB
+
+11.66%
+
+176.17GB
+
+25.79%
+
+249.29GB
+
+32.17%
+
+654.92GB
+
+31.26%
+
+902.35GB
+
+3.12%
+
+872.12GB
+
+8.49%
+
+443.48GB
+
+4.78%
+
+434.75GB
+
+9.36%
+
+473.09GB
+
+0.02%
+
+513.56MB
+
+6.45%
+
+339.98GB
+
+26.84%
+
+778.83GB
+
+15.56%
+
+935.44MB
+
+88.94%
+
+571.16GB
+
+38.68%
+
+347.18GB
+
+27.11%
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+D:
+
+REA-FLORIDAH
+
+REA-FLORIDAH
+E:
+F:
+
+REA-GRACEM
+
+REA-GRACEM
+
+C:
+C:
+
+REA-JOSEPH
+
+REA-JOSEPH
+
+D:
+E:
+
+REA-JULIET
+
+REA-JULIET
+
+REA-KARISA
+
+JohnKarisa
+
+C:
+C:
+D:
+C:
+
+REA-LENCER
+
+REA-LENCER
+D:
+C:
+
+REA-MATHEW
+
+REA-MATHEW
+D:
+
+REA-MONICA
+
+REA-MONICA
+
+C:
+C:
+
+REA-NICHOLASSTORES
+
+REA-NICHOLAS-STORES
+
+D:
+E:
+C:
+
+REA-PATRICK
+
+REA-PATRICK
+G:
+C:
+
+REA-PHARMACY
+
+REA-PHARMACY
+
+D:
+E:
+
+REAPRODUCTIONDEPT
+
+REA - PRODUCTION-DEPT
+
+C:
+
+REA-RACHEL
+
+REA-RACHEL
+
+C:
+
+REA-ROY
+
+REA-ROY
+
+C:
+
+REA-SAMMY
+
+REA-SAMMY
+
+C:
+
+Size
+
+Local Fixed
+170.44GB
+Disk
+Local Fixed
+67.44GB
+Disk
+Local Fixed
+4.99GB
+Disk
+Local Fixed
+918.04GB
+Disk
+Local Fixed
+952.99GB
+Disk
+Local Fixed
+464.17GB
+Disk
+Local Fixed
+488.28GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+930.97GB
+Disk
+Local Fixed
+465.11GB
+Disk
+Local Fixed
+232.88GB
+Disk
+Local Fixed
+237.44GB
+Disk
+Local Fixed
+494.18MB
+Disk
+Local Fixed
+930.65GB
+Disk
+Local Fixed
+465.76GB
+Disk
+Local Fixed
+465.13GB
+Disk
+Local Fixed
+160.08GB
+Disk
+Local Fixed
+1.01GB
+Disk
+Local Fixed
+76.78GB
+Disk
+Local Fixed
+249.99GB
+Disk
+Local Fixed
+215.13GB
+Disk
+Local Fixed
+442.60GB
+Disk
+Local Fixed
+488.28GB
+Disk
+Local Fixed
+465.76GB
+Disk
+Local Fixed
+953.00GB
+Disk
+
+Free
+
+Used %
+
+51.63GB
+
+69.71%
+
+66.95GB
+
+0.72%
+
+2.97GB
+
+40.41%
+
+303.54GB
+
+66.94%
+
+872.34GB
+
+8.46%
+
+388.26GB
+
+16.35%
+
+488.17GB
+
+0.02%
+
+900.94GB
+
+3.28%
+
+887.02GB
+
+4.72%
+
+385.92GB
+
+17.03%
+
+35.49GB
+
+84.76%
+
+55.01GB
+
+76.83%
+
+79.22MB
+
+83.97%
+
+841.21GB
+
+9.61%
+
+465.62GB
+
+0.03%
+
+383.28GB
+
+17.60%
+
+54.62GB
+
+65.88%
+
+600.18MB
+
+42.04%
+
+66.45GB
+
+13.46%
+
+156.04GB
+
+37.58%
+
+193.47GB
+
+10.07%
+
+354.35GB
+
+19.94%
+
+488.17GB
+
+0.02%
+
+463.80GB
+
+0.42%
+
+866.53GB
+
+9.07%
+
+Local Fixed
+237.62GB 159.89GB
+Disk
+Local Fixed
+953.06GB 755.42GB
+Disk
+Local Fixed
+476.16GB 398.55GB
+Disk
+
+32.71%
+20.74%
+16.30%
+
+Device Storage Report
+Device Name
+
+Device Description
+
+Drive Drive Type
+C:
+
+REA-SNJENGA
+
+REA-SNJENGA
+E:
+
+REA-TABITHA
+
+REA-TABITHA
+
+C:
+
+REA-TRANSPORT
+
+REA-TRANSPORT
+
+C:
+
+REA-TRIZA
+
+REA-TRIZA
+
+C:
+D:
+REA-VALENTA
+
+REA-VALENTA
+
+C:
+
+REA-ZAINAB
+
+REA-ZAINAB
+
+C:
+
+Robert-Clarke
+
+REA-CARDOVILLIS
+
+C:
+D:
+
+Size
+
+Local Fixed
+953.07GB
+Disk
+Local Fixed
+931.51GB
+Disk
+Local Fixed
+237.91GB
+Disk
+Local Fixed
+223.00GB
+Disk
+Local Fixed
+158.84GB
+Disk
+Local Fixed
+78.44GB
+Disk
+Local Fixed
+237.84GB
+Disk
+Local Fixed
+476.29GB
+Disk
+Local Fixed
+475.66GB
+Disk
+Local Fixed
+74.53GB
+Disk
+
+Free
+
+Used %
+
+818.13GB
+
+14.16%
+
+891.68GB
+
+4.28%
+
+152.65GB
+
+35.84%
+
+149.51GB
+
+32.96%
+
+31.69GB
+
+80.05%
+
+78.35GB
+
+0.12%
+
+152.50GB
+
+35.88%
+
+376.18GB
+
+21.02%
+
+374.72GB
+
+21.22%
+
+41.71GB
+
+44.03%
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Executive Summary - REA Vipingo Plantations Kilifi.pdf ---
+Executive Summary Report
+Description: This report shows the health of the delivered Managed Services.
+Create Date: 05 FEB 2026 09:15 (EAT)
+Sites: REA Vipingo Plantations Kilifi
+Devices: 33
+
+Executive Summary Report
+SUMMARY
+The Overall score represents the overall health of the network. The score is influenced by the results of different services that
+are delivered below.
+
+0%
+
+54%
+
+100%
+
+Services Delivered
+
+Score
+
+Asset Management
+
+97%
+
+Monitoring
+
+63%
+
+Patch Management
+
+27%
+
+Software Management
+
+0%
+
+Antivirus
+
+87%
+
+Average Score
+
+54%
+
+Asset Management
+The Asset Management score represents the capability of the network to function as is required by today's standards.
+Compliancy checks are made against the device to ensure devices meet the set criteria. Included in the checks are Warranty
+Status, Disk Capacity, Memory Capacity and if the Operating system is still supported.
+Monitoring
+The Monitoring score is influenced by the open monitoring alerts for the network. The total number of open alerts influence
+the score, a higher priority is reflected by a increased weight in the calculation. A lower score means that issues are seen but
+have not yet been resolved.
+Patch Management
+Regularly installing Microsoft Updates is essential for keeping the network secure. The Patch Management score represents
+the current state of Microsoft Updates in the network.
+Software Management
+Keeping commonly used 3rd party software applications updated significantly helps keeping the network secure. Attackers
+often try to exploit security vulnerabilities in these applications. This score indicates the compliance level of the managed
+devices.
+Antivirus
+An Antivirus product on all devices is essential for keeping the network protected against malware and other threats. The
+Antivirus Score represents if the Antivirus solution is installed, running and up to date on all devices.
+Proactive Maintenance
+Any network requires proactive maintenance to ensure its availability, security and performance. The report contains a list of
+regularly scheduled automated activities. No score is calculated based on these activities.
+
+Executive Summary Report
+ASSET MANAGEMENT (97%)
+Device Type
+
+Total Managed
+
+Added Last 30 Days
+
+Desktop
+
+30
+
+0
+
+Laptop
+
+2
+
+0
+
+Server
+
+1
+
+0
+
+Total
+
+33
+
+0
+
+Device Health Check
+
+Passed
+
+Failed
+
+Score
+
+Devices must have at least 15% free space on System Drive
+
+32
+
+1
+
+96%
+
+Devices must have at least 3.8 GB of memory installed
+
+32
+
+1
+
+96%
+
+Windows Devices OS must be supported by Microsoft
+Unsupported devices are those running Windows 8.1 and under or Windows
+Server 2012/2012R2 and under.
+
+32
+
+1
+
+96%
+
+Device must be within warranty
+
+0
+
+0
+
+100%
+
+Average
+
+97%
+
+Executive Summary Report
+MONITORING (63%)
+Total Alerts by Priority
+Alert Priority
+Critical: 45
+High: 533
+
+2237
+
+Moderate: 87
+
+Raised
+
+Resolved Unresolved Score
+
+Critical
+
+45
+
+45
+
+0
+
+100%
+
+High
+
+533
+
+0
+
+533
+
+0%
+
+Moderate
+
+87
+
+15
+
+72
+
+17%
+
+Low
+
+0
+
+0
+
+0
+
+100%
+
+1572
+
+1571
+
+1
+
+99%
+
+Low: 0
+Information: 1572
+
+Information
+Average
+
+63%
+
+Total Alerts by Device Type
+
+Device Type
+
+Unresolved: 606
+
+2237
+
+Resolved: 1631
+
+Raised Resolved
+
+Unresolved
+
+Desktop
+
+2101
+
+1542
+
+559
+
+Laptop
+
+66
+
+44
+
+22
+
+Server
+
+70
+
+45
+
+25
+
+Total
+
+2237
+
+1631
+
+606
+
+Top 5 Servers by Alerts
+Device Name
+
+Description
+
+SERVER
+
+REA-SERVER
+
+Critical
+
+High
+
+45
+
+Moderate
+22
+
+Low
+3
+
+Information
+0
+
+0
+
+Top 5 Other Devices by Alerts
+Device Name
+
+Description
+
+Critical
+
+High
+
+Moderate
+
+Low
+
+Information
+
+REA-RACHEL
+
+REA-RACHEL
+
+0
+
+42
+
+0
+
+0
+
+213
+
+REA-GRACEM
+
+REA-GRACEM
+
+0
+
+69
+
+1
+
+0
+
+140
+
+REA-MATHEW
+
+REA-MATHEW
+
+0
+
+3
+
+0
+
+0
+
+153
+
+REA-CHARITY
+
+REA-CHARITY
+
+0
+
+14
+
+64
+
+0
+
+74
+
+REA-MONICA
+
+REA-MONICA
+
+0
+
+16
+
+0
+
+0
+
+129
+
+Executive Summary Report
+PATCH MANAGEMENT (27%)
+Server Patch Status
+
+Fully Patched: 1
+
+Total
+1
+
+Approved Pending: 0
+
+1
+
+Fully Patched
+
+Score
+1
+
+100%
+
+Install Error: 0
+Reboot Required: 0
+No Data: 0
+No Policy: 0
+
+Workstation Patch Status
+
+Fully Patched: 8
+Approved Pending: 21
+
+32
+
+Install Error: 2
+Reboot Required: 0
+No Data: 1
+No Policy: 0
+
+Total
+
+Fully Patched
+32
+
+Score
+8
+
+25%
+
+Executive Summary Report
+SOFTWARE MANAGEMENT (0%)
+Server Software Status
+Total
+
+Compliant
+1
+
+Score
+0
+
+0%
+
+Compliant: 0
+
+1
+
+Not Compliant: 1
+Unmanaged: 0
+
+Workstation Software Status
+Total
+
+Compliant
+32
+
+Compliant: 0
+
+32
+
+Not Compliant: 32
+Unmanaged: 0
+
+Score
+0
+
+0%
+
+Executive Summary Report
+ANTIVIRUS (87%)
+Server Antivirus Status
+Total
+1
+
+Running and Up to Date: 0
+
+1
+
+Up to date
+0
+
+Not up to date Not Running Score
+0
+
+0
+
+0%
+
+Not up to date: 0
+Not Running: 0
+Not Detected: 1
+
+Workstation Antivirus Status
+Total
+Running and Up to Date: 29
+Not up to date: 1
+
+32
+
+Not Running: 2
+Not Detected: 0
+
+32
+
+Up to date
+29
+
+Not up to date Not Running Score
+1
+
+2
+
+90%
+
+Executive Summary Report
+PROACTIVE MAINTENANCE
+No Data
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Hardware Lifecycle - REA Vipingo Plantations Kilifi.pdf ---
+Hardware Lifecycle Report
+Description: This report can be used to help predict the end of your hardware’s productive lifecycle.
+Create Date: 05 FEB 2026 09:19 (EAT)
+Sites: REA Vipingo Plantations Kilifi
+Devices: 33
+
+Hardware Lifecycle Report
+SUMMARY
+Hardware Replacement Recommendations
+
+Suitable for 24 months+: 15
+
+33
+
+Replacement recommended within 12-24 months: 2
+Replacement recommended within 12 months: 16
+Unknown: 0
+
+Period
+
+Age
+
+Quantity
+
+Replacement recommended within 12 months
+
+4 years+
+
+16
+
+Replacement recommended within 12-24 months
+
+3-4 years
+
+2
+
+Suitable for 24 months+
+
+< 3 years
+
+15
+
+Unknown
+
+0
+
+Total Devices
+
+33
+
+Operating System Support
+
+Operating system is supported: 32
+
+33
+
+Operating system may be unsupported: 1
+Operating system is unsupported: 0
+
+Operating System Support*
+
+Quantity
+
+Operating system is supported
+
+32
+
+Operating system is unsupported unless manufacturer extended support has been arranged
+
+1
+
+Operating system is unsupported
+
+0
+
+Total Devices
+
+33
+
+Windows operating system support only. Non-Windows OS are counted as supported.
+
+Hardware Lifecycle Report
+REA VIPINGO PLANTATIONS KILIFI
+Hardware replacement advised within 12 months (Over 4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+SERVER
+
+REA-SERVER
+
+Microsoft Windows
+Server 2012 R2
+Standard 6.3.9600
+
+MSA\Administr CZJ23301R
+ator
+B
+
+05 MAY
+2011
+
+REA-MONICA
+
+REA-MONICA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REATRF2040JL
+MONICA\Moni 7
+cah.Mutua
+
+21 OCT
+2011
+
+REA-KARISA
+
+JohnKarisa
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAKARISA\USER
+
+23 MAR
+2012
+
+REA-ENGDESIGN
+
+REA-ENGDESIGN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAENGDESIGN\
+Rea
+Enginnering
+
+CZC3013M
+D3
+
+29 OCT
+2012
+
+REA-ZAINAB
+
+REA-ZAINAB
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAZAINAB\Zaina
+b
+
+TRF30404P
+B
+
+14 DEC
+2012
+
+REA-CHARITY
+
+REA-CHARITY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REATRF33604
+CHARITY\Cha R9
+rity
+
+23 JAN
+2013
+
+REA-TRANSPORT
+
+REA-TRANSPORT
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REA3VDCXD2
+TRANSPORT\
+Transport
+
+26 JAN
+2016
+
+BACKUP
+
+BACKUP
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+BACKUP\user
+
+6CR62511
+WD
+
+07 APR
+2016
+
+REA-JULIET
+
+REA-JULIET
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REATo Be Filled
+JULIET\Default By O.E.M.
+
+21 SEP
+2018
+
+REA-AMOS
+
+REA-AMOS
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAAMOS\user
+
+S4GJ1775
+
+27 NOV
+2018
+
+REA-TABITHA
+
+REA-TABITHA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAS4BU0946
+TABITHA\Defa
+ult
+
+27 NOV
+2018
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+REA-NICHOLASSTORES
+
+REA-NICHOLASSTORES
+
+REA-LENCER
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REANICHOLASST\Nicholus
+Kazungu
+
+4CE91120T
+3
+
+03 JAN
+2019
+
+REA-LENCER
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REATo be filled
+LENCER\Lenc by O.E.M.
+er
+
+24 APR
+2020
+
+REA-VALENTA
+
+REA-VALENTA
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAVALENTA\AD
+MIN
+
+S4GJ1581
+
+18 SEP
+2020
+
+REA-ESTHER
+
+REA-ESTHER
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REAESTHER\EST
+HER
+
+4CE214B4
+Z5
+
+07 AUG
+2021
+
+REA-EMILY
+
+REA-EMILLY
+
+Microsoft Windows 10
+Enterprise 10.0.19045
+
+REAEMILY\PC
+
+To be filled
+by O.E.M.
+
+29 SEP
+2021
+
+Last User
+
+Serial
+Number
+
+Hardware replacement advised within 12-24 months (Between 3-4 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+Robert-Clarke
+
+REA-CARDOVILLIS
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+ROBERTCLARKE\User
+
+PF3AM3C4
+
+11 MAR
+2022
+
+REA-Clarke
+
+REA-CLARK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REASGH624RR
+CLARKE\Robe M9
+rt Clark
+
+28 JUL
+2022
+
+Hardware suitable for 24+ months (Less than 3 years old)
+Device Name
+
+Device Description
+
+Operating System
+
+REA-ANNETTE
+
+REA-ANNETTE
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+REAANNETTE\Ad
+ministrator
+
+4CE412D6
+XR
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+08 NOV
+2023
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+REA-BENJAMIN
+
+REA-BENJAMIN
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REASGH723S8
+BENJAMIN\Be H2
+njamin
+
+22 JUL
+2024
+
+REA-FLORIDAH
+
+REA-FLORIDAH
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REASGH810SB
+FLORIDAH\Flo 63
+ridah
+
+22 JUL
+2024
+
+REA-PATRICK
+
+REA-PATRICK
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REASGH723S9
+PATRICK\Patri QD
+ck
+
+22 JUL
+2024
+
+REA-RACHEL
+
+REA-RACHEL
+
+Microsoft Windows 11
+Pro 10.0.22631
+
+REAMXL9193L3
+RACHEL\Rach C
+el
+
+26 SEP
+2024
+
+REA-TRIZA
+
+REA-TRIZA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REATRIZA\TRIZA
+
+4CE237B8
+NK
+
+17 MAR
+2025
+
+REA-JOSEPH
+
+REA-JOSEPH
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA4CE334CM
+JOSEPH\Admi BH
+nistrator
+
+20 MAR
+2025
+
+REA-MATHEW
+
+REA-MATHEW
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+REAMATHEW\Mat
+hew
+
+4CE338DC
+PH
+
+20 MAR
+2025
+
+REA-PHARMACY
+
+REA-PHARMACY
+
+Microsoft Windows 10
+Pro 10.0.19045
+
+REACZC04190
+PHARMACY\A M4
+DMIN
+
+04 JUL
+2025
+
+REAPRODUCTIONDEPT
+
+REA - PRODUCTIONDEPT
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA4CE520CD
+PRODUCTION 52
+D\user
+
+16 JUL
+2025
+
+REA-DAVIDO
+
+REA-DAVIDO
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REA4CE407CG
+DAVIDO\David GZ
+
+12 AUG
+2025
+
+REA-ROY
+
+REA-ROY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REAROY\User
+
+4CE451DS
+TW
+
+12 AUG
+2025
+
+REA-SNJENGA
+
+REA-SNJENGA
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REASNJENGA\Ad
+ministrator
+
+4CE432D8
+V3
+
+12 AUG
+2025
+
+REA-SAMMY
+
+REA-SAMMY
+
+Microsoft Windows 11
+Pro 10.0.26200
+
+REACND12916
+SAMMY\Alfred RR
+
+20 AUG
+2025
+
+Hardware Lifecycle Report
+Device Name
+
+Device Description
+
+Operating System
+
+REA-GRACEM
+
+REA-GRACEM
+
+Microsoft Windows 11
+Pro for Workstations
+10.0.26200
+
+OS
+Support
+
+Last User
+
+Serial
+Number
+
+REAGRACEM\Gra
+ce Muisyo
+
+4CE520CC
+QG
+
+Disk
+Space
+
+RAM
+Under
+Online
+Quantity Warranty Within
+Last 30
+Days
+
+Build Date*
+
+14 OCT
+2025
+
+*Please note: Build date is based on the BIOS release date. While this is the best metric available, the data should not be treated as definitive since it is not always available
+
+
+
+
+
+
+--- Document Break ---
+
+
+--- Content from PDF: Patch Management Summary - REA Vipingo Plantations Kilifi.pdf ---
+Patch Management Summary Report
+Description: This report shows the patch status by device
+Create Date: 05 FEB 2026 09:23 (EAT)
+Sites: REA Vipingo Plantations Kilifi
+Devices: 33
+
+Patch Management Summary Report
+PATCH SUMMARY
+
+Fully Patched: 9
+Approved Pending: 21
+Install Error: 2
+Reboot Required: 0
+No Data: 1
+
+33
+
+No Policy: 0
+
+REA Vipingo Plantations Kilifi
+Servers
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+SERVER
+
+REA-SERVER
+
+27 JAN 2026
+08:24 (EAT)
+
+172
+
+0
+
+0
+
+Fully
+Patched
+
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+REA-PHARMACY
+
+REA-PHARMACY
+
+05 FEB 2026
+06:19 (EAT)
+
+6
+
+6
+
+0
+
+Approved
+Pending
+
+REA-LENCER
+
+REA-LENCER
+
+05 FEB 2026
+07:33 (EAT)
+
+10
+
+0
+
+0
+
+Fully
+Patched
+
+REA-JOSEPH
+
+REA-JOSEPH
+
+31 JAN 2026
+08:13 (EAT)
+
+4
+
+3
+
+0
+
+Approved
+Pending
+
+REA-FLORIDAH
+
+REA-FLORIDAH
+
+05 FEB 2026
+07:50 (EAT)
+
+67
+
+0
+
+0
+
+Fully
+Patched
+
+BACKUP
+
+BACKUP
+
+01 FEB 2026
+07:46 (EAT)
+
+11
+
+1
+
+0
+
+Approved
+Pending
+
+REA-Clarke
+
+REA-CLARK
+
+05 FEB 2026
+07:38 (EAT)
+
+12
+
+0
+
+0
+
+Fully
+Patched
+
+REA-DAVIDO
+
+REA-DAVIDO
+
+04 FEB 2026
+07:35 (EAT)
+
+4
+
+5
+
+0
+
+Approved
+Pending
+
+REA-BENJAMIN
+
+REA-BENJAMIN
+
+05 NOV 2025
+17:02 (EAT)
+
+70
+
+2
+
+0
+
+Approved
+Pending
+
+REA-MATHEW
+
+REA-MATHEW
+
+05 FEB 2026
+07:46 (EAT)
+
+6
+
+4
+
+0
+
+Approved
+Pending
+
+REA-ZAINAB
+
+REA-ZAINAB
+
+05 FEB 2026
+07:37 (EAT)
+
+9
+
+1
+
+0
+
+Approved
+Pending
+
+REA-MONICA
+
+REA-MONICA
+
+03 FEB 2026
+06:56 (EAT)
+
+11
+
+1
+
+0
+
+Approved
+Pending
+
+Robert-Clarke
+
+REA-CARDOVILLIS
+
+04 FEB 2026
+17:59 (EAT)
+
+3
+
+1
+
+0
+
+Install
+Error
+
+REA-CHARITY
+
+REA-CHARITY
+
+05 FEB 2026
+07:12 (EAT)
+
+66
+
+1
+
+0
+
+Approved
+Pending
+
+REA-TRIZA
+
+REA-TRIZA
+
+03 FEB 2026
+13:54 (EAT)
+
+5
+
+4
+
+0
+
+Approved
+Pending
+
+Workstations
+
+Patch Management Summary Report
+REA Vipingo Plantations Kilifi
+Device Name
+
+Description
+
+Last Reboot
+
+Installed
+
+Approved
+Pending
+
+Not Approved
+
+Patch
+Status
+
+REA-RACHEL
+
+REA-RACHEL
+
+04 FEB 2026
+16:34 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+REA-GRACEM
+
+REA-GRACEM
+
+05 FEB 2026
+08:12 (EAT)
+
+5
+
+3
+
+0
+
+Approved
+Pending
+
+REA-ROY
+
+REA-ROY
+
+02 FEB 2026
+07:51 (EAT)
+
+11
+
+4
+
+0
+
+Install
+Error
+
+REA-KARISA
+
+JohnKarisa
+
+05 FEB 2026
+07:46 (EAT)
+
+9
+
+0
+
+0
+
+Fully
+Patched
+
+REA-SNJENGA
+
+REA-SNJENGA
+
+04 FEB 2026
+07:51 (EAT)
+
+5
+
+4
+
+0
+
+Approved
+Pending
+
+REA-PATRICK
+
+REA-PATRICK
+
+05 FEB 2026
+06:28 (EAT)
+
+6
+
+4
+
+0
+
+Approved
+Pending
+
+REA-SAMMY
+
+REA-SAMMY
+
+05 FEB 2026
+07:12 (EAT)
+
+5
+
+15
+
+0
+
+Approved
+Pending
+
+REA-JULIET
+
+REA-JULIET
+
+16 DEC 2025
+16:34 (EAT)
+
+0
+
+0
+
+0
+
+No Data
+
+REA-NICHOLASSTORES
+
+REA-NICHOLAS-STORES
+
+04 FEB 2026
+15:17 (EAT)
+
+11
+
+0
+
+0
+
+Fully
+Patched
+
+REA-VALENTA
+
+REA-VALENTA
+
+05 FEB 2026
+06:28 (EAT)
+
+8
+
+0
+
+0
+
+Fully
+Patched
+
+REA-TRANSPORT
+
+REA-TRANSPORT
+
+05 FEB 2026
+07:02 (EAT)
+
+78
+
+0
+
+0
+
+Fully
+Patched
+
+REA-TABITHA
+
+REA-TABITHA
+
+05 FEB 2026
+07:30 (EAT)
+
+8
+
+2
+
+0
+
+Approved
+Pending
+
+REA-ENGDESIGN
+
+REA-ENGDESIGN
+
+04 FEB 2026
+13:11 (EAT)
+
+9
+
+4
+
+0
+
+Approved
+Pending
+
+REAPRODUCTIONDEPT
+
+REA - PRODUCTION-DEPT
+
+05 FEB 2026
+06:35 (EAT)
+
+6
+
+2
+
+0
+
+Approved
+Pending
+
+REA-EMILY
+
+REA-EMILLY
+
+23 JAN 2026
+14:07 (EAT)
+
+5
+
+16
+
+0
+
+Approved
+Pending
+
+REA-ESTHER
+
+REA-ESTHER
+
+04 FEB 2026
+07:55 (EAT)
+
+7
+
+1
+
+0
+
+Approved
+Pending
+
+REA-AMOS
+
+REA-AMOS
+
+28 JAN 2026
+07:16 (EAT)
+
+8
+
+1
+
+0
+
+Approved
+Pending
+
+REA-ANNETTE
+
+REA-ANNETTE
+
+05 FEB 2026
+06:40 (EAT)
+
+8
+
+2
+
+0
+
+Approved
+Pending
+
+
+
