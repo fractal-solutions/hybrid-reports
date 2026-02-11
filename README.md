@@ -74,4 +74,37 @@ To extend the system with a new data source:
     *   Generate any necessary charts or visuals, saving them to `assets/`.
     *   Construct a JSON object snippet containing its extracted data.
     *   Place this JSON snippet into `shared.output`.
-3.  **Update Client Config**: Add `<your_module_name>` to the
+3.  **Update Client Config**: Add `<your_module_name>` to the `modules_to_run` list for any client that needs the new module.
+4.  **Template Wiring**: If the module adds a new section or fields, update:
+    *   `src/templates/report.html` to include the section and placeholders.
+    *   `src/templates/report_style.css` for styling.
+    *   `src/renderer.js` if you need pre-processing (lists, tables, images).
+
+## Data Layout
+
+By default the system expects data under `data/` with module-specific subfolders. Common examples:
+
+- `data/datto_rmm/` for Datto RMM PDFs
+- `data/prtg/` for PRTG PDFs
+- `data/zoho_tickets.csv` for Zoho Tickets exports
+
+Each parser is responsible for finding and reading its own inputs relative to `shared.data_directory`.
+
+## Report Templates
+
+- HTML layout: `src/templates/report.html`
+- Styles: `src/templates/report_style.css`
+- Logo: `src/templates/eldama-logo.png`
+
+The renderer injects CSS and images, replaces `{{placeholders}}`, and generates the final PDF.
+
+## Troubleshooting
+
+- **Blank sections**: Make sure the module that provides the data is included in `modules_to_run` and that the parser output was merged into `report_data.json`.
+- **Missing images**: Confirm charts were generated in `assets/` and that their paths are present in the module output JSON.
+- **PDF render issues**: Reinstall the Puppeteer browser with `bunx puppeteer browsers install chrome`.
+
+## Notes
+
+- The final aggregated data is written to `report_data.json` before rendering.
+- The PDF is written to `reports/<Client>-<Period>-Monthly_Report.pdf`.
