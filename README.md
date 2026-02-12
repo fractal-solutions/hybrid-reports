@@ -30,6 +30,10 @@ The system follows a Data-View-Controller (DVC) pattern:
     bunx puppeteer browsers install chrome
     ```
 5.  **Environment Variables**: The agent might require API keys for LLM services. Set `AGENT_LLM_API_KEY`, `AGENT_LLM_MODEL`, and `AGENT_LLM_BASE_URL` in your environment or a `.env` file.
+6.  **Patch Qflow Agent (required after install)**: Qflow's finish tool prompts for confirmation by default. This repo includes a patch script to disable that prompt for unattended runs. Run after `bun install` or any dependency reinstall:
+    ```bash
+    bun patch_agent.js
+    ```
 
 ## How to Configure Clients
 
@@ -100,6 +104,7 @@ The renderer injects CSS and images, replaces `{{placeholders}}`, and generates 
 
 ## Troubleshooting
 
+- **Finish tool prompt keeps asking for yes/no**: Re-run `bun patch_agent.js` after reinstalling dependencies.
 - **Blank sections**: Make sure the module that provides the data is included in `modules_to_run` and that the parser output was merged into `report_data.json`.
 - **Missing images**: Confirm charts were generated in `assets/` and that their paths are present in the module output JSON.
 - **PDF render issues**: Reinstall the Puppeteer browser with `bunx puppeteer browsers install chrome`.
