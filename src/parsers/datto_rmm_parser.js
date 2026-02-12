@@ -60,7 +60,6 @@ function fuzzyClientMatch(clientName, fileName) {
 
 // This is a self-contained parser module for Datto RMM data.
 export function datto_rmmParserWorkflow() {
-  // --- LLM Configuration ---
   const AGENT_LLM_API_KEY = process.env.AGENT_LLM_API_KEY;
   const AGENT_LLM_MODEL = process.env.AGENT_LLM_MODEL;
   const AGENT_LLM_BASE_URL = process.env.AGENT_LLM_BASE_URL;
@@ -69,7 +68,6 @@ export function datto_rmmParserWorkflow() {
     throw new Error("AGENT_LLM_API_KEY is not set.");
   }
 
-  // 1. Instantiate the LLM for the agent's reasoning
   const agentLLM = new GenericLLMNode();
   agentLLM.setParams({
     model: AGENT_LLM_MODEL,
@@ -77,21 +75,18 @@ export function datto_rmmParserWorkflow() {
     baseUrl: AGENT_LLM_BASE_URL,
   });
 
-  // 2. Map tool names to their instances
   const codeInterpreter = new CodeInterpreterNode();
   codeInterpreter.setParams({
       interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
   });
   
-  // This availableTools will be passed to the AgentNode
+ 
   const availableTools = {
     code_interpreter: codeInterpreter,
-    // PDFProcessorNode is no longer needed here as AgentNode receives pre-processed text
   };
 
   // --- NODES FOR THE DATTO RMM PARSER FLOW ---
 
-  // Node to find and process Datto RMM PDF files
   const findAndProcessDattoPdfsNode = new AsyncNode();
   findAndProcessDattoPdfsNode.prepAsync = async (shared) => {
     // Defensive check
@@ -132,16 +127,14 @@ export function datto_rmmParserWorkflow() {
       }
     } catch (err) {
       console.error("Error finding Datto RMM PDF files:", err);
-      // Even if error, propagate shared to avoid breaking chain.
     }
     shared.datto_rmm_pdf_paths = dattoRmmPdfPaths;
     return shared; 
   };
 
-  // Node to extract text from all found PDFs and merge them
   const extractPdfsTextNode = new AsyncNode();
-  extractPdfsTextNode.prepAsync = async (shared) => { // prepAsync for extractPdfsTextNode
-    if (typeof shared === 'undefined' || shared === null) { shared = {}; } // Defensive
+  extractPdfsTextNode.prepAsync = async (shared) => { 
+    if (typeof shared === 'undefined' || shared === null) { shared = {}; } 
     
     const pdfPaths = shared.datto_rmm_pdf_paths || [];
     if (pdfPaths.length === 0) {
@@ -154,7 +147,7 @@ export function datto_rmmParserWorkflow() {
 
     for (const pdfPath of pdfPaths) {
       console.log(`Datto RMM Parser: Extracting text from PDF: ${pdfPath}`);
-      const localPdfProcessor = new PDFProcessorNode(); // Instantiate locally for each PDF
+      const localPdfProcessor = new PDFProcessorNode(); 
       localPdfProcessor.setParams({
         filePath: pdfPath,
         action: 'extract_text',
@@ -175,11 +168,9 @@ export function datto_rmmParserWorkflow() {
 
     const mergedContent = allExtractedText.join('\n\n\n--- Document Break ---\n\n\n');
     
-    // Store merged content directly in shared object for LLM's goal
     shared.pdfTextContent = mergedContent; 
     console.log(`Datto RMM Parser: Merged extracted text content (total length: ${mergedContent.length})`);
     
-    // Also write to a temporary file for robustness/debugging, though LLM directly uses shared.pdfTextContent
     const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
     const mergedTextDir = path.join(process.cwd(), 'data', 'datto_rmm', 'extracted');
     if (!fs.existsSync(mergedTextDir)) {
@@ -192,10 +183,8 @@ export function datto_rmmParserWorkflow() {
     return shared; 
   }
 
-  // 3. Instantiate the AgentNode (LLM-driven task execution)
-  const agent = new AgentNode(agentLLM, availableTools, agentLLM); // Agent still needs LLM and tools
-  agent.prepAsync = async (shared) => { // This receives `parserShared` from orchestrator
-    // Use the merged text content directly in the goal
+  const agent = new AgentNode(agentLLM, availableTools, agentLLM); 
+  agent.prepAsync = async (shared) => { 
     const mergedTextContent = shared.pdfTextContent;
     
     if (!mergedTextContent) {
@@ -257,19 +246,17 @@ export function datto_rmmParserWorkflow() {
       4. **Final Output**: Your final response should be ONLY the JSON object you constructed. Do not add any other text or explanation.
     `;
     agent.setParams({ goal: goal }); 
-    return shared; // Return shared for propagation
+    return shared; 
   };
 
-  // Node to process the AgentNode's raw output (from shared.agentOutput) and write to a file
   const processAgentOutputNode = new AsyncNode();
-  processAgentOutputNode.prepAsync = async (shared) => { // prepAsync only takes `shared`
-    // Defensive check
+  processAgentOutputNode.prepAsync = async (shared) => { 
     if (typeof shared === 'undefined' || shared === null) {
         console.warn("Datto RMM Parser: 'shared' object was undefined or null in processAgentOutputNode.prepAsync, initializing.");
         shared = {};
     }
 
-    const rawAgentOutput = shared.agentOutput; // This is where the AgentNode puts its output!
+    const rawAgentOutput = shared.agentOutput; 
 
     try {
         if (!rawAgentOutput) {
@@ -277,7 +264,7 @@ export function datto_rmmParserWorkflow() {
             throw new Error("AgentNode output not found on shared.agentOutput.");
         }
         console.log('Datto RMM Parser: Raw LLM final message from shared.agentOutput:', rawAgentOutput);
-        const jsonOutput = JSON.parse(rawAgentOutput); // Parse the raw string output
+        const jsonOutput = JSON.parse(rawAgentOutput); 
         
         const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
         const tempFilePath = path.join(process.cwd(), `temp_datto_rmm_output_${clientNameSanitized}.json`);
@@ -289,7 +276,7 @@ export function datto_rmmParserWorkflow() {
         console.log('Datto RMM Parser: shared.output_filepath after assignment:', shared.output_filepath);
     } catch (e) {
         console.error("Error processing and writing JSON output from Datto RMM agent:", e);
-        console.log("Agent raw output was:", rawAgentOutput); // Log the problematic raw output
+        console.log("Agent raw output was:", rawAgentOutput); 
         
         const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
         const errorFilePath = path.join(process.cwd(), `temp_datto_rmm_error_${clientNameSanitized}.json`);
@@ -297,15 +284,14 @@ export function datto_rmmParserWorkflow() {
         shared.output_filepath = errorFilePath;
         console.log('Datto RMM Parser: shared.output_filepath after error assignment:', shared.output_filepath);
     }
-    return shared; // Important: Return the shared object for propagation
+    return shared; 
   };
 
-  // 5. Create the flow and chain nodes
   const flow = new AsyncFlow();
   flow.start(findAndProcessDattoPdfsNode)
     .next(extractPdfsTextNode)
     .next(agent)
-    .next(processAgentOutputNode); // Chain processAgentOutputNode after the agent
+    .next(processAgentOutputNode);
 
   return flow;
 }
