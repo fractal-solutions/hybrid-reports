@@ -1,13 +1,4 @@
 {
-  "meta": {
-    "client_name": "REA VIPINGO PLANTATIONS LIMITED",
-    "report_month": "January 2026",
-    "generated_date": "2/13/2026",
-    "modules_to_run": [
-      "datto_rmm",
-      "zoho_tickets"
-    ]
-  },
   "scores": {
     "average_score": 50,
     "services_delivered_chart_path": "assets/datto_services_REA_VIPINGO_PLANTATIONS_LIMITED.png"
@@ -51,18 +42,34 @@
     "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
     "Create an OS lifecycle plan for unsupported or near end-of-support devices."
   ],
-  "tickets": {
-    "source": "Zoho",
-    "total": 8,
-    "software_count": 0,
-    "hardware_count": 2,
-    "misc_count": 6,
-    "chart_path": "assets\\zoho_tickets_REA_VIPINGO_PLANTATIONS_LIMITED.png"
-  },
-  "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for REA VIPINGO PLANTATIONS LIMITED for January 2026. The average service score for the month was 50%. A total of 8 tickets were processed, with 35 devices having antivirus installed, and 9 devices fully patched.",
-    "total_tickets": 8,
-    "av_installed": 35,
-    "fully_patched": 9
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": 97,
+      "Monitoring": 62,
+      "Patch Management": 19,
+      "Software Management": 0,
+      "Antivirus": 76
+    },
+    "average_score": 50,
+    "disk": {
+      "passed": 45,
+      "failed": 1
+    },
+    "ram": {
+      "passed": 44,
+      "failed": 2
+    },
+    "os": {
+      "passed": 45,
+      "failed": 1
+    },
+    "antivirus": {
+      "installed": 35,
+      "missing": 11
+    },
+    "patch": {
+      "fully_patched": 9,
+      "update_required": 37
+    }
   }
 }

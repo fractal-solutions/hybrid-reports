@@ -1,0 +1,73 @@
+{
+  "scores": {
+    "average_score": 55,
+    "services_delivered_chart_path": "assets/datto_services_ASPIRA.png"
+  },
+  "device_health": {
+    "total_managed": 25,
+    "compliance_percentage": 4,
+    "chart_path": "assets/datto_device_health_ASPIRA.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 23,
+        "total_count": 25,
+        "low_space_count": 2,
+        "chart_path": "assets/datto_disk_space_ASPIRA.png"
+      },
+      "ram": {
+        "passed_count": 25,
+        "total_count": 25
+      },
+      "os_support": {
+        "passed_count": 22,
+        "total_count": 22
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 22,
+    "chart_path": "assets/datto_antivirus_ASPIRA.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 3,
+    "update_required_count": 19,
+    "chart_path": "assets/datto_patch_ASPIRA.png",
+    "windows_10_users_list": []
+  },
+  "recommendations": [
+    "Device health compliance is 4%; prioritize remediation of failed health checks this month.",
+    "19 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 22/25; deploy or remediate protection on uncovered endpoints.",
+    "2 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting."
+  ],
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": 98,
+      "Monitoring": 63,
+      "Patch Management": 13,
+      "Software Management": 12,
+      "Antivirus": 91
+    },
+    "average_score": 55,
+    "disk": {
+      "passed": 23,
+      "failed": 2
+    },
+    "ram": {
+      "passed": 25,
+      "failed": 0
+    },
+    "os": {
+      "passed": 22,
+      "failed": 0
+    },
+    "antivirus": {
+      "installed": 22,
+      "missing": 3
+    },
+    "patch": {
+      "fully_patched": 3,
+      "update_required": 19
+    }
+  }
+}

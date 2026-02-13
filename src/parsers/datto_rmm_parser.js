@@ -1,13 +1,8 @@
 import { AsyncFlow, AsyncNode } from "@fractal-solutions/qflow";
-import {
-  AgentNode,
-  CodeInterpreterNode,
-  PDFProcessorNode, // Re-added as it's needed locally within extractPdfsTextNode
-} from "@fractal-solutions/qflow/nodes";
-import { GenericLLMNode } from "../nodes/GenericLLMNode.js";
+import { CodeInterpreterNode, PDFProcessorNode } from "@fractal-solutions/qflow/nodes";
 import path from "path";
 import process from "process";
-import fs from "fs"; // Need fs for writing files
+import fs from "fs";
 
 function tokenizeForMatch(value) {
   return (value || "")
@@ -58,61 +53,363 @@ function fuzzyClientMatch(clientName, fileName) {
   return clientTokens.every((clientToken) => tokenMatches(clientToken, fileTokens));
 }
 
-// This is a self-contained parser module for Datto RMM data.
-export function datto_rmmParserWorkflow() {
-  const AGENT_LLM_API_KEY = process.env.AGENT_LLM_API_KEY;
-  const AGENT_LLM_MODEL = process.env.AGENT_LLM_MODEL;
-  const AGENT_LLM_BASE_URL = process.env.AGENT_LLM_BASE_URL;
+function sanitizeClientName(value) {
+  return (value || "client").replace(/[^a-zA-Z0-9]/g, "_");
+}
 
-  if (!AGENT_LLM_API_KEY) {
-    throw new Error("AGENT_LLM_API_KEY is not set.");
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function normalizeDeviceToken(value) {
+  return (value || "").replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+}
+
+function round1(value) {
+  return Math.round(value * 10) / 10;
+}
+
+function extractFirstInt(text, regex) {
+  if (!text) return null;
+  const match = text.match(regex);
+  if (!match) return null;
+  const parsed = Number.parseInt((match[1] || "").replace(/,/g, ""), 10);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function extractServiceScore(executiveText, serviceName) {
+  if (!executiveText) return null;
+  const regex = new RegExp(`${escapeRegExp(serviceName)}\\s*(?:\\r?\\n)+\\s*(\\d{1,3})%`, "i");
+  return extractFirstInt(executiveText, regex);
+}
+
+function extractCheckMetric(executiveText, checkLabel) {
+  if (!executiveText) return null;
+  const regex = new RegExp(
+    `${escapeRegExp(checkLabel)}[\\s\\S]{0,280}?(\\d+)\\s*(?:\\r?\\n)+\\s*(\\d+)\\s*(?:\\r?\\n)+\\s*(\\d{1,3})%`,
+    "i"
+  );
+  const match = executiveText.match(regex);
+  if (!match) return null;
+  return {
+    passed: Number.parseInt(match[1], 10),
+    failed: Number.parseInt(match[2], 10),
+    score: Number.parseInt(match[3], 10),
+  };
+}
+
+function splitSectionsByPdf(mergedText) {
+  const sections = {};
+  if (!mergedText) return sections;
+
+  const regex = /--- Content from PDF:\s*(.+?)\s*---\s*([\s\S]*?)(?=(?:--- Document Break ---)|(?:--- Content from PDF:)|$)/gi;
+  let match = regex.exec(mergedText);
+  while (match) {
+    const filename = (match[1] || "").trim();
+    const content = (match[2] || "").trim();
+    sections[filename] = content;
+    match = regex.exec(mergedText);
+  }
+  return sections;
+}
+
+function findSectionByName(sections, keyword) {
+  const key = Object.keys(sections).find((name) => name.toLowerCase().includes(keyword.toLowerCase()));
+  return key ? sections[key] : "";
+}
+
+function extractScopedInt(section, anchor, label) {
+  if (!section) return null;
+  const anchorIndex = section.toLowerCase().indexOf(anchor.toLowerCase());
+  if (anchorIndex < 0) return null;
+  const scoped = section.slice(anchorIndex, anchorIndex + 800);
+  const regex = new RegExp(`${escapeRegExp(label)}:\\s*(\\d+)`, "i");
+  return extractFirstInt(scoped, regex);
+}
+
+function extractWindows10DevicesFromHealth(deviceHealthSection) {
+  const devices = new Set();
+  if (!deviceHealthSection) return [];
+  const lines = deviceHealthSection.split(/\r?\n/).map((line) => line.trim());
+
+  for (let i = 0; i < lines.length; i++) {
+    if (!/Microsoft Windows 10/i.test(lines[i])) continue;
+
+    for (let j = i - 1; j >= Math.max(0, i - 6); j--) {
+      const candidate = lines[j];
+      if (!candidate) continue;
+      if (/^DESKTOP-/i.test(candidate)) continue;
+      if (/^Pro\s/i.test(candidate)) continue;
+      if (/^Microsoft/i.test(candidate)) continue;
+      if (/^(Disk Space|RAM|Quantity|Software|Compliant|Fully|Patched|Antivirus|Online|Under|Up to|Within Last|Warranty|Date|No Open|Alerts)$/i.test(candidate)) continue;
+
+      if (/^(PC|PF|PW)[A-Z0-9-]+/i.test(candidate) || (/\d/.test(candidate) && candidate.length >= 6)) {
+        devices.add(normalizeDeviceToken(candidate));
+        break;
+      }
+    }
   }
 
-  const agentLLM = new GenericLLMNode();
-  agentLLM.setParams({
-    model: AGENT_LLM_MODEL,
-    apiKey: AGENT_LLM_API_KEY,
-    baseUrl: AGENT_LLM_BASE_URL,
-  });
+  return Array.from(devices);
+}
 
-  const codeInterpreter = new CodeInterpreterNode();
-  codeInterpreter.setParams({
-      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
-  });
-  
- 
-  const availableTools = {
-    code_interpreter: codeInterpreter,
+function buildPatchDeviceToUserMap(patchSection) {
+  const map = {};
+  if (!patchSection) return map;
+  const lines = patchSection.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+
+  for (let i = 0; i < lines.length; i++) {
+    const deviceLine = lines[i];
+    if (!/^(PC|PF|PW)[A-Z0-9-]+/i.test(deviceLine)) continue;
+
+    const deviceKey = normalizeDeviceToken(deviceLine);
+    for (let j = i + 1; j <= Math.min(i + 4, lines.length - 1); j++) {
+      const candidate = lines[j];
+      if (!candidate) continue;
+      if (/^\d+$/.test(candidate)) continue;
+      if (/^\d{2}\s[A-Z]{3}\s\d{4}/i.test(candidate)) continue;
+      if (/^(Approved|Pending|Install|Error|Reboot|Required|No Data|Fully|Patched|Workstations|Patch|Status)$/i.test(candidate)) continue;
+      if (/^DESKTOP-/i.test(candidate)) continue;
+      if (normalizeDeviceToken(candidate) === deviceKey) continue;
+
+      if (/^[A-Za-z][A-Za-z.' -]+$/.test(candidate) && candidate.includes(" ")) {
+        map[deviceKey] = candidate;
+        break;
+      }
+    }
+  }
+
+  return map;
+}
+
+function buildRecommendations(parsed) {
+  const recommendations = [];
+
+  if (parsed.device_health.compliance_percentage < 90) {
+    recommendations.push(
+      `Device health compliance is ${parsed.device_health.compliance_percentage}%; prioritize remediation of failed health checks this month.`
+    );
+  }
+  if (parsed.patch_management.update_required_count > 0) {
+    recommendations.push(
+      `${parsed.patch_management.update_required_count} endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.`
+    );
+  }
+  if (parsed.antivirus.installed_count < parsed.device_health.total_managed) {
+    recommendations.push(
+      `Antivirus coverage is ${parsed.antivirus.installed_count}/${parsed.device_health.total_managed}; deploy or remediate protection on uncovered endpoints.`
+    );
+  }
+  if (parsed.device_health.metrics.disk_space.low_space_count > 0) {
+    recommendations.push(
+      `${parsed.device_health.metrics.disk_space.low_space_count} endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.`
+    );
+  }
+  if (parsed.device_health.metrics.ram.passed_count < parsed.device_health.metrics.ram.total_count) {
+    recommendations.push("Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.");
+  }
+  if (parsed.device_health.metrics.os_support.passed_count < parsed.device_health.metrics.os_support.total_count) {
+    recommendations.push("Create an OS lifecycle plan for unsupported or near end-of-support devices.");
+  }
+
+  if (recommendations.length < 3) {
+    recommendations.push("Review monitoring alerts weekly and close high-priority items to improve service score.");
+  }
+  if (recommendations.length < 3) {
+    recommendations.push("Track monthly trend lines for patching, antivirus, and health checks to validate operational improvements.");
+  }
+
+  return recommendations.slice(0, 6);
+}
+
+function parseDattoMetrics(mergedText, clientName) {
+  const sections = splitSectionsByPdf(mergedText);
+  const deviceHealthSection = findSectionByName(sections, "device health summary");
+  const executiveSection = findSectionByName(sections, "executive summary");
+  const patchSummarySection = findSectionByName(sections, "patch management summary");
+
+  const totalManaged =
+    extractFirstInt(deviceHealthSection, /Total Managed devices:\s*(\d+)/i) ||
+    extractFirstInt(deviceHealthSection, /Devices:\s*(\d+)/i) ||
+    extractFirstInt(executiveSection, /Devices:\s*(\d+)/i) ||
+    0;
+
+  const summaryPassed = extractFirstInt(deviceHealthSection, /Devices with Check Passed:\s*(\d+)/i) || 0;
+  const summaryFailed = extractFirstInt(deviceHealthSection, /Devices with Checks Failed:\s*(\d+)/i) || 0;
+  const compliancePercentage = totalManaged > 0 ? round1((summaryPassed / totalManaged) * 100) : 0;
+
+  const diskMetric = extractCheckMetric(
+    executiveSection,
+    "Devices must have at least 15% free space on System Drive"
+  );
+  const ramMetric = extractCheckMetric(
+    executiveSection,
+    "Devices must have at least 3.8 GB of memory installed"
+  );
+  const osMetric = extractCheckMetric(
+    executiveSection,
+    "Windows Devices OS must be supported by Microsoft"
+  );
+
+  const diskPassed = diskMetric?.passed ?? summaryPassed;
+  const diskFailed = diskMetric?.failed ?? summaryFailed;
+  const diskTotal = diskPassed + diskFailed;
+
+  const ramPassed = ramMetric?.passed ?? totalManaged;
+  const ramFailed = ramMetric?.failed ?? 0;
+  const ramTotal = ramPassed + ramFailed;
+
+  const osPassed = osMetric?.passed ?? totalManaged;
+  const osFailed = osMetric?.failed ?? 0;
+  const osTotal = osPassed + osFailed;
+
+  const averageScore = extractServiceScore(executiveSection, "Average Score");
+  const serviceScores = {
+    "Asset Management": extractServiceScore(executiveSection, "Asset Management"),
+    Monitoring: extractServiceScore(executiveSection, "Monitoring"),
+    "Patch Management": extractServiceScore(executiveSection, "Patch Management"),
+    "Software Management": extractServiceScore(executiveSection, "Software Management"),
+    Antivirus: extractServiceScore(executiveSection, "Antivirus"),
   };
 
-  // --- NODES FOR THE DATTO RMM PARSER FLOW ---
+  const serverAv = extractScopedInt(executiveSection, "Server Antivirus Status", "Running and Up to Date") || 0;
+  const workstationAv = extractScopedInt(
+    executiveSection,
+    "Workstation Antivirus Status",
+    "Running and Up to Date"
+  ) || 0;
+  const installedCount = serverAv + workstationAv;
+
+  const fullyPatched = extractFirstInt(patchSummarySection, /Fully Patched:\s*(\d+)/i) || 0;
+  const approvedPending = extractFirstInt(patchSummarySection, /Approved Pending:\s*(\d+)/i) || 0;
+  const installError = extractFirstInt(patchSummarySection, /Install Error:\s*(\d+)/i) || 0;
+  const rebootRequired = extractFirstInt(patchSummarySection, /Reboot Required:\s*(\d+)/i) || 0;
+  const noData = extractFirstInt(patchSummarySection, /No Data:\s*(\d+)/i) || 0;
+  const noPolicy = extractFirstInt(patchSummarySection, /No Policy:\s*(\d+)/i) || 0;
+  const patchTotal = extractFirstInt(patchSummarySection, /Devices:\s*(\d+)/i) || 0;
+  const updateRequiredCount =
+    patchTotal > 0
+      ? Math.max(0, patchTotal - fullyPatched)
+      : approvedPending + installError + rebootRequired + noData + noPolicy;
+
+  const windows10Devices = extractWindows10DevicesFromHealth(deviceHealthSection);
+  const patchDeviceUserMap = buildPatchDeviceToUserMap(patchSummarySection);
+  const windows10UsersList = Array.from(
+    new Set(
+      windows10Devices
+        .map((deviceId) => patchDeviceUserMap[deviceId])
+        .filter(Boolean)
+    )
+  );
+
+  const clientNameSanitized = sanitizeClientName(clientName);
+  const chartPaths = {
+    services: `assets/datto_services_${clientNameSanitized}.png`,
+    deviceHealth: `assets/datto_device_health_${clientNameSanitized}.png`,
+    disk: `assets/datto_disk_space_${clientNameSanitized}.png`,
+    antivirus: `assets/datto_antivirus_${clientNameSanitized}.png`,
+    patch: `assets/datto_patch_${clientNameSanitized}.png`,
+  };
+
+  const parsed = {
+    scores: {
+      average_score: averageScore ?? 0,
+      services_delivered_chart_path: chartPaths.services,
+    },
+    device_health: {
+      total_managed: totalManaged,
+      compliance_percentage: compliancePercentage,
+      chart_path: chartPaths.deviceHealth,
+      metrics: {
+        disk_space: {
+          passed_count: diskPassed,
+          total_count: diskTotal,
+          low_space_count: diskFailed,
+          chart_path: chartPaths.disk,
+        },
+        ram: {
+          passed_count: ramPassed,
+          total_count: ramTotal,
+        },
+        os_support: {
+          passed_count: osPassed,
+          total_count: osTotal,
+        },
+      },
+    },
+    antivirus: {
+      installed_count: installedCount,
+      chart_path: chartPaths.antivirus,
+    },
+    patch_management: {
+      fully_patched_count: fullyPatched,
+      update_required_count: updateRequiredCount,
+      chart_path: chartPaths.patch,
+      windows_10_users_list: windows10UsersList,
+    },
+    recommendations: [],
+  };
+
+  parsed.recommendations = buildRecommendations(parsed);
+  parsed.__chart_data = {
+    service_scores: serviceScores,
+    average_score: parsed.scores.average_score,
+    disk: {
+      passed: parsed.device_health.metrics.disk_space.passed_count,
+      failed: parsed.device_health.metrics.disk_space.low_space_count,
+    },
+    ram: {
+      passed: parsed.device_health.metrics.ram.passed_count,
+      failed: Math.max(0, parsed.device_health.metrics.ram.total_count - parsed.device_health.metrics.ram.passed_count),
+    },
+    os: {
+      passed: parsed.device_health.metrics.os_support.passed_count,
+      failed: Math.max(0, parsed.device_health.metrics.os_support.total_count - parsed.device_health.metrics.os_support.passed_count),
+    },
+    antivirus: {
+      installed: parsed.antivirus.installed_count,
+      missing: Math.max(0, parsed.device_health.total_managed - parsed.antivirus.installed_count),
+    },
+    patch: {
+      fully_patched: parsed.patch_management.fully_patched_count,
+      update_required: parsed.patch_management.update_required_count,
+    },
+  };
+
+  return parsed;
+}
+
+export function datto_rmmParserWorkflow() {
+  const codeInterpreter = new CodeInterpreterNode();
+  codeInterpreter.setParams({
+    interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+  });
 
   const findAndProcessDattoPdfsNode = new AsyncNode();
   findAndProcessDattoPdfsNode.prepAsync = async (shared) => {
-    // Defensive check
-    if (typeof shared === 'undefined' || shared === null) {
-      console.warn("Datto RMM Parser: 'shared' object was undefined or null in findAndProcessDattoPdfs.prepAsync, initializing.");
-      shared = {};
-    }
+    if (typeof shared === "undefined" || shared === null) shared = {};
 
-    const dattoRmmDataDir = path.join(process.cwd(), 'data', 'datto_rmm');
+    const baseDataDir = shared.data_directory
+      ? path.resolve(process.cwd(), shared.data_directory)
+      : path.join(process.cwd(), "data");
+    const dattoRmmDataDir = path.join(baseDataDir, "datto_rmm");
     console.log(`Datto RMM Parser: Looking for Datto RMM PDF files in ${dattoRmmDataDir}`);
-    let dattoRmmPdfPaths = [];
 
-    // Dynamically find the Datto RMM PDF files
+    let dattoRmmPdfPaths = [];
     try {
       const files = fs.readdirSync(dattoRmmDataDir);
       console.log(`Datto RMM Parser: Found ${files.length} files in ${dattoRmmDataDir}`);
-      const clientNameRegex = new RegExp(shared.client_name.replace(/[^a-zA-Z0-9]/g, '.*'), 'i');
-      const pdfFiles = files.filter((file) => file.endsWith(".pdf"));
-      const regexMatched = [];
-      for (const file of files) {
-        if (file.endsWith(".pdf") && clientNameRegex.test(file)) {
-          regexMatched.push(file);
+
+      const clientNameRegex = new RegExp((shared.client_name || "").replace(/[^a-zA-Z0-9]/g, ".*"), "i");
+      const pdfFiles = files.filter((file) => file.toLowerCase().endsWith(".pdf"));
+
+      for (const file of pdfFiles) {
+        if (clientNameRegex.test(file)) {
           dattoRmmPdfPaths.push(path.join(dattoRmmDataDir, file));
           console.log(`Datto RMM Parser: Found Datto RMM PDF file: ${file}`);
         }
       }
+
       if (dattoRmmPdfPaths.length === 0) {
         console.warn("Datto RMM Parser: No PDF matches found using exact regex. Trying fuzzy matching...");
         for (const file of pdfFiles) {
@@ -121,177 +418,258 @@ export function datto_rmmParserWorkflow() {
             console.log(`Datto RMM Parser: Fuzzy matched PDF file: ${file}`);
           }
         }
-        if (dattoRmmPdfPaths.length === 0 && regexMatched.length === 0) {
-          console.warn("Datto RMM Parser: No PDF matches found after fuzzy matching.");
-        }
       }
     } catch (err) {
-      console.error("Error finding Datto RMM PDF files:", err);
+      console.error("Datto RMM Parser: Error finding Datto RMM PDF files:", err);
     }
+
     shared.datto_rmm_pdf_paths = dattoRmmPdfPaths;
-    return shared; 
+    return shared;
   };
 
   const extractPdfsTextNode = new AsyncNode();
-  extractPdfsTextNode.prepAsync = async (shared) => { 
-    if (typeof shared === 'undefined' || shared === null) { shared = {}; } 
-    
+  extractPdfsTextNode.prepAsync = async (shared) => {
+    if (typeof shared === "undefined" || shared === null) shared = {};
+
     const pdfPaths = shared.datto_rmm_pdf_paths || [];
     if (pdfPaths.length === 0) {
-      console.warn("Datto RMM Parser: No Datto RMM PDF paths found. Agent will receive empty text.");
-      shared.pdfTextContent = ""; 
-      return shared; 
+      console.warn("Datto RMM Parser: No Datto RMM PDF paths found. Using empty content.");
+      shared.pdfTextContent = "";
+      return shared;
     }
-    
-    let allExtractedText = [];
 
+    const allExtractedText = [];
     for (const pdfPath of pdfPaths) {
       console.log(`Datto RMM Parser: Extracting text from PDF: ${pdfPath}`);
-      const localPdfProcessor = new PDFProcessorNode(); 
+      const localPdfProcessor = new PDFProcessorNode();
       localPdfProcessor.setParams({
         filePath: pdfPath,
-        action: 'extract_text',
+        action: "extract_text",
       });
-      
+
       try {
         const result = await new AsyncFlow(localPdfProcessor).runAsync({});
         if (result && result.text) {
-          allExtractedText.push(`--- Content from PDF: ${path.basename(pdfPath)} ---\n` + result.text + '\n\n');
+          allExtractedText.push(`--- Content from PDF: ${path.basename(pdfPath)} ---\n${result.text}\n\n`);
         } else {
-          console.warn(`Datto RMM Parser: No text extracted from ${pdfPath}. Result:`, result);
+          console.warn(`Datto RMM Parser: No text extracted from ${pdfPath}.`);
         }
-      } catch (pdfExtractError) {
-        console.error(`Datto RMM Parser: Error extracting text from ${pdfPath}: ${pdfExtractError.message}`);
-        allExtractedText.push(`--- Error extracting text from PDF: ${path.basename(pdfPath)} ---\nError: ${pdfExtractError.message}\n\n`);
+      } catch (error) {
+        console.error(`Datto RMM Parser: Error extracting text from ${pdfPath}: ${error.message}`);
       }
     }
 
-    const mergedContent = allExtractedText.join('\n\n\n--- Document Break ---\n\n\n');
-    
-    shared.pdfTextContent = mergedContent; 
+    const mergedContent = allExtractedText.join("\n\n\n--- Document Break ---\n\n\n");
+    shared.pdfTextContent = mergedContent;
     console.log(`Datto RMM Parser: Merged extracted text content (total length: ${mergedContent.length})`);
-    
-    const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
-    const mergedTextDir = path.join(process.cwd(), 'data', 'datto_rmm', 'extracted');
+
+    const clientNameSanitized = sanitizeClientName(shared.client_name);
+    const mergedTextDir = path.join(process.cwd(), "data", "datto_rmm", "extracted");
     if (!fs.existsSync(mergedTextDir)) {
       fs.mkdirSync(mergedTextDir, { recursive: true });
     }
-    shared.merged_datto_rmm_text_filepath = path.join(mergedTextDir, `merged_content_${clientNameSanitized}.txt`);
+    shared.merged_datto_rmm_text_filepath = path.join(
+      mergedTextDir,
+      `merged_content_${clientNameSanitized}.txt`
+    );
     fs.writeFileSync(shared.merged_datto_rmm_text_filepath, mergedContent);
     console.log(`Datto RMM Parser: Merged text written to ${shared.merged_datto_rmm_text_filepath}`);
-
-    return shared; 
-  }
-
-  const agent = new AgentNode(agentLLM, availableTools, agentLLM); 
-  agent.prepAsync = async (shared) => { 
-    const mergedTextContent = shared.pdfTextContent;
-    
-    if (!mergedTextContent) {
-        throw new Error("Datto RMM Parser: Merged PDF text content not found in shared object for AgentNode. Check previous extraction step.");
-    }
-
-    const goal = `
-      Your goal is to act as a specialized Datto RMM Data Parser.
-      You will analyze the provided consolidated text from Datto RMM PDF reports and extract key metrics.
-      
-      Get the merged data for ${shared.client_name} in the ${shared.merged_datto_rmm_text_filepath} file. It may be long so you may need to process it in relevant chunks depending on the metrics you need to extract.
-     
-
-      When using code_interpreter, set requireConfirmation to false. Do not ask for permission; just use it.
-      DO NOT INSTALL ANYTHING. Use only the provided tools.
-      
-      ### Phase 1: Data & Assets
-      1.  **Analyze Text Data**: Read the consolidated text provided. Extract key metrics related to:
-          - Device Health (Disk, RAM, OS)
-          - Antivirus Status
-          - Patch Status
-          - Overall device counts and compliance.
-      2.  **Generate Visuals**: Use the 'code_interpreter' tool (Python) to generate professional charts for the extracted data. (Do not ask for permission/requireConfirmation to use the tool; just use it.)
-          - Use **matplotlib** for all charts (no other plotting libraries).
-          - Save all images to the 'assets/' folder.
-          - Required Charts for Datto RMM: Services Delivery Scores(Bar Chart for various services with average service score as a threshold), Device Health, Disk Space(Bar Charts for each user device with thesholds shown and user names per bar), Antivirus Status(Bar Chart), Patch Status(Donut (hollow Pie) Chart).
-          - Ensure chart files are saved (e.g., 'assets/datto_health_chart.png').
-          - **Eldama visual theme (styling only; do not change data/logic):**
-            - Primary color: #0047AB; accent: #FF5733; neutrals: #f4f4f4, #e6ecf5, #333, #6f6f6f.
-            - Use consistent typography (try "Montserrat" if available, else fallback to DejaVu Sans); set readable label sizes.
-            - Prefer clean, minimal grids; soften axes and spines; add clear titles and value labels where helpful.
-            - Maintain consistent margins and aspect ratios across charts; use 300 DPI for clarity.
-
-      ### Phase 2: The JSON Snippet
-      3.  **Create JSON Data**: Construct a JSON object containing the data you found.
-          - It **MUST** strictly adhere to this schema. Do not add extra keys.
-          \`json
-          {
-            "scores": { "average_score": Number, "services_delivered_chart_path": "assets/filename.png" },
-            "device_health": { 
-                "total_managed": Number, "compliance_percentage": Number, "chart_path": "assets/filename.png",
-                "metrics": {
-                    "disk_space": { "passed_count": Number, "total_count": Number, "low_space_count": Number, "chart_path": "assets/filename.png" },
-                    "ram": { "passed_count": Number, "total_count": Number },
-                    "os_support": { "passed_count": Number, "total_count": Number }
-                }
-            },
-            "antivirus": { "installed_count": Number, "chart_path": "assets/filename.png" },
-            "patch_management": { 
-                "fully_patched_count": Number, 
-                "update_required_count": Number, 
-                "chart_path": "assets/filename.png",
-                "windows_10_users_list": ["User A", "User B"]
-            },
-            "recommendations": ["Recommendation 1", "Recommendation 2"]
-          }
-          \`
-          - **Recommendations**: Derive 3–6 concise, actionable recommendations based strictly on the extracted metrics (e.g., low patch compliance, low AV coverage, disk space issues). Do not invent facts.
-      4. **Final Output**: Your final response should be ONLY the JSON object you constructed. Do not add any other text or explanation.
-    `;
-    agent.setParams({ goal: goal }); 
-    return shared; 
+    return shared;
   };
 
-  const processAgentOutputNode = new AsyncNode();
-  processAgentOutputNode.prepAsync = async (shared) => { 
-    if (typeof shared === 'undefined' || shared === null) {
-        console.warn("Datto RMM Parser: 'shared' object was undefined or null in processAgentOutputNode.prepAsync, initializing.");
-        shared = {};
+  const parseMetricsNode = new AsyncNode();
+  parseMetricsNode.prepAsync = async (shared) => {
+    if (typeof shared === "undefined" || shared === null) shared = {};
+
+    const parsed = parseDattoMetrics(shared.pdfTextContent || "", shared.client_name || "client");
+    shared.datto_output = parsed;
+
+    const metricsPath = path.join(process.cwd(), "data", "datto_rmm", "extracted", `metrics_${sanitizeClientName(shared.client_name)}.json`);
+    fs.writeFileSync(metricsPath, JSON.stringify(parsed, null, 2));
+    console.log(`Datto RMM Parser: Deterministic metrics written to ${metricsPath}`);
+
+    return shared;
+  };
+
+  const generateChartsNode = new AsyncNode();
+  generateChartsNode.prepAsync = async (shared) => {
+    if (typeof shared === "undefined" || shared === null) shared = {};
+    if (!shared.datto_output || !shared.datto_output.__chart_data) {
+      throw new Error("Datto RMM Parser: Missing parsed chart data for chart generation.");
     }
 
-    const rawAgentOutput = shared.agentOutput; 
+    const chartData = shared.datto_output.__chart_data;
+    const paths = {
+      services: shared.datto_output.scores.services_delivered_chart_path.replace(/\\/g, "/"),
+      deviceHealth: shared.datto_output.device_health.chart_path.replace(/\\/g, "/"),
+      disk: shared.datto_output.device_health.metrics.disk_space.chart_path.replace(/\\/g, "/"),
+      antivirus: shared.datto_output.antivirus.chart_path.replace(/\\/g, "/"),
+      patch: shared.datto_output.patch_management.chart_path.replace(/\\/g, "/"),
+    };
 
-    try {
-        if (!rawAgentOutput) {
-            console.warn("Datto RMM Parser: AgentNode did not place its output onto 'shared.agentOutput'. Cannot process output. Did the AgentNode complete its task?");
-            throw new Error("AgentNode output not found on shared.agentOutput.");
-        }
-        console.log('Datto RMM Parser: Raw LLM final message from shared.agentOutput:', rawAgentOutput);
-        const jsonOutput = JSON.parse(rawAgentOutput); 
-        
-        const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
-        const tempFilePath = path.join(process.cwd(), `temp_datto_rmm_output_${clientNameSanitized}.json`);
+    const pythonCode = `
+import os
+import json
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
-        fs.writeFileSync(tempFilePath, JSON.stringify(jsonOutput, null, 2));
-        console.log(`Datto RMM Parser: Wrote output to temporary file: ${tempFilePath}`);
+chart_data = json.loads(r'''${JSON.stringify(chartData)}''')
+paths = json.loads(r'''${JSON.stringify(paths)}''')
 
-        shared.output_filepath = tempFilePath;
-        console.log('Datto RMM Parser: shared.output_filepath after assignment:', shared.output_filepath);
-    } catch (e) {
-        console.error("Error processing and writing JSON output from Datto RMM agent:", e);
-        console.log("Agent raw output was:", rawAgentOutput); 
-        
-        const clientNameSanitized = shared.client_name.replace(/[^a-zA-Z0-9]/g, '_');
-        const errorFilePath = path.join(process.cwd(), `temp_datto_rmm_error_${clientNameSanitized}.json`);
-        fs.writeFileSync(errorFilePath, JSON.stringify({ error: `Failed to process Datto RMM output: ${e.message}`, raw_message: rawAgentOutput || "No raw agent output" }, null, 2));
-        shared.output_filepath = errorFilePath;
-        console.log('Datto RMM Parser: shared.output_filepath after error assignment:', shared.output_filepath);
+PRIMARY = "#0047AB"
+ACCENT = "#FF5733"
+LIGHT = "#e6ecf5"
+DARK = "#333333"
+MUTED = "#6f6f6f"
+
+plt.rcParams["font.family"] = "DejaVu Sans"
+plt.rcParams["axes.titlesize"] = 12
+plt.rcParams["axes.labelsize"] = 10
+
+def prep_ax(ax, title):
+    ax.set_title(title, color=DARK, pad=10, fontweight="bold")
+    ax.grid(axis="y", color=LIGHT, linestyle="--", linewidth=0.8, alpha=0.7)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.spines["left"].set_color(LIGHT)
+    ax.spines["bottom"].set_color(LIGHT)
+    ax.tick_params(colors=MUTED)
+
+os.makedirs("assets", exist_ok=True)
+
+# 1) Services Delivered chart
+services = ["Asset Management", "Monitoring", "Patch Management", "Software Management", "Antivirus"]
+service_values = [chart_data["service_scores"].get(s, 0) or 0 for s in services]
+avg_score = chart_data.get("average_score", 0) or 0
+
+fig, ax = plt.subplots(figsize=(9, 5), dpi=300)
+prep_ax(ax, "Services Delivered Scores")
+x = np.arange(len(services))
+bars = ax.bar(x, service_values, color=PRIMARY, alpha=0.9)
+ax.axhline(avg_score, color=ACCENT, linestyle="--", linewidth=2, label=f"Average ({avg_score}%)")
+ax.set_ylim(0, 100)
+ax.set_ylabel("Score (%)", color=DARK)
+ax.set_xticks(x)
+ax.set_xticklabels(services, rotation=20, ha="right")
+for bar, val in zip(bars, service_values):
+    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1.5, f"{val}%", ha="center", color=DARK, fontsize=9)
+ax.legend(frameon=False)
+fig.tight_layout()
+fig.savefig(paths["services"])
+plt.close(fig)
+
+# 2) Device health checks (passed vs failed)
+health_labels = ["Disk Space", "RAM", "OS Support"]
+passed_vals = [chart_data["disk"]["passed"], chart_data["ram"]["passed"], chart_data["os"]["passed"]]
+failed_vals = [chart_data["disk"]["failed"], chart_data["ram"]["failed"], chart_data["os"]["failed"]]
+
+fig, ax = plt.subplots(figsize=(8, 5), dpi=300)
+prep_ax(ax, "Device Health Checks")
+x = np.arange(len(health_labels))
+width = 0.35
+bars1 = ax.bar(x - width / 2, passed_vals, width, label="Passed", color=PRIMARY)
+bars2 = ax.bar(x + width / 2, failed_vals, width, label="Failed", color=ACCENT)
+ax.set_ylabel("Endpoints", color=DARK)
+ax.set_xticks(x)
+ax.set_xticklabels(health_labels)
+for bars in [bars1, bars2]:
+    for b in bars:
+        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
+ax.legend(frameon=False)
+fig.tight_layout()
+fig.savefig(paths["deviceHealth"])
+plt.close(fig)
+
+# 3) Disk policy compliance
+fig, ax = plt.subplots(figsize=(7, 4.5), dpi=300)
+prep_ax(ax, "Disk Space Policy Compliance")
+labels = ["Passed", "Low Space"]
+vals = [chart_data["disk"]["passed"], chart_data["disk"]["failed"]]
+bars = ax.bar(labels, vals, color=[PRIMARY, ACCENT], width=0.55)
+ax.set_ylabel("Endpoints", color=DARK)
+for b in bars:
+    ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
+fig.tight_layout()
+fig.savefig(paths["disk"])
+plt.close(fig)
+
+# 4) Antivirus installed coverage
+fig, ax = plt.subplots(figsize=(7, 4.5), dpi=300)
+prep_ax(ax, "Antivirus Coverage")
+labels = ["Installed", "Missing"]
+vals = [chart_data["antivirus"]["installed"], chart_data["antivirus"]["missing"]]
+bars = ax.bar(labels, vals, color=[PRIMARY, ACCENT], width=0.55)
+ax.set_ylabel("Endpoints", color=DARK)
+for b in bars:
+    ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
+fig.tight_layout()
+fig.savefig(paths["antivirus"])
+plt.close(fig)
+
+# 5) Patch status donut
+fig, ax = plt.subplots(figsize=(6.5, 6.5), dpi=300)
+ax.set_title("Patch Status", color=DARK, pad=12, fontweight="bold")
+sizes = [chart_data["patch"]["fully_patched"], chart_data["patch"]["update_required"]]
+labels = ["Fully Patched", "Update Required"]
+colors = [PRIMARY, ACCENT]
+wedges, _ = ax.pie(
+    sizes,
+    colors=colors,
+    startangle=90,
+    wedgeprops=dict(width=0.4, edgecolor="white")
+)
+centre_circle = plt.Circle((0, 0), 0.58, fc="white")
+ax.add_artist(centre_circle)
+legend_elements = [Line2D([0], [0], marker="o", color="w", label=f"{l}: {v}", markerfacecolor=c, markersize=9) for l, v, c in zip(labels, sizes, colors)]
+ax.legend(handles=legend_elements, loc="lower center", bbox_to_anchor=(0.5, -0.08), frameon=False)
+fig.tight_layout()
+fig.savefig(paths["patch"])
+plt.close(fig)
+
+print("Charts generated successfully.")
+`;
+
+    codeInterpreter.setParams({
+      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+      requireConfirmation: false,
+      code: pythonCode,
+    });
+
+    const result = await new AsyncFlow(codeInterpreter).runAsync({});
+    if (result?.exitCode !== 0) {
+      throw new Error(`Datto RMM Parser: Chart generation failed: ${result?.stderr || "Unknown error"}`);
     }
-    return shared; 
+
+    return shared;
+  };
+
+  const processOutputNode = new AsyncNode();
+  processOutputNode.prepAsync = async (shared) => {
+    if (typeof shared === "undefined" || shared === null) shared = {};
+    if (!shared.datto_output) {
+      throw new Error("Datto RMM Parser: No parsed Datto output found.");
+    }
+
+    const output = JSON.parse(JSON.stringify(shared.datto_output));
+    delete output.__chart_data;
+
+    const clientNameSanitized = sanitizeClientName(shared.client_name);
+    const tempFilePath = path.join(process.cwd(), `temp_datto_rmm_output_${clientNameSanitized}.json`);
+    fs.writeFileSync(tempFilePath, JSON.stringify(output, null, 2));
+    shared.output_filepath = tempFilePath;
+
+    console.log(`Datto RMM Parser: Wrote output to temporary file: ${tempFilePath}`);
+    return shared;
   };
 
   const flow = new AsyncFlow();
-  flow.start(findAndProcessDattoPdfsNode)
+  flow
+    .start(findAndProcessDattoPdfsNode)
     .next(extractPdfsTextNode)
-    .next(agent)
-    .next(processAgentOutputNode);
+    .next(parseMetricsNode)
+    .next(generateChartsNode)
+    .next(processOutputNode);
 
   return flow;
 }
