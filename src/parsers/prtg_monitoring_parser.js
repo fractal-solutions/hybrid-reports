@@ -68,6 +68,19 @@ function durationSecondsToDhms(totalSeconds) {
   return `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
 }
 
+function totalDataToMb(value) {
+  if (!value || value === "N/A") return -1;
+  const m = String(value).match(/([0-9][0-9,]*(?:\.\d+)?)\s*(MB|GB|TB)/i);
+  if (!m) return -1;
+  const n = Number.parseFloat(m[1].replace(/,/g, ""));
+  if (!Number.isFinite(n)) return -1;
+  const unit = m[2].toUpperCase();
+  if (unit === "MB") return n;
+  if (unit === "GB") return n * 1024;
+  if (unit === "TB") return n * 1024 * 1024;
+  return -1;
+}
+
 function parseUsDateTimeToMs(value) {
   const m = String(value || "")
     .trim()
@@ -290,7 +303,12 @@ function parsePrtgLinksFromText(text) {
 
   return Array.from(byName.values())
     .map((item) => item.entry)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => {
+      const aMb = totalDataToMb(a.total_data);
+      const bMb = totalDataToMb(b.total_data);
+      if (aMb !== bMb) return bMb - aMb;
+      return a.name.localeCompare(b.name);
+    });
 }
 
 function computePrtgSummary(links) {

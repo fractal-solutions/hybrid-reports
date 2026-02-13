@@ -1,6 +1,6 @@
 {
   "meta": {
-    "client_name": "SERENITY SPA LIMITED",
+    "client_name": "ASPIRA",
     "report_month": "January 2026",
     "generated_date": "2/13/2026",
     "modules_to_run": [
@@ -10,215 +10,87 @@
     ]
   },
   "scores": {
-    "average_score": 57,
-    "services_delivered_chart_path": "assets/datto_services_SERENITY_SPA_LIMITED.png"
+    "average_score": 55,
+    "services_delivered_chart_path": "assets/datto_services_ASPIRA.png"
   },
   "device_health": {
-    "total_managed": 48,
-    "compliance_percentage": 2.1,
-    "chart_path": "assets/datto_device_health_SERENITY_SPA_LIMITED.png",
+    "total_managed": 25,
+    "compliance_percentage": 4,
+    "chart_path": "assets/datto_device_health_ASPIRA.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 47,
-        "total_count": 48,
-        "low_space_count": 3,
-        "chart_path": "assets/datto_disk_space_SERENITY_SPA_LIMITED.png"
+        "passed_count": 23,
+        "total_count": 25,
+        "low_space_count": 2,
+        "chart_path": "assets/datto_disk_space_ASPIRA.png"
       },
       "ram": {
-        "passed_count": 47,
-        "total_count": 48
+        "passed_count": 25,
+        "total_count": 25
       },
       "os_support": {
-        "passed_count": 47,
-        "total_count": 48
+        "passed_count": 22,
+        "total_count": 22
       }
     }
   },
   "antivirus": {
-    "installed_count": 47,
-    "chart_path": "assets/datto_antivirus_SERENITY_SPA_LIMITED.png"
+    "installed_count": 22,
+    "chart_path": "assets/datto_antivirus_ASPIRA.png"
   },
   "patch_management": {
-    "fully_patched_count": 12,
-    "update_required_count": 36,
-    "chart_path": "assets/datto_patch_SERENITY_SPA_LIMITED.png",
+    "fully_patched_count": 3,
+    "update_required_count": 19,
+    "chart_path": "assets/datto_patch_ASPIRA.png",
     "windows_10_users_list": []
   },
   "recommendations": [
-    "Device health compliance is 2.1%; prioritize remediation of failed health checks this month.",
-    "36 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
-    "Antivirus coverage is 47/48; deploy or remediate protection on uncovered endpoints.",
-    "3 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.",
-    "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
-    "Create an OS lifecycle plan for unsupported or near end-of-support devices."
+    "Device health compliance is 4%; prioritize remediation of failed health checks this month.",
+    "19 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 22/25; deploy or remediate protection on uncovered endpoints.",
+    "2 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting."
   ],
   "tickets": {
     "source": "Zoho",
-    "total": 27,
-    "software_count": 7,
-    "hardware_count": 3,
-    "misc_count": 17,
-    "chart_path": "assets\\zoho_tickets_SERENITY_SPA_LIMITED.png"
+    "total": 2,
+    "software_count": 0,
+    "hardware_count": 0,
+    "misc_count": 2,
+    "chart_path": "assets\\zoho_tickets_ASPIRA.png"
   },
   "prtg_monitoring": {
     "links": [
       {
-        "name": "41.215.60.10 JANI (Tigoni DD)",
-        "avg_bandwidth": "2.47 Mbit/s",
-        "total_data": "692,075 MB",
-        "uptime_percent": "100%",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 06h 08m 12s",
-        "downtime_duration": "00s"
-      },
-      {
-        "name": "41.215.60.10 JANI (Tigoni DD) Ping",
-        "avg_bandwidth": "72 msec",
-        "total_data": "N/A",
-        "uptime_percent": "97.384%",
-        "downtime_percent": "2.616%",
-        "uptime_duration": "27d 06h 20m 36s",
-        "downtime_duration": "17h 34m 30s"
-      },
-      {
-        "name": "DD-SPA _KAREN DD_WAN Port2",
-        "avg_bandwidth": "0.83 Mbit/s",
-        "total_data": "229,474 MB",
-        "uptime_percent": "96.325%",
-        "downtime_percent": "3.675%",
-        "uptime_duration": "26d 23h 11m 52s",
-        "downtime_duration": "01d 00h 41m 32s"
-      },
-      {
-        "name": "DD-SPA _KAREN Ping",
-        "avg_bandwidth": "67 msec",
-        "total_data": "N/A",
-        "uptime_percent": "96.334%",
-        "downtime_percent": "3.666%",
-        "uptime_duration": "26d 23h 16m 19s",
-        "downtime_duration": "01d 00h 38m 00s"
-      },
-      {
-        "name": "Gigiri DD DD-Link",
-        "avg_bandwidth": "2.42 Mbit/s",
-        "total_data": "682,867 MB",
-        "uptime_percent": "97.941%",
-        "downtime_percent": "2.059%",
-        "uptime_duration": "27d 10h 03m 22s",
-        "downtime_duration": "13h 50m 00s"
-      },
-      {
-        "name": "Gigiri DD Guest LAN",
+        "name": "Aspira Firewall Interface",
         "avg_bandwidth": "0 Mbit/s",
         "total_data": "0 MB",
-        "uptime_percent": "97.941%",
-        "downtime_percent": "2.059%",
-        "uptime_duration": "27d 10h 04m 22s",
-        "downtime_duration": "13h 50m 00s"
+        "uptime_percent": "17.095%",
+        "downtime_percent": "82.905%",
+        "uptime_duration": "05d 03h 04m 15s",
+        "downtime_duration": "24d 20h 50m 13s"
       },
       {
-        "name": "Gigiri DD LAN",
-        "avg_bandwidth": "5.87 Mbit/s",
-        "total_data": "1,658,801 MB",
-        "uptime_percent": "97.941%",
-        "downtime_percent": "2.059%",
-        "uptime_duration": "27d 10h 03m 17s",
-        "downtime_duration": "13h 50m 00s"
-      },
-      {
-        "name": "Gigiri-JTL- 197.232.140.107 LAN",
-        "avg_bandwidth": "5.88 Mbit/s",
-        "total_data": "1,657,791 MB",
-        "uptime_percent": "97.849%",
-        "downtime_percent": "2.151%",
-        "uptime_duration": "27d 09h 25m 44s",
-        "downtime_duration": "14h 27m 00s"
-      },
-      {
-        "name": "Gigiri-JTL-197.232.140.107 JTL-WAN",
-        "avg_bandwidth": "1.92 Mbit/s",
-        "total_data": "543,014 MB",
-        "uptime_percent": "97.849%",
-        "downtime_percent": "2.151%",
-        "uptime_duration": "27d 09h 25m 39s",
-        "downtime_duration": "14h 27m 00s"
-      },
-      {
-        "name": "Kitisuru - JTL (008) Port4 Traffic",
-        "avg_bandwidth": "0.08 Mbit/s",
-        "total_data": "23,188 MB",
-        "uptime_percent": "100%",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 23h 54m 30s",
-        "downtime_duration": "00s"
-      },
-      {
-        "name": "Kitisuru - JTL Cameras-LAN",
-        "avg_bandwidth": "2.72 Mbit/s",
-        "total_data": "784,506 MB",
-        "uptime_percent": "0%",
-        "downtime_percent": "100%",
-        "uptime_duration": "00s",
-        "downtime_duration": "28d 00h 00m 00s"
-      },
-      {
-        "name": "Kitisuru - JTL JTL-WAN",
-        "avg_bandwidth": "3.37 Mbit/s",
-        "total_data": "970,408 MB",
-        "uptime_percent": "100%",
-        "downtime_percent": "0%",
-        "uptime_duration": "27d 23h 53m 35s",
-        "downtime_duration": "00s"
-      },
-      {
-        "name": "Kitisuru DD-197.254.29.114 Availability",
-        "avg_bandwidth": "62 msec",
+        "name": "Aspira Angani Backup Availability-Ping",
+        "avg_bandwidth": "61 msec",
         "total_data": "N/A",
-        "uptime_percent": "29.901%",
-        "downtime_percent": "70.099%",
-        "uptime_duration": "08d 08h 53m 48s",
-        "downtime_duration": "19d 14h 59m 00s"
-      },
-      {
-        "name": "Kitisuru DD-197.254.29.114 Cameras LAN",
-        "avg_bandwidth": "< 0.01 Mbit/s",
-        "total_data": "50 MB",
-        "uptime_percent": "29.9%",
-        "downtime_percent": "70.1%",
-        "uptime_duration": "08d 08h 53m 53s",
-        "downtime_duration": "19d 15h 00m 00s"
-      },
-      {
-        "name": "Kitisuru DD-197.254.29.114 DD",
-        "avg_bandwidth": "3.15 Mbit/s",
-        "total_data": "274,337 MB",
-        "uptime_percent": "29.895%",
-        "downtime_percent": "70.105%",
-        "uptime_duration": "08d 08h 51m 43s",
-        "downtime_duration": "19d 15h 02m 00s"
-      },
-      {
-        "name": "Kitisuru DD-197.254.29.114 Staff LAN",
-        "avg_bandwidth": "3.12 Mbit/s",
-        "total_data": "271,887 MB",
-        "uptime_percent": "29.897%",
-        "downtime_percent": "70.103%",
-        "uptime_duration": "08d 08h 52m 48s",
-        "downtime_duration": "19d 15h 01m 00s"
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "29d 23h 53m 41s",
+        "downtime_duration": "00s"
       }
     ],
     "summary_stats": {
-      "overall_avg_uptime_percent": "74.947%",
-      "overall_avg_downtime_percent": "25.053%",
-      "total_links_monitored": 16,
-      "links_with_downtime": 13
+      "overall_avg_uptime_percent": "58.548%",
+      "overall_avg_downtime_percent": "41.453%",
+      "total_links_monitored": 2,
+      "links_with_downtime": 1
     },
-    "chart_path": "assets\\prtg_uptime_SERENITY_SPA_LIMITED.png"
+    "chart_path": "assets\\prtg_uptime_ASPIRA.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 57%. A total of 27 tickets were processed, with 47 devices having antivirus installed, and 12 devices fully patched.",
-    "total_tickets": 27,
-    "av_installed": 47,
-    "fully_patched": 12
+    "executive_summary": "This is a comprehensive monthly support report for ASPIRA for January 2026. The average service score for the month was 55%. A total of 2 tickets were processed, with 22 devices having antivirus installed, and 3 devices fully patched.",
+    "total_tickets": 2,
+    "av_installed": 22,
+    "fully_patched": 3
   }
 }
