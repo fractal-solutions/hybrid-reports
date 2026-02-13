@@ -67,6 +67,57 @@ bun src/index.js --client=<SanitizedClientName>
 
 The generated PDF report will be saved in the `reports/` directory with a filename like `<SanitizedClientName>-<SanitizedReportPeriod>-Monthly_Report.pdf`.
 
+## Renderer Spec and Standalone Usage
+
+You can run the renderer directly without running parsers/orchestrator, as long as your JSON data and chart assets already exist.
+
+### Renderer Input Contract
+
+The renderer command is:
+
+```bash
+bun src/renderer.js <input-json-path> <output-pdf-path>
+```
+
+- `<input-json-path>`: path to a JSON file (typically `report_data.json`) containing:
+  - `meta` object (`client_name`, `report_month`, `generated_date`)
+  - section data used by template placeholders (`scores`, `device_health`, `antivirus`, `patch_management`, `tickets`, `prtg_monitoring`, `recommendations`, etc.)
+  - `meta.modules_to_run` list for section visibility control
+- `<output-pdf-path>`: desired PDF output path (e.g., `reports/ASPIRA-January_2026-Monthly_Report.pdf`)
+
+### Asset Requirements
+
+If your JSON includes image path fields, those files must exist (usually under `assets/`) before rendering.
+
+Expected image keys include:
+
+- `scores.services_delivered_chart_path`
+- `device_health.chart_path`
+- `device_health.metrics.disk_space.chart_path`
+- `antivirus.chart_path`
+- `patch_management.chart_path`
+- `tickets.chart_path`
+- `prtg_monitoring.chart_path`
+
+The renderer resolves these as filesystem paths relative to the project root and embeds them as Base64 in the final HTML/PDF.
+
+### Standalone Example
+
+If you already have `report_data.json` and all referenced assets:
+
+```bash
+bun src/renderer.js report_data.json "reports/ASPIRA-January_2026-Monthly_Report.pdf"
+```
+
+### What the Renderer Does
+
+1. Loads `src/templates/report.html` and `src/templates/report_style.css`.
+2. Injects CSS and logo.
+3. Removes sections not listed in `meta.modules_to_run`.
+4. Converts configured image paths to Base64.
+5. Replaces template placeholders (including list/table pre-processing).
+6. Generates the PDF via Puppeteer.
+
 
 ## Adding New Parser Modules
 
