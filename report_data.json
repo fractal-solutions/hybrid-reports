@@ -1,65 +1,98 @@
 {
   "meta": {
-    "client_name": "DIRA IMMIGRATION CONSULTANTS",
+    "client_name": "SERENITY SPA LIMITED",
     "report_month": "January 2026",
     "generated_date": "2/13/2026",
     "modules_to_run": [
       "datto_rmm",
-      "zoho_tickets"
+      "zoho_tickets",
+      "prtg_monitoring"
     ]
   },
   "scores": {
-    "average_score": 59,
-    "services_delivered_chart_path": "assets/datto_services_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "average_score": 57,
+    "services_delivered_chart_path": "assets/datto_services_SERENITY_SPA_LIMITED.png"
   },
   "device_health": {
-    "total_managed": 15,
-    "compliance_percentage": 13.3,
-    "chart_path": "assets/datto_device_health_DIRA_IMMIGRATION_CONSULTANTS.png",
+    "total_managed": 48,
+    "compliance_percentage": 2.1,
+    "chart_path": "assets/datto_device_health_SERENITY_SPA_LIMITED.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 15,
-        "total_count": 15,
-        "low_space_count": 0,
-        "chart_path": "assets/datto_disk_space_DIRA_IMMIGRATION_CONSULTANTS.png"
+        "passed_count": 47,
+        "total_count": 48,
+        "low_space_count": 3,
+        "chart_path": "assets/datto_disk_space_SERENITY_SPA_LIMITED.png"
       },
       "ram": {
-        "passed_count": 15,
-        "total_count": 15
+        "passed_count": 47,
+        "total_count": 48
       },
       "os_support": {
-        "passed_count": 15,
-        "total_count": 15
+        "passed_count": 47,
+        "total_count": 48
       }
     }
   },
   "antivirus": {
-    "installed_count": 15,
-    "chart_path": "assets/datto_antivirus_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "installed_count": 47,
+    "chart_path": "assets/datto_antivirus_SERENITY_SPA_LIMITED.png"
   },
   "patch_management": {
-    "fully_patched_count": 4,
-    "update_required_count": 11,
-    "chart_path": "assets/datto_patch_DIRA_IMMIGRATION_CONSULTANTS.png",
+    "fully_patched_count": 12,
+    "update_required_count": 36,
+    "chart_path": "assets/datto_patch_SERENITY_SPA_LIMITED.png",
     "windows_10_users_list": []
   },
   "recommendations": [
-    "Device health compliance is 13.3%; prioritize remediation of failed health checks this month.",
-    "11 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
-    "Review monitoring alerts weekly and close high-priority items to improve service score."
+    "Device health compliance is 2.1%; prioritize remediation of failed health checks this month.",
+    "36 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 47/48; deploy or remediate protection on uncovered endpoints.",
+    "3 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.",
+    "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
+    "Create an OS lifecycle plan for unsupported or near end-of-support devices."
   ],
   "tickets": {
     "source": "Zoho",
-    "total": 10,
-    "software_count": 3,
-    "hardware_count": 5,
-    "misc_count": 2,
-    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "total": 27,
+    "software_count": 7,
+    "hardware_count": 3,
+    "misc_count": 17,
+    "chart_path": "assets\\zoho_tickets_SERENITY_SPA_LIMITED.png"
+  },
+  "prtg_monitoring": {
+    "links": [
+      {
+        "name": "41.215.60.10 JANI (Tigoni",
+        "avg_bandwidth": "2.47 Mbit/s",
+        "total_data": "N/A",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 06h 08m 12s",
+        "downtime_duration": "0d 17h 51m 48s"
+      },
+      {
+        "name": "DD-SPA _KAREN Ping",
+        "avg_bandwidth": "67 msec",
+        "total_data": "N/A",
+        "uptime_percent": "3.666%",
+        "downtime_percent": "96.334%",
+        "uptime_duration": "01d 00h 38m 00s",
+        "downtime_duration": "26d 23h 22m 00s"
+      }
+    ],
+    "summary_stats": {
+      "overall_avg_uptime_percent": "51.833%",
+      "overall_avg_downtime_percent": "48.167%",
+      "total_links_monitored": 2,
+      "links_with_downtime": 1
+    },
+    "chart_path": "assets\\prtg_uptime_SERENITY_SPA_LIMITED.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 59%. A total of 10 tickets were processed, with 15 devices having antivirus installed, and 4 devices fully patched.",
-    "total_tickets": 10,
-    "av_installed": 15,
-    "fully_patched": 4
+    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 57%. A total of 27 tickets were processed, with 47 devices having antivirus installed, and 12 devices fully patched.",
+    "total_tickets": 27,
+    "av_installed": 47,
+    "fully_patched": 12
   }
 }

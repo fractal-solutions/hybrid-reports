@@ -1,0 +1,117 @@
+{
+  "scores": {
+    "average_score": 57,
+    "services_delivered_chart_path": "assets/datto_services_SERENITY_SPA_LIMITED.png"
+  },
+  "device_health": {
+    "total_managed": 48,
+    "compliance_percentage": 2.1,
+    "chart_path": "assets/datto_device_health_SERENITY_SPA_LIMITED.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 47,
+        "total_count": 48,
+        "low_space_count": 3,
+        "chart_path": "assets/datto_disk_space_SERENITY_SPA_LIMITED.png"
+      },
+      "ram": {
+        "passed_count": 47,
+        "total_count": 48
+      },
+      "os_support": {
+        "passed_count": 47,
+        "total_count": 48
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 47,
+    "chart_path": "assets/datto_antivirus_SERENITY_SPA_LIMITED.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 12,
+    "update_required_count": 36,
+    "chart_path": "assets/datto_patch_SERENITY_SPA_LIMITED.png",
+    "windows_10_users_list": []
+  },
+  "recommendations": [
+    "Device health compliance is 2.1%; prioritize remediation of failed health checks this month.",
+    "36 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 47/48; deploy or remediate protection on uncovered endpoints.",
+    "3 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.",
+    "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
+    "Create an OS lifecycle plan for unsupported or near end-of-support devices."
+  ],
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": 97,
+      "Monitoring": 59,
+      "Patch Management": 25,
+      "Software Management": 10,
+      "Antivirus": 97
+    },
+    "average_score": 57,
+    "disk": {
+      "passed": 47,
+      "failed": 3
+    },
+    "disk_top_entries": [
+      {
+        "label": "SERKIT-SVR",
+        "used_percent": 99.9
+      },
+      {
+        "label": "SERKRN-SEVR",
+        "used_percent": 99.9
+      },
+      {
+        "label": "SERGIG-KITCHEN",
+        "used_percent": 98.8
+      },
+      {
+        "label": "SERKIT-VANESSA",
+        "used_percent": 80.2
+      },
+      {
+        "label": "SERGIG-MaryM",
+        "used_percent": 67.1
+      },
+      {
+        "label": "SBTYC-DORIS",
+        "used_percent": 65.6
+      },
+      {
+        "label": "Gigiri-svr",
+        "used_percent": 64.5
+      },
+      {
+        "label": "SERGIG-SVR",
+        "used_percent": 55.8
+      },
+      {
+        "label": "SERKRN-SVR",
+        "used_percent": 54.1
+      },
+      {
+        "label": "SERKIT-LYNN",
+        "used_percent": 52.4
+      }
+    ],
+    "ram": {
+      "passed": 47,
+      "failed": 1
+    },
+    "os": {
+      "passed": 47,
+      "failed": 1
+    },
+    "antivirus": {
+      "installed": 47,
+      "missing": 1
+    },
+    "patch": {
+      "fully_patched": 12,
+      "update_required": 36
+    }
+  }
+}

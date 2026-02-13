@@ -1,0 +1,30 @@
+{
+  "prtg_monitoring": {
+    "links": [
+      {
+        "name": "41.215.60.10 JANI (Tigoni",
+        "avg_bandwidth": "2.47 Mbit/s",
+        "total_data": "N/A",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 06h 08m 12s",
+        "downtime_duration": "0d 17h 51m 48s"
+      },
+      {
+        "name": "DD-SPA _KAREN Ping",
+        "avg_bandwidth": "67 msec",
+        "total_data": "N/A",
+        "uptime_percent": "3.666%",
+        "downtime_percent": "96.334%",
+        "uptime_duration": "01d 00h 38m 00s",
+        "downtime_duration": "26d 23h 22m 00s"
+      }
+    ],
+    "summary_stats": {
+      "overall_avg_uptime_percent": "51.833%",
+      "overall_avg_downtime_percent": "48.167%",
+      "total_links_monitored": 2,
+      "links_with_downtime": 1
+    }
+  }
+}

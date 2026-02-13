@@ -4,63 +4,54 @@
       {
         "name": "Aspira Firewall Interface",
         "avg_bandwidth": "0 Mbit/s",
-        "total_data": "7383 MB",
+        "total_data": "N/A",
         "uptime_percent": "17%",
         "downtime_percent": "17%",
-        "uptime_duration": "7383",
-        "downtime_duration": "N/A"
+        "uptime_duration": "05d 03h 04m 15s",
+        "downtime_duration": "0d 02h 03m 03s"
       },
       {
         "name": "Angani_Link LAN",
-        "avg_bandwidth": "0 MB",
-        "total_data": "35932 MB",
-        "uptime_percent": "83%",
-        "downtime_percent": "83%",
-        "uptime_duration": "35932",
-        "downtime_duration": "N/A"
+        "avg_bandwidth": "N/A",
+        "total_data": "0 MB",
+        "uptime_percent": "83 %",
+        "downtime_percent": "83 %",
+        "uptime_duration": "24d 20h 50m 13s",
+        "downtime_duration": "0d 09h 58m 52s"
       },
       {
         "name": "Aspira Firewall Interface",
         "avg_bandwidth": "< 0.01 Mbit/s",
-        "total_data": "7383 MB",
-        "uptime_percent": "17%",
+        "total_data": "N/A",
+        "uptime_percent": "17 %",
         "downtime_percent": "17%",
-        "uptime_duration": "7383",
-        "downtime_duration": "N/A"
+        "uptime_duration": "05d 03h 04m 15s",
+        "downtime_duration": "0d 02h 03m 03s"
       },
       {
         "name": "Angani_Link Angani",
-        "avg_bandwidth": "439 MB",
-        "total_data": "35916 MB",
-        "uptime_percent": "83%",
-        "downtime_percent": "83%",
-        "uptime_duration": "35916",
-        "downtime_duration": "N/A"
-      },
-      {
-        "name": "CIM Credit Kenya (Aspira)",
         "avg_bandwidth": "N/A",
-        "total_data": "43196 MB",
-        "uptime_percent": "100%",
-        "downtime_percent": "99.998%",
-        "uptime_duration": "43196",
-        "downtime_duration": "N/A"
+        "total_data": "439 MB",
+        "uptime_percent": "83 %",
+        "downtime_percent": "83 %",
+        "uptime_duration": "24d 20h 50m 08s",
+        "downtime_duration": "0d 09h 58m 36s"
       },
       {
         "name": "Aspira Angani Backup Availability-Ping",
         "avg_bandwidth": "61 msec",
-        "total_data": "1 MB",
+        "total_data": "N/A",
         "uptime_percent": "0%",
-        "downtime_percent": "0.002%",
-        "uptime_duration": "1",
-        "downtime_duration": "N/A"
+        "downtime_percent": "0.002 %",
+        "uptime_duration": "00s",
+        "downtime_duration": "0d 00h 00m 01s"
       }
     ],
     "summary_stats": {
-      "overall_avg_uptime_percent": "50.000%",
-      "overall_avg_downtime_percent": "50.000%",
-      "total_links_monitored": 6,
-      "links_with_downtime": 6
+      "overall_avg_uptime_percent": "40.000 %",
+      "overall_avg_downtime_percent": "40.000 %",
+      "total_links_monitored": 5,
+      "links_with_downtime": 5
     }
   }
 }

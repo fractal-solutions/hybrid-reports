@@ -1,0 +1,48 @@
+{
+  "prtg_monitoring": {
+    "links": [
+      {
+        "name": "Angani_Link Angani",
+        "avg_bandwidth": "N/A",
+        "total_data": "439 MB",
+        "uptime_percent": "83%",
+        "downtime_percent": "17%",
+        "uptime_duration": "24d 20h 50m 08s",
+        "downtime_duration": "5d 03h 09m 52s"
+      },
+      {
+        "name": "Angani_Link LAN",
+        "avg_bandwidth": "N/A",
+        "total_data": "0 MB",
+        "uptime_percent": "83%",
+        "downtime_percent": "17%",
+        "uptime_duration": "24d 20h 50m 13s",
+        "downtime_duration": "5d 03h 09m 47s"
+      },
+      {
+        "name": "Aspira Angani Backup Availability-Ping",
+        "avg_bandwidth": "61 msec",
+        "total_data": "N/A",
+        "uptime_percent": "0%",
+        "downtime_percent": "100%",
+        "uptime_duration": "00s",
+        "downtime_duration": "30d 00h 00m 00s"
+      },
+      {
+        "name": "Aspira Firewall Interface",
+        "avg_bandwidth": "0 Mbit/s",
+        "total_data": "N/A",
+        "uptime_percent": "17%",
+        "downtime_percent": "83%",
+        "uptime_duration": "05d 03h 04m 15s",
+        "downtime_duration": "24d 20h 55m 45s"
+      }
+    ],
+    "summary_stats": {
+      "overall_avg_uptime_percent": "45.75%",
+      "overall_avg_downtime_percent": "54.25%",
+      "total_links_monitored": 4,
+      "links_with_downtime": 4
+    }
+  }
+}

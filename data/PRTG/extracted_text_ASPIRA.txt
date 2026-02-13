@@ -1,0 +1,26 @@
+PRTG NETWORK MONITOR
+
+Aspira Report (1/1/2026 12:00:00 AM - 1/31/2026 12:00:00 AM 24 / 7)
+
+Average Uptime Good
+Probe, Group, Device Sensor Total Downtime Failed
+Local Probe (Local Probe) »
+CIM Credit Kenya (Aspira) »
+
+Aspira Firewall Interface 0 Mbit/s 17% [05d 03h 04m 15s 17% [7383]
+Angani_Link LAN 0 MB 83 % [24d 20h 50m 13s 83 % [35932]
+Local Probe (Local Probe) »
+
+CIM Credit Kenya (Aspira) »
+
+Aspira Firewall Interface < 0.01 Mbit/s 17 % [05d 03h 04m 15s 17% [7383]
+Angani_Link Angani 439 MB 83 % [24d 20h 50m 08s 83 % [35916]
+Local Probe (Local Probe) »
+
+CIM Credit Kenya (Aspira) » 100 % [29d 23h 53m 41s 99.998 % [43196]
+
+Aspira Angani Backup Availability-Ping 61 msec 0% [00s 0.002 % [1]
+
+PAESSLER 20.2:59.1689+ © 2/6/2026 10:34:12 AM
+
+--- Page Break ---
