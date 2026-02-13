@@ -4,6 +4,7 @@
   "data_directory": "data/",
   "modules_to_run": [
     "datto_rmm",
-    "zoho_tickets"
+    "zoho_tickets",
+    "prtg_monitoring"
   ]
 }
