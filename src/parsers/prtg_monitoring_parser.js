@@ -40,6 +40,19 @@ function parseDurationToSeconds(duration) {
   if (secOnlyMatch) {
     return Number.parseInt(secOnlyMatch[1], 10);
   }
+  const hmsMatch = duration.match(/^(\d+)h\s+(\d+)m\s+(\d+)s$/i);
+  if (hmsMatch) {
+    const h = Number.parseInt(hmsMatch[1], 10);
+    const m = Number.parseInt(hmsMatch[2], 10);
+    const s = Number.parseInt(hmsMatch[3], 10);
+    return h * 3600 + m * 60 + s;
+  }
+  const msMatch = duration.match(/^(\d+)m\s+(\d+)s$/i);
+  if (msMatch) {
+    const m = Number.parseInt(msMatch[1], 10);
+    const s = Number.parseInt(msMatch[2], 10);
+    return m * 60 + s;
+  }
   return null;
 }
 
@@ -85,65 +98,178 @@ function parseReportWindowSeconds(text) {
   return Math.max(1, Math.round((endMs - startMs) / 1000));
 }
 
+function cleanPrtgLine(value) {
+  return String(value || "")
+    .replace(/[^\x00-\x7F]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function parseDurationPercentPairsFromBlock(lines) {
+  const pairs = [];
+  const pairRegex = /\[\s*(\d+d\s+\d+h\s+\d+m\s+\d+s|\d+h\s+\d+m\s+\d+s|\d+m\s+\d+s|\d+s)\s+(\d+(?:\.\d+)?)\s*%/i;
+  for (const line of lines) {
+    const m = line.match(pairRegex);
+    if (m) {
+      pairs.push({
+        duration: m[1],
+        percent: Number.parseFloat(m[2]),
+      });
+    }
+  }
+  return pairs;
+}
+
+function parseMetricsFromBlockText(blockText) {
+  const metricRegex = /(<\s*)?(\d[\d,]*(?:\.\d+)?)\s*(Mbit\/s|MB|msec)\b/gi;
+  const metrics = [];
+  let m = metricRegex.exec(blockText);
+  while (m) {
+    metrics.push({
+      value: `${(m[1] || "").trim() ? `${(m[1] || "").trim()} ` : ""}${m[2]} ${m[3]}`
+        .replace(/\s+/g, " ")
+        .trim(),
+      unit: m[3].toLowerCase(),
+    });
+    m = metricRegex.exec(blockText);
+  }
+  return metrics;
+}
+
+function extractNameFromSensorLine(line) {
+  const nameRegex = /^(.*?)\s+(?:<\s*)?\d[\d,]*(?:\.\d+)?\s*(?:Mbit\/s|MB|msec)\b/i;
+  const m = line.match(nameRegex);
+  if (!m) return null;
+  return m[1].replace(/\s+/g, " ").trim();
+}
+
+function parseEntryFromBlock(blockLines, reportWindowSeconds) {
+  const lines = blockLines.map(cleanPrtgLine).filter(Boolean);
+  if (lines.length === 0) return null;
+
+  const compactLines = lines.filter(
+    (line) =>
+      !/^Local Probe \(Local Probe\)/i.test(line) &&
+      !/^Serenity Spa Links\s*»?$/i.test(line) &&
+      !/^PAESSLER/i.test(line) &&
+      !/^Report\s*\(/i.test(line)
+  );
+  if (compactLines.length === 0) return null;
+
+  const blockText = compactLines.join(" ");
+  if (!/(Mbit\/s|MB|msec)/i.test(blockText)) return null;
+
+  // Prefer a non-summary sensor line (not "Serenity Spa Links ...").
+  let sensorLine = compactLines.find(
+    (line) =>
+      /(Mbit\/s|MB|msec)/i.test(line) &&
+      !/^Serenity Spa Links/i.test(line) &&
+      !/^CIM Credit Kenya/i.test(line)
+  );
+  if (!sensorLine) {
+    sensorLine = compactLines.find((line) => /(Mbit\/s|MB|msec)/i.test(line)) || "";
+  }
+
+  let name = extractNameFromSensorLine(sensorLine) || "";
+  // Handle wrapped names like "... (Tigoni" + next line starts with "DD) Ping ..."
+  if (name && /\([^)]+$/i.test(name)) {
+    const next = compactLines.find((line) => /^\w+\)\s+/i.test(line));
+    if (next) {
+      name = `${name} ${next.split(/\s+/)[0]}`.replace(/\s+/g, " ").trim();
+    }
+  }
+  // Handle OCR wrap where current name starts with a dangling suffix e.g. "DD) Ping".
+  if (/^\w+\)\s+/i.test(name)) {
+    const prefixLine = compactLines.find((line) => {
+      const open = (line.match(/\(/g) || []).length;
+      const close = (line.match(/\)/g) || []).length;
+      return open > close;
+    });
+    if (prefixLine) {
+      const prefix = prefixLine.split(/\d+(?:\.\d+)?\s*%/)[0].trim();
+      if (prefix) {
+        name = `${prefix} ${name}`.replace(/\s+/g, " ").trim();
+      }
+    }
+  }
+  name = name.replace(/^Serenity Spa Links\s*»?\s*/i, "").trim();
+  if (!name || /^Serenity Spa Links/i.test(name) || /^CIM Credit Kenya/i.test(name)) {
+    return null;
+  }
+
+  const metricCandidates = parseMetricsFromBlockText(blockText);
+  const avgMetric = metricCandidates.find((metric) => metric.unit === "mbit/s" || metric.unit === "msec");
+  const dataMetric = metricCandidates.find((metric) => metric.unit === "mb");
+  const avg_bandwidth = avgMetric ? avgMetric.value : "N/A";
+  const total_data = dataMetric ? dataMetric.value : "N/A";
+
+  const pairs = parseDurationPercentPairsFromBlock(compactLines);
+  const uptimePair = pairs[0] || null;
+  const downtimePair = pairs[1] || null;
+  const uptimeDuration = uptimePair?.duration || "N/A";
+  let downtimeDuration = downtimePair?.duration || "N/A";
+
+  let uptimePct = Number.isFinite(uptimePair?.percent) ? uptimePair.percent : null;
+  let downtimePct = Number.isFinite(downtimePair?.percent) ? downtimePair.percent : null;
+
+  const upSeconds = parseDurationToSeconds(uptimeDuration);
+  const downSeconds = parseDurationToSeconds(downtimeDuration);
+  if (reportWindowSeconds && Number.isFinite(upSeconds) && Number.isFinite(downSeconds) && upSeconds + downSeconds > 0) {
+    const upFromDur = (upSeconds / (upSeconds + downSeconds)) * 100;
+    const downFromDur = 100 - upFromDur;
+    uptimePct = upFromDur;
+    downtimePct = downFromDur;
+  } else if (reportWindowSeconds && Number.isFinite(upSeconds) && upSeconds >= 0) {
+    const upFromWindow = (upSeconds / reportWindowSeconds) * 100;
+    uptimePct = upFromWindow;
+    downtimePct = 100 - upFromWindow;
+    downtimeDuration = durationSecondsToDhms(Math.max(0, reportWindowSeconds - upSeconds));
+  } else if (Number.isFinite(uptimePct) && !Number.isFinite(downtimePct)) {
+    downtimePct = 100 - uptimePct;
+  } else if (!Number.isFinite(uptimePct) && Number.isFinite(downtimePct)) {
+    uptimePct = 100 - downtimePct;
+  }
+
+  const finalUptime = Number.isFinite(uptimePct) ? numberToPercentString(uptimePct) : "0%";
+  const finalDowntime = Number.isFinite(downtimePct) ? numberToPercentString(downtimePct) : "0%";
+
+  return {
+    name,
+    avg_bandwidth,
+    total_data,
+    uptime_percent: finalUptime,
+    downtime_percent: finalDowntime,
+    uptime_duration: uptimeDuration,
+    downtime_duration: downtimeDuration,
+  };
+}
+
 function parsePrtgLinksFromText(text) {
   const lines = (text || "")
     .split(/\r?\n/)
-    .map((line) => line.replace(/[^\x00-\x7F]+/g, " ").trim())
+    .map((line) => cleanPrtgLine(line))
     .filter(Boolean);
   const reportWindowSeconds = parseReportWindowSeconds(text);
 
-  const sensorRegex = /^(.*?)\s+(<\s*)?(\d+(?:\.\d+)?)\s*(Mbit\/s|MB|msec)\s*(\d+(?:\.\d+)?)\s*%\s*\[(\d+d\s+\d+h\s+\d+m\s+\d+s|\d+s)\s+(\d+(?:\.\d+)?)\s*%\s*\[(\d+)\]$/i;
-  const skipPrefixRegex = /^(PRTG NETWORK MONITOR|Aspira Report|Average Uptime|Probe, Group, Device Sensor|Local Probe|PAESSLER|--- Page Break ---)/i;
+  // Split by Local Probe markers to parse sensor blocks in multiline OCR.
+  const blocks = [];
+  let currentBlock = [];
+  for (const line of lines) {
+    if (/^Local Probe \(Local Probe\)/i.test(line)) {
+      if (currentBlock.length > 0) blocks.push(currentBlock);
+      currentBlock = [line];
+      continue;
+    }
+    if (currentBlock.length > 0) {
+      currentBlock.push(line);
+    }
+  }
+  if (currentBlock.length > 0) blocks.push(currentBlock);
 
   const candidates = [];
-  for (const line of lines) {
-    if (skipPrefixRegex.test(line)) continue;
-    const match = line.match(sensorRegex);
-    if (!match) continue;
-
-    const name = match[1].trim();
-    // Filter group/site summary rows to keep only sensor-like entries.
-    if (/\([^)]+\)/.test(name) && !/Availability-Ping/i.test(name)) continue;
-    if (/^CIM Credit Kenya/i.test(name)) continue;
-
-    const comparator = (match[2] || "").trim();
-    const valueNum = match[3];
-    const unit = match[4];
-    const uptimePercentRaw = match[5];
-    const uptimeDuration = match[6];
-    const uptimePercentNum = Number.parseFloat(uptimePercentRaw);
-    const uptimeSeconds = parseDurationToSeconds(uptimeDuration);
-
-    const value = `${comparator ? `${comparator} ` : ""}${valueNum} ${unit}`.replace(/\s+/g, " ").trim();
-    const isBandwidth = unit.toLowerCase() === "mbit/s" || unit.toLowerCase() === "msec";
-    const avg_bandwidth = isBandwidth ? value : "N/A";
-    const total_data = unit.toLowerCase() === "mb" ? value : "N/A";
-
-    let normalizedUptime = Number.isFinite(uptimePercentNum) ? uptimePercentNum : 0;
-    if (reportWindowSeconds && Number.isFinite(uptimeSeconds) && uptimeSeconds >= 0) {
-      const uptimeFromDuration = (uptimeSeconds / reportWindowSeconds) * 100;
-      // If OCR percent is noisy, prefer duration-derived value when mismatch is large.
-      if (!Number.isFinite(uptimePercentNum) || Math.abs(uptimeFromDuration - uptimePercentNum) > 5) {
-        normalizedUptime = uptimeFromDuration;
-      }
-    }
-    normalizedUptime = Math.min(100, Math.max(0, normalizedUptime));
-    const normalizedDowntime = Math.min(100, Math.max(0, 100 - normalizedUptime));
-
-    let downtimeDuration = "N/A";
-    if (reportWindowSeconds && Number.isFinite(uptimeSeconds) && uptimeSeconds >= 0) {
-      downtimeDuration = durationSecondsToDhms(Math.max(0, reportWindowSeconds - uptimeSeconds));
-    }
-
-    candidates.push({
-      name,
-      avg_bandwidth,
-      total_data,
-      uptime_percent: numberToPercentString(normalizedUptime),
-      downtime_percent: numberToPercentString(normalizedDowntime),
-      uptime_duration: uptimeDuration,
-      downtime_duration: downtimeDuration,
-    });
+  for (const block of blocks) {
+    const parsed = parseEntryFromBlock(block, reportWindowSeconds);
+    if (parsed) candidates.push(parsed);
   }
 
   // Deduplicate by name deterministically: keep the row with richer fields.

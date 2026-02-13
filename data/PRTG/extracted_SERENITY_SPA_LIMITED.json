@@ -2,29 +2,155 @@
   "prtg_monitoring": {
     "links": [
       {
-        "name": "41.215.60.10 JANI (Tigoni",
+        "name": "41.215.60.10 JANI (Tigoni DD)",
         "avg_bandwidth": "2.47 Mbit/s",
-        "total_data": "N/A",
+        "total_data": "692,075 MB",
         "uptime_percent": "100%",
         "downtime_percent": "0%",
         "uptime_duration": "27d 06h 08m 12s",
-        "downtime_duration": "0d 17h 51m 48s"
+        "downtime_duration": "00s"
+      },
+      {
+        "name": "41.215.60.10 JANI (Tigoni DD) Ping",
+        "avg_bandwidth": "72 msec",
+        "total_data": "N/A",
+        "uptime_percent": "97.384%",
+        "downtime_percent": "2.616%",
+        "uptime_duration": "27d 06h 20m 36s",
+        "downtime_duration": "17h 34m 30s"
+      },
+      {
+        "name": "DD-SPA _KAREN DD_WAN Port2",
+        "avg_bandwidth": "0.83 Mbit/s",
+        "total_data": "229,474 MB",
+        "uptime_percent": "96.325%",
+        "downtime_percent": "3.675%",
+        "uptime_duration": "26d 23h 11m 52s",
+        "downtime_duration": "01d 00h 41m 32s"
       },
       {
         "name": "DD-SPA _KAREN Ping",
         "avg_bandwidth": "67 msec",
         "total_data": "N/A",
-        "uptime_percent": "3.666%",
-        "downtime_percent": "96.334%",
-        "uptime_duration": "01d 00h 38m 00s",
-        "downtime_duration": "26d 23h 22m 00s"
+        "uptime_percent": "96.334%",
+        "downtime_percent": "3.666%",
+        "uptime_duration": "26d 23h 16m 19s",
+        "downtime_duration": "01d 00h 38m 00s"
+      },
+      {
+        "name": "Gigiri DD DD-Link",
+        "avg_bandwidth": "2.42 Mbit/s",
+        "total_data": "682,867 MB",
+        "uptime_percent": "97.941%",
+        "downtime_percent": "2.059%",
+        "uptime_duration": "27d 10h 03m 22s",
+        "downtime_duration": "13h 50m 00s"
+      },
+      {
+        "name": "Gigiri DD Guest LAN",
+        "avg_bandwidth": "0 Mbit/s",
+        "total_data": "0 MB",
+        "uptime_percent": "97.941%",
+        "downtime_percent": "2.059%",
+        "uptime_duration": "27d 10h 04m 22s",
+        "downtime_duration": "13h 50m 00s"
+      },
+      {
+        "name": "Gigiri DD LAN",
+        "avg_bandwidth": "5.87 Mbit/s",
+        "total_data": "1,658,801 MB",
+        "uptime_percent": "97.941%",
+        "downtime_percent": "2.059%",
+        "uptime_duration": "27d 10h 03m 17s",
+        "downtime_duration": "13h 50m 00s"
+      },
+      {
+        "name": "Gigiri-JTL- 197.232.140.107 LAN",
+        "avg_bandwidth": "5.88 Mbit/s",
+        "total_data": "1,657,791 MB",
+        "uptime_percent": "97.849%",
+        "downtime_percent": "2.151%",
+        "uptime_duration": "27d 09h 25m 44s",
+        "downtime_duration": "14h 27m 00s"
+      },
+      {
+        "name": "Gigiri-JTL-197.232.140.107 JTL-WAN",
+        "avg_bandwidth": "1.92 Mbit/s",
+        "total_data": "543,014 MB",
+        "uptime_percent": "97.849%",
+        "downtime_percent": "2.151%",
+        "uptime_duration": "27d 09h 25m 39s",
+        "downtime_duration": "14h 27m 00s"
+      },
+      {
+        "name": "Kitisuru - JTL (008) Port4 Traffic",
+        "avg_bandwidth": "0.08 Mbit/s",
+        "total_data": "23,188 MB",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 23h 54m 30s",
+        "downtime_duration": "00s"
+      },
+      {
+        "name": "Kitisuru - JTL Cameras-LAN",
+        "avg_bandwidth": "2.72 Mbit/s",
+        "total_data": "784,506 MB",
+        "uptime_percent": "0%",
+        "downtime_percent": "100%",
+        "uptime_duration": "00s",
+        "downtime_duration": "28d 00h 00m 00s"
+      },
+      {
+        "name": "Kitisuru - JTL JTL-WAN",
+        "avg_bandwidth": "3.37 Mbit/s",
+        "total_data": "970,408 MB",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 23h 53m 35s",
+        "downtime_duration": "00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Availability",
+        "avg_bandwidth": "62 msec",
+        "total_data": "N/A",
+        "uptime_percent": "29.901%",
+        "downtime_percent": "70.099%",
+        "uptime_duration": "08d 08h 53m 48s",
+        "downtime_duration": "19d 14h 59m 00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Cameras LAN",
+        "avg_bandwidth": "< 0.01 Mbit/s",
+        "total_data": "50 MB",
+        "uptime_percent": "29.9%",
+        "downtime_percent": "70.1%",
+        "uptime_duration": "08d 08h 53m 53s",
+        "downtime_duration": "19d 15h 00m 00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 DD",
+        "avg_bandwidth": "3.15 Mbit/s",
+        "total_data": "274,337 MB",
+        "uptime_percent": "29.895%",
+        "downtime_percent": "70.105%",
+        "uptime_duration": "08d 08h 51m 43s",
+        "downtime_duration": "19d 15h 02m 00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Staff LAN",
+        "avg_bandwidth": "3.12 Mbit/s",
+        "total_data": "271,887 MB",
+        "uptime_percent": "29.897%",
+        "downtime_percent": "70.103%",
+        "uptime_duration": "08d 08h 52m 48s",
+        "downtime_duration": "19d 15h 01m 00s"
       }
     ],
     "summary_stats": {
-      "overall_avg_uptime_percent": "51.833%",
-      "overall_avg_downtime_percent": "48.167%",
-      "total_links_monitored": 2,
-      "links_with_downtime": 1
+      "overall_avg_uptime_percent": "74.947%",
+      "overall_avg_downtime_percent": "25.053%",
+      "total_links_monitored": 16,
+      "links_with_downtime": 13
     }
   }
 }
