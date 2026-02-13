@@ -182,6 +182,183 @@ function buildPatchDeviceToUserMap(patchSection) {
   return map;
 }
 
+function isLikelyDeviceId(value) {
+  return /^(PC|PF|PW)[A-Z0-9-]+/i.test(value || "");
+}
+
+function isGenericCompanyOrHeaderLine(value, clientName) {
+  if (!value) return true;
+  const normalizedValue = value.replace(/[^a-z0-9]/gi, "").toLowerCase();
+  const normalizedClient = (clientName || "").replace(/[^a-z0-9]/gi, "").toLowerCase();
+  if (normalizedClient && normalizedValue === normalizedClient) return true;
+  if (normalizedClient && normalizedClient.length >= 8 && normalizedValue.includes(normalizedClient)) return true;
+  if (/^(device|description|drive|type|size|free|used|disk|workstations|report|summary|sites|devices|create date)$/i.test(value)) return true;
+  if (/^description:/i.test(value)) return true;
+  if (/available disk space/i.test(value)) return true;
+  return false;
+}
+
+function isLikelyHumanName(value) {
+  if (!value) return false;
+  if (!/^[A-Za-z][A-Za-z.' -]+$/.test(value)) return false;
+  if (!value.includes(" ")) return false;
+  if (value.includes(":")) return false;
+  if (value.split(/\s+/).length > 4) return false;
+  if (/^(Device|Description|Drive|Type|Size|Free|Used|Disk|Local|Workstations|ASPIRA|Report|Summary)$/i.test(value)) {
+    return false;
+  }
+  if (/available disk space/i.test(value)) return false;
+  if (/^this report/i.test(value)) return false;
+  return true;
+}
+
+function isLikelyDattoDeviceLabel(value, clientName) {
+  if (!value) return false;
+  if (isGenericCompanyOrHeaderLine(value, clientName)) return false;
+  if (/^(C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z):$/i.test(value)) return false;
+  if (/^\d+(\.\d+)?(MB|GB|TB|%)$/i.test(value)) return false;
+  if (/^\d+(\.\d+)?b$/i.test(value)) return false;
+  if (/\d/.test(value) && /(MB|GB|TB|KB|B)/i.test(value)) return false;
+  if (/^\d+$/.test(value)) return false;
+  if (/^disk\d+/i.test(value)) return false;
+  if (/^s\d+$/i.test(value)) return false;
+  if (/^(local fixed|efi|no data)$/i.test(value)) return false;
+  if (/^microsoft\s/i.test(value)) return false;
+  if (/^pro\s\d/i.test(value)) return false;
+  if (/\.local$/i.test(value)) return false;
+  if (/macbook/i.test(value)) return false;
+
+  // Datto names are usually one-token labels like DIRA-CAROLINE, Apex-NaomiW, PF12VD4C-Stacy.
+  if (/\s{2,}/.test(value)) return false;
+  if (value.split(/\s+/).length > 3) return false;
+  if (!/[A-Za-z]/.test(value)) return false;
+
+  return /[-_.]/.test(value) || /^[A-Za-z0-9]{6,}$/.test(value);
+}
+
+function extractDiskUsageEntries(deviceStorageSection, clientName) {
+  if (!deviceStorageSection) return [];
+
+  const rawLines = deviceStorageSection.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  const labels = [];
+  const conventionLabels = [];
+  const fallbackHostLabels = [];
+  const weakFallbackLabels = [];
+  const genericTokens = new Set([
+    "Device Name",
+    "Device Description",
+    "Drive Drive Type",
+    "Size",
+    "Free",
+    "Used %",
+    "Disk",
+    "Local Fixed",
+    "Workstations",
+    "Patch",
+    "Status",
+    "Description",
+    "Last Reboot",
+    "Installed",
+    "Approved",
+    "Pending",
+    "Not Approved",
+    "C:",
+    "D:",
+    "ASPIRA - CIM CREDIT",
+    "Device Storage Report",
+    "Description:",
+    "Description: This report lists all the disks available on the selected devices including their",
+    "available disk space.",
+  ]);
+
+  for (let i = 0; i < rawLines.length; i++) {
+    const line = rawLines[i];
+    if (!line || genericTokens.has(line)) continue;
+    if (isGenericCompanyOrHeaderLine(line, clientName)) continue;
+    if (/^\d+(\.\d+)?(MB|GB|TB|%)$/i.test(line)) continue;
+    if (/^\d+$/.test(line)) continue;
+    if (/^disk\d+/i.test(line)) continue;
+    if (/^s\d+$/i.test(line)) continue;
+    if (/^(EFI|No data)$/i.test(line)) continue;
+    if (/^(C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z):$/i.test(line)) continue;
+
+    if (isLikelyDeviceId(line)) {
+      const normalized = line.replace(/\s+/g, " ").trim();
+      labels.push(normalized);
+      conventionLabels.push(normalized);
+      continue;
+    }
+
+    if (isLikelyDattoDeviceLabel(line, clientName)) {
+      const normalized = line.replace(/\s+/g, " ").trim();
+      labels.push(normalized);
+      if (/^(DESKTOP|LAPTOP)-/i.test(normalized)) {
+        fallbackHostLabels.push(normalized);
+      } else {
+        // Prefer dashboard naming convention labels like DIRA-*, APEX-*, DWA-* and coded aliases.
+        if (/^[A-Za-z0-9]+-[A-Za-z0-9][A-Za-z0-9._-]*$/i.test(normalized)) {
+          conventionLabels.push(normalized);
+        } else {
+          weakFallbackLabels.push(normalized);
+        }
+      }
+      continue;
+    }
+
+    // Do not prefer human-name labels for disk chart naming.
+  }
+
+  // Deterministic priority:
+  // 1) Convention aliases (DIRA-*, APEX-*, DWA-*, PC*/PF*/PW* etc)
+  // 2) Other non-host labels
+  // 3) Hostnames (DESKTOP-/LAPTOP-)
+  // 4) Any remaining labels
+  const labelSource =
+    conventionLabels.length > 0
+      ? conventionLabels
+      : weakFallbackLabels.length > 0
+        ? weakFallbackLabels
+        : fallbackHostLabels.length > 0
+          ? fallbackHostLabels
+          : labels;
+
+  const dedupedLabels = [];
+  const seenLabels = new Set();
+  for (const label of labelSource) {
+    const key = label.toLowerCase();
+    if (!seenLabels.has(key)) {
+      seenLabels.add(key);
+      dedupedLabels.push(label);
+    }
+  }
+
+  const percentageMatches = Array.from(deviceStorageSection.matchAll(/(\d{1,3}\.\d+)%/g))
+    .map((m) => Number.parseFloat(m[1]))
+    .filter((value) => Number.isFinite(value) && value >= 0 && value <= 100);
+
+  const alignCount = Math.min(dedupedLabels.length, percentageMatches.length);
+  if (alignCount === 0) return [];
+
+  const alignedEntries = [];
+  for (let i = 0; i < alignCount; i++) {
+    alignedEntries.push({
+      label: dedupedLabels[i],
+      used_percent: round1(percentageMatches[i]),
+    });
+  }
+
+  const mergedByLabel = new Map();
+  for (const entry of alignedEntries) {
+    const key = entry.label.toLowerCase();
+    const existing = mergedByLabel.get(key);
+    if (!existing || entry.used_percent > existing.used_percent) {
+      mergedByLabel.set(key, entry);
+    }
+  }
+
+  return Array.from(mergedByLabel.values()).sort((a, b) => b.used_percent - a.used_percent);
+}
+
 function buildRecommendations(parsed) {
   const recommendations = [];
 
@@ -226,6 +403,7 @@ function parseDattoMetrics(mergedText, clientName) {
   const sections = splitSectionsByPdf(mergedText);
   const deviceHealthSection = findSectionByName(sections, "device health summary");
   const executiveSection = findSectionByName(sections, "executive summary");
+  const deviceStorageSection = findSectionByName(sections, "device storage");
   const patchSummarySection = findSectionByName(sections, "patch management summary");
 
   const totalManaged =
@@ -254,6 +432,10 @@ function parseDattoMetrics(mergedText, clientName) {
   const diskPassed = diskMetric?.passed ?? summaryPassed;
   const diskFailed = diskMetric?.failed ?? summaryFailed;
   const diskTotal = diskPassed + diskFailed;
+  const diskUsageEntries = extractDiskUsageEntries(deviceStorageSection, clientName);
+  const diskTop10 = diskUsageEntries.slice(0, 10);
+  const thresholdLowSpaceCount = diskUsageEntries.filter((entry) => entry.used_percent >= 85).length;
+  const lowSpaceCount = Math.max(diskFailed, thresholdLowSpaceCount);
 
   const ramPassed = ramMetric?.passed ?? totalManaged;
   const ramFailed = ramMetric?.failed ?? 0;
@@ -324,7 +506,7 @@ function parseDattoMetrics(mergedText, clientName) {
         disk_space: {
           passed_count: diskPassed,
           total_count: diskTotal,
-          low_space_count: diskFailed,
+          low_space_count: lowSpaceCount,
           chart_path: chartPaths.disk,
         },
         ram: {
@@ -358,6 +540,7 @@ function parseDattoMetrics(mergedText, clientName) {
       passed: parsed.device_health.metrics.disk_space.passed_count,
       failed: parsed.device_health.metrics.disk_space.low_space_count,
     },
+    disk_top_entries: diskTop10,
     ram: {
       passed: parsed.device_health.metrics.ram.passed_count,
       failed: Math.max(0, parsed.device_health.metrics.ram.total_count - parsed.device_health.metrics.ram.passed_count),
@@ -581,16 +764,45 @@ fig.tight_layout()
 fig.savefig(paths["deviceHealth"])
 plt.close(fig)
 
-# 3) Disk policy compliance
-fig, ax = plt.subplots(figsize=(7, 4.5), dpi=300)
-prep_ax(ax, "Disk Space Policy Compliance")
-labels = ["Passed", "Low Space"]
-vals = [chart_data["disk"]["passed"], chart_data["disk"]["failed"]]
-bars = ax.bar(labels, vals, color=[PRIMARY, ACCENT], width=0.55)
-ax.set_ylabel("Endpoints", color=DARK)
-for b in bars:
-    ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
+# 3) Top 10 disk usage with threshold
+fig, ax = plt.subplots(figsize=(7.6, 6.2), dpi=300)
+prep_ax(ax, "Top 10 Disk Space Utilization (Used %)")
+top_disk = chart_data.get("disk_top_entries", [])
+if top_disk:
+    labels = [entry["label"] for entry in top_disk]
+    vals = [entry["used_percent"] for entry in top_disk]
+    colors = [ACCENT if v >= 85 else PRIMARY for v in vals]
+    bars = ax.bar(labels, vals, color=colors, width=0.65)
+    ax.axhline(85, color=ACCENT, linestyle="--", linewidth=2, label="Threshold (15% free / 85% used)")
+    ax.set_ylabel("Disk Used (%)", color=DARK)
+    ax.set_ylim(0, 100)
+    small_label_set = len(labels) < 4
+    label_rotation = 35 if small_label_set else 90
+    label_size = 9 if small_label_set else 8
+    ax.tick_params(axis="x", rotation=label_rotation, labelsize=label_size)
+    for tick in ax.get_xticklabels():
+        if small_label_set:
+            tick.set_ha("right")
+            tick.set_va("top")
+        else:
+            tick.set_ha("center")
+            tick.set_va("top")
+    for b, val in zip(bars, vals):
+        ax.text(b.get_x() + b.get_width() / 2, val + 1.2, f"{val:.1f}%", ha="center", color=DARK, fontsize=8)
+    ax.legend(frameon=False, fontsize=8, loc="upper left")
+else:
+    labels = ["Passed", "Low Space"]
+    vals = [chart_data["disk"]["passed"], chart_data["disk"]["failed"]]
+    bars = ax.bar(labels, vals, color=[PRIMARY, ACCENT], width=0.55)
+    ax.set_ylabel("Endpoints", color=DARK)
+    for b in bars:
+        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
 fig.tight_layout()
+if top_disk:
+    bottom_margin = 0.24 if len(top_disk) < 4 else 0.40
+else:
+    bottom_margin = 0.18
+fig.subplots_adjust(bottom=bottom_margin)
 fig.savefig(paths["disk"])
 plt.close(fig)
 

@@ -55,6 +55,48 @@
       "passed": 45,
       "failed": 1
     },
+    "disk_top_entries": [
+      {
+        "label": "REA-SERVER2025",
+        "used_percent": 87.3
+      },
+      {
+        "label": "DWA-FIRDAUS",
+        "used_percent": 80.8
+      },
+      {
+        "label": "TECHNICALMANGER-ENG",
+        "used_percent": 74.7
+      },
+      {
+        "label": "DWA-EMS-OFFICE",
+        "used_percent": 72.6
+      },
+      {
+        "label": "DWA-NDINDA",
+        "used_percent": 69.7
+      },
+      {
+        "label": "DWA-GEORGEPAYROLL",
+        "used_percent": 66
+      },
+      {
+        "label": "DWA-KEVIN",
+        "used_percent": 64.8
+      },
+      {
+        "label": "DWA-STEVESTORES",
+        "used_percent": 60.9
+      },
+      {
+        "label": "DWA-MATHIAS",
+        "used_percent": 56.3
+      },
+      {
+        "label": "DWA-HORTICULTURE",
+        "used_percent": 53.3
+      }
+    ],
     "ram": {
       "passed": 44,
       "failed": 2

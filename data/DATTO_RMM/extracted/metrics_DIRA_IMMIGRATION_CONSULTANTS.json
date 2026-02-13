@@ -1,13 +1,4 @@
 {
-  "meta": {
-    "client_name": "DIRA IMMIGRATION CONSULTANTS",
-    "report_month": "January 2026",
-    "generated_date": "2/13/2026",
-    "modules_to_run": [
-      "datto_rmm",
-      "zoho_tickets"
-    ]
-  },
   "scores": {
     "average_score": 59,
     "services_delivered_chart_path": "assets/datto_services_DIRA_IMMIGRATION_CONSULTANTS.png"
@@ -48,18 +39,76 @@
     "11 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
     "Review monitoring alerts weekly and close high-priority items to improve service score."
   ],
-  "tickets": {
-    "source": "Zoho",
-    "total": 10,
-    "software_count": 3,
-    "hardware_count": 5,
-    "misc_count": 2,
-    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
-  },
-  "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 59%. A total of 10 tickets were processed, with 15 devices having antivirus installed, and 4 devices fully patched.",
-    "total_tickets": 10,
-    "av_installed": 15,
-    "fully_patched": 4
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": 100,
+      "Monitoring": 60,
+      "Patch Management": 26,
+      "Software Management": 13,
+      "Antivirus": 100
+    },
+    "average_score": 59,
+    "disk": {
+      "passed": 15,
+      "failed": 0
+    },
+    "disk_top_entries": [
+      {
+        "label": "DIRA-SAMUEL",
+        "used_percent": 71.2
+      },
+      {
+        "label": "DIRA-DUNCAN",
+        "used_percent": 55.1
+      },
+      {
+        "label": "DIRA-KEZIAH",
+        "used_percent": 41.6
+      },
+      {
+        "label": "DIRA-CAROLINEM",
+        "used_percent": 35.4
+      },
+      {
+        "label": "DIRA-DAVIS",
+        "used_percent": 34
+      },
+      {
+        "label": "DIRA-CAROLINE",
+        "used_percent": 33.2
+      },
+      {
+        "label": "DIRA-PURITY",
+        "used_percent": 28.4
+      },
+      {
+        "label": "DIRA-VIVIAN",
+        "used_percent": 28.4
+      },
+      {
+        "label": "DIRA-MERCY",
+        "used_percent": 20.9
+      },
+      {
+        "label": "DIRA-FRIDAH",
+        "used_percent": 15.5
+      }
+    ],
+    "ram": {
+      "passed": 15,
+      "failed": 0
+    },
+    "os": {
+      "passed": 15,
+      "failed": 0
+    },
+    "antivirus": {
+      "installed": 15,
+      "missing": 0
+    },
+    "patch": {
+      "fully_patched": 4,
+      "update_required": 11
+    }
   }
 }

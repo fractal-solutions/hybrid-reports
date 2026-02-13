@@ -1,0 +1,114 @@
+{
+  "scores": {
+    "average_score": 53,
+    "services_delivered_chart_path": "assets/datto_services_APEX_RESEARCH_SOLUTIONS_LIMITED.png"
+  },
+  "device_health": {
+    "total_managed": 18,
+    "compliance_percentage": 0,
+    "chart_path": "assets/datto_device_health_APEX_RESEARCH_SOLUTIONS_LIMITED.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 17,
+        "total_count": 18,
+        "low_space_count": 1,
+        "chart_path": "assets/datto_disk_space_APEX_RESEARCH_SOLUTIONS_LIMITED.png"
+      },
+      "ram": {
+        "passed_count": 18,
+        "total_count": 18
+      },
+      "os_support": {
+        "passed_count": 18,
+        "total_count": 18
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 18,
+    "chart_path": "assets/datto_antivirus_APEX_RESEARCH_SOLUTIONS_LIMITED.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 2,
+    "update_required_count": 16,
+    "chart_path": "assets/datto_patch_APEX_RESEARCH_SOLUTIONS_LIMITED.png",
+    "windows_10_users_list": []
+  },
+  "recommendations": [
+    "Device health compliance is 0%; prioritize remediation of failed health checks this month.",
+    "16 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "1 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting."
+  ],
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": 98,
+      "Monitoring": 59,
+      "Patch Management": 11,
+      "Software Management": 0,
+      "Antivirus": 100
+    },
+    "average_score": 53,
+    "disk": {
+      "passed": 17,
+      "failed": 1
+    },
+    "disk_top_entries": [
+      {
+        "label": "Apex-KemoiT",
+        "used_percent": 89.2
+      },
+      {
+        "label": "Apex-Joseph",
+        "used_percent": 82.1
+      },
+      {
+        "label": "APEX-LUMARAE",
+        "used_percent": 76.7
+      },
+      {
+        "label": "Apex-Horward",
+        "used_percent": 71.2
+      },
+      {
+        "label": "Apex-NaomiW",
+        "used_percent": 56.3
+      },
+      {
+        "label": "APEX-MIRITIM",
+        "used_percent": 36.9
+      },
+      {
+        "label": "APEX-MwangiM",
+        "used_percent": 35.4
+      },
+      {
+        "label": "APEX-ASHIONOR",
+        "used_percent": 35
+      },
+      {
+        "label": "APEX-AderoE",
+        "used_percent": 26.6
+      },
+      {
+        "label": "Apex-Howards",
+        "used_percent": 21.1
+      }
+    ],
+    "ram": {
+      "passed": 18,
+      "failed": 0
+    },
+    "os": {
+      "passed": 18,
+      "failed": 0
+    },
+    "antivirus": {
+      "installed": 18,
+      "missing": 0
+    },
+    "patch": {
+      "fully_patched": 2,
+      "update_required": 16
+    }
+  }
+}

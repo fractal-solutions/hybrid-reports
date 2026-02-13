@@ -53,6 +53,48 @@
       "passed": 23,
       "failed": 2
     },
+    "disk_top_entries": [
+      {
+        "label": "PC0UCCYS-MARY",
+        "used_percent": 100
+      },
+      {
+        "label": "PC0UN27CMICHAEL",
+        "used_percent": 98.2
+      },
+      {
+        "label": "PC1H258N-Lucy",
+        "used_percent": 78.9
+      },
+      {
+        "label": "PF3J6TBWROSEMARY",
+        "used_percent": 63.3
+      },
+      {
+        "label": "PC0S81XK-Maryanne DESKTOP-TO7PALU",
+        "used_percent": 58.1
+      },
+      {
+        "label": "PF1JU7DW-AGNES",
+        "used_percent": 53.8
+      },
+      {
+        "label": "PC0QPPLS-Anne",
+        "used_percent": 48.5
+      },
+      {
+        "label": "PF0T96BB-Rhoda",
+        "used_percent": 39.9
+      },
+      {
+        "label": "PC0QC6H5-STACY",
+        "used_percent": 38.9
+      },
+      {
+        "label": "PC0MF7EC-Eunice",
+        "used_percent": 37.6
+      }
+    ],
     "ram": {
       "passed": 25,
       "failed": 0
