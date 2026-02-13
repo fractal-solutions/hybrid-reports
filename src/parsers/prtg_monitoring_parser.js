@@ -485,33 +485,54 @@ names = [link['name'] for link in links_data]
 uptime = [float(str(link['uptime_percent']).replace('%', '').strip() or 0) for link in links_data]
 downtime = [float(str(link['downtime_percent']).replace('%', '').strip() or 0) for link in links_data]
 
-fig, ax = plt.subplots(figsize=(11, 6), dpi=300)
+PRIMARY = "#0047AB"
+SUCCESS = "#2FA36B"
+ACCENT = "#FF5733"
+DANGER = "#D64545"
+SURFACE = "#f4f4f4"
+LIGHT = "#e6ecf5"
+TEXT = "#222222"
+MUTED = "#5b6878"
+
+plt.rcParams["font.family"] = "DejaVu Sans"
+plt.rcParams["axes.titlesize"] = 13
+plt.rcParams["axes.labelsize"] = 10
+plt.rcParams["xtick.labelsize"] = 9
+plt.rcParams["ytick.labelsize"] = 9
+
+fig, ax = plt.subplots(figsize=(11.4, 6.4), dpi=300)
+fig.patch.set_facecolor("white")
+ax.set_facecolor(SURFACE)
 indices = np.arange(len(names))
 width = 0.38
 
-bars_uptime = ax.bar(indices - width/2, uptime, width, label='Uptime (%)', color='#4CAF50')
-bars_downtime = ax.bar(indices + width/2, downtime, width, label='Downtime (%)', color='#E76F51')
+bars_uptime = ax.bar(indices - width/2, uptime, width, label='Uptime (%)', color=SUCCESS, edgecolor='white', linewidth=1.0)
+bars_downtime = ax.bar(indices + width/2, downtime, width, label='Downtime (%)', color=DANGER, edgecolor='white', linewidth=1.0)
 
-ax.set_ylabel('Percentage (%)')
-ax.set_title('PRTG Link Performance - ${shared.client_name}')
+ax.set_ylabel('Percentage (%)', color=TEXT)
+ax.set_title('PRTG Link Performance - ${shared.client_name}', color=TEXT, pad=12, fontweight='bold')
 ax.set_xticks(indices)
-ax.set_xticklabels(names, rotation=35, ha='right')
+ax.set_xticklabels(names, rotation=35, ha='right', color=MUTED)
 ax.set_ylim(0, max(100, max(uptime + downtime + [0]) * 1.15))
-ax.legend()
-ax.yaxis.grid(True, linestyle='--', alpha=0.4)
+ax.legend(frameon=False, fontsize=8.5, loc='upper right')
+ax.yaxis.grid(True, linestyle='-', alpha=0.85, color=LIGHT)
+ax.set_axisbelow(True)
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color(LIGHT)
+ax.spines['bottom'].set_color(LIGHT)
+ax.tick_params(colors=MUTED)
 
 for b in bars_uptime:
     v = b.get_height()
-    ax.text(b.get_x() + b.get_width()/2, v + 0.8, f'{v:.1f}%', ha='center', va='bottom', fontsize=8)
+    ax.text(b.get_x() + b.get_width()/2, v + 0.8, f'{v:.1f}%', ha='center', va='bottom', fontsize=8, color=TEXT, fontweight='bold')
 for b in bars_downtime:
     v = b.get_height()
-    ax.text(b.get_x() + b.get_width()/2, v + 0.8, f'{v:.1f}%', ha='center', va='bottom', fontsize=8)
+    ax.text(b.get_x() + b.get_width()/2, v + 0.8, f'{v:.1f}%', ha='center', va='bottom', fontsize=8, color=TEXT, fontweight='bold')
 
 fig.tight_layout()
 os.makedirs(os.path.dirname(r"${chartPathForPython}"), exist_ok=True)
-fig.savefig(r"${chartPathForPython}")
+fig.savefig(r"${chartPathForPython}", dpi=300)
 print("Chart saved to ${chartPathForPython}")
     `;
 

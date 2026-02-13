@@ -1,6 +1,6 @@
 {
   "meta": {
-    "client_name": "DIRA IMMIGRATION CONSULTANTS",
+    "client_name": "REA VIPINGO PLANTATIONS LIMITED",
     "report_month": "January 2026",
     "generated_date": "2/13/2026",
     "modules_to_run": [
@@ -9,57 +9,60 @@
     ]
   },
   "scores": {
-    "average_score": 59,
-    "services_delivered_chart_path": "assets/datto_services_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "average_score": 50,
+    "services_delivered_chart_path": "assets/datto_services_REA_VIPINGO_PLANTATIONS_LIMITED.png"
   },
   "device_health": {
-    "total_managed": 15,
-    "compliance_percentage": 13.3,
-    "chart_path": "assets/datto_device_health_DIRA_IMMIGRATION_CONSULTANTS.png",
+    "total_managed": 46,
+    "compliance_percentage": 4.3,
+    "chart_path": "assets/datto_device_health_REA_VIPINGO_PLANTATIONS_LIMITED.png",
     "metrics": {
       "disk_space": {
-        "passed_count": 15,
-        "total_count": 15,
-        "low_space_count": 0,
-        "chart_path": "assets/datto_disk_space_DIRA_IMMIGRATION_CONSULTANTS.png"
+        "passed_count": 45,
+        "total_count": 46,
+        "low_space_count": 1,
+        "chart_path": "assets/datto_disk_space_REA_VIPINGO_PLANTATIONS_LIMITED.png"
       },
       "ram": {
-        "passed_count": 15,
-        "total_count": 15
+        "passed_count": 44,
+        "total_count": 46
       },
       "os_support": {
-        "passed_count": 15,
-        "total_count": 15
+        "passed_count": 45,
+        "total_count": 46
       }
     }
   },
   "antivirus": {
-    "installed_count": 15,
-    "chart_path": "assets/datto_antivirus_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "installed_count": 35,
+    "chart_path": "assets/datto_antivirus_REA_VIPINGO_PLANTATIONS_LIMITED.png"
   },
   "patch_management": {
-    "fully_patched_count": 4,
-    "update_required_count": 11,
-    "chart_path": "assets/datto_patch_DIRA_IMMIGRATION_CONSULTANTS.png",
+    "fully_patched_count": 9,
+    "update_required_count": 37,
+    "chart_path": "assets/datto_patch_REA_VIPINGO_PLANTATIONS_LIMITED.png",
     "windows_10_users_list": []
   },
   "recommendations": [
-    "Device health compliance is 13.3%; prioritize remediation of failed health checks this month.",
-    "11 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
-    "Review monitoring alerts weekly and close high-priority items to improve service score."
+    "Device health compliance is 4.3%; prioritize remediation of failed health checks this month.",
+    "37 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 35/46; deploy or remediate protection on uncovered endpoints.",
+    "1 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.",
+    "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
+    "Create an OS lifecycle plan for unsupported or near end-of-support devices."
   ],
   "tickets": {
     "source": "Zoho",
-    "total": 10,
-    "software_count": 3,
-    "hardware_count": 5,
-    "misc_count": 2,
-    "chart_path": "assets\\zoho_tickets_DIRA_IMMIGRATION_CONSULTANTS.png"
+    "total": 8,
+    "software_count": 0,
+    "hardware_count": 2,
+    "misc_count": 6,
+    "chart_path": "assets\\zoho_tickets_REA_VIPINGO_PLANTATIONS_LIMITED.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for DIRA IMMIGRATION CONSULTANTS for January 2026. The average service score for the month was 59%. A total of 10 tickets were processed, with 15 devices having antivirus installed, and 4 devices fully patched.",
-    "total_tickets": 10,
-    "av_installed": 15,
-    "fully_patched": 4
+    "executive_summary": "This is a comprehensive monthly support report for REA VIPINGO PLANTATIONS LIMITED for January 2026. The average service score for the month was 50%. A total of 8 tickets were processed, with 35 devices having antivirus installed, and 9 devices fully patched.",
+    "total_tickets": 8,
+    "av_installed": 35,
+    "fully_patched": 9
   }
 }

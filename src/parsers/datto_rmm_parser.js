@@ -701,20 +701,29 @@ chart_data = json.loads(r'''${JSON.stringify(chartData)}''')
 paths = json.loads(r'''${JSON.stringify(paths)}''')
 
 PRIMARY = "#0047AB"
+PRIMARY_ALT = "#0F66D7"
 ACCENT = "#FF5733"
+SUCCESS = "#2FA36B"
+DANGER = "#D64545"
 LIGHT = "#e6ecf5"
-DARK = "#333333"
-MUTED = "#6f6f6f"
+SURFACE = "#f4f4f4"
+TEXT = "#222222"
+MUTED = "#5b6878"
 
 plt.rcParams["font.family"] = "DejaVu Sans"
-plt.rcParams["axes.titlesize"] = 12
+plt.rcParams["axes.titlesize"] = 13
 plt.rcParams["axes.labelsize"] = 10
+plt.rcParams["xtick.labelsize"] = 9
+plt.rcParams["ytick.labelsize"] = 9
 
-def prep_ax(ax, title):
-    ax.set_title(title, color=DARK, pad=10, fontweight="bold")
-    ax.grid(axis="y", color=LIGHT, linestyle="--", linewidth=0.8, alpha=0.7)
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
+def style_card(fig, ax, title):
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor(SURFACE)
+    ax.set_title(title, color=TEXT, pad=12, fontweight="bold")
+    ax.grid(axis="y", color=LIGHT, linestyle="-", linewidth=1.0, alpha=0.9)
+    ax.set_axisbelow(True)
+    for side in ["top", "right"]:
+        ax.spines[side].set_visible(False)
     ax.spines["left"].set_color(LIGHT)
     ax.spines["bottom"].set_color(LIGHT)
     ax.tick_params(colors=MUTED)
@@ -726,20 +735,20 @@ services = ["Asset Management", "Monitoring", "Patch Management", "Software Mana
 service_values = [chart_data["service_scores"].get(s, 0) or 0 for s in services]
 avg_score = chart_data.get("average_score", 0) or 0
 
-fig, ax = plt.subplots(figsize=(9, 5), dpi=300)
-prep_ax(ax, "Services Delivered Scores")
+fig, ax = plt.subplots(figsize=(9.2, 5.4), dpi=300)
+style_card(fig, ax, "Services Delivered Scores")
 x = np.arange(len(services))
-bars = ax.bar(x, service_values, color=PRIMARY, alpha=0.9)
-ax.axhline(avg_score, color=ACCENT, linestyle="--", linewidth=2, label=f"Average ({avg_score}%)")
+bars = ax.bar(x, service_values, color=[PRIMARY, PRIMARY_ALT, PRIMARY, PRIMARY_ALT, PRIMARY], alpha=0.95, edgecolor="white", linewidth=1.0)
+ax.axhline(avg_score, color=ACCENT, linestyle=(0, (6, 3)), linewidth=2.2)
+ax.text((len(services) - 1) / 2, avg_score + 1.2, f"Average ({avg_score}%)", color=ACCENT, ha="center", va="bottom", fontsize=8.5, fontweight="bold")
 ax.set_ylim(0, 100)
-ax.set_ylabel("Score (%)", color=DARK)
+ax.set_ylabel("Score (%)", color=TEXT)
 ax.set_xticks(x)
-ax.set_xticklabels(services, rotation=20, ha="right")
+ax.set_xticklabels(services, rotation=18, ha="right")
 for bar, val in zip(bars, service_values):
-    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1.5, f"{val}%", ha="center", color=DARK, fontsize=9)
-ax.legend(frameon=False)
+    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1.5, f"{val}%", ha="center", color=TEXT, fontsize=8.5, fontweight="bold")
 fig.tight_layout()
-fig.savefig(paths["services"])
+fig.savefig(paths["services"], dpi=300)
 plt.close(fig)
 
 # 2) Device health checks (passed vs failed)
@@ -747,37 +756,37 @@ health_labels = ["Disk Space", "RAM", "OS Support"]
 passed_vals = [chart_data["disk"]["passed"], chart_data["ram"]["passed"], chart_data["os"]["passed"]]
 failed_vals = [chart_data["disk"]["failed"], chart_data["ram"]["failed"], chart_data["os"]["failed"]]
 
-fig, ax = plt.subplots(figsize=(8, 5), dpi=300)
-prep_ax(ax, "Device Health Checks")
+fig, ax = plt.subplots(figsize=(8.2, 5.2), dpi=300)
+style_card(fig, ax, "Device Health Checks")
 x = np.arange(len(health_labels))
-width = 0.35
-bars1 = ax.bar(x - width / 2, passed_vals, width, label="Passed", color=PRIMARY)
-bars2 = ax.bar(x + width / 2, failed_vals, width, label="Failed", color=ACCENT)
-ax.set_ylabel("Endpoints", color=DARK)
+width = 0.34
+bars1 = ax.bar(x - width / 2, passed_vals, width, label="Passed", color=SUCCESS, edgecolor="white", linewidth=1.0)
+bars2 = ax.bar(x + width / 2, failed_vals, width, label="Failed", color=DANGER, edgecolor="white", linewidth=1.0)
+ax.set_ylabel("Endpoints", color=TEXT)
 ax.set_xticks(x)
 ax.set_xticklabels(health_labels)
 for bars in [bars1, bars2]:
     for b in bars:
-        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
-ax.legend(frameon=False)
+        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=TEXT, fontsize=8.5, fontweight="bold")
+ax.legend(frameon=False, fontsize=8.5, loc="upper right")
 fig.tight_layout()
-fig.savefig(paths["deviceHealth"])
+fig.savefig(paths["deviceHealth"], dpi=300)
 plt.close(fig)
 
 # 3) Top 10 disk usage with threshold
-fig, ax = plt.subplots(figsize=(7.6, 6.2), dpi=300)
-prep_ax(ax, "Top 10 Disk Space Utilization (Used %)")
+fig, ax = plt.subplots(figsize=(7.8, 6.4), dpi=300)
+style_card(fig, ax, "Top 10 Disk Space Utilization (Used %)")
 top_disk = chart_data.get("disk_top_entries", [])
 if top_disk:
     labels = [entry["label"] for entry in top_disk]
     vals = [entry["used_percent"] for entry in top_disk]
     colors = [ACCENT if v >= 85 else PRIMARY for v in vals]
-    bars = ax.bar(labels, vals, color=colors, width=0.65)
-    ax.axhline(85, color=ACCENT, linestyle="--", linewidth=2, label="Threshold (15% free / 85% used)")
-    ax.set_ylabel("Disk Used (%)", color=DARK)
+    bars = ax.bar(labels, vals, color=colors, width=0.66, edgecolor="white", linewidth=1.0)
+    ax.axhline(85, color=ACCENT, linestyle=(0, (6, 3)), linewidth=2.2, label="Threshold (15% free / 85% used)")
+    ax.set_ylabel("Disk Used (%)", color=TEXT)
     ax.set_ylim(0, 100)
     small_label_set = len(labels) < 4
-    label_rotation = 35 if small_label_set else 90
+    label_rotation = 32 if small_label_set else 90
     label_size = 9 if small_label_set else 8
     ax.tick_params(axis="x", rotation=label_rotation, labelsize=label_size)
     for tick in ax.get_xticklabels():
@@ -788,55 +797,57 @@ if top_disk:
             tick.set_ha("center")
             tick.set_va("top")
     for b, val in zip(bars, vals):
-        ax.text(b.get_x() + b.get_width() / 2, val + 1.2, f"{val:.1f}%", ha="center", color=DARK, fontsize=8)
-    ax.legend(frameon=False, fontsize=8, loc="upper left")
+        ax.text(b.get_x() + b.get_width() / 2, val + 1.2, f"{val:.1f}%", ha="center", color=TEXT, fontsize=8, fontweight="bold")
+    ax.legend(frameon=False, fontsize=8, loc="upper right")
 else:
     labels = ["Passed", "Low Space"]
     vals = [chart_data["disk"]["passed"], chart_data["disk"]["failed"]]
-    bars = ax.bar(labels, vals, color=[PRIMARY, ACCENT], width=0.55)
-    ax.set_ylabel("Endpoints", color=DARK)
+    bars = ax.bar(labels, vals, color=[SUCCESS, DANGER], width=0.56, edgecolor="white", linewidth=1.0)
+    ax.set_ylabel("Endpoints", color=TEXT)
     for b in bars:
-        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
+        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=TEXT, fontsize=8.5, fontweight="bold")
 fig.tight_layout()
 if top_disk:
     bottom_margin = 0.24 if len(top_disk) < 4 else 0.40
 else:
     bottom_margin = 0.18
 fig.subplots_adjust(bottom=bottom_margin)
-fig.savefig(paths["disk"])
+fig.savefig(paths["disk"], dpi=300)
 plt.close(fig)
 
 # 4) Antivirus installed coverage
-fig, ax = plt.subplots(figsize=(7, 4.5), dpi=300)
-prep_ax(ax, "Antivirus Coverage")
+fig, ax = plt.subplots(figsize=(7.2, 4.8), dpi=300)
+style_card(fig, ax, "Antivirus Coverage")
 labels = ["Installed", "Missing"]
 vals = [chart_data["antivirus"]["installed"], chart_data["antivirus"]["missing"]]
-bars = ax.bar(labels, vals, color=[PRIMARY, ACCENT], width=0.55)
-ax.set_ylabel("Endpoints", color=DARK)
+bars = ax.bar(labels, vals, color=[SUCCESS, DANGER], width=0.56, edgecolor="white", linewidth=1.0)
+ax.set_ylabel("Endpoints", color=TEXT)
 for b in bars:
-    ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=DARK, fontsize=9)
+    ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.2, f"{int(b.get_height())}", ha="center", color=TEXT, fontsize=8.5, fontweight="bold")
 fig.tight_layout()
-fig.savefig(paths["antivirus"])
+fig.savefig(paths["antivirus"], dpi=300)
 plt.close(fig)
 
 # 5) Patch status donut
-fig, ax = plt.subplots(figsize=(6.5, 6.5), dpi=300)
-ax.set_title("Patch Status", color=DARK, pad=12, fontweight="bold")
+fig, ax = plt.subplots(figsize=(6.7, 6.7), dpi=300)
+fig.patch.set_facecolor("white")
+ax.set_facecolor(SURFACE)
+ax.set_title("Patch Status", color=TEXT, pad=12, fontweight="bold")
 sizes = [chart_data["patch"]["fully_patched"], chart_data["patch"]["update_required"]]
 labels = ["Fully Patched", "Update Required"]
-colors = [PRIMARY, ACCENT]
+colors = [SUCCESS, ACCENT]
 wedges, _ = ax.pie(
     sizes,
     colors=colors,
     startangle=90,
-    wedgeprops=dict(width=0.4, edgecolor="white")
+    wedgeprops=dict(width=0.42, edgecolor="white")
 )
-centre_circle = plt.Circle((0, 0), 0.58, fc="white")
+centre_circle = plt.Circle((0, 0), 0.56, fc="white")
 ax.add_artist(centre_circle)
 legend_elements = [Line2D([0], [0], marker="o", color="w", label=f"{l}: {v}", markerfacecolor=c, markersize=9) for l, v, c in zip(labels, sizes, colors)]
-ax.legend(handles=legend_elements, loc="lower center", bbox_to_anchor=(0.5, -0.08), frameon=False)
+ax.legend(handles=legend_elements, loc="lower center", bbox_to_anchor=(0.5, -0.08), frameon=False, fontsize=8.5)
 fig.tight_layout()
-fig.savefig(paths["patch"])
+fig.savefig(paths["patch"], dpi=300)
 plt.close(fig)
 
 print("Charts generated successfully.")

@@ -129,21 +129,41 @@ categories = json.loads('${JSON.stringify(Object.keys(counts))}')
 values = json.loads('${JSON.stringify(Object.values(counts))}')
 chart_file_path = r"${chartPathForPython}"
 
-fig, ax = plt.subplots(figsize=(8, 5))
-bars = ax.bar(categories, values, color=['#4E79A7', '#F28E2B', '#E15759'])
+PRIMARY = "#0047AB"
+ACCENT = "#FF5733"
+SURFACE = "#f4f4f4"
+LIGHT = "#e6ecf5"
+TEXT = "#222222"
+MUTED = "#5b6878"
 
-ax.set_ylabel('Number of Tickets')
-ax.set_title('Monthly Ticket Summary by Category')
+plt.rcParams["font.family"] = "DejaVu Sans"
+plt.rcParams["axes.titlesize"] = 13
+plt.rcParams["axes.labelsize"] = 10
+plt.rcParams["xtick.labelsize"] = 9
+plt.rcParams["ytick.labelsize"] = 9
+
+fig, ax = plt.subplots(figsize=(8.6, 5.3), dpi=300)
+fig.patch.set_facecolor("white")
+ax.set_facecolor(SURFACE)
+bars = ax.bar(categories, values, color=[PRIMARY, "#0F66D7", ACCENT], edgecolor="white", linewidth=1.0, width=0.58)
+
+ax.set_ylabel('Number of Tickets', color=TEXT)
+ax.set_title('Monthly Ticket Summary by Category', color=TEXT, pad=12, fontweight='bold')
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
-ax.yaxis.grid(True, linestyle='--', alpha=0.6)
+ax.spines['left'].set_color(LIGHT)
+ax.spines['bottom'].set_color(LIGHT)
+ax.yaxis.grid(True, linestyle='-', alpha=0.85, color=LIGHT)
+ax.set_axisbelow(True)
+ax.tick_params(colors=MUTED)
 
 for bar in bars:
     yval = bar.get_height()
-    plt.text(bar.get_x() + bar.get_width()/2.0, yval + 0.1, int(yval), ha='center', va='bottom')
+    plt.text(bar.get_x() + bar.get_width()/2.0, yval + 0.12, int(yval), ha='center', va='bottom', color=TEXT, fontsize=9, fontweight='bold')
 
 os.makedirs(os.path.dirname(chart_file_path), exist_ok=True)
-plt.savefig(chart_file_path)
+plt.tight_layout()
+plt.savefig(chart_file_path, dpi=300)
 print(f"Chart saved to {chart_file_path}")
     `;
     generateChartNode.setParams({ 
