@@ -46,9 +46,9 @@ header {
 header h1 {
     margin: 0;
     color: var(--primary-color);
-    font-size: 22pt;
+    font-size: 20pt;
     letter-spacing: 0.3px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .meta p {
