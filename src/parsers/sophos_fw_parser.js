@@ -383,7 +383,7 @@ def style_ax(fig, ax, title, xlabel):
 
 def draw_horizontal(entries, metric_key, title, xlabel, path):
     if not entries:
-        fig, ax = plt.subplots(figsize=(8.8, 5.2), dpi=300)
+        fig, ax = plt.subplots(figsize=(9.0, 4.3), dpi=300)
         style_ax(fig, ax, title, xlabel)
         ax.text(0.5, 0.5, "No data available", transform=ax.transAxes, ha="center", va="center", color=MUTED)
         fig.tight_layout()
@@ -395,7 +395,7 @@ def draw_horizontal(entries, metric_key, title, xlabel, path):
     labels = [e["name"] for e in entries][:10]
     values = [float(e.get(metric_key, 0) or 0) for e in entries][:10]
 
-    fig, ax = plt.subplots(figsize=(9.2, 5.8), dpi=300)
+    fig, ax = plt.subplots(figsize=(9.0, 4.4), dpi=300)
     style_ax(fig, ax, title, xlabel)
     ypos = np.arange(len(labels))
     colors = [PRIMARY if i % 2 == 0 else PRIMARY_ALT for i in range(len(labels))]

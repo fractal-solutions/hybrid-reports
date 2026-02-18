@@ -224,7 +224,7 @@ li {
 
 .chart-grid-two {
     display: block;
-    margin: 12px 0;
+    margin: 8px 0;
 }
 
 .chart-grid-two .chart-card {
@@ -234,7 +234,7 @@ li {
     border-radius: 8px;
     padding: 10px 12px;
     background: #fff;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
     page-break-inside: avoid;
     break-inside: avoid;
 }
@@ -244,15 +244,30 @@ li {
 }
 
 .sophos-fw .chart-container-small {
-    margin: 8px 0 10px;
+    margin: 4px 0 6px;
 }
 
 .sophos-fw .chart-card img {
-    max-height: 360px;
+    max-height: 250px;
 }
 
 .sophos-fw ul {
-    margin-top: 10px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+.sophos-fw {
+    page-break-inside: auto;
+    break-inside: auto;
+}
+
+.sophos-fw h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.sophos-fw p {
+    margin: 2px 0;
 }
 
 footer {
