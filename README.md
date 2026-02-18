@@ -34,6 +34,11 @@ The system follows a Data-View-Controller (DVC) pattern:
     ```bash
     bun patch_agent.js
     ```
+7.  **Optional Qflow Dependency Trim (for constrained environments)**: If your environment does not support `ssh2`/`serialport`, run:
+    ```bash
+    bun patch_qflow.js
+    ```
+    This removes `remote_execution` / `hardware_interaction` dependency references from installed Qflow files in `node_modules`.
 
 ## How to Configure Clients
 
@@ -47,7 +52,9 @@ Client configurations are located in the `config/` directory. Each client has a 
   "data_directory": "data/",
   "modules_to_run": [
     "datto_rmm",
-    "zoho_tickets"
+    "zoho_tickets",
+    "prtg_monitoring",
+    "sophos_fw"
   ]
 }
 ```
@@ -98,6 +105,10 @@ Expected image keys include:
 - `patch_management.chart_path`
 - `tickets.chart_path`
 - `prtg_monitoring.chart_path`
+- `sophos_fw.applications.chart_path`
+- `sophos_fw.application_categories.chart_path`
+- `sophos_fw.web_categories.chart_path`
+- `sophos_fw.web_domains.chart_path`
 
 The renderer resolves these as filesystem paths relative to the project root and embeds them as Base64 in the final HTML/PDF.
 
@@ -142,6 +153,8 @@ By default the system expects data under `data/` with module-specific subfolders
 - `data/datto_rmm/` for Datto RMM PDFs
 - `data/prtg/` for PRTG PDFs
 - `data/zoho_tickets.csv` for Zoho Tickets exports
+- `data/SOPHOS/<Client-Folder>/` for Sophos Firewall CSV exports
+  - required files for `sophos_fw`: `Applications.csv`, `Application Categories.csv`, `Web Categories.csv`, `Web Domains.csv`
 
 Each parser is responsible for finding and reading its own inputs relative to `shared.data_directory`.
 
@@ -156,6 +169,7 @@ The renderer injects CSS and images, replaces `{{placeholders}}`, and generates 
 ## Troubleshooting
 
 - **Finish tool prompt keeps asking for yes/no**: Re-run `bun patch_agent.js` after reinstalling dependencies.
+- **Qflow install issues on systems without serial/ssh support**: Run `bun patch_qflow.js`.
 - **Blank sections**: Make sure the module that provides the data is included in `modules_to_run` and that the parser output was merged into `report_data.json`.
 - **Missing images**: Confirm charts were generated in `assets/` and that their paths are present in the module output JSON.
 - **PDF render issues**: Reinstall the Puppeteer browser with `bunx puppeteer browsers install chrome`.
