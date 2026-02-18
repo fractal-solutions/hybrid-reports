@@ -106,6 +106,51 @@ async function renderReport(jsonPath, outputPdfPath) {
         data.prtg_monitoring.links_table_rows = '<tr><td colspan="7">No PRTG link data available.</td></tr>';
     }
 
+    // Sophos top lists
+    if (data.sophos_fw && data.sophos_fw.applications && Array.isArray(data.sophos_fw.applications.top)) {
+        data.sophos_fw.applications.top_html = data.sophos_fw.applications.top
+            .slice(0, 5)
+            .map(item => `<li>${item.name} (${item.bytes}, ${item.percent})</li>`)
+            .join('\n');
+    } else {
+        if (!data.sophos_fw) data.sophos_fw = {};
+        if (!data.sophos_fw.applications) data.sophos_fw.applications = {};
+        data.sophos_fw.applications.top_html = '<li>No data available.</li>';
+    }
+
+    if (data.sophos_fw && data.sophos_fw.application_categories && Array.isArray(data.sophos_fw.application_categories.top)) {
+        data.sophos_fw.application_categories.top_html = data.sophos_fw.application_categories.top
+            .slice(0, 5)
+            .map(item => `<li>${item.name} (${item.bytes}, ${item.percent})</li>`)
+            .join('\n');
+    } else {
+        if (!data.sophos_fw) data.sophos_fw = {};
+        if (!data.sophos_fw.application_categories) data.sophos_fw.application_categories = {};
+        data.sophos_fw.application_categories.top_html = '<li>No data available.</li>';
+    }
+
+    if (data.sophos_fw && data.sophos_fw.web_categories && Array.isArray(data.sophos_fw.web_categories.top)) {
+        data.sophos_fw.web_categories.top_html = data.sophos_fw.web_categories.top
+            .slice(0, 5)
+            .map(item => `<li>${item.name} (${item.hits} hits, ${item.percent})</li>`)
+            .join('\n');
+    } else {
+        if (!data.sophos_fw) data.sophos_fw = {};
+        if (!data.sophos_fw.web_categories) data.sophos_fw.web_categories = {};
+        data.sophos_fw.web_categories.top_html = '<li>No data available.</li>';
+    }
+
+    if (data.sophos_fw && data.sophos_fw.web_domains && Array.isArray(data.sophos_fw.web_domains.top)) {
+        data.sophos_fw.web_domains.top_html = data.sophos_fw.web_domains.top
+            .slice(0, 5)
+            .map(item => `<li>${item.name} (${item.bytes}, ${item.percent})</li>`)
+            .join('\n');
+    } else {
+        if (!data.sophos_fw) data.sophos_fw = {};
+        if (!data.sophos_fw.web_domains) data.sophos_fw.web_domains = {};
+        data.sophos_fw.web_domains.top_html = '<li>No data available.</li>';
+    }
+
 
     // 3. Process Images (Find keys ending in _path or strictly known keys)
     // For robustness, let's walk the known schema paths that are images.
@@ -116,7 +161,11 @@ async function renderReport(jsonPath, outputPdfPath) {
         'antivirus.chart_path',
         'patch_management.chart_path',
         'tickets.chart_path', // Zoho tickets chart
-        'prtg_monitoring.chart_path' // New PRTG monitoring chart
+        'prtg_monitoring.chart_path', // New PRTG monitoring chart
+        'sophos_fw.applications.chart_path',
+        'sophos_fw.application_categories.chart_path',
+        'sophos_fw.web_categories.chart_path',
+        'sophos_fw.web_domains.chart_path'
     ];
 
     for (const keyPath of imageKeys) {

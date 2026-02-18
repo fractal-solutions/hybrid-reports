@@ -1,0 +1,31 @@
+﻿Start Date,2026-02-13 00:00:00
+End Date,2026-02-13 23:59:59
+Server Time,2026-02-13 17:29:34
+Appliance,XGS2100
+Firmware Version,SFOS 20.0.2 MR-2-Build378
+Firmware Build,378
+Device Serial Number,X2100674GQWD91A
+Reports
+	,Applications
+	,Application Categories
+	,Application Users
+	,Hosts
+	,Source Countries
+	,Destination Countries
+	,Allowed Policies
+	,Web Categories
+	,Web Users
+	,Web Domains
+	,Web Server Domains
+	,File Uploaded via Web
+	,Files Uploaded via FTP
+	,Files Downloaded via FTP
+	,FTP Servers
+	,Mail Traffic Summary
+	,Mail Senders
+	,Mail Recipients
+Criteria
+None
+
+
+Server,Bytes,Percent

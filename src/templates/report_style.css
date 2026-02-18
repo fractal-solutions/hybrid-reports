@@ -222,6 +222,39 @@ li {
     max-height: 500px; /* Adjust as needed */
 }
 
+.chart-grid-two {
+    display: block;
+    margin: 12px 0;
+}
+
+.chart-grid-two .chart-card {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #fff;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.chart-grid-two .chart-card h3 {
+    margin-top: 2px;
+}
+
+.sophos-fw .chart-container-small {
+    margin: 8px 0 10px;
+}
+
+.sophos-fw .chart-card img {
+    max-height: 360px;
+}
+
+.sophos-fw ul {
+    margin-top: 10px;
+}
+
 footer {
     margin-top: 50px;
     padding-top: 20px;

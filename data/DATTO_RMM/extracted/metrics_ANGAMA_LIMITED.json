@@ -1,0 +1,73 @@
+{
+  "scores": {
+    "average_score": 0,
+    "services_delivered_chart_path": "assets/datto_services_ANGAMA_LIMITED.png"
+  },
+  "device_health": {
+    "total_managed": 0,
+    "compliance_percentage": 0,
+    "chart_path": "assets/datto_device_health_ANGAMA_LIMITED.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 0,
+        "total_count": 0,
+        "low_space_count": 0,
+        "chart_path": "assets/datto_disk_space_ANGAMA_LIMITED.png"
+      },
+      "ram": {
+        "passed_count": 0,
+        "total_count": 0
+      },
+      "os_support": {
+        "passed_count": 0,
+        "total_count": 0
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 0,
+    "chart_path": "assets/datto_antivirus_ANGAMA_LIMITED.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 0,
+    "update_required_count": 0,
+    "chart_path": "assets/datto_patch_ANGAMA_LIMITED.png",
+    "windows_10_users_list": []
+  },
+  "recommendations": [
+    "Device health compliance is 0%; prioritize remediation of failed health checks this month.",
+    "Review monitoring alerts weekly and close high-priority items to improve service score.",
+    "Track monthly trend lines for patching, antivirus, and health checks to validate operational improvements."
+  ],
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": null,
+      "Monitoring": null,
+      "Patch Management": null,
+      "Software Management": null,
+      "Antivirus": null
+    },
+    "average_score": 0,
+    "disk": {
+      "passed": 0,
+      "failed": 0
+    },
+    "disk_top_entries": [],
+    "ram": {
+      "passed": 0,
+      "failed": 0
+    },
+    "os": {
+      "passed": 0,
+      "failed": 0
+    },
+    "antivirus": {
+      "installed": 0,
+      "missing": 0
+    },
+    "patch": {
+      "fully_patched": 0,
+      "update_required": 0
+    }
+  }
+}

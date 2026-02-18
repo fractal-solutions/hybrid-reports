@@ -158,6 +158,60 @@
                 {{recommendations_html}}
             </ul>
         </section>
+
+        <section class="sophos-fw" data-module="sophos_fw">
+            <h2>Sophos Firewall Overview</h2>
+            <p><strong>Source Folder:</strong> {{sophos_fw.source_folder}}</p>
+            <p><strong>Window:</strong> {{sophos_fw.report_window.start}} to {{sophos_fw.report_window.end}}</p>
+
+            <div class="chart-grid-two">
+                <div class="chart-card">
+                    <h3>Top Applications by Traffic</h3>
+                    <div class="chart-container-small">
+                        <img src="{{sophos_fw.applications.chart_path}}" alt="Top Applications Chart">
+                    </div>
+                    <ul>
+                        {{sophos_fw.applications.top_html}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chart-grid-two">
+                <div class="chart-card">
+                    <h3>Top Application Categories</h3>
+                    <div class="chart-container-small">
+                        <img src="{{sophos_fw.application_categories.chart_path}}" alt="Top Application Categories Chart">
+                    </div>
+                    <ul>
+                        {{sophos_fw.application_categories.top_html}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chart-grid-two">
+                <div class="chart-card">
+                    <h3>Top Web Categories by Hits</h3>
+                    <div class="chart-container-small">
+                        <img src="{{sophos_fw.web_categories.chart_path}}" alt="Top Web Categories Chart">
+                    </div>
+                    <ul>
+                        {{sophos_fw.web_categories.top_html}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chart-grid-two">
+                <div class="chart-card">
+                    <h3>Top Web Domains by Traffic</h3>
+                    <div class="chart-container-small">
+                        <img src="{{sophos_fw.web_domains.chart_path}}" alt="Top Web Domains Chart">
+                    </div>
+                    <ul>
+                        {{sophos_fw.web_domains.top_html}}
+                    </ul>
+                </div>
+            </div>
+        </section>
         
         <footer>
             <p>Eldama Technologies Ltd - Confidential - {{meta.report_month}}</p>

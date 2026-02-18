@@ -1,0 +1,36 @@
+﻿Start Date,2026-02-13 00:00:00
+End Date,2026-02-13 23:59:59
+Server Time,2026-02-13 17:29:31
+Appliance,XGS2100
+Firmware Version,SFOS 20.0.2 MR-2-Build378
+Firmware Build,378
+Device Serial Number,X2100674GQWD91A
+Reports
+	,Applications
+	,Application Categories
+	,Application Users
+	,Hosts
+	,Source Countries
+	,Destination Countries
+	,Allowed Policies
+	,Web Categories
+	,Web Users
+	,Web Domains
+	,Web Server Domains
+	,File Uploaded via Web
+	,Files Uploaded via FTP
+	,Files Downloaded via FTP
+	,FTP Servers
+	,Mail Traffic Summary
+	,Mail Senders
+	,Mail Recipients
+Criteria
+None
+
+
+Application/Proto:Port,Category,Risk,Bytes,Percent
+Others,Unclassified,?,34.36 GB,36.91 %
+My SharePoint,General Business,3,18.21 GB,19.64 %
+Secure Socket Layer Protocol,Infrastructure,1,17.25 GB,18.6 %
+Youtube Video Streaming,Streaming Media,3,11.59 GB,12.5 %
+Facebook Website,Social Networking,3,11.32 GB,12.21 %

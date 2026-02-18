@@ -3,7 +3,8 @@
   "report_period": "January 2026",
   "data_directory": "data/",
   "modules_to_run": [
+    "zoho_tickets",
     "datto_rmm",
-    "zoho_tickets"
+    "sophos_fw"
   ]
 }
