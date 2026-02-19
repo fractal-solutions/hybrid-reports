@@ -186,6 +186,60 @@ function rowsToHtmlList(rows, formatter) {
   return rows.map((row) => `<li>${formatter(row)}</li>`).join("\n");
 }
 
+function buildSophosDeterministicReview(appRows, appCategoryRows) {
+  const reviews = [];
+  if (!Array.isArray(appRows) || appRows.length === 0 || !Array.isArray(appCategoryRows) || appCategoryRows.length === 0) {
+    return ["Insufficient Sophos application/category data to produce deterministic review points."];
+  }
+
+  const byTrafficApps = [...appRows].sort((a, b) => (b.bytes_mb || 0) - (a.bytes_mb || 0));
+  const byTrafficCategories = [...appCategoryRows].sort((a, b) => (b.bytes_mb || 0) - (a.bytes_mb || 0));
+
+  const topApp = byTrafficApps[0];
+  const topCategory = byTrafficCategories[0];
+  if (topApp) {
+    reviews.push(
+      `Top application by traffic is ${topApp.name} (${topApp.bytes}, ${topApp.percent}), which should be treated as a primary policy and monitoring target.`
+    );
+  }
+  if (topCategory) {
+    reviews.push(
+      `Top application category is ${topCategory.name} (${topCategory.bytes}, ${topCategory.percent}); validate that its bandwidth aligns with intended business use.`
+    );
+  }
+
+  const othersApp = byTrafficApps.find((r) => String(r.name || "").toLowerCase() === "others");
+  if (othersApp && (othersApp.percent_value || 0) >= 20) {
+    reviews.push(
+      `"Others" accounts for ${othersApp.percent}; refine application signatures/policies to improve traffic attribution and reduce blind spots.`
+    );
+  }
+
+  const highRiskApps = byTrafficApps.filter((r) => Number.parseInt(String(r.risk), 10) >= 3);
+  const highRiskShare = highRiskApps.reduce((sum, r) => sum + (r.percent_value || 0), 0);
+  if (highRiskShare >= 20) {
+    reviews.push(
+      `High-risk applications (risk >= 3) contribute ${highRiskShare.toFixed(2)}% of observed traffic; prioritize stricter controls and exception reviews for these flows.`
+    );
+  }
+
+  const internetLeisureSet = new Set(["streaming media", "social networking", "entertainment", "games"]);
+  const internetLeisureShare = byTrafficCategories
+    .filter((r) => internetLeisureSet.has(String(r.name || "").toLowerCase()))
+    .reduce((sum, r) => sum + (r.percent_value || 0), 0);
+  if (internetLeisureShare >= 25) {
+    reviews.push(
+      `Streaming/Social/Entertainment categories represent ${internetLeisureShare.toFixed(2)}% of traffic; apply QoS and time-based policy controls to protect business-critical performance.`
+    );
+  }
+
+  if (reviews.length < 4) {
+    reviews.push("Track month-on-month top application/category drift to detect abnormal traffic shifts early.");
+  }
+
+  return reviews.slice(0, 6);
+}
+
 export function sophos_fwParserWorkflow() {
   const flow = new AsyncFlow();
 
@@ -262,6 +316,7 @@ export function sophos_fwParserWorkflow() {
     const topAppCategories = topN(appCategoryRows, "bytes_mb", 10);
     const topWebCategories = topN(webCategoryRows, "hits_value", 10);
     const topWebDomains = topN(webDomainRows, "bytes_mb", 10);
+    const deterministicReview = buildSophosDeterministicReview(appRows, appCategoryRows);
 
     const clientNameSanitized = sanitizeClientName(shared.client_name);
     const paths = {
@@ -321,6 +376,7 @@ export function sophos_fwParserWorkflow() {
           })),
           top_html: rowsToHtmlList(topWebDomains.slice(0, 5), (r) => `${r.name} (${r.bytes}, ${r.percent})`),
         },
+        review: deterministicReview,
       },
     };
 

@@ -222,6 +222,11 @@ li {
     max-height: 500px; /* Adjust as needed */
 }
 
+.datto-saas img {
+    max-height: 580px;
+    object-fit: contain;
+}
+
 .chart-grid-two {
     display: block;
     margin: 8px 0;
@@ -257,6 +262,8 @@ li {
 }
 
 .sophos-fw {
+    page-break-before: always;
+    break-before: page;
     page-break-inside: auto;
     break-inside: auto;
 }

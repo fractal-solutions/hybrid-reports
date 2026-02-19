@@ -152,6 +152,15 @@
             </div>
         </section>
 
+        <section class="datto-saas" data-module="datto_saas">
+            <h2>Datto SaaS Offsite Backup</h2>
+            <p>{{datto_saas.summary_note}}</p>
+            <p><strong>Source:</strong> {{datto_saas.source_filename}}</p>
+            <div class="chart-container-large">
+                <img src="{{datto_saas.screenshot_path}}" alt="Datto SaaS Offsite Backup Screenshot">
+            </div>
+        </section>
+
         <section class="recommendations" data-module="datto_rmm">
             <h2>Recommendations</h2>
             <ul>
@@ -163,6 +172,10 @@
             <h2>Sophos Firewall Overview</h2>
             <p><strong>Source Folder:</strong> {{sophos_fw.source_folder}}</p>
             <p><strong>Window:</strong> {{sophos_fw.report_window.start}} to {{sophos_fw.report_window.end}}</p>
+            <h3>Professional Review</h3>
+            <ul>
+                {{sophos_fw.review_html}}
+            </ul>
 
             <div class="chart-grid-two">
                 <div class="chart-card">

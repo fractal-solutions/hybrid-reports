@@ -151,6 +151,13 @@ async function renderReport(jsonPath, outputPdfPath) {
         data.sophos_fw.web_domains.top_html = '<li>No data available.</li>';
     }
 
+    if (data.sophos_fw && Array.isArray(data.sophos_fw.review)) {
+        data.sophos_fw.review_html = data.sophos_fw.review.map(item => `<li>${item}</li>`).join('\n');
+    } else {
+        if (!data.sophos_fw) data.sophos_fw = {};
+        data.sophos_fw.review_html = '<li>No deterministic review available.</li>';
+    }
+
 
     // 3. Process Images (Find keys ending in _path or strictly known keys)
     // For robustness, let's walk the known schema paths that are images.
@@ -162,6 +169,7 @@ async function renderReport(jsonPath, outputPdfPath) {
         'patch_management.chart_path',
         'tickets.chart_path', // Zoho tickets chart
         'prtg_monitoring.chart_path', // New PRTG monitoring chart
+        'datto_saas.screenshot_path',
         'sophos_fw.applications.chart_path',
         'sophos_fw.application_categories.chart_path',
         'sophos_fw.web_categories.chart_path',

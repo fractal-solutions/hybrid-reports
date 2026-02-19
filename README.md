@@ -54,7 +54,8 @@ Client configurations are located in the `config/` directory. Each client has a 
     "datto_rmm",
     "zoho_tickets",
     "prtg_monitoring",
-    "sophos_fw"
+    "sophos_fw",
+    "datto_saas"
   ]
 }
 ```
@@ -105,6 +106,7 @@ Expected image keys include:
 - `patch_management.chart_path`
 - `tickets.chart_path`
 - `prtg_monitoring.chart_path`
+- `datto_saas.screenshot_path`
 - `sophos_fw.applications.chart_path`
 - `sophos_fw.application_categories.chart_path`
 - `sophos_fw.web_categories.chart_path`
@@ -151,12 +153,26 @@ To extend the system with a new data source:
 By default the system expects data under `data/` with module-specific subfolders. Common examples:
 
 - `data/datto_rmm/` for Datto RMM PDFs
+- `data/datto_saas/` for Datto SaaS dashboard screenshot(s)
 - `data/prtg/` for PRTG PDFs
 - `data/zoho_tickets.csv` for Zoho Tickets exports
 - `data/SOPHOS/<Client-Folder>/` for Sophos Firewall CSV exports
   - required files for `sophos_fw`: `Applications.csv`, `Application Categories.csv`, `Web Categories.csv`, `Web Domains.csv`
 
 Each parser is responsible for finding and reading its own inputs relative to `shared.data_directory`.
+
+### Datto SaaS Module Input
+
+For `datto_saas`, place screenshots in `data/datto_saas/` using client-identifiable names.
+
+Examples:
+- `Serenity Spa Limited - Datto SaaS Backup.png`
+- `Aspira datto saas.jpg`
+
+The parser picks the best fuzzy match for `client_name` and injects:
+- `datto_saas.screenshot_path`
+- `datto_saas.source_filename`
+- `datto_saas.summary_note`
 
 ## Report Templates
 

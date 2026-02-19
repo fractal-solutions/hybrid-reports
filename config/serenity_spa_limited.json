@@ -5,6 +5,7 @@
   "modules_to_run": [
     "datto_rmm",
     "zoho_tickets",
-    "prtg_monitoring"
+    "prtg_monitoring",
+    "datto_saas"
   ]
 }
