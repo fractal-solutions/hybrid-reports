@@ -52,9 +52,11 @@ const validateBtn = document.getElementById("validateBtn");
 const validationSummary = document.getElementById("validationSummary");
 const validationResults = document.getElementById("validationResults");
 const generateBtn = document.getElementById("generateBtn");
+const downloadGeneratedBtn = document.getElementById("downloadGeneratedBtn");
 const generateLog = document.getElementById("generateLog");
 const loadReportDataBtn = document.getElementById("loadReportDataBtn");
 const renderEditedBtn = document.getElementById("renderEditedBtn");
+const downloadEditedBtn = document.getElementById("downloadEditedBtn");
 const reportJsonEditor = document.getElementById("reportJsonEditor");
 const jsonLineNumbers = document.getElementById("jsonLineNumbers");
 const editLog = document.getElementById("editLog");
@@ -63,6 +65,8 @@ const reportPeriodInput = document.getElementById("reportPeriodInput");
 const moduleCheckboxes = document.getElementById("moduleCheckboxes");
 const saveConfigBtn = document.getElementById("saveConfigBtn");
 const saveConfigStatus = document.getElementById("saveConfigStatus");
+let latestGeneratedPdfPath = "";
+let latestEditedPdfPath = "";
 
 async function fetchJson(url, options = {}) {
   const res = await fetch(url, options);
@@ -314,6 +318,8 @@ async function validateInputs() {
 
 async function generateReport() {
   if (!state.client) return;
+  downloadGeneratedBtn.disabled = true;
+  latestGeneratedPdfPath = "";
   generateLog.textContent = "Generating report...";
   const data = await fetchJson("/api/generate-report", {
     method: "POST",
@@ -330,6 +336,10 @@ async function generateReport() {
     "stderr:",
     data.stderr || "",
   ].join("\n");
+  if (data.ok && data.reportPdfPath) {
+    latestGeneratedPdfPath = data.reportPdfPath;
+    downloadGeneratedBtn.disabled = false;
+  }
 }
 
 async function loadReportData() {
@@ -346,6 +356,8 @@ async function loadReportData() {
 async function renderEdited() {
   if (!state.client) return;
   if (!validateJsonEditor()) return;
+  downloadEditedBtn.disabled = true;
+  latestEditedPdfPath = "";
   editLog.textContent = "Rendering edited PDF...";
   const data = await fetchJson("/api/render-edited", {
     method: "POST",
@@ -365,6 +377,10 @@ async function renderEdited() {
     "stderr:",
     data.stderr || "",
   ].join("\n");
+  if (data.ok && data.reportPdfPath) {
+    latestEditedPdfPath = data.reportPdfPath;
+    downloadEditedBtn.disabled = false;
+  }
 }
 
 loadClientBtn.addEventListener("click", () => loadClientConfig().catch((e) => alert(e.message)));
@@ -373,6 +389,14 @@ validateBtn.addEventListener("click", () => validateInputs().catch((e) => alert(
 generateBtn.addEventListener("click", () => generateReport().catch((e) => alert(e.message)));
 loadReportDataBtn.addEventListener("click", () => loadReportData().catch((e) => alert(e.message)));
 renderEditedBtn.addEventListener("click", () => renderEdited().catch((e) => alert(e.message)));
+downloadGeneratedBtn.addEventListener("click", () => {
+  if (!latestGeneratedPdfPath) return;
+  window.location.href = `/api/download-report?path=${encodeURIComponent(latestGeneratedPdfPath)}`;
+});
+downloadEditedBtn.addEventListener("click", () => {
+  if (!latestEditedPdfPath) return;
+  window.location.href = `/api/download-report?path=${encodeURIComponent(latestEditedPdfPath)}`;
+});
 
 clientSelect.addEventListener("change", () => {
   state.client = clientSelect.value;
@@ -382,6 +406,8 @@ async function boot() {
   await loadClients();
   if (state.client) await loadClientConfig();
   renderEditedBtn.disabled = true;
+  downloadGeneratedBtn.disabled = true;
+  downloadEditedBtn.disabled = true;
   updateLineNumbers();
 }
 

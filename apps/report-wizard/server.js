@@ -506,6 +506,30 @@ async function handleApi(request, pathname) {
     });
   }
 
+  if (pathname === "/api/download-report" && request.method === "GET") {
+    const url = new URL(request.url);
+    const relPath = String(url.searchParams.get("path") || "");
+    if (!relPath) return json({ error: "Missing report path." }, 400);
+
+    const absPath = path.resolve(ROOT, relPath);
+    const reportsRoot = path.resolve(ROOT, "reports");
+    const allowedPrefix = reportsRoot + path.sep;
+    if (!(absPath === reportsRoot || absPath.startsWith(allowedPrefix))) {
+      return json({ error: "Invalid report path." }, 400);
+    }
+    if (!fileExists(absPath)) return json({ error: "Report file not found." }, 404);
+
+    const filename = path.basename(absPath).replace(/"/g, "");
+    const bytes = fs.readFileSync(absPath);
+    return new Response(bytes, {
+      status: 200,
+      headers: {
+        "content-type": "application/pdf",
+        "content-disposition": `attachment; filename="${filename}"`,
+      },
+    });
+  }
+
   return null;
 }
 
