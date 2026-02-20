@@ -1,214 +1,224 @@
 {
   "meta": {
-    "client_name": "ANGAMA LIMITED",
+    "client_name": "SERENITY SPA LIMITED",
     "report_month": "January 2026",
     "generated_date": "2/20/2026",
     "modules_to_run": [
       "datto_rmm",
       "zoho_tickets",
-      "sophos_fw"
+      "prtg_monitoring"
     ]
   },
+  "scores": {
+    "average_score": 57,
+    "services_delivered_chart_path": "assets/datto_services_SERENITY_SPA_LIMITED.png"
+  },
+  "device_health": {
+    "total_managed": 48,
+    "compliance_percentage": 2.1,
+    "chart_path": "assets/datto_device_health_SERENITY_SPA_LIMITED.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 47,
+        "total_count": 48,
+        "low_space_count": 3,
+        "chart_path": "assets/datto_disk_space_SERENITY_SPA_LIMITED.png"
+      },
+      "ram": {
+        "passed_count": 47,
+        "total_count": 48
+      },
+      "os_support": {
+        "passed_count": 47,
+        "total_count": 48
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 47,
+    "chart_path": "assets/datto_antivirus_SERENITY_SPA_LIMITED.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 12,
+    "update_required_count": 36,
+    "chart_path": "assets/datto_patch_SERENITY_SPA_LIMITED.png",
+    "windows_10_users_list": []
+  },
+  "recommendations": [
+    "Device health compliance is 2.1%; prioritize remediation of failed health checks this month.",
+    "36 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 47/48; deploy or remediate protection on uncovered endpoints.",
+    "3 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.",
+    "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
+    "Create an OS lifecycle plan for unsupported or near end-of-support devices."
+  ],
   "tickets": {
     "source": "Zoho",
-    "total": 33,
-    "software_count": 8,
-    "hardware_count": 1,
-    "misc_count": 24,
-    "chart_path": "assets\\zoho_tickets_ANGAMA_LIMITED.png"
+    "total": 27,
+    "software_count": 7,
+    "hardware_count": 3,
+    "misc_count": 17,
+    "chart_path": "assets\\zoho_tickets_SERENITY_SPA_LIMITED.png"
   },
-  "sophos_fw": {
-    "source_folder": "Angama-Sophos-FW",
-    "report_window": {
-      "start": "2026-02-13 00:00:00",
-      "end": "2026-02-13 23:59:59"
+  "prtg_monitoring": {
+    "links": [
+      {
+        "name": "Gigiri DD LAN",
+        "avg_bandwidth": "5.87 Mbit/s",
+        "total_data": "1,658,801 MB",
+        "uptime_percent": "97.941%",
+        "downtime_percent": "2.059%",
+        "uptime_duration": "27d 10h 03m 17s",
+        "downtime_duration": "13h 50m 00s"
+      },
+      {
+        "name": "Gigiri-JTL- 197.232.140.107 LAN",
+        "avg_bandwidth": "5.88 Mbit/s",
+        "total_data": "1,657,791 MB",
+        "uptime_percent": "97.849%",
+        "downtime_percent": "2.151%",
+        "uptime_duration": "27d 09h 25m 44s",
+        "downtime_duration": "14h 27m 00s"
+      },
+      {
+        "name": "Kitisuru - JTL JTL-WAN",
+        "avg_bandwidth": "3.37 Mbit/s",
+        "total_data": "970,408 MB",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 23h 53m 35s",
+        "downtime_duration": "00s"
+      },
+      {
+        "name": "Kitisuru - JTL Cameras-LAN",
+        "avg_bandwidth": "2.72 Mbit/s",
+        "total_data": "784,506 MB",
+        "uptime_percent": "0%",
+        "downtime_percent": "100%",
+        "uptime_duration": "00s",
+        "downtime_duration": "28d 00h 00m 00s"
+      },
+      {
+        "name": "41.215.60.10 JANI (Tigoni DD)",
+        "avg_bandwidth": "2.47 Mbit/s",
+        "total_data": "692,075 MB",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 06h 08m 12s",
+        "downtime_duration": "00s"
+      },
+      {
+        "name": "Gigiri DD DD-Link",
+        "avg_bandwidth": "2.42 Mbit/s",
+        "total_data": "682,867 MB",
+        "uptime_percent": "97.941%",
+        "downtime_percent": "2.059%",
+        "uptime_duration": "27d 10h 03m 22s",
+        "downtime_duration": "13h 50m 00s"
+      },
+      {
+        "name": "Gigiri-JTL-197.232.140.107 JTL-WAN",
+        "avg_bandwidth": "1.92 Mbit/s",
+        "total_data": "543,014 MB",
+        "uptime_percent": "97.849%",
+        "downtime_percent": "2.151%",
+        "uptime_duration": "27d 09h 25m 39s",
+        "downtime_duration": "14h 27m 00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 DD",
+        "avg_bandwidth": "3.15 Mbit/s",
+        "total_data": "274,337 MB",
+        "uptime_percent": "29.895%",
+        "downtime_percent": "70.105%",
+        "uptime_duration": "08d 08h 51m 43s",
+        "downtime_duration": "19d 15h 02m 00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Staff LAN",
+        "avg_bandwidth": "3.12 Mbit/s",
+        "total_data": "271,887 MB",
+        "uptime_percent": "29.897%",
+        "downtime_percent": "70.103%",
+        "uptime_duration": "08d 08h 52m 48s",
+        "downtime_duration": "19d 15h 01m 00s"
+      },
+      {
+        "name": "DD-SPA _KAREN DD_WAN Port2",
+        "avg_bandwidth": "0.83 Mbit/s",
+        "total_data": "229,474 MB",
+        "uptime_percent": "96.325%",
+        "downtime_percent": "3.675%",
+        "uptime_duration": "26d 23h 11m 52s",
+        "downtime_duration": "01d 00h 41m 32s"
+      },
+      {
+        "name": "Kitisuru - JTL (008) Port4 Traffic",
+        "avg_bandwidth": "0.08 Mbit/s",
+        "total_data": "23,188 MB",
+        "uptime_percent": "100%",
+        "downtime_percent": "0%",
+        "uptime_duration": "27d 23h 54m 30s",
+        "downtime_duration": "00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Cameras LAN",
+        "avg_bandwidth": "< 0.01 Mbit/s",
+        "total_data": "50 MB",
+        "uptime_percent": "29.9%",
+        "downtime_percent": "70.1%",
+        "uptime_duration": "08d 08h 53m 53s",
+        "downtime_duration": "19d 15h 00m 00s"
+      },
+      {
+        "name": "Gigiri DD Guest LAN",
+        "avg_bandwidth": "0 Mbit/s",
+        "total_data": "0 MB",
+        "uptime_percent": "97.941%",
+        "downtime_percent": "2.059%",
+        "uptime_duration": "27d 10h 04m 22s",
+        "downtime_duration": "13h 50m 00s"
+      },
+      {
+        "name": "41.215.60.10 JANI (Tigoni DD) Ping",
+        "avg_bandwidth": "72 msec",
+        "total_data": "N/A",
+        "uptime_percent": "97.384%",
+        "downtime_percent": "2.616%",
+        "uptime_duration": "27d 06h 20m 36s",
+        "downtime_duration": "17h 34m 30s"
+      },
+      {
+        "name": "DD-SPA _KAREN Ping",
+        "avg_bandwidth": "67 msec",
+        "total_data": "N/A",
+        "uptime_percent": "96.334%",
+        "downtime_percent": "3.666%",
+        "uptime_duration": "26d 23h 16m 19s",
+        "downtime_duration": "01d 00h 38m 00s"
+      },
+      {
+        "name": "Kitisuru DD-197.254.29.114 Availability",
+        "avg_bandwidth": "62 msec",
+        "total_data": "N/A",
+        "uptime_percent": "29.901%",
+        "downtime_percent": "70.099%",
+        "uptime_duration": "08d 08h 53m 48s",
+        "downtime_duration": "19d 14h 59m 00s"
+      }
+    ],
+    "summary_stats": {
+      "overall_avg_uptime_percent": "74.947%",
+      "overall_avg_downtime_percent": "25.053%",
+      "total_links_monitored": 16,
+      "links_with_downtime": 13
     },
-    "applications": {
-      "chart_path": "assets/sophos_applications_ANGAMA_LIMITED.png",
-      "top": [
-        {
-          "name": "Others",
-          "bytes": "34.36 GB",
-          "bytes_mb": 35184.64,
-          "percent": "36.91 %",
-          "percent_value": 36.91,
-          "category": "Unclassified",
-          "risk": "?"
-        },
-        {
-          "name": "My SharePoint",
-          "bytes": "18.21 GB",
-          "bytes_mb": 18647.04,
-          "percent": "19.64 %",
-          "percent_value": 19.64,
-          "category": "General Business",
-          "risk": "3"
-        },
-        {
-          "name": "Secure Socket Layer Protocol",
-          "bytes": "17.25 GB",
-          "bytes_mb": 17664,
-          "percent": "18.6 %",
-          "percent_value": 18.6,
-          "category": "Infrastructure",
-          "risk": "1"
-        },
-        {
-          "name": "Youtube Video Streaming",
-          "bytes": "11.59 GB",
-          "bytes_mb": 11868.16,
-          "percent": "12.5 %",
-          "percent_value": 12.5,
-          "category": "Streaming Media",
-          "risk": "3"
-        },
-        {
-          "name": "Facebook Website",
-          "bytes": "11.32 GB",
-          "bytes_mb": 11591.68,
-          "percent": "12.21 %",
-          "percent_value": 12.21,
-          "category": "Social Networking",
-          "risk": "3"
-        }
-      ],
-      "top_html": "<li>Others (34.36 GB, 36.91 %)</li>\n<li>My SharePoint (18.21 GB, 19.64 %)</li>\n<li>Secure Socket Layer Protocol (17.25 GB, 18.6 %)</li>\n<li>Youtube Video Streaming (11.59 GB, 12.5 %)</li>\n<li>Facebook Website (11.32 GB, 12.21 %)</li>"
-    },
-    "application_categories": {
-      "chart_path": "assets/sophos_app_categories_ANGAMA_LIMITED.png",
-      "top": [
-        {
-          "name": "Streaming Media",
-          "bytes": "26.78 GB",
-          "bytes_mb": 27422.72,
-          "percent": "28.88 %",
-          "percent_value": 28.88
-        },
-        {
-          "name": "General Business",
-          "bytes": "18.62 GB",
-          "bytes_mb": 19066.88,
-          "percent": "20.08 %",
-          "percent_value": 20.08
-        },
-        {
-          "name": "Infrastructure",
-          "bytes": "18.03 GB",
-          "bytes_mb": 18462.72,
-          "percent": "19.44 %",
-          "percent_value": 19.44
-        },
-        {
-          "name": "Others",
-          "bytes": "16.31 GB",
-          "bytes_mb": 16701.44,
-          "percent": "17.6 %",
-          "percent_value": 17.6
-        },
-        {
-          "name": "Mobile Applications",
-          "bytes": "13 GB",
-          "bytes_mb": 13312,
-          "percent": "14.02 %",
-          "percent_value": 14.02
-        }
-      ],
-      "top_html": "<li>Streaming Media (26.78 GB, 28.88 %)</li>\n<li>General Business (18.62 GB, 20.08 %)</li>\n<li>Infrastructure (18.03 GB, 19.44 %)</li>\n<li>Others (16.31 GB, 17.6 %)</li>\n<li>Mobile Applications (13 GB, 14.02 %)</li>"
-    },
-    "web_categories": {
-      "chart_path": "assets/sophos_web_categories_ANGAMA_LIMITED.png",
-      "top": [
-        {
-          "name": "Information Technology",
-          "hits": "92605",
-          "hits_value": 92605,
-          "percent": "40.96 %",
-          "percent_value": 40.96
-        },
-        {
-          "name": "Others",
-          "hits": "64677",
-          "hits_value": 64677,
-          "percent": "28.6 %",
-          "percent_value": 28.6
-        },
-        {
-          "name": "Social Networking",
-          "hits": "37908",
-          "hits_value": 37908,
-          "percent": "16.77 %",
-          "percent_value": 16.77
-        },
-        {
-          "name": "Content Delivery",
-          "hits": "20248",
-          "hits_value": 20248,
-          "percent": "8.96 %",
-          "percent_value": 8.96
-        },
-        {
-          "name": "Entertainment",
-          "hits": "10632",
-          "hits_value": 10632,
-          "percent": "4.7 %",
-          "percent_value": 4.7
-        }
-      ],
-      "top_html": "<li>Information Technology (92605 hits, 40.96 %)</li>\n<li>Others (64677 hits, 28.6 %)</li>\n<li>Social Networking (37908 hits, 16.77 %)</li>\n<li>Content Delivery (20248 hits, 8.96 %)</li>\n<li>Entertainment (10632 hits, 4.7 %)</li>"
-    },
-    "web_domains": {
-      "chart_path": "assets/sophos_web_domains_ANGAMA_LIMITED.png",
-      "top": [
-        {
-          "name": "Others",
-          "bytes": "43.38 GB",
-          "bytes_mb": 44421.12,
-          "percent": "60.35 %",
-          "percent_value": 60.35
-        },
-        {
-          "name": "instagram.fnbo11-1.fna.fbcdn.net",
-          "bytes": "8.87 GB",
-          "bytes_mb": 9082.88,
-          "percent": "12.62 %",
-          "percent_value": 12.62
-        },
-        {
-          "name": "scontent.fnbo11-1.fna.fbcdn.net",
-          "bytes": "8.62 GB",
-          "bytes_mb": 8826.88,
-          "percent": "12.27 %",
-          "percent_value": 12.27
-        },
-        {
-          "name": "rr1---sn-wuapouxgoxu-ocvz.googlevideo.com",
-          "bytes": "5.72 GB",
-          "bytes_mb": 5857.28,
-          "percent": "8.14 %",
-          "percent_value": 8.14
-        },
-        {
-          "name": "media.fnbo12-1.fna.whatsapp.net",
-          "bytes": "3.7 GB",
-          "bytes_mb": 3788.8,
-          "percent": "5.27 %",
-          "percent_value": 5.27
-        }
-      ],
-      "top_html": "<li>Others (43.38 GB, 60.35 %)</li>\n<li>instagram.fnbo11-1.fna.fbcdn.net (8.87 GB, 12.62 %)</li>\n<li>scontent.fnbo11-1.fna.fbcdn.net (8.62 GB, 12.27 %)</li>\n<li>rr1---sn-wuapouxgoxu-ocvz.googlevideo.com (5.72 GB, 8.14 %)</li>\n<li>media.fnbo12-1.fna.whatsapp.net (3.7 GB, 5.27 %)</li>"
-    },
-    "review": [
-      "Top application by traffic is Others (34.36 GB, 36.91 %), which should be treated as a primary policy and monitoring target.",
-      "Top application category is Streaming Media (26.78 GB, 28.88 %); validate that its bandwidth aligns with intended business use.",
-      "\"Others\" accounts for 36.91 %; refine application signatures/policies to improve traffic attribution and reduce blind spots.",
-      "High-risk applications (risk >= 3) contribute 44.35% of observed traffic; prioritize stricter controls and exception reviews for these flows.",
-      "Streaming/Social/Entertainment categories represent 28.88% of traffic; apply QoS and time-based policy controls to protect business-critical performance."
-    ]
+    "chart_path": "assets\\prtg_uptime_SERENITY_SPA_LIMITED.png"
   },
   "summary": {
-    "executive_summary": "This is a comprehensive monthly support report for ANGAMA LIMITED for January 2026. The average service score for the month was 0%. A total of 33 tickets were processed, with 0 devices having antivirus installed, and 0 devices fully patched.",
-    "total_tickets": 33,
-    "av_installed": 0,
-    "fully_patched": 0
+    "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 57%. A total of 27 tickets were processed, with 47 devices having antivirus installed, and 12 devices fully patched.",
+    "total_tickets": 27,
+    "av_installed": 47,
+    "fully_patched": 12
   }
 }

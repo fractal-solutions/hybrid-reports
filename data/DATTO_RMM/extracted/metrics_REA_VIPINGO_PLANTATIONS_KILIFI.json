@@ -1,0 +1,117 @@
+{
+  "scores": {
+    "average_score": 54,
+    "services_delivered_chart_path": "assets/datto_services_REA_VIPINGO_PLANTATIONS_KILIFI.png"
+  },
+  "device_health": {
+    "total_managed": 33,
+    "compliance_percentage": 6.1,
+    "chart_path": "assets/datto_device_health_REA_VIPINGO_PLANTATIONS_KILIFI.png",
+    "metrics": {
+      "disk_space": {
+        "passed_count": 32,
+        "total_count": 33,
+        "low_space_count": 4,
+        "chart_path": "assets/datto_disk_space_REA_VIPINGO_PLANTATIONS_KILIFI.png"
+      },
+      "ram": {
+        "passed_count": 32,
+        "total_count": 33
+      },
+      "os_support": {
+        "passed_count": 32,
+        "total_count": 33
+      }
+    }
+  },
+  "antivirus": {
+    "installed_count": 29,
+    "chart_path": "assets/datto_antivirus_REA_VIPINGO_PLANTATIONS_KILIFI.png"
+  },
+  "patch_management": {
+    "fully_patched_count": 9,
+    "update_required_count": 24,
+    "chart_path": "assets/datto_patch_REA_VIPINGO_PLANTATIONS_KILIFI.png",
+    "windows_10_users_list": []
+  },
+  "recommendations": [
+    "Device health compliance is 6.1%; prioritize remediation of failed health checks this month.",
+    "24 endpoints require patching or reboot; schedule a staged patching window and enforce reboot follow-up.",
+    "Antivirus coverage is 29/33; deploy or remediate protection on uncovered endpoints.",
+    "4 endpoints are below disk policy threshold; clean up storage and set automated low-space alerting.",
+    "Upgrade RAM on non-compliant endpoints to meet the 3.8 GB minimum baseline.",
+    "Create an OS lifecycle plan for unsupported or near end-of-support devices."
+  ],
+  "__chart_data": {
+    "service_scores": {
+      "Asset Management": 97,
+      "Monitoring": 63,
+      "Patch Management": 27,
+      "Software Management": 0,
+      "Antivirus": 87
+    },
+    "average_score": 54,
+    "disk": {
+      "passed": 32,
+      "failed": 4
+    },
+    "disk_top_entries": [
+      {
+        "label": "REA-EMILY",
+        "used_percent": 100
+      },
+      {
+        "label": "REA-DAVIDO",
+        "used_percent": 95.6
+      },
+      {
+        "label": "REA-PATRICK",
+        "used_percent": 88.9
+      },
+      {
+        "label": "REA-SERVER",
+        "used_percent": 87.9
+      },
+      {
+        "label": "REA-CHARITY",
+        "used_percent": 83.5
+      },
+      {
+        "label": "REA-CLARK",
+        "used_percent": 79.1
+      },
+      {
+        "label": "REA-ANNETTE",
+        "used_percent": 75.3
+      },
+      {
+        "label": "REA-ROY",
+        "used_percent": 69.7
+      },
+      {
+        "label": "REA-TABITHA",
+        "used_percent": 66.9
+      },
+      {
+        "label": "REA-BENJAMIN",
+        "used_percent": 65.1
+      }
+    ],
+    "ram": {
+      "passed": 32,
+      "failed": 1
+    },
+    "os": {
+      "passed": 32,
+      "failed": 1
+    },
+    "antivirus": {
+      "installed": 29,
+      "missing": 4
+    },
+    "patch": {
+      "fully_patched": 9,
+      "update_required": 24
+    }
+  }
+}

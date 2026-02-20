@@ -22,11 +22,23 @@
           <select id="clientSelect"></select>
           <button id="loadClientBtn">Load Client</button>
         </div>
+        <div class="row config-row">
+          <label for="reportPeriodInput"><strong>Report Period</strong></label>
+          <input id="reportPeriodInput" type="text" placeholder="January 2026" />
+        </div>
+        <div class="module-picker">
+          <p><strong>Modules to Run</strong></p>
+          <div id="moduleCheckboxes" class="checkbox-grid"></div>
+        </div>
+        <div class="row">
+          <button id="saveConfigBtn">Save Config Changes</button>
+          <span id="saveConfigStatus" class="status"></span>
+        </div>
         <pre id="clientConfigView" class="code"></pre>
       </section>
 
       <section class="step" id="step-2">
-        <h2>Step 2: Modules & Data Instructions</h2>
+        <h2>Step 2: Modules, Instructions, and File Uploads</h2>
         <div id="moduleList" class="module-list"></div>
       </section>
 

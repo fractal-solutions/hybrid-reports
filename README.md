@@ -75,6 +75,73 @@ bun src/index.js --client=<SanitizedClientName>
 
 The generated PDF report will be saved in the `reports/` directory with a filename like `<SanitizedClientName>-<SanitizedReportPeriod>-Monthly_Report.pdf`.
 
+## Report Wizard (UI)
+
+You can run a browser-based, step-by-step wizard for non-technical operators.
+
+### Start the Wizard
+
+```bash
+bun run report:wizard
+```
+
+Then open:
+
+```text
+http://localhost:8787
+```
+
+### Wizard Flow
+
+1. **Step 1 - Client + Config**
+   - Select a client config from `config/*.json`.
+   - Edit `report_period`.
+   - Select/deselect `modules_to_run`.
+   - Save changes directly back to that client config file.
+
+2. **Step 2 - Module Upload Cards**
+   - Drag/drop files per module card.
+   - Files are renamed and stored deterministically to parser-expected paths.
+
+3. **Step 3 - Validate Inputs**
+   - Validates the **selected client's** files (not global file counts).
+   - Example: `datto_rmm` checks that the 5 required report types exist for that specific client.
+
+4. **Step 4 - Generate Report**
+   - Runs the existing orchestrator (`bun src/index.js --client=<client>`).
+
+5. **Step 5 - Optional JSON Edit**
+   - Load current `report_data.json`, edit if needed, and render an edited PDF.
+
+### Upload Destination Mapping
+
+For a selected client, wizard uploads are saved as:
+
+- `zoho_tickets`
+  - `data/zoho_tickets.csv` (shared/global file)
+  - Wizard shows last modified timestamp if file already exists.
+
+- `datto_rmm`
+  - `data/datto_rmm/Device Health Summary - <client_label>.pdf`
+  - `data/datto_rmm/Device Storage - <client_label>.pdf`
+  - `data/datto_rmm/Executive Summary - <client_label>.pdf`
+  - `data/datto_rmm/Hardware Lifecycle - <client_label>.pdf`
+  - `data/datto_rmm/Patch Management Summary - <client_label>.pdf`
+
+- `prtg_monitoring`
+  - `data/prtg/PRTG Report - <client_label>.pdf`
+
+- `datto_saas`
+  - `data/datto_saas/Datto SaaS - <client_label>.<ext>`
+
+- `sophos_fw`
+  - `data/SOPHOS/<client_label>-Sophos-FW/Applications.csv`
+  - `data/SOPHOS/<client_label>-Sophos-FW/Application Categories.csv`
+  - `data/SOPHOS/<client_label>-Sophos-FW/Web Categories.csv`
+  - `data/SOPHOS/<client_label>-Sophos-FW/Web Domains.csv`
+
+`<client_label>` is the config `client_name` sanitized to letters/numbers/underscores.
+
 ## Renderer Spec and Standalone Usage
 
 You can run the renderer directly without running parsers/orchestrator, as long as your JSON data and chart assets already exist.

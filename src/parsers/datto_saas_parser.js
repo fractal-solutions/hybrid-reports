@@ -63,6 +63,28 @@ function scoreClientMatch(clientName, fileName) {
   return Math.min(1, score);
 }
 
+function meaningfulClientTokens(clientName) {
+  const ignore = new Set([
+    "limited",
+    "ltd",
+    "company",
+    "co",
+    "inc",
+    "llc",
+    "plc",
+    "group",
+    "holdings",
+    "technologies",
+    "technology",
+    "services",
+    "service",
+    "the",
+    "and",
+    "of",
+  ]);
+  return tokenizeForMatch(clientName).filter((t) => !ignore.has(t) && t.length >= 3);
+}
+
 function sanitizeClientName(value) {
   return (value || "client").replace(/[^a-zA-Z0-9]/g, "_");
 }
@@ -101,20 +123,31 @@ export function datto_saasParserWorkflow() {
 
     let bestPath = null;
     let bestScore = -1;
+    let bestMeaningfulMatchCount = 0;
+    const clientMeaningfulTokens = meaningfulClientTokens(shared.client_name);
+
     for (const filePath of files) {
       const base = path.basename(filePath, path.extname(filePath));
       const score = scoreClientMatch(shared.client_name, base);
+      const fileTokens = tokenizeForMatch(base);
+      let matchedMeaningful = 0;
+      for (const token of clientMeaningfulTokens) {
+        if (tokenMatches(token, fileTokens)) matchedMeaningful += 1;
+      }
+
       if (score > bestScore) {
         bestScore = score;
+        bestMeaningfulMatchCount = matchedMeaningful;
         bestPath = filePath;
       }
     }
 
-    if (!bestPath && files.length === 1) {
-      bestPath = files[0];
-    }
+    const hasMeaningfulMatch =
+      clientMeaningfulTokens.length === 0
+        ? bestScore >= 0.34
+        : bestMeaningfulMatchCount >= 1;
 
-    if (!bestPath || (files.length > 1 && bestScore < 0.34)) {
+    if (!bestPath || bestScore < 0.34 || !hasMeaningfulMatch) {
       throw new Error(
         `Datto SaaS Parser: Could not confidently match a screenshot for client '${shared.client_name}' in ${dattoSaasDir}.`
       );

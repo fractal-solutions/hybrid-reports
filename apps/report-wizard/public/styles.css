@@ -81,12 +81,14 @@ body {
 }
 
 select,
+input,
 button,
 textarea {
   font: inherit;
 }
 
-select {
+select,
+input {
   min-width: 300px;
   padding: 8px 10px;
   border-radius: 8px;
@@ -145,6 +147,83 @@ button:hover {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.module-picker {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.module-picker p {
+  margin: 0 0 8px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.checkbox-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.config-row {
+  margin-top: 10px;
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.upload-slot {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.slot-title {
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.dropzone {
+  border: 2px dashed #9eb3da;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  color: var(--muted);
+  background: #f9fbff;
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+
+.dropzone.active {
+  border-color: var(--accent-2);
+  background: #edf3ff;
+  color: #173669;
+}
+
+.slot-status {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.slot-status.ok {
+  color: #0a7a5c;
+}
+
+.slot-status.fail {
+  color: var(--danger);
 }
 
 .validation-grid {
