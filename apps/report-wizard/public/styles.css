@@ -81,14 +81,28 @@ body {
 }
 
 select,
-input,
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
 button,
 textarea {
   font: inherit;
 }
 
 select,
-input {
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="email"],
+input[type="url"],
+input[type="password"] {
   min-width: 300px;
   padding: 8px 10px;
   border-radius: 8px;
@@ -209,13 +223,40 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 8px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .checkbox-item {
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 8px 10px;
+  padding: 5px 10px;
   background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin: 0;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  align-self: center;
+}
+
+.checkbox-item span {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .config-row {
@@ -387,5 +428,15 @@ code {
   select {
     min-width: 0;
     width: 100%;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .checkbox-grid {
+    grid-template-columns: 1fr;
   }
 }
