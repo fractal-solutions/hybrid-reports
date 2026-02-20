@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Wizard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Eldama Report Ops</p>
+        <h1>Monthly Report Wizard</h1>
+        <p class="sub">
+          Guided onboarding for data readiness, deterministic generation, and optional final JSON edit.
+        </p>
+      </header>
+
+      <section class="step" id="step-1">
+        <h2>Step 1: Select Client</h2>
+        <div class="row">
+          <select id="clientSelect"></select>
+          <button id="loadClientBtn">Load Client</button>
+        </div>
+        <pre id="clientConfigView" class="code"></pre>
+      </section>
+
+      <section class="step" id="step-2">
+        <h2>Step 2: Modules & Data Instructions</h2>
+        <div id="moduleList" class="module-list"></div>
+      </section>
+
+      <section class="step" id="step-3">
+        <h2>Step 3: Validate Inputs</h2>
+        <div class="row">
+          <button id="validateBtn">Validate Data Readiness</button>
+          <span id="validationSummary" class="status"></span>
+        </div>
+        <div id="validationResults"></div>
+      </section>
+
+      <section class="step" id="step-4">
+        <h2>Step 4: Generate Report</h2>
+        <div class="row">
+          <button id="generateBtn">Generate from Source Data</button>
+        </div>
+        <pre id="generateLog" class="code"></pre>
+      </section>
+
+      <section class="step" id="step-5">
+        <h2>Step 5: Optional Final JSON Edit</h2>
+        <p class="subtle">
+          Load current <code>report_data.json</code>, apply edits only if needed, then render an edited PDF.
+        </p>
+        <div class="row">
+          <button id="loadReportDataBtn">Load Current report_data.json</button>
+          <button id="renderEditedBtn">Render Edited PDF</button>
+        </div>
+        <textarea id="reportJsonEditor" spellcheck="false"></textarea>
+        <pre id="editLog" class="code"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+  </html>
