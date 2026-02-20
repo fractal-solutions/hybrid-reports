@@ -400,6 +400,7 @@ downloadEditedBtn.addEventListener("click", () => {
 
 clientSelect.addEventListener("change", () => {
   state.client = clientSelect.value;
+  loadClientConfig().catch((e) => alert(e.message));
 });
 
 async function boot() {
