@@ -299,7 +299,7 @@ button:hover {
   margin-top: 10px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fff;
+  background: linear-gradient(to right, #f3f6fb 52px, #ffffff 52px);
   display: grid;
   grid-template-columns: 52px 1fr;
   overflow: hidden;
