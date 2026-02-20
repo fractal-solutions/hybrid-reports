@@ -2,9 +2,20 @@ import { AsyncFlow, AsyncNode } from "@fractal-solutions/qflow";
 import { CodeInterpreterNode } from "@fractal-solutions/qflow/nodes";
 import fs from "fs";
 import path from "path";
+import process from "process";
 
 function sanitizeClientName(value) {
   return (value || "client").replace(/[^a-zA-Z0-9]/g, "_");
+}
+
+function resolvePythonInterpreterPath() {
+  const winPath = path.join(process.cwd(), "venv", "Scripts", "python.exe");
+  const linuxPath = path.join(process.cwd(), "venv", "bin", "python");
+  const linuxPath3 = path.join(process.cwd(), "venv", "bin", "python3");
+  if (fs.existsSync(winPath)) return winPath;
+  if (fs.existsSync(linuxPath)) return linuxPath;
+  if (fs.existsSync(linuxPath3)) return linuxPath3;
+  return process.platform === "win32" ? "python" : "python3";
 }
 
 function tokenizeForMatch(value) {
@@ -242,6 +253,7 @@ function buildSophosDeterministicReview(appRows, appCategoryRows) {
 
 export function sophos_fwParserWorkflow() {
   const flow = new AsyncFlow();
+  const pythonInterpreter = resolvePythonInterpreterPath();
 
   const findSophosFolderNode = new AsyncNode();
   findSophosFolderNode.prepAsync = async (shared) => {
@@ -478,7 +490,7 @@ print("Sophos charts generated.")
     `;
 
     generateChartsNode.setParams({
-      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+      interpreterPath: pythonInterpreter,
       requireConfirmation: false,
       code: pythonCode,
     });

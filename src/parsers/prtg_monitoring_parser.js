@@ -2,9 +2,31 @@ import { AsyncFlow, AsyncNode } from "@fractal-solutions/qflow";
 import { CodeInterpreterNode } from "@fractal-solutions/qflow/nodes";
 import path from "path";
 import fs from "fs";
+import process from "process";
 
 function sanitizeClientName(value) {
   return (value || "client").replace(/[^a-zA-Z0-9]/g, "_");
+}
+
+function resolveCaseInsensitiveSubdir(baseDir, expectedName) {
+  const direct = path.join(baseDir, expectedName);
+  if (fs.existsSync(direct)) return direct;
+  if (!fs.existsSync(baseDir)) return direct;
+  const entries = fs.readdirSync(baseDir, { withFileTypes: true });
+  const match = entries.find(
+    (e) => e.isDirectory() && e.name.toLowerCase() === expectedName.toLowerCase()
+  );
+  return match ? path.join(baseDir, match.name) : direct;
+}
+
+function resolvePythonInterpreterPath() {
+  const winPath = path.join(process.cwd(), "venv", "Scripts", "python.exe");
+  const linuxPath = path.join(process.cwd(), "venv", "bin", "python");
+  const linuxPath3 = path.join(process.cwd(), "venv", "bin", "python3");
+  if (fs.existsSync(winPath)) return winPath;
+  if (fs.existsSync(linuxPath)) return linuxPath;
+  if (fs.existsSync(linuxPath3)) return linuxPath3;
+  return process.platform === "win32" ? "python" : "python3";
 }
 
 function escapeForPythonTripleQuoted(value) {
@@ -343,6 +365,7 @@ function computePrtgSummary(links) {
 
 export function prtg_monitoringParserWorkflow() {
   const flow = new AsyncFlow();
+  const pythonInterpreter = resolvePythonInterpreterPath();
 
   const findAndProcessPrtgPdfNode = new AsyncNode();
   findAndProcessPrtgPdfNode.prepAsync = async (shared) => {
@@ -352,7 +375,8 @@ export function prtg_monitoringParserWorkflow() {
     }
 
     const baseDataDir = path.resolve(process.cwd(), shared.data_directory);
-    const prtgDataDir = path.join(baseDataDir, "prtg");
+    const prtgDataDir = resolveCaseInsensitiveSubdir(baseDataDir, "prtg");
+    shared.prtgDataDir = prtgDataDir;
 
     let prtgPdfPath = null;
     try {
@@ -387,19 +411,24 @@ export function prtg_monitoringParserWorkflow() {
     }
 
     const safePdfPath = shared.prtgPdfPath.replace(/\\/g, "\\\\");
-    const outputTxtPath = path.join("data", "prtg", `extracted_text_${sanitizeClientName(shared.client_name)}.txt`);
-    const safeOutputPath = outputTxtPath.replace(/\\/g, "/");
-    shared.prtgExtractedTextPath = outputTxtPath;
+    const outputTxtPathAbs = path.join(
+      shared.prtgDataDir || path.join(process.cwd(), "data", "prtg"),
+      `extracted_text_${sanitizeClientName(shared.client_name)}.txt`
+    );
+    const safeOutputPath = outputTxtPathAbs.replace(/\\/g, "/");
+    shared.prtgExtractedTextPath = outputTxtPathAbs;
 
     extractPdfTextNode.setParams({
-      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+      interpreterPath: pythonInterpreter,
       requireConfirmation: false,
       code: `
 import os
 import pytesseract
 from pdf2image import convert_from_path
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe'
+# Prefer default tesseract on Linux, keep explicit path for Windows.
+if os.name == 'nt':
+    pytesseract.pytesseract.tesseract_cmd = r'C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe'
 pdf_path = r'${safePdfPath}'
 output_path = r'${safeOutputPath}'
 
@@ -453,8 +482,11 @@ print(f'Extracted length: {len(extracted_text)}')
       },
     };
 
-    const extractedJsonPath = path.join("data", "prtg", `extracted_${sanitizeClientName(shared.client_name)}.json`);
-    fs.writeFileSync(path.resolve(process.cwd(), extractedJsonPath), JSON.stringify(parsed, null, 2));
+    const extractedJsonPath = path.join(
+      shared.prtgDataDir || path.join(process.cwd(), "data", "prtg"),
+      `extracted_${sanitizeClientName(shared.client_name)}.json`
+    );
+    fs.writeFileSync(extractedJsonPath, JSON.stringify(parsed, null, 2));
     console.log(`PRTG Parser: Deterministic extracted JSON written to ${extractedJsonPath}`);
 
     shared.prtgData = parsed;
@@ -537,7 +569,7 @@ print("Chart saved to ${chartPathForPython}")
     `;
 
     generateChartNode.setParams({
-      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+      interpreterPath: pythonInterpreter,
       requireConfirmation: false,
       code: pythonCode,
     });

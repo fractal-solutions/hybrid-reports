@@ -5,9 +5,20 @@ import path from "path";
 import process from "process";
 import Papa from "papaparse";
 
+function resolvePythonInterpreterPath() {
+  const winPath = path.join(process.cwd(), "venv", "Scripts", "python.exe");
+  const linuxPath = path.join(process.cwd(), "venv", "bin", "python");
+  const linuxPath3 = path.join(process.cwd(), "venv", "bin", "python3");
+  if (fs.existsSync(winPath)) return winPath;
+  if (fs.existsSync(linuxPath)) return linuxPath;
+  if (fs.existsSync(linuxPath3)) return linuxPath3;
+  return process.platform === "win32" ? "python" : "python3";
+}
+
 // This is a self-contained parser module for Zoho Tickets CSV data.
 export function zoho_ticketsParserWorkflow() {
   const flow = new AsyncFlow();
+  const pythonInterpreter = resolvePythonInterpreterPath();
 
   // 1. Node to read and process the CSV
   const processCsvNode = new AsyncNode();
@@ -99,7 +110,7 @@ export function zoho_ticketsParserWorkflow() {
   // 2. Node to generate the chart
   const generateChartNode = new CodeInterpreterNode();
   generateChartNode.setParams({
-    interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe")
+    interpreterPath: pythonInterpreter
   });
   generateChartNode.prepAsync = async (shared) => { // prepAsync receives `shared`
     // Defensive check
@@ -171,6 +182,11 @@ print(f"Chart saved to {chart_file_path}")
       requireConfirmation: false
     });
     return shared; // Return shared
+  };
+  generateChartNode.postAsync = async (shared, prepRes, execRes) => {
+    if (execRes?.exitCode !== 0) {
+      throw new Error(`Zoho Parser: Chart generation failed: ${execRes?.stderr || "Unknown error"}`);
+    }
   };
   
   // 3. Node to format the final output and write to file

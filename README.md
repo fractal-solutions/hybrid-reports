@@ -25,16 +25,33 @@ The system follows a Data-View-Controller (DVC) pattern:
     # or source venv/bin/activate # On Linux/macOS
     pip install matplotlib
     ```
-4.  **Puppeteer Browser**: Puppeteer requires a browser executable. Install the recommended browser:
+4.  **OCR Dependencies (required for PRTG parser)**:
+    - Install Python OCR libraries in the active venv:
+      ```bash
+      pip install pytesseract pdf2image
+      ```
+    - Install **Tesseract OCR** on the host OS:
+      - Windows: install from Tesseract OCR installer (default path used by parser: `C:\Program Files\Tesseract-OCR\tesseract.exe`)
+      - Linux (Debian/Ubuntu):
+        ```bash
+        sudo apt-get update
+        sudo apt-get install -y tesseract-ocr
+        ```
+    - Install **Poppler** (`pdftoppm`) for PDF-to-image conversion used by `pdf2image`:
+      - Linux (Debian/Ubuntu):
+        ```bash
+        sudo apt-get install -y poppler-utils
+        ```
+5.  **Puppeteer Browser**: Puppeteer requires a browser executable. Install the recommended browser:
     ```bash
     bunx puppeteer browsers install chrome
     ```
-5.  **Environment Variables**: The agent might require API keys for LLM services. Set `AGENT_LLM_API_KEY`, `AGENT_LLM_MODEL`, and `AGENT_LLM_BASE_URL` in your environment or a `.env` file.
-6.  **Patch Qflow Agent (required after install)**: Qflow's finish tool prompts for confirmation by default. This repo includes a patch script to disable that prompt for unattended runs. Run after `bun install` or any dependency reinstall:
+6.  **Environment Variables**: The agent might require API keys for LLM services. Set `AGENT_LLM_API_KEY`, `AGENT_LLM_MODEL`, and `AGENT_LLM_BASE_URL` in your environment or a `.env` file.
+7.  **Patch Qflow Agent (required after install)**: Qflow's finish tool prompts for confirmation by default. This repo includes a patch script to disable that prompt for unattended runs. Run after `bun install` or any dependency reinstall:
     ```bash
     bun patch_agent.js
     ```
-7.  **Optional Qflow Dependency Trim (for constrained environments)**: If your environment does not support `ssh2`/`serialport`, run:
+8.  **Optional Qflow Dependency Trim (for constrained environments)**: If your environment does not support `ssh2`/`serialport`, run:
     ```bash
     bun patch_qflow.js
     ```

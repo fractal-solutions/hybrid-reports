@@ -93,6 +93,18 @@ function toWorkspaceRelative(p) {
   return path.relative(process.cwd(), p).replace(/\\/g, "/");
 }
 
+function resolveCaseInsensitiveSubdir(baseDir, expectedName) {
+  const direct = path.join(baseDir, expectedName);
+  if (fs.existsSync(direct)) return direct;
+  if (!fs.existsSync(baseDir)) return direct;
+
+  const entries = fs.readdirSync(baseDir, { withFileTypes: true });
+  const match = entries.find(
+    (e) => e.isDirectory() && e.name.toLowerCase() === expectedName.toLowerCase()
+  );
+  return match ? path.join(baseDir, match.name) : direct;
+}
+
 export function datto_saasParserWorkflow() {
   const flow = new AsyncFlow();
 
@@ -106,7 +118,7 @@ export function datto_saasParserWorkflow() {
     const baseDataDir = shared.data_directory
       ? path.resolve(process.cwd(), shared.data_directory)
       : path.join(process.cwd(), "data");
-    const dattoSaasDir = path.join(baseDataDir, "datto_saas");
+    const dattoSaasDir = resolveCaseInsensitiveSubdir(baseDataDir, "datto_saas");
     if (!fs.existsSync(dattoSaasDir)) {
       throw new Error(`Datto SaaS Parser: Folder not found: ${dattoSaasDir}`);
     }

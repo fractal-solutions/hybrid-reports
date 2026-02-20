@@ -211,8 +211,10 @@ async function renderReport(jsonPath, outputPdfPath) {
 
     // 5. Generate PDF
     console.log('Launching browser...');
+    const isLinuxRoot = process.platform === 'linux' && typeof process.getuid === 'function' && process.getuid() === 0;
     const browser = await puppeteer.launch({
-        headless: "new" // or true
+        headless: "new", // or true
+        args: isLinuxRoot ? ['--no-sandbox', '--disable-setuid-sandbox'] : []
     });
     const page = await browser.newPage();
     

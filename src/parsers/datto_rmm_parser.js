@@ -57,6 +57,28 @@ function sanitizeClientName(value) {
   return (value || "client").replace(/[^a-zA-Z0-9]/g, "_");
 }
 
+function resolveCaseInsensitiveSubdir(baseDir, expectedName) {
+  const direct = path.join(baseDir, expectedName);
+  if (fs.existsSync(direct)) return direct;
+  if (!fs.existsSync(baseDir)) return direct;
+
+  const entries = fs.readdirSync(baseDir, { withFileTypes: true });
+  const match = entries.find(
+    (e) => e.isDirectory() && e.name.toLowerCase() === expectedName.toLowerCase()
+  );
+  return match ? path.join(baseDir, match.name) : direct;
+}
+
+function resolvePythonInterpreterPath() {
+  const winPath = path.join(process.cwd(), "venv", "Scripts", "python.exe");
+  const linuxPath = path.join(process.cwd(), "venv", "bin", "python");
+  const linuxPath3 = path.join(process.cwd(), "venv", "bin", "python3");
+  if (fs.existsSync(winPath)) return winPath;
+  if (fs.existsSync(linuxPath)) return linuxPath;
+  if (fs.existsSync(linuxPath3)) return linuxPath3;
+  return process.platform === "win32" ? "python" : "python3";
+}
+
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -564,8 +586,9 @@ function parseDattoMetrics(mergedText, clientName) {
 
 export function datto_rmmParserWorkflow() {
   const codeInterpreter = new CodeInterpreterNode();
+  const pythonInterpreter = resolvePythonInterpreterPath();
   codeInterpreter.setParams({
-    interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+    interpreterPath: pythonInterpreter,
   });
 
   const findAndProcessDattoPdfsNode = new AsyncNode();
@@ -575,7 +598,7 @@ export function datto_rmmParserWorkflow() {
     const baseDataDir = shared.data_directory
       ? path.resolve(process.cwd(), shared.data_directory)
       : path.join(process.cwd(), "data");
-    const dattoRmmDataDir = path.join(baseDataDir, "datto_rmm");
+    const dattoRmmDataDir = resolveCaseInsensitiveSubdir(baseDataDir, "datto_rmm");
     console.log(`Datto RMM Parser: Looking for Datto RMM PDF files in ${dattoRmmDataDir}`);
 
     let dattoRmmPdfPaths = [];
@@ -613,6 +636,10 @@ export function datto_rmmParserWorkflow() {
   const extractPdfsTextNode = new AsyncNode();
   extractPdfsTextNode.prepAsync = async (shared) => {
     if (typeof shared === "undefined" || shared === null) shared = {};
+    const baseDataDir = shared.data_directory
+      ? path.resolve(process.cwd(), shared.data_directory)
+      : path.join(process.cwd(), "data");
+    const dattoRmmDataDir = resolveCaseInsensitiveSubdir(baseDataDir, "datto_rmm");
 
     const pdfPaths = shared.datto_rmm_pdf_paths || [];
     if (pdfPaths.length === 0) {
@@ -647,7 +674,7 @@ export function datto_rmmParserWorkflow() {
     console.log(`Datto RMM Parser: Merged extracted text content (total length: ${mergedContent.length})`);
 
     const clientNameSanitized = sanitizeClientName(shared.client_name);
-    const mergedTextDir = path.join(process.cwd(), "data", "datto_rmm", "extracted");
+    const mergedTextDir = path.join(dattoRmmDataDir, "extracted");
     if (!fs.existsSync(mergedTextDir)) {
       fs.mkdirSync(mergedTextDir, { recursive: true });
     }
@@ -667,7 +694,13 @@ export function datto_rmmParserWorkflow() {
     const parsed = parseDattoMetrics(shared.pdfTextContent || "", shared.client_name || "client");
     shared.datto_output = parsed;
 
-    const metricsPath = path.join(process.cwd(), "data", "datto_rmm", "extracted", `metrics_${sanitizeClientName(shared.client_name)}.json`);
+    const baseDataDir = shared.data_directory
+      ? path.resolve(process.cwd(), shared.data_directory)
+      : path.join(process.cwd(), "data");
+    const dattoRmmDataDir = resolveCaseInsensitiveSubdir(baseDataDir, "datto_rmm");
+    const extractedDir = path.join(dattoRmmDataDir, "extracted");
+    if (!fs.existsSync(extractedDir)) fs.mkdirSync(extractedDir, { recursive: true });
+    const metricsPath = path.join(extractedDir, `metrics_${sanitizeClientName(shared.client_name)}.json`);
     fs.writeFileSync(metricsPath, JSON.stringify(parsed, null, 2));
     console.log(`Datto RMM Parser: Deterministic metrics written to ${metricsPath}`);
 
@@ -854,7 +887,7 @@ print("Charts generated successfully.")
 `;
 
     codeInterpreter.setParams({
-      interpreterPath: path.join(process.cwd(), "venv", "Scripts", "python.exe"),
+      interpreterPath: pythonInterpreter,
       requireConfirmation: false,
       code: pythonCode,
     });
