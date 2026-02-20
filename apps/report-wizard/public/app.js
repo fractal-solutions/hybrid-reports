@@ -56,7 +56,9 @@ const generateLog = document.getElementById("generateLog");
 const loadReportDataBtn = document.getElementById("loadReportDataBtn");
 const renderEditedBtn = document.getElementById("renderEditedBtn");
 const reportJsonEditor = document.getElementById("reportJsonEditor");
+const jsonLineNumbers = document.getElementById("jsonLineNumbers");
 const editLog = document.getElementById("editLog");
+const jsonValidationStatus = document.getElementById("jsonValidationStatus");
 const reportPeriodInput = document.getElementById("reportPeriodInput");
 const moduleCheckboxes = document.getElementById("moduleCheckboxes");
 const saveConfigBtn = document.getElementById("saveConfigBtn");
@@ -337,10 +339,13 @@ async function loadReportData() {
     throw new Error(body || "Unable to load report_data.json");
   }
   reportJsonEditor.value = await res.text();
+  updateLineNumbers();
+  validateJsonEditor();
 }
 
 async function renderEdited() {
   if (!state.client) return;
+  if (!validateJsonEditor()) return;
   editLog.textContent = "Rendering edited PDF...";
   const data = await fetchJson("/api/render-edited", {
     method: "POST",
@@ -376,8 +381,57 @@ clientSelect.addEventListener("change", () => {
 async function boot() {
   await loadClients();
   if (state.client) await loadClientConfig();
+  renderEditedBtn.disabled = true;
+  updateLineNumbers();
 }
 
 boot().catch((e) => {
   alert(e.message);
 });
+
+function setJsonValidationState(kind, message) {
+  jsonValidationStatus.classList.remove("neutral", "valid", "invalid");
+  jsonValidationStatus.classList.add(kind);
+  jsonValidationStatus.textContent = message;
+  reportJsonEditor.classList.remove("json-valid", "json-invalid");
+  if (kind === "valid") reportJsonEditor.classList.add("json-valid");
+  if (kind === "invalid") reportJsonEditor.classList.add("json-invalid");
+}
+
+function validateJsonEditor() {
+  const raw = reportJsonEditor.value.trim();
+  if (!raw) {
+    setJsonValidationState("invalid", "JSON is empty.");
+    renderEditedBtn.disabled = true;
+    return false;
+  }
+  try {
+    JSON.parse(raw);
+    setJsonValidationState("valid", "JSON is valid.");
+    renderEditedBtn.disabled = false;
+    return true;
+  } catch (error) {
+    setJsonValidationState("invalid", `Invalid JSON: ${error.message}`);
+    renderEditedBtn.disabled = true;
+    return false;
+  }
+}
+
+reportJsonEditor.addEventListener("input", () => {
+  updateLineNumbers();
+  validateJsonEditor();
+});
+
+reportJsonEditor.addEventListener("scroll", () => {
+  jsonLineNumbers.style.transform = `translateY(-${reportJsonEditor.scrollTop}px)`;
+});
+
+function updateLineNumbers() {
+  const lineCount = Math.max(1, reportJsonEditor.value.split("\n").length);
+  let numbers = "";
+  for (let i = 1; i <= lineCount; i++) {
+    numbers += i === lineCount ? `${i}` : `${i}\n`;
+  }
+  jsonLineNumbers.textContent = numbers;
+  jsonLineNumbers.style.transform = `translateY(-${reportJsonEditor.scrollTop}px)`;
+}

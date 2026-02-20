@@ -6,7 +6,8 @@
     "modules_to_run": [
       "datto_rmm",
       "zoho_tickets",
-      "prtg_monitoring"
+      "prtg_monitoring",
+      "datto_saas"
     ]
   },
   "scores": {
@@ -214,6 +215,11 @@
       "links_with_downtime": 13
     },
     "chart_path": "assets\\prtg_uptime_SERENITY_SPA_LIMITED.png"
+  },
+  "datto_saas": {
+    "screenshot_path": "data/datto_saas/Serenity Spa Limited.png",
+    "source_filename": "Serenity Spa Limited.png",
+    "summary_note": "Offsite backup status is presented directly from the Datto SaaS dashboard screenshot for source-of-truth visibility."
   },
   "summary": {
     "executive_summary": "This is a comprehensive monthly support report for SERENITY SPA LIMITED for January 2026. The average service score for the month was 57%. A total of 27 tickets were processed, with 47 devices having antivirus installed, and 12 devices fully patched.",

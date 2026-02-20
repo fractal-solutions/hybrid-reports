@@ -68,7 +68,11 @@
           <button id="loadReportDataBtn">Load Current report_data.json</button>
           <button id="renderEditedBtn">Render Edited PDF</button>
         </div>
-        <textarea id="reportJsonEditor" spellcheck="false"></textarea>
+        <div class="editor-wrap">
+          <pre id="jsonLineNumbers" class="line-numbers" aria-hidden="true">1</pre>
+          <textarea id="reportJsonEditor" spellcheck="false" wrap="off"></textarea>
+        </div>
+        <div id="jsonValidationStatus" class="json-validation neutral">JSON not loaded.</div>
         <pre id="editLog" class="code"></pre>
       </section>
     </main>
