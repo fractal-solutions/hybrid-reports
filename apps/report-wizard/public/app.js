@@ -12,6 +12,19 @@ const moduleHints = {
   datto_saas: "Upload a Datto SaaS dashboard screenshot for this client.",
 };
 
+const moduleTooltips = {
+  datto_rmm:
+    "Source: Datto RMM portal -> Reports. Export these 5 PDFs for the client/site: Device Health Summary, Device Storage, Executive Summary, Hardware Lifecycle, Patch Management Summary.",
+  prtg_monitoring:
+    "Source: PRTG web console -> Reports. Export the client's monthly report as a single PDF and upload here.",
+  zoho_tickets:
+    "Source: Zoho Desk/Tickets export. Download CSV and upload as zoho_tickets.csv. This file is shared across clients.",
+  sophos_fw:
+    "Source: Sophos Firewall reports export. Upload 4 CSVs: Applications.csv, Application Categories.csv, Web Categories.csv, Web Domains.csv.",
+  datto_saas:
+    "Source: Datto SaaS dashboard. Capture/upload the offsite-backup screenshot for the selected client.",
+};
+
 const moduleUploadSlots = {
   zoho_tickets: [{ slot: "zoho_tickets_csv", label: "Zoho Tickets CSV", accept: ".csv" }],
   datto_rmm: [
@@ -195,11 +208,22 @@ function renderModules() {
     const card = document.createElement("div");
     card.className = "module-card";
     card.innerHTML = `
-      <p class="module-title">${moduleName}</p>
+      <div class="module-card-head">
+        <p class="module-title">${moduleName}</p>
+        <div class="help-wrap">
+          <button type="button" class="help-btn" aria-label="How to get ${moduleName} files">?</button>
+          <div class="help-tip"></div>
+        </div>
+      </div>
       <p class="module-hint">${moduleHints[moduleName] || "No guidance configured yet."}</p>
       <div class="upload-grid" id="upload-grid-${moduleName}"></div>
     `;
     moduleList.appendChild(card);
+
+    const helpTip = card.querySelector(".help-tip");
+    if (helpTip) {
+      helpTip.textContent = moduleTooltips[moduleName] || "Upload the required files for this module.";
+    }
 
     const grid = card.querySelector(`#${CSS.escape(`upload-grid-${moduleName}`)}`);
     const slots = moduleUploadSlots[moduleName] || [];

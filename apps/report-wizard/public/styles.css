@@ -136,11 +136,58 @@ button:hover {
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 10px;
+  position: relative;
 }
 
 .module-title {
   margin: 0 0 4px;
   font-weight: 700;
+}
+
+.module-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.help-wrap {
+  position: relative;
+}
+
+.help-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1;
+  background: #1f4aa6;
+}
+
+.help-tip {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: min(360px, 76vw);
+  background: #0f1728;
+  color: #d4def2;
+  border: 1px solid #2b3c64;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  z-index: 20;
+  opacity: 0;
+  transform: translateY(-3px);
+  pointer-events: none;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.help-wrap:hover .help-tip,
+.help-wrap:focus-within .help-tip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .module-hint {
